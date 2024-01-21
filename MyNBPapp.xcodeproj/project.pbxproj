@@ -11,6 +11,7 @@
 		9357DA002B5D31770097673C /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FF2B5D31770097673C /* AppTabView.swift */; };
 		9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA012B5D78BD0097673C /* AppSidebarList.swift */; };
 		9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA032B5D7AC30097673C /* AppDetailColumn.swift */; };
+		9357DA072B5D84B10097673C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA062B5D84B10097673C /* README.md */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		9357D9FF2B5D31770097673C /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		9357DA012B5D78BD0097673C /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
 		9357DA032B5D7AC30097673C /* AppDetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailColumn.swift; sourceTree = "<group>"; };
+		9357DA062B5D84B10097673C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				9357D9FC2B5D2EE40097673C /* Navigation */,
 				93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */,
 				93C6D7BB2B5BA56A006E28F7 /* Preview Content */,
+				9357DA062B5D84B10097673C /* README.md */,
 			);
 			path = MyNBPapp;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9357DA072B5D84B10097673C /* README.md in Resources */,
 				93C6D7BD2B5BA56A006E28F7 /* Preview Assets.xcassets in Resources */,
 				93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */,
 			);
