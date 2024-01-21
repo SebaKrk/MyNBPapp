@@ -9,9 +9,9 @@ import SwiftUI
 
 enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     
-    case fist
-    case second
-    case third
+    case main
+    case rate
+    case favorites
     
     var id: AppScreen { self }
     
@@ -22,24 +22,24 @@ extension AppScreen {
     @ViewBuilder
     var label: some View {
         switch self {
-        case .fist:
-            Label("first", systemImage: "chart.bar.doc.horizontal")
-        case .second:
-            Label("second", systemImage: "chart.bar.xaxis")
-        case .third:
-            Label("third", systemImage: "chart.pie.fill")
+        case .main:
+            Label("Main", systemImage: "chart.bar.doc.horizontal")
+        case .rate:
+            Label("Rate", systemImage: "chart.line.uptrend.xyaxis")
+        case .favorites:
+            Label("Favorites", systemImage: "star")
         }
     }
     
     @ViewBuilder
     var destination: some View {
         switch self {
-        case .fist:
-            Text("first")
-        case .second:
-            Text("second")
-        case .third:
-            Text("third")
+        case .main:
+            Text("Main")
+        case .rate:
+            Text("Rate")
+        case .favorites:
+            Text("Favorites")
         }
     }
     
