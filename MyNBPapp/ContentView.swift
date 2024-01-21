@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var selection: AppScreen? = .fist
+    
     var body: some View {
-            Text("My NBP app")
+         
+        if horizontalSizeClass == .compact {
+            AppTabView(selection: $selection)
+        } else {
+            NavigationSplitView {
+                AppSidebarList(selection: $selection)
+            } detail: {
+                AppDetailColumn(screen: selection)
+            }
+        }
     }
+    
 }
 
 #Preview {
