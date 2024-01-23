@@ -7,6 +7,7 @@ https://github.com/SebaKrk/MyNBPapp
 - aplikacja ma działac przynajmniej w dwoch jezykach pl/en
 - swift Charts (szkolnie zespolu)
 - implementacja serwisów/modeli/ do odzielnych framework
+- sprawdzenie import Network oraz import OSLog
 - logowanie FireBase
 - zależności między framework-kami
 - testy jednostkowe
