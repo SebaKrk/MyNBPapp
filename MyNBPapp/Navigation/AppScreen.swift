@@ -12,6 +12,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case main
     case rate
     case favorites
+    case account
     
     var id: AppScreen { self }
     
@@ -28,6 +29,8 @@ extension AppScreen {
             Label("Rate", systemImage: "chart.line.uptrend.xyaxis")
         case .favorites:
             Label("Favorites", systemImage: "star")
+        case .account:
+            Label("Account", systemImage: "person")
         }
     }
     
@@ -35,11 +38,13 @@ extension AppScreen {
     var destination: some View {
         switch self {
         case .main:
-            Text("Main")
+            MainView()
         case .rate:
-            Text("Rate")
+            CurrencyRateView()
         case .favorites:
-            Text("Favorites")
+            FavoritesView()
+        case .account:
+            AccountView()
         }
     }
     

@@ -11,10 +11,11 @@
 		9357DA002B5D31770097673C /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FF2B5D31770097673C /* AppTabView.swift */; };
 		9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA012B5D78BD0097673C /* AppSidebarList.swift */; };
 		9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA032B5D7AC30097673C /* AppDetailColumn.swift */; };
-		9357DA072B5D84B10097673C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA062B5D84B10097673C /* README.md */; };
 		9357DA092B5D9A7E0097673C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA082B5D9A7E0097673C /* MainView.swift */; };
 		9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA0A2B5D9B4F0097673C /* CurrencyRateView.swift */; };
 		9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA0C2B5D9B900097673C /* FavoritesView.swift */; };
+		9357DA102B6065120097673C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA0F2B6065120097673C /* AccountView.swift */; };
+		9357DA162B6066F80097673C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA152B6066F80097673C /* SettingsView.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -46,10 +47,11 @@
 		9357D9FF2B5D31770097673C /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		9357DA012B5D78BD0097673C /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
 		9357DA032B5D7AC30097673C /* AppDetailColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailColumn.swift; sourceTree = "<group>"; };
-		9357DA062B5D84B10097673C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9357DA082B5D9A7E0097673C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9357DA0A2B5D9B4F0097673C /* CurrencyRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateView.swift; sourceTree = "<group>"; };
 		9357DA0C2B5D9B900097673C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		9357DA0F2B6065120097673C /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		9357DA152B6066F80097673C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,50 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		9357DA0E2B5F10870097673C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9357DA112B6065BF0097673C /* Main */,
+				9357DA122B6065C90097673C /* Favorites */,
+				9357DA132B6065D00097673C /* CurrencyRate */,
+				9357DA142B6065DA0097673C /* Account */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9357DA112B6065BF0097673C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9357DA082B5D9A7E0097673C /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9357DA122B6065C90097673C /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				9357DA0C2B5D9B900097673C /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		9357DA132B6065D00097673C /* CurrencyRate */ = {
+			isa = PBXGroup;
+			children = (
+				9357DA0A2B5D9B4F0097673C /* CurrencyRateView.swift */,
+			);
+			path = CurrencyRate;
+			sourceTree = "<group>";
+		};
+		9357DA142B6065DA0097673C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9357DA0F2B6065120097673C /* AccountView.swift */,
+				9357DA152B6066F80097673C /* SettingsView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		93C6D7A92B5BA569006E28F7 = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +170,9 @@
 				93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */,
 				93C6D7B72B5BA569006E28F7 /* ContentView.swift */,
 				9357D9FC2B5D2EE40097673C /* Navigation */,
-				9357DA082B5D9A7E0097673C /* MainView.swift */,
-				9357DA0C2B5D9B900097673C /* FavoritesView.swift */,
-				9357DA0A2B5D9B4F0097673C /* CurrencyRateView.swift */,
+				9357DA0E2B5F10870097673C /* View */,
 				93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */,
 				93C6D7BB2B5BA56A006E28F7 /* Preview Content */,
-				9357DA062B5D84B10097673C /* README.md */,
 			);
 			path = MyNBPapp;
 			sourceTree = "<group>";
@@ -263,7 +306,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9357DA072B5D84B10097673C /* README.md in Resources */,
 				93C6D7BD2B5BA56A006E28F7 /* Preview Assets.xcassets in Resources */,
 				93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */,
 			);
@@ -294,11 +336,13 @@
 				9357DA092B5D9A7E0097673C /* MainView.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,
 				9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */,
+				9357DA102B6065120097673C /* AccountView.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
 				9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
+				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
