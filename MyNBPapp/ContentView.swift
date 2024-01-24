@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @State private var selection: AppScreen? = .fist
+    @State private var selection: AppScreen? = .main
     
     var body: some View {
          
