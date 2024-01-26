@@ -36,3 +36,5 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0003 Dodanie biblioteki `The Composable Architecture`
     * A: TCA wersja 1.6.0 
+
+### IOS-0004 Dodanie pliku do tlumaczen
