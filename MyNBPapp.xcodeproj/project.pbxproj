@@ -16,6 +16,10 @@
 		9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA0C2B5D9B900097673C /* FavoritesView.swift */; };
 		9357DA102B6065120097673C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA0F2B6065120097673C /* AccountView.swift */; };
 		9357DA162B6066F80097673C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA152B6066F80097673C /* SettingsView.swift */; };
+		9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA652B63CEB30097673C /* ComposableArchitecture */; };
+		9357DA692B63CF240097673C /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA682B63CF240097673C /* Commons */; };
+		9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6A2B63CF2A0097673C /* DataModels */; };
+		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -72,6 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9357DA6D2B63CF2E0097673C /* Services in Frameworks */,
+				9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */,
+				9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */,
+				9357DA692B63CF240097673C /* Commons in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +155,13 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		9357DA672B63CF240097673C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		93C6D7A92B5BA569006E28F7 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +172,7 @@
 				93C6D7C52B5BA56A006E28F7 /* MyNBPappTests */,
 				93C6D7CF2B5BA56A006E28F7 /* MyNBPappUITests */,
 				93C6D7B32B5BA569006E28F7 /* Products */,
+				9357DA672B63CF240097673C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,6 +240,12 @@
 			dependencies = (
 			);
 			name = MyNBPapp;
+			packageProductDependencies = (
+				9357DA652B63CEB30097673C /* ComposableArchitecture */,
+				9357DA682B63CF240097673C /* Commons */,
+				9357DA6A2B63CF2A0097673C /* DataModels */,
+				9357DA6C2B63CF2E0097673C /* Services */,
+			);
 			productName = MyNBPapp;
 			productReference = 93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 93C6D7A92B5BA569006E28F7;
+			packageReferences = (
+				9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 93C6D7B32B5BA569006E28F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -680,6 +705,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9357DA652B63CEB30097673C /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		9357DA682B63CF240097673C /* Commons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Commons;
+		};
+		9357DA6A2B63CF2A0097673C /* DataModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataModels;
+		};
+		9357DA6C2B63CF2E0097673C /* Services */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Services;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93C6D7AA2B5BA569006E28F7 /* Project object */;
 }

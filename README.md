@@ -35,3 +35,4 @@ https://github.com/SebaKrk/MyNBPapp
     * D: Zależności miedzy pakietami
     
 ### IOS-0003 Dodanie biblioteki `The Composable Architecture`
+    * A: TCA wersja 1.6.0 
