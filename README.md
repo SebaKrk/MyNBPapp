@@ -25,6 +25,7 @@ https://github.com/SebaKrk/MyNBPapp
     Po starcie aplikacji w zalenosci od urzadzenia ma pojawic sie TabView (iPhone) badz NavigationView (iPad)
     * B: Zmiana nazwa enum AppScreen na docelowe (pierwsze trzy główne widoki)
 
-### IOS-0002 Inicjalizacja framework Serwis
-    * A: Stworzenie framework Serwis
+### IOS-0002 Inicjalizacja pakietów
+    * A: Stworzenie pakietu `Serwis`
     Tu ma sie odbywac caly serwsi zwiazany z api NBP + ewentualnie innne serwsiy
+    * B: Stworzenie pakietu `DataModels`
