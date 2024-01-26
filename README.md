@@ -32,3 +32,4 @@ https://github.com/SebaKrk/MyNBPapp
     Tu beda wszystkie modele 
     * C: Stworzenie pakiet `Commons`
     Pakiet do plikow extension, formaterow, constants
+    * D: Zależności miedzy pakietami

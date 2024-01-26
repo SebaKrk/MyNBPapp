@@ -12,11 +12,20 @@ let package = Package(
             name: "Services",
             targets: ["Services"]),
     ],
+    dependencies: [
+        .package(name: "Commons", path: "../Commons"),
+        .package(name: "DataModels", path: "../DataModels")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Services"),
+            name: "Services",
+            dependencies: [
+                .product(name: "DataModels", package: "DataModels"),
+                .product(name: "Commons", package: "Commons")
+            ]
+        ),
         .testTarget(
             name: "ServicesTests",
             dependencies: ["Services"]),
