@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import MonumentKit
 
 struct MainView: View {
     
     var body: some View {
-        Text("Main")
+        Text("MainView")
     }
     
 }

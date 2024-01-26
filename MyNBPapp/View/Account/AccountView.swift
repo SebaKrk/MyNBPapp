@@ -13,7 +13,7 @@ struct AccountView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Account")
+            Text("AccountView")
                 .toolbar {
                     Button {
                         isPresented.toggle()
