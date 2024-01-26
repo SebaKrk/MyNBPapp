@@ -33,3 +33,5 @@ https://github.com/SebaKrk/MyNBPapp
     * C: Stworzenie pakiet `Commons`
     Pakiet do plikow extension, formaterow, constants
     * D: Zależności miedzy pakietami
+    
+### IOS-0003 Dodanie biblioteki `The Composable Architecture`
