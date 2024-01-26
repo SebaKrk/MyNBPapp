@@ -14,7 +14,8 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Commons", path: "../Commons"),
-        .package(name: "DataModels", path: "../DataModels")
+        .package(name: "DataModels", path: "../DataModels"),
+        .package(name: "MonumentKit", path: "../MonumentKit")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,7 +24,8 @@ let package = Package(
             name: "Services",
             dependencies: [
                 .product(name: "DataModels", package: "DataModels"),
-                .product(name: "Commons", package: "Commons")
+                .product(name: "Commons", package: "Commons"),
+                .product(name: "MonumentKit", package: "MonumentKit")
             ]
         ),
         .testTarget(
