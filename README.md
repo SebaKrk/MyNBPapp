@@ -30,3 +30,5 @@ https://github.com/SebaKrk/MyNBPapp
     Tu ma sie odbywac caly serwsi zwiazany z api NBP + ewentualnie innne serwsiy
     * B: Stworzenie pakietu `DataModels`
     Tu beda wszystkie modele 
+    * C: Stworzenie pakiet `Commons`
+    Pakiet do plikow extension, formaterow, constants
