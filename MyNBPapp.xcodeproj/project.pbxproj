@@ -61,6 +61,7 @@
 		9357DA622B63BF820097673C /* DataModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DataModels; path = Frameworks/DataModels; sourceTree = "<group>"; };
 		9357DA632B63C1940097673C /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Commons; path = Frameworks/Commons; sourceTree = "<group>"; };
 		9357DA6E2B63D3170097673C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9357DA702B63F5560097673C /* MonumentKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MonumentKit; path = Frameworks/MonumentKit; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		93C6D7A92B5BA569006E28F7 = {
 			isa = PBXGroup;
 			children = (
+				9357DA702B63F5560097673C /* MonumentKit */,
 				9357DA632B63C1940097673C /* Commons */,
 				9357DA622B63BF820097673C /* DataModels */,
 				9357DA612B63BD560097673C /* Services */,
