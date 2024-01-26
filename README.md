@@ -29,3 +29,4 @@ https://github.com/SebaKrk/MyNBPapp
     * A: Stworzenie pakietu `Serwis`
     Tu ma sie odbywac caly serwsi zwiazany z api NBP + ewentualnie innne serwsiy
     * B: Stworzenie pakietu `DataModels`
+    Tu beda wszystkie modele 
