@@ -2,16 +2,39 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Account" : {
-      "comment" : "The Account tab provides a personalized space where users can manage their profile and settings."
+      "comment" : "The Account tab provides a personalized space where users can manage their profile and settings.",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konto"
+          }
+        }
+      }
     },
     "CurrencyRateView" : {
 
     },
     "Done" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe"
+          }
+        }
+      }
     },
     "Favorites" : {
-      "comment" : "The Favorites Tab - rates that have been added to favorites"
+      "comment" : "The Favorites Tab - rates that have been added to favorites",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulubione"
+          }
+        }
+      }
     },
     "FavoritesView" : {
 
@@ -24,20 +47,61 @@
             "state" : "translated",
             "value" : "Main"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Główny"
+          }
         }
       }
     },
     "NBP Charts" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NBP Charts"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NBP Kursy Walut"
+          }
+        }
+      }
     },
     "Pick something form ths tabbar list." : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz coś z tej listy zakładek."
+          }
+        }
+      }
     },
     "Rates" : {
-      "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts."
+      "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts.",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kursy"
+          }
+        }
+      }
     },
     "select a tab" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz zakładkę"
+          }
+        }
+      }
     },
     "SettingsView" : {
 
