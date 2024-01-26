@@ -39,3 +39,4 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-0004 Dodanie pliku do tłumaczeń
     * A: Utworzenie String Katalog w projekcie
+    * B: Uzupełnienie tłumaczenia PL
