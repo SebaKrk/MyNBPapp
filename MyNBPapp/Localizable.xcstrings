@@ -1,0 +1,47 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Account" : {
+      "comment" : "The Account tab provides a personalized space where users can manage their profile and settings."
+    },
+    "CurrencyRateView" : {
+
+    },
+    "Done" : {
+
+    },
+    "Favorites" : {
+      "comment" : "The Favorites Tab - rates that have been added to favorites"
+    },
+    "FavoritesView" : {
+
+    },
+    "Main" : {
+      "comment" : "The Main Tab presents the primary view of the application.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main"
+          }
+        }
+      }
+    },
+    "NBP Charts" : {
+
+    },
+    "Pick something form ths tabbar list." : {
+
+    },
+    "Rates" : {
+      "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts."
+    },
+    "select a tab" : {
+
+    },
+    "SettingsView" : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -20,6 +20,7 @@
 		9357DA692B63CF240097673C /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA682B63CF240097673C /* Commons */; };
 		9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6A2B63CF2A0097673C /* DataModels */; };
 		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
+		9357DA6F2B63D3170097673C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA6E2B63D3170097673C /* Localizable.xcstrings */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		9357DA612B63BD560097673C /* Services */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Services; path = Frameworks/Services; sourceTree = "<group>"; };
 		9357DA622B63BF820097673C /* DataModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DataModels; path = Frameworks/DataModels; sourceTree = "<group>"; };
 		9357DA632B63C1940097673C /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Commons; path = Frameworks/Commons; sourceTree = "<group>"; };
+		9357DA6E2B63D3170097673C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				9357D9FC2B5D2EE40097673C /* Navigation */,
 				9357DA0E2B5F10870097673C /* View */,
 				93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */,
+				9357DA6E2B63D3170097673C /* Localizable.xcstrings */,
 				93C6D7BB2B5BA56A006E28F7 /* Preview Content */,
 			);
 			path = MyNBPapp;
@@ -316,6 +319,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 93C6D7A92B5BA569006E28F7;
 			packageReferences = (
@@ -339,6 +343,7 @@
 			files = (
 				93C6D7BD2B5BA56A006E28F7 /* Preview Assets.xcassets in Resources */,
 				93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */,
+				9357DA6F2B63D3170097673C /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

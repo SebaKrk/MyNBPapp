@@ -24,13 +24,17 @@ extension AppScreen {
     var label: some View {
         switch self {
         case .main:
-            Label("Main", systemImage: "chart.bar.doc.horizontal")
+            Label(String(localized: "Main", comment: "The Main Tab presents the primary view of the application."),
+                  systemImage: "chart.bar.doc.horizontal")
         case .rate:
-            Label("Rate", systemImage: "chart.line.uptrend.xyaxis")
+            Label(String(localized: "Rates", comment: "The Exchange Rate Tab displays selected currency exchange rate charts."),
+                  systemImage: "chart.line.uptrend.xyaxis")
         case .favorites:
-            Label("Favorites", systemImage: "star")
+            Label(String(localized: "Favorites", comment: "The Favorites Tab - rates that have been added to favorites"),
+                  systemImage: "star")
         case .account:
-            Label("Account", systemImage: "person")
+            Label(String(localized: "Account", comment: "The Account tab provides a personalized space where users can manage their profile and settings."),
+                  systemImage: "person")
         }
     }
     
