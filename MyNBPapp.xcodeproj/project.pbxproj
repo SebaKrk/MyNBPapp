@@ -22,6 +22,12 @@
 		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
 		9357DA6F2B63D3170097673C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA6E2B63D3170097673C /* Localizable.xcstrings */; };
 		93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93A3EB4B2B640291007BFCDC /* MonumentKit */; };
+		93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */; };
+		93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB502B658318007BFCDC /* CurrencyView.swift */; };
+		93A3EB532B6584BB007BFCDC /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB522B6584BB007BFCDC /* CurrencyCell.swift */; };
+		93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */; };
+		93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB562B658655007BFCDC /* MainViewModel.swift */; };
+		93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB582B65894A007BFCDC /* FlagView.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -63,6 +69,12 @@
 		9357DA632B63C1940097673C /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Commons; path = Frameworks/Commons; sourceTree = "<group>"; };
 		9357DA6E2B63D3170097673C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9357DA702B63F5560097673C /* MonumentKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MonumentKit; path = Frameworks/MonumentKit; sourceTree = "<group>"; };
+		93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBalanceView.swift; sourceTree = "<group>"; };
+		93A3EB502B658318007BFCDC /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		93A3EB522B6584BB007BFCDC /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRatePrimaryView.swift; sourceTree = "<group>"; };
+		93A3EB562B658655007BFCDC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		93A3EB582B65894A007BFCDC /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				9357DA082B5D9A7E0097673C /* MainView.swift */,
+				93A3EB562B658655007BFCDC /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -167,6 +180,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		93A3EB4D2B657D8F007BFCDC /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */,
+				93A3EB502B658318007BFCDC /* CurrencyView.swift */,
+				93A3EB522B6584BB007BFCDC /* CurrencyCell.swift */,
+				93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */,
+				93A3EB582B65894A007BFCDC /* FlagView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		93C6D7A92B5BA569006E28F7 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +223,7 @@
 				93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */,
 				93C6D7B72B5BA569006E28F7 /* ContentView.swift */,
 				9357D9FC2B5D2EE40097673C /* Navigation */,
+				93A3EB4D2B657D8F007BFCDC /* SubViews */,
 				9357DA0E2B5F10870097673C /* View */,
 				93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */,
 				9357DA6E2B63D3170097673C /* Localizable.xcstrings */,
@@ -373,17 +399,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
+				93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */,
 				93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */,
 				9357DA092B5D9A7E0097673C /* MainView.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,
 				9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */,
+				93A3EB532B6584BB007BFCDC /* CurrencyCell.swift in Sources */,
 				9357DA102B6065120097673C /* AccountView.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
 				9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */,
+				93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */,
+				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
 				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,
+				93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
