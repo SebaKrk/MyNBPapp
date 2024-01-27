@@ -21,6 +21,7 @@
 		9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6A2B63CF2A0097673C /* DataModels */; };
 		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
 		9357DA6F2B63D3170097673C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA6E2B63D3170097673C /* Localizable.xcstrings */; };
+		93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93A3EB4B2B640291007BFCDC /* MonumentKit */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */,
 				9357DA6D2B63CF2E0097673C /* Services in Frameworks */,
 				9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */,
 				9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */,
@@ -250,6 +252,7 @@
 				9357DA682B63CF240097673C /* Commons */,
 				9357DA6A2B63CF2A0097673C /* DataModels */,
 				9357DA6C2B63CF2E0097673C /* Services */,
+				93A3EB4B2B640291007BFCDC /* MonumentKit */,
 			);
 			productName = MyNBPapp;
 			productReference = 93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */;
@@ -741,6 +744,10 @@
 		9357DA6C2B63CF2E0097673C /* Services */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Services;
+		};
+		93A3EB4B2B640291007BFCDC /* MonumentKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MonumentKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
