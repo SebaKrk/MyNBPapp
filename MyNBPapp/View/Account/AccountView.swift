@@ -21,9 +21,9 @@ struct AccountView: View {
                         Image(systemName: "gearshape")
                     }
                 }
+                .navigationTitle("Account")
+                .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("Account")
-        .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $isPresented) {
             SettingsView()
         }
