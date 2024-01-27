@@ -45,3 +45,5 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0005 `MonumentKit`
     * A: Prototypowanie Funkcjonalności MonumentKit
     * B: Wstępna Implementacja
+
+### IOS-0006 Budowa widoku 'MainView'
