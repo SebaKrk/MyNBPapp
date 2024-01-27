@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "%@%@%%" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@%%"
+          }
+        }
+      }
+    },
     "Account" : {
       "comment" : "The Account tab provides a personalized space where users can manage their profile and settings.",
       "localizations" : {
@@ -58,6 +71,9 @@
           }
         }
       }
+    },
+    "National Bank of Poland" : {
+
     },
     "NBP Charts" : {
       "localizations" : {
