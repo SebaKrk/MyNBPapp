@@ -47,3 +47,4 @@ https://github.com/SebaKrk/MyNBPapp
     * B: Wstępna Implementacja
 
 ### IOS-0006 Budowa widoku 'MainView'
+    * A: Wstępna budowa UI 

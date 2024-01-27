@@ -5,14 +5,8 @@
 //  Created by Sebastian Sciuba on 21/01/2024.
 //
 
-import SwiftUI
 import MonumentKit
-
-class MainViewModel: ObservableObject {
-    
-    @Published var nbp = MonumentData.nbp
-    
-}
+import SwiftUI
 
 struct MainView: View {
     
@@ -22,6 +16,7 @@ struct MainView: View {
     var body: some View {
         ScrollView {
             createMonument()
+            primaryInfoView()
         }
     }
     
@@ -31,7 +26,12 @@ struct MainView: View {
         .frame(height: horizontalSizeClass == .compact ? 150 : 200)
         .frame(maxWidth: .infinity)
         .cornerRadius(5)
-        .padding([.leading, .trailing], 5)
+        .padding([.leading, .trailing], 10)
+    }
+    
+    private func primaryInfoView() -> some View {
+        CurrencyRatePrimaryView()
+            .padding([.leading, .trailing], 10)
     }
     
 }
