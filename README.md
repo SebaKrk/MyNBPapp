@@ -47,4 +47,6 @@ https://github.com/SebaKrk/MyNBPapp
     * B: Wstępna Implementacja
 
 ### IOS-0006 Budowa widoku 'MainView'
-    * A: Wstępna budowa UI 
+    * A: Wstępna budowa UI
+    
+### IOS-0007 TCA Account
