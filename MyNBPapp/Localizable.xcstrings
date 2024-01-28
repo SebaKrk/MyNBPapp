@@ -28,6 +28,9 @@
     "Account View" : {
 
     },
+    "Cancle" : {
+
+    },
     "CurrencyRateView" : {
 
     },
@@ -121,6 +124,9 @@
           }
         }
       }
+    },
+    "Settings" : {
+
     },
     "SettingsView" : {
 

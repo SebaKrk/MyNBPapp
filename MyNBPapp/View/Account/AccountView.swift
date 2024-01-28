@@ -25,14 +25,15 @@ struct AccountView: View {
                     }
                     .navigationTitle("Account")
                     .navigationBarTitleDisplayMode(.inline)
-                    .sheet(isPresented: viewStore.binding(
-                        get: \.isSettingsSheetPresented,
-                        send: AccountFeature.Action.settingsSheetPresented)) {
-                        SettingsView()
-                    }
+                .sheet(isPresented: viewStore.binding(
+                    get: \.isSettingsSheetPresented,
+                    send: AccountFeature.Action.settingsSheetPresented)) {
+                    SettingsView()
+                }
             }
         }
     }
+    
 }
 
 //struct AccountView: View {
@@ -57,3 +58,5 @@ struct AccountView: View {
 //        }
 //    }
 //}
+
+

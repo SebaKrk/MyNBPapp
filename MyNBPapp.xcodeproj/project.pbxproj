@@ -11,6 +11,10 @@
 		930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */; };
 		930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EA12B667BA600BEB7B7 /* AccountFeature+State.swift */; };
 		930B2EA42B667BE400BEB7B7 /* AccountFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EA32B667BE400BEB7B7 /* AccountFeature+Reducer.swift */; };
+		930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EA92B6694F400BEB7B7 /* SettingsFeature.swift */; };
+		930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAB2B66952800BEB7B7 /* SettingsFeature+Action.swift */; };
+		930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAD2B66957800BEB7B7 /* SettingsFeature+State.swift */; };
+		930B2EB02B6695C400BEB7B7 /* SettingsFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAF2B6695C400BEB7B7 /* SettingsFeature+Reducer.swift */; };
 		9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FD2B5D2EFC0097673C /* AppScreen.swift */; };
 		9357DA002B5D31770097673C /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FF2B5D31770097673C /* AppTabView.swift */; };
 		9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA012B5D78BD0097673C /* AppSidebarList.swift */; };
@@ -63,6 +67,10 @@
 		930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+Action.swift"; sourceTree = "<group>"; };
 		930B2EA12B667BA600BEB7B7 /* AccountFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+State.swift"; sourceTree = "<group>"; };
 		930B2EA32B667BE400BEB7B7 /* AccountFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+Reducer.swift"; sourceTree = "<group>"; };
+		930B2EA92B6694F400BEB7B7 /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
+		930B2EAB2B66952800BEB7B7 /* SettingsFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsFeature+Action.swift"; sourceTree = "<group>"; };
+		930B2EAD2B66957800BEB7B7 /* SettingsFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsFeature+State.swift"; sourceTree = "<group>"; };
+		930B2EAF2B6695C400BEB7B7 /* SettingsFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsFeature+Reducer.swift"; sourceTree = "<group>"; };
 		9357D9FD2B5D2EFC0097673C /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		9357D9FF2B5D31770097673C /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		9357DA012B5D78BD0097673C /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
@@ -136,6 +144,17 @@
 			path = AccountFeature;
 			sourceTree = "<group>";
 		};
+		930B2EA82B6694C900BEB7B7 /* SettingsFeature */ = {
+			isa = PBXGroup;
+			children = (
+				930B2EA92B6694F400BEB7B7 /* SettingsFeature.swift */,
+				930B2EAB2B66952800BEB7B7 /* SettingsFeature+Action.swift */,
+				930B2EAD2B66957800BEB7B7 /* SettingsFeature+State.swift */,
+				930B2EAF2B6695C400BEB7B7 /* SettingsFeature+Reducer.swift */,
+			);
+			path = SettingsFeature;
+			sourceTree = "<group>";
+		};
 		9357D9FC2B5D2EE40097673C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +207,7 @@
 			children = (
 				930B2E9C2B667B0500BEB7B7 /* AccountFeature */,
 				9357DA0F2B6065120097673C /* AccountView.swift */,
+				930B2EA82B6694C900BEB7B7 /* SettingsFeature */,
 				9357DA152B6066F80097673C /* SettingsView.swift */,
 			);
 			path = Account;
@@ -420,18 +440,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
+				930B2EB02B6695C400BEB7B7 /* SettingsFeature+Reducer.swift in Sources */,
 				93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */,
 				93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */,
 				9357DA092B5D9A7E0097673C /* MainView.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,
+				930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */,
 				9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */,
 				930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */,
 				930B2E9E2B667B3D00BEB7B7 /* AccountFeature.swift in Sources */,
+				930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */,
 				930B2EA42B667BE400BEB7B7 /* AccountFeature+Reducer.swift in Sources */,
 				93A3EB532B6584BB007BFCDC /* CurrencyCell.swift in Sources */,
 				9357DA102B6065120097673C /* AccountView.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
+				930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */,
 				9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */,
 				93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,

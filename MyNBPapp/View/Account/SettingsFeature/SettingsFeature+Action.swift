@@ -1,5 +1,5 @@
 //
-//  AccountFeature+Action.swift
+//  SettingsFeature+Action.swift
 //  MyNBPapp
 //
 //  Created by Sebastian Sciuba on 28/01/2024.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-extension AccountFeature {
+extension SettingsFeature {
     
     enum Action: Equatable {
         
-        case userTappedSettingsButton
+        case userTapedDoneButton
         
-        case settingsSheetPresented(Bool)
+        case userTapedCancleButton
         
     }
     
