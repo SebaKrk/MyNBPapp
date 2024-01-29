@@ -25,8 +25,18 @@
         }
       }
     },
-    "AccountView" : {
+    "Account View" : {
 
+    },
+    "Cancel" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        }
+      }
     },
     "CurrencyRateView" : {
 
@@ -73,7 +83,14 @@
       }
     },
     "National Bank of Poland" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Narodowy Bank Polski"
+          }
+        }
+      }
     },
     "NBP Charts" : {
       "localizations" : {
@@ -118,6 +135,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybierz zakładkę"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia"
           }
         }
       }

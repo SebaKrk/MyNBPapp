@@ -46,7 +46,9 @@ https://github.com/SebaKrk/MyNBPapp
     * A: Prototypowanie Funkcjonalności MonumentKit
     * B: Wstępna Implementacja
 
-### IOS-0006 Budowa widoku 'MainView'
+### IOS-0006 Budowa widoku `MainView`
     * A: Wstępna budowa UI
     
 ### IOS-0007 TCA Account
+    * A: Account Feature
+    * B: Settings Feature
