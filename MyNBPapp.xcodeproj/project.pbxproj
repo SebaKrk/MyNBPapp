@@ -15,6 +15,7 @@
 		930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAB2B66952800BEB7B7 /* SettingsFeature+Action.swift */; };
 		930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAD2B66957800BEB7B7 /* SettingsFeature+State.swift */; };
 		930B2EB02B6695C400BEB7B7 /* SettingsFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAF2B6695C400BEB7B7 /* SettingsFeature+Reducer.swift */; };
+		930B2EB32B68506D00BEB7B7 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 930B2EB22B68506D00BEB7B7 /* Factory */; };
 		9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FD2B5D2EFC0097673C /* AppScreen.swift */; };
 		9357DA002B5D31770097673C /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FF2B5D31770097673C /* AppTabView.swift */; };
 		9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA012B5D78BD0097673C /* AppSidebarList.swift */; };
@@ -111,6 +112,7 @@
 				93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */,
 				9357DA6D2B63CF2E0097673C /* Services in Frameworks */,
 				9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */,
+				930B2EB32B68506D00BEB7B7 /* Factory in Frameworks */,
 				9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */,
 				9357DA692B63CF240097673C /* Commons in Frameworks */,
 			);
@@ -319,6 +321,7 @@
 				9357DA6A2B63CF2A0097673C /* DataModels */,
 				9357DA6C2B63CF2E0097673C /* Services */,
 				93A3EB4B2B640291007BFCDC /* MonumentKit */,
+				930B2EB22B68506D00BEB7B7 /* Factory */,
 			);
 			productName = MyNBPapp;
 			productReference = 93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */;
@@ -395,6 +398,7 @@
 			mainGroup = 93C6D7A92B5BA569006E28F7;
 			packageReferences = (
 				9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 93C6D7B32B5BA569006E28F7 /* Products */;
 			projectDirPath = "";
@@ -797,6 +801,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -808,6 +820,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		930B2EB22B68506D00BEB7B7 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
 		9357DA652B63CEB30097673C /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

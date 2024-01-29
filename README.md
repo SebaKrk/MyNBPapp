@@ -52,3 +52,4 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0007 TCA Account
     * A: Account Feature
     * B: Settings Feature
+    * C: Dodanie biblioteki `Factory`
