@@ -20,7 +20,9 @@ extension SettingsFeature: Reducer {
                 
             case .userTapedCancelButton:
                 print("userTapedCancelButton")
-                return .none
+                return .run { _ in
+                   await dismiss()
+                }
                 
             }
         }
