@@ -9,7 +9,7 @@ import ComposableArchitecture
 import Foundation
 
 extension SettingsFeature: Reducer {
-    
+     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
@@ -18,11 +18,12 @@ extension SettingsFeature: Reducer {
                 print("userTapedDoneButton")
                 return .none
                 
-            case .userTapedCancleButton:
-                print("userTapedCancleButton")
+            case .userTapedCancelButton:
+                print("userTapedCancelButton")
                 return .none
                 
             }
         }
     }
+    
 }

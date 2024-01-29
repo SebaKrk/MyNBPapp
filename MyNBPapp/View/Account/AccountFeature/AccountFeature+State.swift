@@ -14,6 +14,8 @@ extension AccountFeature {
         
         var isSettingsSheetPresented: Bool = false
         
+        @PresentationState var settingsFeature: SettingsFeature.State?
+        
     }
     
 }

@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct SettingsView2: View {
+struct SettingsView: View {
     
     var store: StoreOf<SettingsFeature>
     
@@ -20,10 +20,10 @@ struct SettingsView2: View {
                         ToolbarItem(placement: .topBarLeading) {
                             Button {
                                 viewStore.send(
-                                    .userTapedCancleButton
+                                    .userTapedCancelButton
                                 )
                             } label: {
-                                Text("Cancle")
+                                Text("Cancel")
                             }
                         }
                         ToolbarItem(placement: .topBarTrailing) {
@@ -41,39 +41,5 @@ struct SettingsView2: View {
             }
         }
     }
-}
-
-struct SettingsView: View {
-    
-    @Environment(\.dismiss) private var dismiss
-    var body: some View {
-        NavigationStack {
-            Text("SettingsView")
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button {
-                            
-                        } label: {
-                            Text("Cancle")
-                        }
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            
-                        } label: {
-                            Text("Done")
-                        }
-                    }
-                    
-                }
-//            
-//                .toolbar {
-//                    Button("Done") {
-//                        dismiss()
-//                    }
-//                }
-        }
-    }
     
 }
-

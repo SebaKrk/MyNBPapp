@@ -25,38 +25,11 @@ struct AccountView: View {
                     }
                     .navigationTitle("Account")
                     .navigationBarTitleDisplayMode(.inline)
-                .sheet(isPresented: viewStore.binding(
-                    get: \.isSettingsSheetPresented,
-                    send: AccountFeature.Action.settingsSheetPresented)) {
-                    SettingsView()
-                }
+            }
+            .sheet(store: store.scope(state: \.$settingsFeature, action: \.settingsFeature)) { store in
+                SettingsView(store: store)
             }
         }
     }
     
 }
-
-//struct AccountView: View {
-//
-//    @State var isPresented: Bool = false
-//
-//    var body: some View {
-//        NavigationStack {
-//            Text("AccountView")
-//                .toolbar {
-//                    Button {
-//                        isPresented.toggle()
-//                    } label: {
-//                        Image(systemName: "gearshape")
-//                    }
-//                }
-//        }
-//        .navigationTitle("Account")
-//        .navigationBarTitleDisplayMode(.inline)
-//        .sheet(isPresented: $isPresented) {
-//            SettingsView()
-//        }
-//    }
-//}
-
-

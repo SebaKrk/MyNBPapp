@@ -13,7 +13,7 @@ extension SettingsFeature {
         
         case userTapedDoneButton
         
-        case userTapedCancleButton
+        case userTapedCancelButton
         
     }
     

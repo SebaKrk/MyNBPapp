@@ -15,13 +15,20 @@ extension AccountFeature: Reducer {
             switch action {
                 
             case .userTappedSettingsButton:
-                state.isSettingsSheetPresented = true
+                return .run { send in
+                    await send(.settingsSheetPresented)
+                }
+                
+            case .settingsSheetPresented:
+                state.settingsFeature = .init()
                 return .none
                 
-            case .settingsSheetPresented(let isPresented):
-                state.isSettingsSheetPresented = isPresented
+            default:
                 return .none
             }
+        }
+        .ifLet(\.$settingsFeature, action: \.settingsFeature) {
+            SettingsFeature()
         }
     }
     
