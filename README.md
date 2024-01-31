@@ -54,3 +54,5 @@ https://github.com/SebaKrk/MyNBPapp
     * B: Settings Feature
     * C: Dodanie biblioteki `Factory`
     * D: Dodanie `@Reducer` macro
+
+### IOS-0008 Serwis NBP
