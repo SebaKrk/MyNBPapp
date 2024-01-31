@@ -8,9 +8,9 @@
 import ComposableArchitecture
 import Foundation
 
-extension AccountFeature: Reducer {
+extension AccountFeature {
     
-    var body: some ReducerOf<Self> {
+    var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
                 

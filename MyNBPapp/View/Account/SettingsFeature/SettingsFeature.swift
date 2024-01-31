@@ -9,6 +9,7 @@ import ComposableArchitecture
 import Factory
 import Foundation
 
+@Reducer
 struct SettingsFeature {
  
     // MARK: - Dependencies

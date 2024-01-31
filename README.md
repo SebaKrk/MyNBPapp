@@ -53,3 +53,4 @@ https://github.com/SebaKrk/MyNBPapp
     * A: Account Feature
     * B: Settings Feature
     * C: Dodanie biblioteki `Factory`
+    * D: Dodanie `@Reducer` macro
