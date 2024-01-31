@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "%@%@%%" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@%%"
+          }
+        }
+      }
+    },
     "Account" : {
       "comment" : "The Account tab provides a personalized space where users can manage their profile and settings.",
       "localizations" : {
@@ -8,6 +21,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konto"
+          }
+        }
+      }
+    },
+    "Account View" : {
+
+    },
+    "Cancel" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
           }
         }
       }
@@ -56,6 +82,16 @@
         }
       }
     },
+    "National Bank of Poland" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Narodowy Bank Polski"
+          }
+        }
+      }
+    },
     "NBP Charts" : {
       "localizations" : {
         "en" : {
@@ -99,6 +135,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wybierz zakładkę"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia"
           }
         }
       }

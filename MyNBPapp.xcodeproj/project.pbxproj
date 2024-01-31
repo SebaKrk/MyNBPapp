@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930B2E9E2B667B3D00BEB7B7 /* AccountFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */; };
+		930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */; };
+		930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EA12B667BA600BEB7B7 /* AccountFeature+State.swift */; };
+		930B2EA42B667BE400BEB7B7 /* AccountFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EA32B667BE400BEB7B7 /* AccountFeature+Reducer.swift */; };
+		930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EA92B6694F400BEB7B7 /* SettingsFeature.swift */; };
+		930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAB2B66952800BEB7B7 /* SettingsFeature+Action.swift */; };
+		930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAD2B66957800BEB7B7 /* SettingsFeature+State.swift */; };
+		930B2EB02B6695C400BEB7B7 /* SettingsFeature+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EAF2B6695C400BEB7B7 /* SettingsFeature+Reducer.swift */; };
+		930B2EB32B68506D00BEB7B7 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 930B2EB22B68506D00BEB7B7 /* Factory */; };
 		9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FD2B5D2EFC0097673C /* AppScreen.swift */; };
 		9357DA002B5D31770097673C /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FF2B5D31770097673C /* AppTabView.swift */; };
 		9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA012B5D78BD0097673C /* AppSidebarList.swift */; };
@@ -21,6 +30,13 @@
 		9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6A2B63CF2A0097673C /* DataModels */; };
 		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
 		9357DA6F2B63D3170097673C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA6E2B63D3170097673C /* Localizable.xcstrings */; };
+		93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93A3EB4B2B640291007BFCDC /* MonumentKit */; };
+		93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */; };
+		93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB502B658318007BFCDC /* CurrencyView.swift */; };
+		93A3EB532B6584BB007BFCDC /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB522B6584BB007BFCDC /* CurrencyCell.swift */; };
+		93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */; };
+		93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB562B658655007BFCDC /* MainViewModel.swift */; };
+		93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB582B65894A007BFCDC /* FlagView.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -48,6 +64,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFeature.swift; sourceTree = "<group>"; };
+		930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+Action.swift"; sourceTree = "<group>"; };
+		930B2EA12B667BA600BEB7B7 /* AccountFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+State.swift"; sourceTree = "<group>"; };
+		930B2EA32B667BE400BEB7B7 /* AccountFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+Reducer.swift"; sourceTree = "<group>"; };
+		930B2EA92B6694F400BEB7B7 /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
+		930B2EAB2B66952800BEB7B7 /* SettingsFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsFeature+Action.swift"; sourceTree = "<group>"; };
+		930B2EAD2B66957800BEB7B7 /* SettingsFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsFeature+State.swift"; sourceTree = "<group>"; };
+		930B2EAF2B6695C400BEB7B7 /* SettingsFeature+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsFeature+Reducer.swift"; sourceTree = "<group>"; };
 		9357D9FD2B5D2EFC0097673C /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		9357D9FF2B5D31770097673C /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		9357DA012B5D78BD0097673C /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
@@ -62,6 +86,12 @@
 		9357DA632B63C1940097673C /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Commons; path = Frameworks/Commons; sourceTree = "<group>"; };
 		9357DA6E2B63D3170097673C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9357DA702B63F5560097673C /* MonumentKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MonumentKit; path = Frameworks/MonumentKit; sourceTree = "<group>"; };
+		93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBalanceView.swift; sourceTree = "<group>"; };
+		93A3EB502B658318007BFCDC /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		93A3EB522B6584BB007BFCDC /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRatePrimaryView.swift; sourceTree = "<group>"; };
+		93A3EB562B658655007BFCDC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		93A3EB582B65894A007BFCDC /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,8 +109,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */,
 				9357DA6D2B63CF2E0097673C /* Services in Frameworks */,
 				9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */,
+				930B2EB32B68506D00BEB7B7 /* Factory in Frameworks */,
 				9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */,
 				9357DA692B63CF240097673C /* Commons in Frameworks */,
 			);
@@ -103,6 +135,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930B2E9C2B667B0500BEB7B7 /* AccountFeature */ = {
+			isa = PBXGroup;
+			children = (
+				930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */,
+				930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */,
+				930B2EA12B667BA600BEB7B7 /* AccountFeature+State.swift */,
+				930B2EA32B667BE400BEB7B7 /* AccountFeature+Reducer.swift */,
+			);
+			path = AccountFeature;
+			sourceTree = "<group>";
+		};
+		930B2EA82B6694C900BEB7B7 /* SettingsFeature */ = {
+			isa = PBXGroup;
+			children = (
+				930B2EA92B6694F400BEB7B7 /* SettingsFeature.swift */,
+				930B2EAB2B66952800BEB7B7 /* SettingsFeature+Action.swift */,
+				930B2EAD2B66957800BEB7B7 /* SettingsFeature+State.swift */,
+				930B2EAF2B6695C400BEB7B7 /* SettingsFeature+Reducer.swift */,
+			);
+			path = SettingsFeature;
+			sourceTree = "<group>";
+		};
 		9357D9FC2B5D2EE40097673C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				9357DA082B5D9A7E0097673C /* MainView.swift */,
+				93A3EB562B658655007BFCDC /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -152,7 +207,9 @@
 		9357DA142B6065DA0097673C /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				930B2E9C2B667B0500BEB7B7 /* AccountFeature */,
 				9357DA0F2B6065120097673C /* AccountView.swift */,
+				930B2EA82B6694C900BEB7B7 /* SettingsFeature */,
 				9357DA152B6066F80097673C /* SettingsView.swift */,
 			);
 			path = Account;
@@ -163,6 +220,18 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93A3EB4D2B657D8F007BFCDC /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */,
+				93A3EB502B658318007BFCDC /* CurrencyView.swift */,
+				93A3EB522B6584BB007BFCDC /* CurrencyCell.swift */,
+				93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */,
+				93A3EB582B65894A007BFCDC /* FlagView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		93C6D7A92B5BA569006E28F7 = {
@@ -196,6 +265,7 @@
 				93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */,
 				93C6D7B72B5BA569006E28F7 /* ContentView.swift */,
 				9357D9FC2B5D2EE40097673C /* Navigation */,
+				93A3EB4D2B657D8F007BFCDC /* SubViews */,
 				9357DA0E2B5F10870097673C /* View */,
 				93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */,
 				9357DA6E2B63D3170097673C /* Localizable.xcstrings */,
@@ -250,6 +320,8 @@
 				9357DA682B63CF240097673C /* Commons */,
 				9357DA6A2B63CF2A0097673C /* DataModels */,
 				9357DA6C2B63CF2E0097673C /* Services */,
+				93A3EB4B2B640291007BFCDC /* MonumentKit */,
+				930B2EB22B68506D00BEB7B7 /* Factory */,
 			);
 			productName = MyNBPapp;
 			productReference = 93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */;
@@ -326,6 +398,7 @@
 			mainGroup = 93C6D7A92B5BA569006E28F7;
 			packageReferences = (
 				9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 93C6D7B32B5BA569006E28F7 /* Products */;
 			projectDirPath = "";
@@ -370,17 +443,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
+				930B2EB02B6695C400BEB7B7 /* SettingsFeature+Reducer.swift in Sources */,
+				93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */,
 				93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */,
 				9357DA092B5D9A7E0097673C /* MainView.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,
+				930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */,
 				9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */,
+				930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */,
+				930B2E9E2B667B3D00BEB7B7 /* AccountFeature.swift in Sources */,
+				930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */,
+				930B2EA42B667BE400BEB7B7 /* AccountFeature+Reducer.swift in Sources */,
+				93A3EB532B6584BB007BFCDC /* CurrencyCell.swift in Sources */,
 				9357DA102B6065120097673C /* AccountView.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
+				930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */,
 				9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */,
+				93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */,
+				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
+				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
 				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,
+				93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +801,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -725,6 +820,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		930B2EB22B68506D00BEB7B7 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
 		9357DA652B63CEB30097673C /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
@@ -741,6 +841,10 @@
 		9357DA6C2B63CF2E0097673C /* Services */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Services;
+		};
+		93A3EB4B2B640291007BFCDC /* MonumentKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MonumentKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
