@@ -5,6 +5,7 @@
 //  Created by Sebastian Sciuba on 21/01/2024.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
@@ -48,7 +49,9 @@ extension AppScreen {
         case .favorites:
             FavoritesView()
         case .account:
-            AccountView()
+            AccountView(store: Store(initialState: AccountFeature.State(),
+                                     reducer: { AccountFeature() })
+            )
         }
     }
     
