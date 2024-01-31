@@ -14,10 +14,15 @@ struct MainView: View {
     @StateObject var viewModel = MainViewModel()
     
     var body: some View {
-        ScrollView {
-            createMonument()
-            primaryInfoView()
+        NavigationStack {
+            ScrollView {
+                createMonument()
+                primaryInfoView()
+            }
+            .navigationTitle("Main")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        
     }
     
     private func createMonument() -> some View {
