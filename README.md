@@ -56,3 +56,4 @@ https://github.com/SebaKrk/MyNBPapp
     * D: Dodanie `@Reducer` macro
 
 ### IOS-0008 Serwis NBP
+    * A: Stworzenie serwisu, wstępna implementacja

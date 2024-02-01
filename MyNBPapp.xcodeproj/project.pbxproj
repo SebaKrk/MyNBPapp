@@ -172,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				9357DA112B6065BF0097673C /* Main */,
-				9357DA122B6065C90097673C /* Favorites */,
 				9357DA132B6065D00097673C /* CurrencyRate */,
+				9357DA122B6065C90097673C /* Favorites */,
 				9357DA142B6065DA0097673C /* Account */,
 			);
 			path = View;
