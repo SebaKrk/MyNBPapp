@@ -45,6 +45,7 @@
 		93C6D7D12B5BA56A006E28F7 /* MyNBPappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7D02B5BA56A006E28F7 /* MyNBPappUITests.swift */; };
 		93C6D7D32B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7D22B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift */; };
 		93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */; };
+		93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		93C6D7D02B5BA56A006E28F7 /* MyNBPappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappUITests.swift; sourceTree = "<group>"; };
 		93C6D7D22B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewModel.swift; sourceTree = "<group>"; };
+		93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+EuroChart.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				93E9A80A2B6E628600B37B26 /* ViewModel */,
+				93E9A80B2B6EB56C00B37B26 /* ChartView */,
 				9357DA0A2B5D9B4F0097673C /* CurrencyRateView.swift */,
 			);
 			path = CurrencyRate;
@@ -308,6 +311,14 @@
 				93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		93E9A80B2B6EB56C00B37B26 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */,
+			);
+			path = ChartView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +467,7 @@
 			files = (
 				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
 				930B2EB02B6695C400BEB7B7 /* SettingsFeature+Reducer.swift in Sources */,
+				93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */,
 				93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */,
 				93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */,
 				93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */,

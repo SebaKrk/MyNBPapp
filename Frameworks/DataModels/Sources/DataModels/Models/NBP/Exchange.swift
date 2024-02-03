@@ -7,9 +7,9 @@
 
 public struct Exchange: Codable, Hashable {
     
-    let table: String
-    let currency: String
-    let code: String
-    let rates: [ExchangeRate]
+    public let table: String
+    public let currency: String
+    public let code: String
+    public let rates: [ExchangeRate]
     
 }

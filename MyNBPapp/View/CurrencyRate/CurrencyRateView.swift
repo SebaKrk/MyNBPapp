@@ -12,12 +12,24 @@ struct CurrencyRateView: View {
     @StateObject var viewModel = CurrencyRateViewModel()
     
     var body: some View {
-        Text("CurrencyRateView")
-            .onAppear {
-                Task {
-                    try await viewModel.fetchData()
-                }
+        ScrollView {
+            euroWidgetGroupBox
+        }
+        .onAppear {
+            Task {
+                try await viewModel.fetchData()
             }
+        }
+    }
+    
+    @ViewBuilder
+    var euroWidgetGroupBox: some View {
+        GroupBox {
+            euroChart
+        } label: {
+            Text("\(viewModel.minMidValue.rounded())")
+        }
+        .padding()
     }
     
 }

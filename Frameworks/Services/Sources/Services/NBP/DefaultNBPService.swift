@@ -13,7 +13,7 @@ public final class DefaultNBPService: NBPService {
     public init() {} 
     
     public func getEuroData() async throws -> Exchange {
-        let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/eur/2024-01-01/2024-01-31/?format=json"
+        let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/eur/2023-11-01/2023-11-30/?format=json"
         
         guard let url = URL(string: endpoint) else {
             throw NetworkingError.invalidURL
