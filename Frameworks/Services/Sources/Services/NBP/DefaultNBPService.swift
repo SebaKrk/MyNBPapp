@@ -1,5 +1,5 @@
 //
-//  DefaultNetworkServiceNBP.swift
+//  DefaultNBPService.swift
 //
 //
 //  Created by Sebastian Sciuba on 01/02/2024.
@@ -8,7 +8,7 @@
 import DataModels
 import Foundation
 
-public final class DefaultNetworkServiceNBP: NetworkServiceNBP {
+public final class DefaultNBPService: NBPService {
     
     public init() {} 
     

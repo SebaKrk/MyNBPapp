@@ -44,6 +44,7 @@
 		93C6D7C72B5BA56A006E28F7 /* MyNBPappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7C62B5BA56A006E28F7 /* MyNBPappTests.swift */; };
 		93C6D7D12B5BA56A006E28F7 /* MyNBPappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7D02B5BA56A006E28F7 /* MyNBPappUITests.swift */; };
 		93C6D7D32B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7D22B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift */; };
+		93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		93C6D7CC2B5BA56A006E28F7 /* MyNBPappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNBPappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7D02B5BA56A006E28F7 /* MyNBPappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappUITests.swift; sourceTree = "<group>"; };
 		93C6D7D22B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		9357DA132B6065D00097673C /* CurrencyRate */ = {
 			isa = PBXGroup;
 			children = (
+				93E9A80A2B6E628600B37B26 /* ViewModel */,
 				9357DA0A2B5D9B4F0097673C /* CurrencyRateView.swift */,
 			);
 			path = CurrencyRate;
@@ -297,6 +300,14 @@
 				93C6D7D22B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift */,
 			);
 			path = MyNBPappUITests;
+			sourceTree = "<group>";
+		};
+		93E9A80A2B6E628600B37B26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +457,7 @@
 				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
 				930B2EB02B6695C400BEB7B7 /* SettingsFeature+Reducer.swift in Sources */,
 				93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */,
+				93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */,
 				93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */,
 				9357DA092B5D9A7E0097673C /* MainView.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,

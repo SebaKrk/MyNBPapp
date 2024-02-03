@@ -22,16 +22,16 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-00001 Implementacja Interfejsu użytkownika
     * A: Implementacja Interfejsu użytkownika (Basic)
-    Po starcie aplikacji w zalenosci od urzadzenia ma pojawic sie TabView (iPhone) badz NavigationView (iPad)
+        - *Po starcie aplikacji w zalenosci od urzadzenia ma pojawic sie TabView (iPhone) badz NavigationView (iPad)
     * B: Zmiana nazwa enum AppScreen na docelowe (pierwsze trzy główne widoki)
 
 ### IOS-0002 Inicjalizacja pakietów
     * A: Stworzenie pakietu `Serwis`
-    Tu ma sie odbywac caly serwsi zwiazany z api NBP + ewentualnie innne serwsiy
+        - *Tu ma sie odbywac caly serwsi zwiazany z api NBP + ewentualnie innne serwsiy
     * B: Stworzenie pakietu `DataModels`
-    Tu beda wszystkie modele 
+        - *Tu beda wszystkie modele 
     * C: Stworzenie pakiet `Commons`
-    Pakiet do plikow extension, formaterow, constants
+        - *Pakiet do plikow extension, formaterow, constants
     * D: Zależności miedzy pakietami
     * E: Stworzenie pakiet `MonumentKit`
     
@@ -57,3 +57,5 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-0008 Serwis NBP
     * A: Stworzenie serwisu, wstępna implementacja
+    * B: Stworzyć `Dependencies` w pakietu `Service`
+    - *uzupełnij zależności miedzy pakietami
