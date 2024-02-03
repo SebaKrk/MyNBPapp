@@ -9,8 +9,15 @@ import SwiftUI
 
 struct CurrencyRateView: View {
     
+    @StateObject var viewModel = CurrencyRateViewModel()
+    
     var body: some View {
         Text("CurrencyRateView")
+            .onAppear {
+                Task {
+                    try await viewModel.fetchData()
+                }
+            }
     }
     
 }
