@@ -5,6 +5,7 @@
 //  Created by Sebastian Sciuba on 03/02/2024.
 //
 
+import Commons
 import DataModels
 import Factory
 import Services
@@ -75,16 +76,11 @@ final class CurrencyRateViewModel: ObservableObject {
         return value - difference
     }
     
-    func convertDate(_ dateString: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        if let date = dateFormatter.date(from: dateString) {
-            dateFormatter.dateFormat = "dd"
-            return dateFormatter.string(from: date)
-        } else {
-            return ""
-        }
-    }
-    
+    func convertDateToDay(_ dateString: String) -> String {
+       if let date = Formatters.Date.createDate(from: dateString, with: .shortDate) {
+           return Formatters.Date.createString(from: date, with: .day)
+       } else {
+           return ""
+       }
+   }
 }
