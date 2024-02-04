@@ -16,14 +16,14 @@ extension CurrencyRateView {
             if let rates = viewModel.exchange?.rates {
                 ForEach(rates, id: \.effectiveDate) { item in
                     AreaMark(
-                        x: .value("Date",  viewModel.convertDate(item.effectiveDate)),
+                        x: .value("Date", viewModel.convertDateToDay(item.effectiveDate)),
                         yStart: .value("Average rate", viewModel.difference(value: item.mid)),
                         yEnd: .value("Average rate", item.mid )
                     )
                     .foregroundStyle(Color("GreenChart").opacity(0.1).gradient)
                     
                     LineMark(
-                        x: .value("Date", viewModel.convertDate(item.effectiveDate)),
+                        x: .value("Date", viewModel.convertDateToDay(item.effectiveDate)),
                         y: .value("Average rate", item.mid)
                     )
                     .foregroundStyle(Color("GreenChart"))

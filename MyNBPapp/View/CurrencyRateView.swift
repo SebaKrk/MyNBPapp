@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Commons
 
 struct CurrencyRateView: View {
     

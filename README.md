@@ -63,3 +63,4 @@ https://github.com/SebaKrk/MyNBPapp
     - euro widget
     - euro rate chart
     - pomocnicze funkcje w view modelu
+    * D: Uzupełnienie pakietu `Commons` o formatowanie daty
