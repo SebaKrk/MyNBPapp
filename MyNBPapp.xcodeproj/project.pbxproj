@@ -30,6 +30,14 @@
 		9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6A2B63CF2A0097673C /* DataModels */; };
 		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
 		9357DA6F2B63D3170097673C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA6E2B63D3170097673C /* Localizable.xcstrings */; };
+		936775002B7007A500816C92 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936774FF2B7007A500816C92 /* WidgetKit.framework */; };
+		936775022B7007A500816C92 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936775012B7007A500816C92 /* SwiftUI.framework */; };
+		936775052B7007A500816C92 /* WidgetNBPBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936775042B7007A500816C92 /* WidgetNBPBundle.swift */; };
+		936775072B7007A500816C92 /* WidgetNBPLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936775062B7007A500816C92 /* WidgetNBPLiveActivity.swift */; };
+		936775092B7007A500816C92 /* WidgetNBP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936775082B7007A500816C92 /* WidgetNBP.swift */; };
+		9367750B2B7007A500816C92 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367750A2B7007A500816C92 /* AppIntent.swift */; };
+		9367750D2B7007A600816C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9367750C2B7007A600816C92 /* Assets.xcassets */; };
+		936775112B7007A600816C92 /* WidgetNBPExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93A3EB4B2B640291007BFCDC /* MonumentKit */; };
 		93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */; };
 		93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB502B658318007BFCDC /* CurrencyView.swift */; };
@@ -51,6 +59,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9367750F2B7007A600816C92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93C6D7AA2B5BA569006E28F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 936774FD2B7007A500816C92;
+			remoteInfo = WidgetNBPExtension;
+		};
 		93C6D7C32B5BA56A006E28F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93C6D7AA2B5BA569006E28F7 /* Project object */;
@@ -66,6 +81,20 @@
 			remoteInfo = MyNBPapp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		936775122B7007A600816C92 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				936775112B7007A600816C92 /* WidgetNBPExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFeature.swift; sourceTree = "<group>"; };
@@ -90,6 +119,15 @@
 		9357DA632B63C1940097673C /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Commons; path = Frameworks/Commons; sourceTree = "<group>"; };
 		9357DA6E2B63D3170097673C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9357DA702B63F5560097673C /* MonumentKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MonumentKit; path = Frameworks/MonumentKit; sourceTree = "<group>"; };
+		936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetNBPExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		936774FF2B7007A500816C92 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		936775012B7007A500816C92 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		936775042B7007A500816C92 /* WidgetNBPBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNBPBundle.swift; sourceTree = "<group>"; };
+		936775062B7007A500816C92 /* WidgetNBPLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNBPLiveActivity.swift; sourceTree = "<group>"; };
+		936775082B7007A500816C92 /* WidgetNBP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNBP.swift; sourceTree = "<group>"; };
+		9367750A2B7007A500816C92 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		9367750C2B7007A600816C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9367750E2B7007A600816C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBalanceView.swift; sourceTree = "<group>"; };
 		93A3EB502B658318007BFCDC /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		93A3EB522B6584BB007BFCDC /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
@@ -113,6 +151,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		936774FB2B7007A500816C92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				936775022B7007A500816C92 /* SwiftUI.framework in Frameworks */,
+				936775002B7007A500816C92 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93C6D7AF2B5BA569006E28F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,8 +276,23 @@
 		9357DA672B63CF240097673C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				936774FF2B7007A500816C92 /* WidgetKit.framework */,
+				936775012B7007A500816C92 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		936775032B7007A500816C92 /* WidgetNBP */ = {
+			isa = PBXGroup;
+			children = (
+				936775042B7007A500816C92 /* WidgetNBPBundle.swift */,
+				936775062B7007A500816C92 /* WidgetNBPLiveActivity.swift */,
+				936775082B7007A500816C92 /* WidgetNBP.swift */,
+				9367750A2B7007A500816C92 /* AppIntent.swift */,
+				9367750C2B7007A600816C92 /* Assets.xcassets */,
+				9367750E2B7007A600816C92 /* Info.plist */,
+			);
+			path = WidgetNBP;
 			sourceTree = "<group>";
 		};
 		93A3EB4D2B657D8F007BFCDC /* SubViews */ = {
@@ -256,6 +318,7 @@
 				93C6D7B42B5BA569006E28F7 /* MyNBPapp */,
 				93C6D7C52B5BA56A006E28F7 /* MyNBPappTests */,
 				93C6D7CF2B5BA56A006E28F7 /* MyNBPappUITests */,
+				936775032B7007A500816C92 /* WidgetNBP */,
 				93C6D7B32B5BA569006E28F7 /* Products */,
 				9357DA672B63CF240097673C /* Frameworks */,
 			);
@@ -267,6 +330,7 @@
 				93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */,
 				93C6D7C22B5BA56A006E28F7 /* MyNBPappTests.xctest */,
 				93C6D7CC2B5BA56A006E28F7 /* MyNBPappUITests.xctest */,
+				936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -346,6 +410,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		936774FD2B7007A500816C92 /* WidgetNBPExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 936775152B7007A600816C92 /* Build configuration list for PBXNativeTarget "WidgetNBPExtension" */;
+			buildPhases = (
+				936774FA2B7007A500816C92 /* Sources */,
+				936774FB2B7007A500816C92 /* Frameworks */,
+				936774FC2B7007A500816C92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetNBPExtension;
+			productName = WidgetNBPExtension;
+			productReference = 936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		93C6D7B12B5BA569006E28F7 /* MyNBPapp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93C6D7D62B5BA56A006E28F7 /* Build configuration list for PBXNativeTarget "MyNBPapp" */;
@@ -353,10 +434,12 @@
 				93C6D7AE2B5BA569006E28F7 /* Sources */,
 				93C6D7AF2B5BA569006E28F7 /* Frameworks */,
 				93C6D7B02B5BA569006E28F7 /* Resources */,
+				936775122B7007A600816C92 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				936775102B7007A600816C92 /* PBXTargetDependency */,
 			);
 			name = MyNBPapp;
 			packageProductDependencies = (
@@ -417,6 +500,9 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					936774FD2B7007A500816C92 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					93C6D7B12B5BA569006E28F7 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -451,11 +537,20 @@
 				93C6D7B12B5BA569006E28F7 /* MyNBPapp */,
 				93C6D7C12B5BA56A006E28F7 /* MyNBPappTests */,
 				93C6D7CB2B5BA56A006E28F7 /* MyNBPappUITests */,
+				936774FD2B7007A500816C92 /* WidgetNBPExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		936774FC2B7007A500816C92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9367750D2B7007A600816C92 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93C6D7B02B5BA569006E28F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +578,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		936774FA2B7007A500816C92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				936775092B7007A500816C92 /* WidgetNBP.swift in Sources */,
+				9367750B2B7007A500816C92 /* AppIntent.swift in Sources */,
+				936775052B7007A500816C92 /* WidgetNBPBundle.swift in Sources */,
+				936775072B7007A500816C92 /* WidgetNBPLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		93C6D7AE2B5BA569006E28F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,6 +645,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		936775102B7007A600816C92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 936774FD2B7007A500816C92 /* WidgetNBPExtension */;
+			targetProxy = 9367750F2B7007A600816C92 /* PBXContainerItemProxy */;
+		};
 		93C6D7C42B5BA56A006E28F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
@@ -552,6 +663,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		936775132B7007A600816C92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RH4482R36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetNBP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetNBP;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ss.MyNBPapp.WidgetNBP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		936775142B7007A600816C92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RH4482R36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetNBP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetNBP;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ss.MyNBPapp.WidgetNBP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		93C6D7D42B5BA56A006E28F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -674,6 +841,7 @@
 		93C6D7D72B5BA56A006E28F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,6 +872,7 @@
 		93C6D7D82B5BA56A006E28F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -810,6 +979,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		936775152B7007A600816C92 /* Build configuration list for PBXNativeTarget "WidgetNBPExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				936775132B7007A600816C92 /* Debug */,
+				936775142B7007A600816C92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		93C6D7AD2B5BA569006E28F7 /* Build configuration list for PBXProject "MyNBPapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

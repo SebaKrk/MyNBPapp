@@ -66,3 +66,5 @@ https://github.com/SebaKrk/MyNBPapp
     * D: Uzupełnienie pakietu `Commons` o formatowanie daty
 
 ### IOS-0009 `WidgetKit`
+    * A: Stworzenie WidgetNBP
+    - dodanie nowego targetu
