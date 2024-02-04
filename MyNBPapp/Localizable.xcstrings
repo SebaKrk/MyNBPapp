@@ -4,6 +4,9 @@
     "%@" : {
 
     },
+    "%@ %%" : {
+
+    },
     "%@%@%%" : {
       "localizations" : {
         "en" : {
@@ -13,6 +16,9 @@
           }
         }
       }
+    },
+    "1 Euro" : {
+
     },
     "Account" : {
       "comment" : "The Account tab provides a personalized space where users can manage their profile and settings.",
@@ -28,6 +34,9 @@
     "Account View" : {
 
     },
+    "Average rate" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "pl" : {
@@ -38,7 +47,7 @@
         }
       }
     },
-    "CurrencyRateView" : {
+    "Date" : {
 
     },
     "Done" : {
@@ -117,6 +126,9 @@
           }
         }
       }
+    },
+    "PLN" : {
+
     },
     "Rates" : {
       "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts.",
