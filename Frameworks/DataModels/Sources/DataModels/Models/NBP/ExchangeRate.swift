@@ -9,8 +9,8 @@ import Foundation
 
 public struct ExchangeRate: Codable, Hashable {
 
-    let no: String
-    let effectiveDate: String
-    let mid: Double
+    public let no: String
+    public let effectiveDate: String
+    public let mid: Double
     
 }
