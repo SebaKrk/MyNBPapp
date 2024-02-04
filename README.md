@@ -4,9 +4,9 @@ https://github.com/SebaKrk/MyNBPapp
 ## Zdanie roczne:
 - uzyc The Composable Architecture
 - interfejs Master-Detail
-- aplikacja ma działac przynajmniej w dwoch jezykach pl/en
-- swift Charts (szkolnie zespolu)
-- implementacja serwisów/modeli/ do odzielnych framework
+- aplikacja ma działać przynajmniej w dwóch językach pl/en
+- swift Charts (szkolnie zespołu)
+- implementacja serwisów/modeli/ do oddzielnych framework
 - sprawdzenie import Network oraz import OSLog
 - logowanie FireBase
 - zależności między framework-kami
@@ -14,7 +14,7 @@ https://github.com/SebaKrk/MyNBPapp
 - użycie Factory (wstrzykiwanie zależności)
 - coreData , migracja do SwiftData
 - funkcionalnosci na feture togla
-- widget, na glowny ekran iPhona (np jakis kurs ulubionych walut)
+- widget, na główny ekran iPhona (np jakiś kurs ulubionych walut)
 - keychain
 - push notfication 
 
@@ -22,16 +22,16 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-00001 Implementacja Interfejsu użytkownika
     * A: Implementacja Interfejsu użytkownika (Basic)
-        - Po starcie aplikacji w zalenosci od urzadzenia ma pojawic sie TabView (iPhone) badz NavigationView (iPad)
+        - Po starcie aplikacji w zależności od urządzenia ma pojawić się TabView (iPhone) bądź NavigationView (iPad)
     * B: Zmiana nazwa enum AppScreen na docelowe (pierwsze trzy główne widoki)
 
 ### IOS-0002 Inicjalizacja pakietów
     * A: Stworzenie pakietu `Serwis`
-        - Tu ma sie odbywac caly serwsi zwiazany z api NBP + ewentualnie innne serwsiy
+        - Tu ma się odbywać cały serwis związany z api NBP + ewentualnie inne serwisy
     * B: Stworzenie pakietu `DataModels`
         - Tu beda wszystkie modele 
     * C: Stworzenie pakiet `Commons`
-        - Pakiet do plikow extension, formaterow, constants
+        - Pakiet do plików extension, formaterów, constants
     * D: Zależności miedzy pakietami
     * E: Stworzenie pakiet `MonumentKit`
     
@@ -60,5 +60,6 @@ https://github.com/SebaKrk/MyNBPapp
     * B: Stworzyć `Dependencies` w pakietu `Service`
     - uzupełnij zależności miedzy pakietami
     * C: Wstępnie wykorzystanie danych z Swift Charts
+    - euro widget
     - euro rate chart
-    - pomocnie funkcje w view modelu
+    - pomocnicze funkcje w view modelu

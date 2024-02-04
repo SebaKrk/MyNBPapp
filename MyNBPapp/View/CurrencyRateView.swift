@@ -22,14 +22,4 @@ struct CurrencyRateView: View {
         }
     }
     
-    @ViewBuilder
-    var euroWidgetGroupBox: some View {
-        GroupBox {
-            euroChart
-        } label: {
-            Text("\(viewModel.minMidValue.rounded())")
-        }
-        .padding()
-    }
-    
 }

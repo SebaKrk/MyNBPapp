@@ -7,6 +7,7 @@
 
 import MonumentKit
 import SwiftUI
+import Charts
 
 struct MainView: View {
     

@@ -4,6 +4,9 @@
     "%@" : {
 
     },
+    "%@ %%" : {
+
+    },
     "%@%@%%" : {
       "localizations" : {
         "en" : {
@@ -14,7 +17,7 @@
         }
       }
     },
-    "%lf" : {
+    "1 Euro" : {
 
     },
     "Account" : {
@@ -31,7 +34,7 @@
     "Account View" : {
 
     },
-    "Average Rate" : {
+    "Average rate" : {
 
     },
     "Cancel" : {
@@ -123,6 +126,9 @@
           }
         }
       }
+    },
+    "PLN" : {
+
     },
     "Rates" : {
       "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts.",

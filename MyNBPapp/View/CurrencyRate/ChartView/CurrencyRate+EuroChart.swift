@@ -27,12 +27,11 @@ extension CurrencyRateView {
                         y: .value("Average rate", item.mid)
                     )
                     .foregroundStyle(Color("GreenChart"))
-                    .interpolationMethod(.catmullRom)
                 }
             }
         }
         .chartYScale(domain: viewModel.minMidValue - 0.01...(viewModel.maxMidValue + 0.01))
-        .frame(height: 300)
+        .frame(height: 250)
         .scaledToFit()
         .padding()
     }
