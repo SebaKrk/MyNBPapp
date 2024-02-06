@@ -68,3 +68,4 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0009 `WidgetKit`
     * A: Stworzenie WidgetNBP
     - dodanie nowego targetu
+    * B: Dodanie mock serwisu
