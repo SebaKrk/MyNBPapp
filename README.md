@@ -69,3 +69,5 @@ https://github.com/SebaKrk/MyNBPapp
     * A: Stworzenie WidgetNBP
     - dodanie nowego targetu
     * B: Dodanie mock serwisu
+
+### IOS-0010 `Swift OpenAPI Generator`
