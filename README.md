@@ -71,3 +71,9 @@ https://github.com/SebaKrk/MyNBPapp
     * B: Dodanie mock serwisu
 
 ### IOS-0010 `Swift OpenAPI Generator`
+    * A: Dodanie odpowiednich pakietów zależność
+    - stworzenie pakietu client - exchangeRateAPI
+    https://github.com/APIs-guru/openapi-directory/blob/main/APIs/1forge.com/0.0.1/swagger.yaml
+    - `Swift OpenAPI Generator`
+    - `URLSession Transport for Swift OpenAPI Generator`
+    - `Swift OpenAPI Generator Runtime` 
