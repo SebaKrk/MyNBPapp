@@ -27,8 +27,8 @@ public struct ExchangeRateClient {
             
         case .ok(let okResponse):
             switch okResponse.body {
-            case .json(let jason):
-                dump(jason)
+            case .json(let json):
+                dump(json)
             }
         case .notFound(_):
             print("not found")
