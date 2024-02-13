@@ -77,3 +77,4 @@ https://github.com/SebaKrk/MyNBPapp
     - `Swift OpenAPI Generator`
     - `URLSession Transport for Swift OpenAPI Generator`
     - `Swift OpenAPI Generator Runtime` 
+    * B: Wstępna implementacja oraz 

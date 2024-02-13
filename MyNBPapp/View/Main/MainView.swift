@@ -24,7 +24,11 @@ struct MainView: View {
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
+        .onAppear {
+            Task {
+                await viewModel.getCurrencyRateData()
+            }
+        }   
     }
     
     private func createMonument() -> some View {
