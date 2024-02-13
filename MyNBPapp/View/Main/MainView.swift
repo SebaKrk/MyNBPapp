@@ -5,14 +5,15 @@
 //  Created by Sebastian Sciuba on 21/01/2024.
 //
 
+import Charts
+import ExchangeRateClient
 import MonumentKit
 import SwiftUI
-import Charts
 
 struct MainView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @StateObject var viewModel = MainViewModel()
+    @StateObject var viewModel = MainViewModel(client: ExchangeRateClient())
     
     var body: some View {
         NavigationStack {

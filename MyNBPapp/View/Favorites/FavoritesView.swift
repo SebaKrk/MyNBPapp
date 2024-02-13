@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Observation
+import ExchangeRateClient
 
 struct FavoritesView: View {
     
@@ -14,3 +16,4 @@ struct FavoritesView: View {
     }
     
 }
+
