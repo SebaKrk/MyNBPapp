@@ -8,17 +8,18 @@
 import ComposableArchitecture
 import SwiftUI
 
+@ViewAction(for: AccountFeature.self)
 struct AccountView: View {
     
     var store: StoreOf<AccountFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
+        WithPerceptionTracking {
             NavigationStack {
                 Text("Account View")
                     .toolbar {
                         Button {
-                            viewStore.send(.userTappedSettingsButton)
+                            send(.userTappedSettingsButton)
                         } label: {
                             Image(systemName: "gearshape")
                         }
