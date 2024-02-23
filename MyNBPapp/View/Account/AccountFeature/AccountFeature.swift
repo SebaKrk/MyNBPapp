@@ -9,4 +9,15 @@ import ComposableArchitecture
 import Foundation
 
 @Reducer
-struct AccountFeature {}
+struct AccountFeature {
+    
+    // MARK: - Typealias
+    
+    typealias FeatureState = AccountFeature.State
+    typealias FeatureAction = AccountFeature.Action
+    
+    // MARK: Properties
+    
+    let service = AccountFeatureServices()
+    
+}

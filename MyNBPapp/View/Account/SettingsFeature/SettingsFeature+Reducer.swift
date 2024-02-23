@@ -9,21 +9,19 @@ import ComposableArchitecture
 import Foundation
 
 extension SettingsFeature {
-     
-    var body: some Reducer<State, Action> {
+    
+    var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
                 
-            case .userTapedDoneButton:
+            case .view(.userTapedDoneButton):
                 print("userTapedDoneButton")
                 return .none
-                
-            case .userTapedCancelButton:
+            case .view(.userTapedCancelButton):
                 print("userTapedCancelButton")
                 return .run { _ in
-                   await dismiss()
+                    await dismiss()
                 }
-                
             }
         }
     }

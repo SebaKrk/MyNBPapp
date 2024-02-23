@@ -10,11 +10,12 @@ import Foundation
 
 extension AccountFeature {
     
+    @ObservableState
     struct State: Equatable {
         
         var isSettingsSheetPresented: Bool = false
         
-        @PresentationState var settingsFeature: SettingsFeature.State?
+        @Presents var settingsFeature: SettingsFeature.State?
         
     }
     

@@ -4,17 +4,22 @@
 //
 //  Created by Sebastian Sciuba on 28/01/2024.
 //
-
+import ComposableArchitecture
 import Foundation
 
 extension SettingsFeature {
-    
-    enum Action: Equatable {
+    @CasePathable
+    enum Action: ViewAction {
         
-        case userTapedDoneButton
+        case view(View)
         
-        case userTapedCancelButton
-        
+        enum View {
+            
+            case userTapedDoneButton
+            
+            case userTapedCancelButton
+            
+        }
     }
     
 }

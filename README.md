@@ -66,3 +66,8 @@ https://github.com/SebaKrk/MyNBPapp
     * D: Uzupełnienie pakietu `Commons` o formatowanie daty
 
 ### IOS-0011 The Composable Architecture
+    * A: Migrating to 1.7.3
+    - ViewAction
+    - @ObservableState
+    - ReducerOf<Self>
+    - add additional TestFeature
