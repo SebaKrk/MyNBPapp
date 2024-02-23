@@ -11,4 +11,13 @@ import ComposableArchitecture
 @Reducer
 struct TestFeature {
     
+    // MARK: - Typealias
+    
+    typealias FeatureState = TestFeature.State
+    typealias FeatureAction = TestFeature.Action
+    
+    // MARK: Properties
+    
+    let service = TestFeatureServices()
+    
 }
