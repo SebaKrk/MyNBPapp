@@ -64,3 +64,5 @@ https://github.com/SebaKrk/MyNBPapp
     - euro rate chart
     - pomocnicze funkcje w view modelu
     * D: Uzupełnienie pakietu `Commons` o formatowanie daty
+
+### IOS-0011 The Composable Architecture
