@@ -8,29 +8,26 @@
 import ComposableArchitecture
 import SwiftUI
 
+@ViewAction(for: SettingsFeature.self)
 struct SettingsView: View {
     
     var store: StoreOf<SettingsFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
+        WithPerceptionTracking {
             NavigationStack {
                 Text("SettingsView")
                     .toolbar {
                         ToolbarItem(placement: .topBarLeading) {
                             Button {
-                                viewStore.send(
-                                    .userTapedCancelButton
-                                )
+                                send(.userTapedCancelButton)
                             } label: {
                                 Text("Cancel")
                             }
                         }
                         ToolbarItem(placement: .topBarTrailing) {
                             Button {
-                                viewStore.send(
-                                    .userTapedDoneButton
-                                )
+                                send(.userTapedDoneButton)
                             } label: {
                                 Text("Done")
                             }
