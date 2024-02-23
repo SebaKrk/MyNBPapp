@@ -11,14 +11,19 @@ import Foundation
 extension AccountFeature {
     
     @CasePathable
-    enum Action: Equatable {
-        
-        case userTappedSettingsButton
+    enum Action: ViewAction {
         
         case settingsSheetPresented
         
         case settingsFeature(PresentationAction<SettingsFeature.Action>)
         
+        case view(View)
+        
+        enum View {
+            
+            case userTappedSettingsButton
+            
+        }
     }
     
 }

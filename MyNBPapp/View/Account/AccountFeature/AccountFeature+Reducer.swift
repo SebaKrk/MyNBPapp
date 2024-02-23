@@ -10,11 +10,11 @@ import Foundation
 
 extension AccountFeature {
     
-    var body: some Reducer<State, Action> {
+    var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-                
-            case .userTappedSettingsButton:
+            
+            case .view(.userTappedSettingsButton):
                 return .run { send in
                     await send(.settingsSheetPresented)
                 }
@@ -22,6 +22,7 @@ extension AccountFeature {
             case .settingsSheetPresented:
                 state.settingsFeature = .init()
                 return .none
+                
                 
             default:
                 return .none
