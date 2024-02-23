@@ -11,9 +11,8 @@ import SwiftUI
 
 class MainViewModel: ObservableObject {
     
-    @Published var nbp = MonumentData.nbp
-    
     let client: ExchangeRateClient
+    @Published var nbp = MonumentData.nbp
     
     init(client: ExchangeRateClient) {
         self.client = client
