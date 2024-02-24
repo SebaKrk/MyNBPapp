@@ -9,10 +9,12 @@ import ExchangeRateClient
 import MonumentKit
 import SwiftUI
 
+@MainActor
 class MainViewModel: ObservableObject {
     
     let client: ExchangeRateClient
     @Published var nbp = MonumentData.nbp
+    @Published var currencyRates: [CurrencyRate] = []
     
     init(client: ExchangeRateClient) {
         self.client = client
@@ -20,10 +22,18 @@ class MainViewModel: ObservableObject {
     
     func getCurrencyRateData() async {
         do {
-            try await client.getData()
+            let ratesDictionary = try await client.getData()
+            self.currencyRates = ratesDictionary.map { CurrencyRate(code: $0.key, rate: $0.value) }
+            dump(currencyRates)
         } catch {
             print(error.localizedDescription)
         }
     }
     
+}
+
+
+struct CurrencyRate {
+    let code: String
+    let rate: Double
 }

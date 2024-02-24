@@ -21,6 +21,14 @@ struct MainView: View {
                 createMonument()
                 primaryInfoView()
             }
+            
+            List(viewModel.currencyRates, id: \.code) { rate in
+                HStack {
+                    Text(rate.code)
+                    Spacer()
+                    Text("\(rate.rate, specifier: "%.2f")")
+                }
+            }
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)
         }
