@@ -25,7 +25,6 @@ class MainViewModel: ObservableObject {
         do {
             let ratesDictionary = try await client.getData()
             self.currencyRates = ratesDictionary.map { CurrencyRate(currency: $0.key, rate: $0.value) }
-            dump(currencyRates)
         } catch {
             print(error.localizedDescription)
         }
