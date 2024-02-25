@@ -5,6 +5,7 @@
 //  Created by Sebastian Sciuba on 27/01/2024.
 //
 
+import DataModels
 import ExchangeRateClient
 import MonumentKit
 import SwiftUI
@@ -23,17 +24,11 @@ class MainViewModel: ObservableObject {
     func getCurrencyRateData() async {
         do {
             let ratesDictionary = try await client.getData()
-            self.currencyRates = ratesDictionary.map { CurrencyRate(code: $0.key, rate: $0.value) }
+            self.currencyRates = ratesDictionary.map { CurrencyRate(currency: $0.key, rate: $0.value) }
             dump(currencyRates)
         } catch {
             print(error.localizedDescription)
         }
     }
     
-}
-
-
-struct CurrencyRate {
-    let code: String
-    let rate: Double
 }

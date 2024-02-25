@@ -22,13 +22,14 @@ struct MainView: View {
                 primaryInfoView()
             }
             
-            List(viewModel.currencyRates, id: \.code) { rate in
+            List(viewModel.currencyRates, id: \.currency) { rate in
                 HStack {
-                    Text(rate.code)
+                    Text(rate.currency)
                     Spacer()
                     Text("\(rate.rate, specifier: "%.2f")")
                 }
             }
+            .listStyle(.sidebar)
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -50,7 +51,7 @@ struct MainView: View {
     
     private func primaryInfoView() -> some View {
         CurrencyRatePrimaryView()
-            .padding([.leading, .trailing], 10)
+             .padding([.leading, .trailing], 10)
     }
     
 }

@@ -79,3 +79,4 @@ https://github.com/SebaKrk/MyNBPapp
     - `Swift OpenAPI Generator Runtime` 
     * B: Wstępne testowanie api
     - dodanie i wyświetlenie danych na iście
+    * C: Wyciagnięcie modelu do `Data Models` 
