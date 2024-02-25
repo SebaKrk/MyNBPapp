@@ -85,3 +85,5 @@ https://github.com/SebaKrk/MyNBPapp
     - @ObservableState
     - ReducerOf<Self>
     - add additional TestFeature
+    
+### IOS-0012 Lista kursów walut
