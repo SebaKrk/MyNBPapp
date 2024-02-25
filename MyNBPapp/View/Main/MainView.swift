@@ -5,14 +5,15 @@
 //  Created by Sebastian Sciuba on 21/01/2024.
 //
 
+import Charts
+import ExchangeRateClient
 import MonumentKit
 import SwiftUI
-import Charts
 
 struct MainView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @StateObject var viewModel = MainViewModel()
+    @StateObject var viewModel = MainViewModel(client: ExchangeRateClient())
     
     var body: some View {
         NavigationStack {
@@ -20,10 +21,23 @@ struct MainView: View {
                 createMonument()
                 primaryInfoView()
             }
+            
+            List(viewModel.currencyRates, id: \.currency) { rate in
+                HStack {
+                    Text(rate.currency)
+                    Spacer()
+                    Text("\(rate.rate, specifier: "%.2f")")
+                }
+            }
+            .listStyle(.sidebar)
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
+        .onAppear {
+            Task {
+                await viewModel.getCurrencyRateData()
+            }
+        }   
     }
     
     private func createMonument() -> some View {
@@ -37,7 +51,7 @@ struct MainView: View {
     
     private func primaryInfoView() -> some View {
         CurrencyRatePrimaryView()
-            .padding([.leading, .trailing], 10)
+             .padding([.leading, .trailing], 10)
     }
     
 }

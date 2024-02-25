@@ -64,6 +64,20 @@ https://github.com/SebaKrk/MyNBPapp
     - euro rate chart
     - pomocnicze funkcje w view modelu
     * D: Uzupełnienie pakietu `Commons` o formatowanie daty
+### IOS-0009 `WidgetKit`
+    * A: Stworzenie WidgetNBP
+    - dodanie nowego targetu
+    * B: Dodanie mock serwisu
+
+### IOS-0010 `Swift OpenAPI Generator`
+    * A: Dodanie pakietu zależność
+    - stworzenie pakietu client - exchangeRateAPI
+    https://github.com/APIs-guru/openapi-directory/blob/main/APIs/1forge.com/0.0.1/swagger.yaml
+    - `Swift OpenAPI Generator`
+    - `URLSession Transport for Swift OpenAPI Generator`
+    - `Swift OpenAPI Generator Runtime` 
+    * B: Wstępne testowanie api
+    - dodanie i wyświetlenie danych na iście
 
 ### IOS-0011 upgrade `The Composable Architecture`
     * A: Migrating to 1.7.3
