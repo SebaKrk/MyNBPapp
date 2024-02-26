@@ -9,16 +9,25 @@ import SwiftUI
 
 struct FlagView: View {
     
-    var name: String
+    var name: String?
     
     var body: some View {
-        Image(name)
-            .resizable()
-            .scaledToFit()
-            .clipShape(Circle())
-            .overlay(Circle().stroke(Color.white, lineWidth: 2))
-            .shadow(radius: 10)
-            .frame(height: 25)
+        if let name {
+            Image(name)
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                .shadow(radius: 10)
+                .frame(height: 25)
+        } else {
+            Rectangle()
+                .fill(Color.gray)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                .shadow(radius: 10)
+                .frame(height: 25)
+        }
     }
     
 }

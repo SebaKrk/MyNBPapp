@@ -87,3 +87,4 @@ https://github.com/SebaKrk/MyNBPapp
     - add additional TestFeature
     
 ### IOS-0012 Lista kursów walut
+    * A: UI listy kursów

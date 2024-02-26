@@ -1,5 +1,5 @@
 //
-//  CurrencyCell.swift
+//  CurrencyCellWithBalance.swift
 //  MyNBPapp
 //
 //  Created by Sebastian Sciuba on 27/01/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CurrencyCell: View {
+struct CurrencyCellWithBalance: View {
     
     let country: String
     let currency: String

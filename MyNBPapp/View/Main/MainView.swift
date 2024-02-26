@@ -18,18 +18,13 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                createMonument()
-                primaryInfoView()
+            createMonument()
+            primaryInfoView()
             }
-            
-            List(viewModel.currencyRates, id: \.currency) { rate in
-                HStack {
-                    Text(rate.currency)
-                    Spacer()
-                    Text("\(rate.rate, specifier: "%.2f")")
-                }
+            List(viewModel.currencyRates, id: \.currency) { item in
+                CurrencyRateCell(currency: item.currency, rate: item.rate)
             }
-            .listStyle(.sidebar)
+            .listStyle(.plain)
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -37,7 +32,7 @@ struct MainView: View {
             Task {
                 await viewModel.getCurrencyRateData()
             }
-        }   
+        }
     }
     
     private func createMonument() -> some View {
@@ -51,7 +46,7 @@ struct MainView: View {
     
     private func primaryInfoView() -> some View {
         CurrencyRatePrimaryView()
-             .padding([.leading, .trailing], 10)
+            .padding([.leading, .trailing], 10)
     }
     
 }

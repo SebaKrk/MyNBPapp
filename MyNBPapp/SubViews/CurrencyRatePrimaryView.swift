@@ -16,11 +16,11 @@ struct CurrencyRatePrimaryView: View {
                     .padding(.bottom,15)
                 VStack {
                         VStack {
-                            CurrencyCell(country: "europ", currency: "eur",
+                            CurrencyCellWithBalance(country: "europ", currency: "eur",
                                          bidRate: 4.3560, bidChange: 0.0021,
                                          askRate: 4.4451, askChange: -0.0031)
                             Divider()
-                            CurrencyCell(country: "usa", currency: "usd",
+                            CurrencyCellWithBalance(country: "usa", currency: "usd",
                                          bidRate: 3.3560, bidChange: 0.0051,
                                          askRate: 3.5451, askChange: -0.0021)
                         }
