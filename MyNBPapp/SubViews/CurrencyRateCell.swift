@@ -24,10 +24,12 @@ struct CurrencyRateCell: View {
                 .font(.headline)
         }
         .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(.gray, lineWidth: 1)
-        )
+        .background(.quaternary.opacity(0.5))
+        .cornerRadius(5)
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 10)
+//                .stroke(.gray, lineWidth: 1)
+//        )
     }
     
 }
