@@ -88,3 +88,6 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0012 Lista kursów walut
     * A: UI listy kursów
+
+ IOS-0012 Lista kursów walut
+ IOS-0012A UI listy kursów

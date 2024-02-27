@@ -18,13 +18,13 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-            createMonument()
-            primaryInfoView()
+                createMonument()
+                primaryInfoView()
+                ForEach(viewModel.currencyRates, id: \.currency) { item in
+                    CurrencyRateCell(currency: item.currency, rate: item.rate)
+                        .padding([.leading, .trailing], 10)
+                }
             }
-            List(viewModel.currencyRates, id: \.currency) { item in
-                CurrencyRateCell(currency: item.currency, rate: item.rate)
-            }
-            .listStyle(.plain)
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)
         }
@@ -50,3 +50,9 @@ struct MainView: View {
     }
     
 }
+
+
+//            List(viewModel.currencyRates, id: \.currency) { item in
+//                CurrencyRateCell(currency: item.currency, rate: item.rate)
+//            }
+//            .listStyle(.plain)
