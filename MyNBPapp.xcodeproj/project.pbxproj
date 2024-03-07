@@ -275,12 +275,12 @@
 			path = SettingsFeature;
 			sourceTree = "<group>";
 		};
-		9328B9B12B9910E6004404BB /* DestinationFeature */ = {
+		9328B9B12B9910E6004404BB /* UserProfileUpdateFeature */ = {
 			isa = PBXGroup;
 			children = (
 				9328B9B22B9910F2004404BB /* UserProfileUpdateFeature.swift */,
 			);
-			path = DestinationFeature;
+			path = UserProfileUpdateFeature;
 			sourceTree = "<group>";
 		};
 		93373EC62B88F3FC00975A6B /* Utilites */ = {
@@ -372,7 +372,7 @@
 		9357DA142B6065DA0097673C /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				9328B9B12B9910E6004404BB /* DestinationFeature */,
+				9328B9B12B9910E6004404BB /* UserProfileUpdateFeature */,
 				93517C392B88CBAB009252E9 /* TestFeature */,
 				93517C422B88CD99009252E9 /* TestView.swift */,
 				930B2E9C2B667B0500BEB7B7 /* AccountFeature */,

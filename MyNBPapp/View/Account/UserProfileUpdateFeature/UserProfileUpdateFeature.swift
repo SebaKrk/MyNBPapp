@@ -56,7 +56,7 @@ struct UserProfileUpdateFeature {
 }
 
 @ViewAction(for: UserProfileUpdateFeature.self)
-struct DestinationFeatureView: View {
+struct UserProfileUpdateFeatureView: View {
     
     @State private var name: String = ""
     @Bindable var store: StoreOf<UserProfileUpdateFeature>

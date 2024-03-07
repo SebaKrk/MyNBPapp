@@ -50,8 +50,8 @@ extension AppScreen {
             //FavoritesView()
 //            TestView(store: Store(initialState: TestFeature.State(),
 //                                  reducer: { TestFeature() }))
-            DestinationFeatureView(store: Store(initialState: DestinationFeature.State(),
-                                                reducer: { DestinationFeature() }))
+            UserProfileUpdateFeatureView(store: Store(initialState: UserProfileUpdateFeature.State(),
+                                                reducer: { UserProfileUpdateFeature() }))
         case .account:
             AccountView(store: Store(initialState: AccountFeature.State(),
                                      reducer: { AccountFeature() })
