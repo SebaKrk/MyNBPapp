@@ -14,7 +14,7 @@ struct SettingsView: View {
     var store: StoreOf<SettingsFeature>
     
     var body: some View {
-        WithPerceptionTracking {
+//        WithPerceptionTracking {
             NavigationStack {
                 Text("SettingsView")
                     .toolbar {
@@ -36,7 +36,7 @@ struct SettingsView: View {
                     .navigationTitle("Settings")
                     .navigationBarTitleDisplayMode(.inline)
             }
-        }
+//        }
     }
     
 }

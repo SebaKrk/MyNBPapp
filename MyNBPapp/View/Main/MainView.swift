@@ -16,23 +16,37 @@ struct MainView: View {
     @StateObject var viewModel = MainViewModel(client: ExchangeRateClient())
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                createMonument()
-                primaryInfoView()
-                ForEach(viewModel.currencyRates, id: \.currency) { item in
-                    CurrencyRateCell(currency: item.currency, rate: item.rate)
-                        .padding([.leading, .trailing], 10)
+        ScrollView {
+            VStack(spacing: 10) {
+                ZStack {
+                    Text("Beautiful Map Goes Here")
+                        .hidden()
+                        .frame(height: horizontalSizeClass == .compact ? 150 : 200)
+                        .frame(maxWidth: .infinity)
+                }
+                .background(alignment: .bottom) {
+                    createMonument()
                 }
             }
-            .navigationTitle("Main")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("NBP")
         }
-        .onAppear {
-            Task {
-                await viewModel.getCurrencyRateData()
-            }
-        }
+        
+//        NavigationStack {
+//            createMonument()
+//            ScrollView {
+//                primaryInfoView()
+//                ForEach(viewModel.currencyRates, id: \.currency) { item in
+//                    CurrencyRateCell(currency: item.currency, rate: item.rate)
+//                        .padding([.leading, .trailing], 10)
+//                }
+//            }
+//            .navigationTitle("NBP")
+//        }
+//        .onAppear {
+//            Task {
+//                await viewModel.getCurrencyRateData()
+//            }
+//        }
     }
     
     private func createMonument() -> some View {
@@ -50,9 +64,3 @@ struct MainView: View {
     }
     
 }
-
-
-//            List(viewModel.currencyRates, id: \.currency) { item in
-//                CurrencyRateCell(currency: item.currency, rate: item.rate)
-//            }
-//            .listStyle(.plain)

@@ -14,12 +14,12 @@ struct TestView: View {
     let store: StoreOf<TestFeature>
     
     var body: some View {
-        WithPerceptionTracking {
+        //WithPerceptionTracking {
             Button {
                 send(.userTapedTestButton)
             } label: {
                 Text("Button test")
             }
-        }
+        //} -> to używamy tylko do iOS 17.0
     }
 }
