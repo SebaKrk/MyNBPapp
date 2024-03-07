@@ -14,13 +14,13 @@ struct CurrencyTableFeature {
     @ObservableState
     struct State: Equatable {
         
-        var selectedTab: MainCurrencyState = .euro
+        var selectedTab: CurrencyTransactionType = .average
     }
     
     @CasePathable
     enum Action: ViewAction {
         
-        case selectedTabChange(MainCurrencyState)
+        case selectedTabChange(CurrencyTransactionType)
         case view(View)
         
         enum View {
@@ -31,6 +31,10 @@ struct CurrencyTableFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+                
+            case let .selectedTabChange(selectedTab):
+                state.selectedTab = selectedTab
+                return .none
                 
             default: return .none
             }
@@ -43,9 +47,7 @@ struct CurrencyTableFeature {
 @ViewAction(for: CurrencyTableFeature.self)
 struct CurrencyTableView: View {
     
-    //@Perception.Bindable
-//    @Perception.Bindable 
-    var store: StoreOf<CurrencyTableFeature>
+    @Bindable var store: StoreOf<CurrencyTableFeature>
 
     init() {
         self.store = Store(initialState: CurrencyTableFeature.State(), reducer: { CurrencyTableFeature() })
@@ -54,49 +56,60 @@ struct CurrencyTableView: View {
     var body: some View {
         
         NavigationStack {
+            Divider()
+            HStack {
+                Spacer()
+                currencyTableBox
+                    .padding()
+            }
+            Spacer()
+            
+        }
+        
+    }
+    
+    @ViewBuilder
+    var currencyTableBox: some View {
+        GroupBox {
+            Text("")
+                .frame(height: 300)
+                
+        } label: {
             currencyPicker
         }
+        .frame(width: 350)
         
     }
     
     @ViewBuilder
     var currencyPicker: some View {
         Picker("Currency picker", selection: $store.selectedTab.sending(\.selectedTabChange)) {
-            ForEach(MainCurrencyState.allCases, id: \.self) {  item in
+            ForEach(CurrencyTransactionType.allCases, id: \.self) {  item in
                 Text(item.title)
                     .textCase(.uppercase)
-                    .tag(item.title)
+                    .tag(item)
             }
         }
+        .pickerStyle(.segmented)
+        
     }
 }
 
 
-enum MainCurrencyState: Equatable, CaseIterable {
+enum CurrencyTransactionType: Equatable, CaseIterable {
     
-    case euro
+    case average
     
-    case dolar
+    case purchase
     
-    case funt
-    
-    case jen
+    case sale
     
     var title: String {
         switch self {
-        case .euro: return "eur"
-        case .dolar: return "usd"
-        case .funt: return "gbp"
-        case .jen: return "jpy"
-        }
-    }
-    
-    var iconName: String {
-        switch self {
-        case .euro: return "unia"
-        case .dolar: return "stany"
-        case .funt: return "brytania"
-        case .jen: return "japonia"
+        case .average: return "Średni"
+        case .purchase: return "Kupno"
+        case .sale: return "Sprzedaż"
         }
     }
 }
+
