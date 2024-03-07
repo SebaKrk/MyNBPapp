@@ -20,6 +20,9 @@
     "1 Euro" : {
 
     },
+    "About this case study" : {
+
+    },
     "Account" : {
       "comment" : "The Account tab provides a personalized space where users can manage their profile and settings.",
       "localizations" : {
@@ -35,6 +38,12 @@
 
     },
     "Average rate" : {
+
+    },
+    "Beautiful Map Goes Here" : {
+
+    },
+    "Bindings basics" : {
 
     },
     "Button test" : {
@@ -53,6 +62,12 @@
     "Date" : {
 
     },
+    "DetailsFeature" : {
+
+    },
+    "Disable other controls" : {
+
+    },
     "Done" : {
       "localizations" : {
         "pl" : {
@@ -62,6 +77,9 @@
           }
         }
       }
+    },
+    "enter your name" : {
+
     },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
@@ -94,6 +112,9 @@
         }
       }
     },
+    "Max slider value: %lld" : {
+
+    },
     "National Bank of Poland" : {
       "localizations" : {
         "pl" : {
@@ -103,6 +124,9 @@
           }
         }
       }
+    },
+    "NBP" : {
+
     },
     "NBP Charts" : {
       "localizations" : {
@@ -154,6 +178,9 @@
         }
       }
     },
+    "Send" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "pl" : {
@@ -165,6 +192,12 @@
       }
     },
     "SettingsView" : {
+
+    },
+    "Slider value: %lld" : {
+
+    },
+    "Type here" : {
 
     }
   },
