@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "%@" : {
 
     },
@@ -52,6 +49,12 @@
           }
         }
       }
+    },
+    "currency converter" : {
+
+    },
+    "Currency converter" : {
+
     },
     "Currency picker" : {
 

@@ -44,7 +44,7 @@ extension AppScreen {
         switch self {
         case .main:
             //MainView()
-            CurrencyTableView()
+            MainView2()
         case .rate:
             CurrencyRateView()
         case .favorites:
