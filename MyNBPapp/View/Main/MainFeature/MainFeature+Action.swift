@@ -13,11 +13,13 @@ extension MainFeature {
     
     @CasePathable
     enum Action: ViewAction {
-            
+        
+        // MARK: Action
         case selectedTabChange(CurrencyTransactionType)
         
         case selectedCurrencyTabChange(MainCurrencyState)
         
+        // MARK: View Action
         case view(View)
         
         enum View {
@@ -27,6 +29,9 @@ extension MainFeature {
             case viewDidAppear
         
         }
+        
+        // MARK: Children Action
+        case currencyConverter(CurrencyConverterFeature.Action)
     }
     
 }
