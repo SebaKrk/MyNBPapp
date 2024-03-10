@@ -50,7 +50,7 @@
         }
       }
     },
-    "currency converter" : {
+    "Chcę" : {
 
     },
     "Currency converter" : {
@@ -74,6 +74,9 @@
           }
         }
       }
+    },
+    "Dostanę" : {
+
     },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
@@ -142,6 +145,9 @@
         }
       }
     },
+    "Płacę" : {
+
+    },
     "PLN" : {
 
     },
@@ -155,6 +161,9 @@
           }
         }
       }
+    },
+    "Sales Picker" : {
+
     },
     "select a tab" : {
       "localizations" : {
@@ -177,6 +186,9 @@
       }
     },
     "SettingsView" : {
+
+    },
+    "Wpisz liczbę do przekonwertowania" : {
 
     }
   },
