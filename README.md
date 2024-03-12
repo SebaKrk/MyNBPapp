@@ -91,4 +91,4 @@ https://github.com/SebaKrk/MyNBPapp
     * B: Refactor wyglądu aplikacji
     * C: Wydzielenie nowych Feature z MainFeature
         - CurrencyConverterFeature
-
+    * D: Dodanie feature toggle isMultipleSourcesEnabled

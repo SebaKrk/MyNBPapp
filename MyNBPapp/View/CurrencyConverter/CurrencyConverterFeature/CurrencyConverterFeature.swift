@@ -25,6 +25,8 @@ struct CurrencyConverterFeature {
         
         var convertedAmount: Double? = nil
         
+        var isMultipleSourcesEnabled: Bool = false
+        
     }
     
     @CasePathable
