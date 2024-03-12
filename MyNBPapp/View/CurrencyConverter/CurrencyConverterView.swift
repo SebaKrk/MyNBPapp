@@ -1,4 +1,4 @@
-    //
+//
 //  CurrencyConverterView.swift
 //  MyNBPapp
 //
@@ -12,7 +12,7 @@ import SwiftUI
 struct CurrencyConverterView: View {
     
     @Bindable var store: StoreOf<CurrencyConverterFeature>
-    @State var num: Double = 0
+    @State var isMultipleSourcesEnabled: Bool = false
     
     var body: some View {
         HStack {
@@ -74,11 +74,19 @@ struct CurrencyConverterView: View {
             Text(store.currencySelectType.title)
             Spacer()
             Menu {
-                ForEach(GlobalCurrencySymbols.allCases, id:\.self) { item in
+                if store.isMultipleSourcesEnabled {
+                    ForEach(GlobalCurrencySymbols.allCases, id:\.self) { item in
+                        Button {
+                            send(.selectedCurrencyType(item))
+                        } label: {
+                            Text(item.title)
+                        }
+                    }
+                } else {
                     Button {
-                        send(.selectedCurrencyType(item))
+                        send(.selectedCurrencyType(.polishZloty))
                     } label: {
-                        Text(item.title)
+                        Text(GlobalCurrencySymbols.polishZloty.title)
                     }
                 }
             } label: {
@@ -134,7 +142,7 @@ struct CurrencyConverterView: View {
                     .frame(width: 300, height: 250)
             }
     }
-        
+    
     @ViewBuilder
     private func  createCapsule(_ width: CGFloat,_ height: CGFloat) -> some View {
         RoundedRectangle(cornerRadius: 10)
@@ -149,6 +157,3 @@ struct CurrencyConverterView: View {
         CurrencyConverterFeature()
     }))
 }
-
-
-
