@@ -71,14 +71,15 @@ struct MainView: View {
     @ViewBuilder
     var currencyRateBox: some View {
         GroupBox {
-            Text(store.selectedCurrency.title)
-                .frame(height: 300)
-            
+            HStack {
+                MarketRateView()
+                Text(store.selectedCurrency.title)
+            }
+            .frame(height: 300)
         } label: {
             currencyRatePicker
         }
     }
-    
     
     @ViewBuilder
     var currencyTableBox: some View {
@@ -114,4 +115,5 @@ struct MainView: View {
         }
         .pickerStyle(.segmented)
     }
+    
 }

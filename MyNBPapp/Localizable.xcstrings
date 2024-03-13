@@ -17,6 +17,9 @@
         }
       }
     },
+    "%lf" : {
+
+    },
     "1 Euro" : {
 
     },
@@ -60,6 +63,9 @@
 
     },
     "currency rate picker" : {
+
+    },
+    "Data: %@" : {
 
     },
     "Date" : {

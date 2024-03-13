@@ -92,3 +92,4 @@ https://github.com/SebaKrk/MyNBPapp
     * C: Wydzielenie nowych Feature z MainFeature
         - CurrencyConverterFeature
     * D: Dodanie feature toggle isMultipleSourcesEnabled
+    * E: Stworzenie MarketRate
