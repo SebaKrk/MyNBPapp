@@ -27,7 +27,6 @@ struct AddContactFeature {
         case setName(String)
         
         enum Delegate: Equatable {
-          //case cancel
           case saveContact(Contact)
         }
     }
@@ -36,7 +35,6 @@ struct AddContactFeature {
         Reduce { state , action in
             switch action {
             case .cancelButtonTapped:
-                //return .send(.delegate(.cancel))
                 return .run { send in
                     await self.dismiss()
                 }
@@ -45,7 +43,6 @@ struct AddContactFeature {
                return .none
                 
             case .saveButtonTapped:
-                //return .send(.delegate(.saveContact(state.contact)))
                 return .run { [contact = state.contact] send in
                     await send(.delegate(.saveContact(contact)))
                     await self.dismiss()

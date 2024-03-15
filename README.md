@@ -97,3 +97,4 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0014 TCA Navigation
     * A: Navigation
         - Your first presentation 
+    * B: Multiple presentation destinations
