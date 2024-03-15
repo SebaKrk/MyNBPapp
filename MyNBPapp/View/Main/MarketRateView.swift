@@ -5,14 +5,6 @@
 //  Created by Sebastian Sciuba on 13/03/2024.
 //
 
-//
-//            Text("Ostatni kurs")
-//            Text("Zmiana %")
-//            Text("Średnia")
-//            Text("BID")
-//            Text("ASK")
-//            Text("Data")
-
 import SwiftUI
 
 class MarketRateViewModel: ObservableObject {

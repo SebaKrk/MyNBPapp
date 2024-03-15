@@ -93,3 +93,7 @@ https://github.com/SebaKrk/MyNBPapp
         - CurrencyConverterFeature
     * D: Dodanie feature toggle isMultipleSourcesEnabled
     * E: Stworzenie MarketRate
+
+### IOS-0014 TCA Navigation
+    * A: Navigation
+        - Your first presentation 
