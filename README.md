@@ -101,3 +101,6 @@ https://github.com/SebaKrk/MyNBPapp
     * C: Migration to TCA 1.8.2
         - clean up the TCA code
     * D: Improve domain modeling
+    
+### IOS-0015 Uporzadkowanie drzewa plików
+    * A: Uporzadkowanie drzewa plików
