@@ -26,6 +26,10 @@
 		9312DF102B9B208800C3D441 /* CurrencyConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312DF0F2B9B208800C3D441 /* CurrencyConverterView.swift */; };
 		9312DF132B9B209700C3D441 /* CurrencyConverterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312DF122B9B209700C3D441 /* CurrencyConverterFeature.swift */; };
 		9312DF162B9B346000C3D441 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312DF152B9B346000C3D441 /* TransactionType.swift */; };
+		93335A692BA4560A001F1610 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A682BA4560A001F1610 /* ContactDetailView.swift */; };
+		93335A6D2BA45F3D001F1610 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A6C2BA45F3D001F1610 /* ContactView.swift */; };
+		93335A702BA45F56001F1610 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A6F2BA45F56001F1610 /* Contact.swift */; };
+		93335A772BA465FD001F1610 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A762BA465FD001F1610 /* AddContactView.swift */; };
 		93373EC82B88F40800975A6B /* TestFeatureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93373EC72B88F40800975A6B /* TestFeatureServices.swift */; };
 		9338604B2B8BCA4B0062DBC0 /* CurrencyRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338604A2B8BCA4B0062DBC0 /* CurrencyRateCell.swift */; };
 		93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C3A2B88CBB7009252E9 /* TestFeature.swift */; };
@@ -162,6 +166,10 @@
 		9312DF0F2B9B208800C3D441 /* CurrencyConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterView.swift; sourceTree = "<group>"; };
 		9312DF122B9B209700C3D441 /* CurrencyConverterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterFeature.swift; sourceTree = "<group>"; };
 		9312DF152B9B346000C3D441 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		93335A682BA4560A001F1610 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		93335A6C2BA45F3D001F1610 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		93335A6F2BA45F56001F1610 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		93335A762BA465FD001F1610 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		93373EC72B88F40800975A6B /* TestFeatureServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFeatureServices.swift; sourceTree = "<group>"; };
 		9338604A2B8BCA4B0062DBC0 /* CurrencyRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateCell.swift; sourceTree = "<group>"; };
 		93517C3A2B88CBB7009252E9 /* TestFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFeature.swift; sourceTree = "<group>"; };
@@ -364,6 +372,49 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		93335A662BA455E3001F1610 /* ContactTest */ = {
+			isa = PBXGroup;
+			children = (
+				93335A712BA45F59001F1610 /* Model */,
+				93335A6B2BA45F1C001F1610 /* Contact */,
+				93335A732BA465F1001F1610 /* AddContact */,
+				93335A672BA455EE001F1610 /* ContactDetail */,
+			);
+			path = ContactTest;
+			sourceTree = "<group>";
+		};
+		93335A672BA455EE001F1610 /* ContactDetail */ = {
+			isa = PBXGroup;
+			children = (
+				93335A682BA4560A001F1610 /* ContactDetailView.swift */,
+			);
+			path = ContactDetail;
+			sourceTree = "<group>";
+		};
+		93335A6B2BA45F1C001F1610 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				93335A6C2BA45F3D001F1610 /* ContactView.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		93335A712BA45F59001F1610 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93335A6F2BA45F56001F1610 /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93335A732BA465F1001F1610 /* AddContact */ = {
+			isa = PBXGroup;
+			children = (
+				93335A762BA465FD001F1610 /* AddContactView.swift */,
+			);
+			path = AddContact;
+			sourceTree = "<group>";
+		};
 		93373EC62B88F3FC00975A6B /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +506,7 @@
 		9357DA142B6065DA0097673C /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				93335A662BA455E3001F1610 /* ContactTest */,
 				93517C392B88CBAB009252E9 /* TestFeature */,
 				93517C422B88CD99009252E9 /* TestView.swift */,
 				930B2E9C2B667B0500BEB7B7 /* AccountFeature */,
@@ -900,6 +952,8 @@
 				9312DF102B9B208800C3D441 /* CurrencyConverterView.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
+				93335A772BA465FD001F1610 /* AddContactView.swift in Sources */,
+				93335A702BA45F56001F1610 /* Contact.swift in Sources */,
 				930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */,
 				9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */,
 				9312DEFF2B9B001800C3D441 /* GlobalCurrencySymbols.swift in Sources */,
@@ -909,6 +963,8 @@
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */,
 				9312DF052B9B1D9200C3D441 /* MainFeature+Action.swift in Sources */,
+				93335A692BA4560A001F1610 /* ContactDetailView.swift in Sources */,
+				93335A6D2BA45F3D001F1610 /* ContactView.swift in Sources */,
 				93EC19442BA2443F00273F13 /* MarketRateView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */,

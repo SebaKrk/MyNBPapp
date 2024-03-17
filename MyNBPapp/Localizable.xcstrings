@@ -56,6 +56,9 @@
     "Chcę" : {
 
     },
+    "Contacts" : {
+
+    },
     "Currency converter" : {
 
     },
@@ -115,6 +118,9 @@
         }
       }
     },
+    "name" : {
+
+    },
     "National Bank of Poland" : {
       "localizations" : {
         "pl" : {
@@ -169,6 +175,9 @@
       }
     },
     "Sales Picker" : {
+
+    },
+    "Save" : {
 
     },
     "select a tab" : {
