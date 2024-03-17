@@ -8,43 +8,9 @@
 import ComposableArchitecture
 import Foundation
 
+/// `CurrencyConverterFeature+Reducer`
 @Reducer
 struct CurrencyConverterFeature { 
-    
-    /// `CurrencyConverterFeature+State`
-    @ObservableState
-    struct State: Equatable {
-        
-        var selectedTransactionType: TransactionType = .buy
-        
-        var currencySelectType: GlobalCurrencySymbols = .polishZloty
-        
-        var paymentCurrencyType: GlobalCurrencySymbols = .euro
-        
-        var amount: String = ""
-        
-        var convertedAmount: Double? = nil
-        
-        var isMultipleSourcesEnabled: Bool = false
-        
-    }
-    
-    @CasePathable
-    enum Action: ViewAction {
-        
-        case selectedTransactionTypeChange(TransactionType)
-        
-        case convertAmount(String)
-        
-        case view(View)
-        
-        enum View {
-            
-            case selectedCurrencyType(GlobalCurrencySymbols)
-            
-            case selectedPaymentCurrencyType(GlobalCurrencySymbols)
-        }
-    }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in

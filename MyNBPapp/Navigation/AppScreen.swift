@@ -52,8 +52,8 @@ extension AppScreen {
             TestView(store: Store(initialState: TestFeature.State(),
                                   reducer: { TestFeature() }))
         case .account:
-//            AccountView(store: Store(initialState: AccountFeature.State(),
-//                                     reducer: { AccountFeature() }))
+            //            AccountView(store: Store(initialState: AccountFeature.State(),
+            //                                     reducer: { AccountFeature() }))
             
             ContactsView(store: Store(initialState: ContactsFeature.State(),
                                       reducer: { ContactsFeature() }))

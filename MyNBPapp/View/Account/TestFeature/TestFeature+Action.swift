@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import Foundation
 
+/// `TestFeature+Action
 extension TestFeature {
     
     @CasePathable
@@ -19,4 +20,5 @@ extension TestFeature {
             case userTapedTestButton
         }
     }
+    
 }

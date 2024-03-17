@@ -98,3 +98,5 @@ https://github.com/SebaKrk/MyNBPapp
     * A: Navigation
         - Your first presentation 
     * B: Multiple presentation destinations
+    * C: Migration to TCA 1.8.2
+        - clean up the TCA code
