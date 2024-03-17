@@ -85,3 +85,27 @@ https://github.com/SebaKrk/MyNBPapp
     - @ObservableState
     - ReducerOf<Self>
     - add additional TestFeature
+    
+### IOS-0012 Lista kursów walut
+    * A: UI listy kursów
+    * B: Refactor wyglądu aplikacji
+    * C: Wydzielenie nowych Feature z MainFeature
+        - CurrencyConverterFeature
+    * D: Dodanie feature toggle isMultipleSourcesEnabled
+    * E: Stworzenie MarketRate
+
+### IOS-0014 TCA Navigation
+    * A: Navigation
+        - Your first presentation 
+    * B: Multiple presentation destinations
+    * C: Migration to TCA 1.8.2
+        - clean up the TCA code
+    * D: Improve domain modeling
+    
+### IOS-0015 Uporzadkowanie drzewa plików
+    * A: Uporzadkowanie drzewa plików
+
+### IOS-0016 CurrencyRateDetailFeature
+    * A: dodanie NavigationStack
+    
+ 
