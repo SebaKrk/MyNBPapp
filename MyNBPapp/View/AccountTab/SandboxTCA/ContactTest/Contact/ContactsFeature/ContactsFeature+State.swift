@@ -19,7 +19,6 @@ extension ContactsFeature {
         @Presents var destination: Destination.State?
         
         var path = StackState<ContactDetailFeature.State>()
-        
     }
     
 }

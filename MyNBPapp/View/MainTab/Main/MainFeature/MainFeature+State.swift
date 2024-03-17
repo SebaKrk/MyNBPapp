@@ -21,6 +21,9 @@ extension MainFeature {
         
         var selectedTransitionTab: CurrencyTransactionType = .average
         
+        // MARK: Path
+        var path = StackState<CurrencyRateDetailFeature.State>()
+        
         // MARK: Children state
         var currencyConverter = CurrencyConverterFeature.State()
     }
