@@ -24,7 +24,7 @@ extension AddContactFeature {
         
         enum Delegate: Equatable {
             
-          case saveContact(Contact)
+            case saveContact(Contact)
             
         }
         

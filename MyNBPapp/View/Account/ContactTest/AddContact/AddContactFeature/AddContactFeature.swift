@@ -24,7 +24,6 @@ struct AddContactFeature {
                 return .run { send in
                     await self.dismiss()
                 }
-                
             case .delegate:
                return .none
                 

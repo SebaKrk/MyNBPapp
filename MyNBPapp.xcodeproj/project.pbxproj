@@ -36,6 +36,9 @@
 		93335A8E2BA751BC001F1610 /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A8D2BA751BC001F1610 /* AddContactFeature.swift */; };
 		93335A922BA751F2001F1610 /* AddContactFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A912BA751F2001F1610 /* AddContactFeature+Action.swift */; };
 		93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A932BA751FB001F1610 /* AddContactFeature+State.swift */; };
+		93335A972BA75313001F1610 /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A962BA75313001F1610 /* ContactDetailFeature.swift */; };
+		93335A9B2BA7532A001F1610 /* ContactDetailFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A9A2BA7532A001F1610 /* ContactDetailFeature+Action.swift */; };
+		93335A9D2BA75331001F1610 /* ContactDetailFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93335A9C2BA75331001F1610 /* ContactDetailFeature+State.swift */; };
 		93373EC82B88F40800975A6B /* TestFeatureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93373EC72B88F40800975A6B /* TestFeatureServices.swift */; };
 		9338604B2B8BCA4B0062DBC0 /* CurrencyRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338604A2B8BCA4B0062DBC0 /* CurrencyRateCell.swift */; };
 		93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C3A2B88CBB7009252E9 /* TestFeature.swift */; };
@@ -181,6 +184,9 @@
 		93335A8D2BA751BC001F1610 /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
 		93335A912BA751F2001F1610 /* AddContactFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddContactFeature+Action.swift"; sourceTree = "<group>"; };
 		93335A932BA751FB001F1610 /* AddContactFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddContactFeature+State.swift"; sourceTree = "<group>"; };
+		93335A962BA75313001F1610 /* ContactDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
+		93335A9A2BA7532A001F1610 /* ContactDetailFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactDetailFeature+Action.swift"; sourceTree = "<group>"; };
+		93335A9C2BA75331001F1610 /* ContactDetailFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactDetailFeature+State.swift"; sourceTree = "<group>"; };
 		93373EC72B88F40800975A6B /* TestFeatureServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFeatureServices.swift; sourceTree = "<group>"; };
 		9338604A2B8BCA4B0062DBC0 /* CurrencyRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateCell.swift; sourceTree = "<group>"; };
 		93517C3A2B88CBB7009252E9 /* TestFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFeature.swift; sourceTree = "<group>"; };
@@ -395,6 +401,7 @@
 		93335A672BA455EE001F1610 /* ContactDetail */ = {
 			isa = PBXGroup;
 			children = (
+				93335A952BA75303001F1610 /* ContactDetailFeature */,
 				93335A682BA4560A001F1610 /* ContactDetailView.swift */,
 			);
 			path = ContactDetail;
@@ -403,8 +410,8 @@
 		93335A6B2BA45F1C001F1610 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				93335A6C2BA45F3D001F1610 /* ContactsView.swift */,
 				93335A8A2BA75109001F1610 /* ContactsFeature */,
+				93335A6C2BA45F3D001F1610 /* ContactsView.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -445,6 +452,16 @@
 				93335A932BA751FB001F1610 /* AddContactFeature+State.swift */,
 			);
 			path = AddContactFeature;
+			sourceTree = "<group>";
+		};
+		93335A952BA75303001F1610 /* ContactDetailFeature */ = {
+			isa = PBXGroup;
+			children = (
+				93335A962BA75313001F1610 /* ContactDetailFeature.swift */,
+				93335A9A2BA7532A001F1610 /* ContactDetailFeature+Action.swift */,
+				93335A9C2BA75331001F1610 /* ContactDetailFeature+State.swift */,
+			);
+			path = ContactDetailFeature;
 			sourceTree = "<group>";
 		};
 		93373EC62B88F3FC00975A6B /* Utilites */ = {
@@ -968,6 +985,7 @@
 				9312DF162B9B346000C3D441 /* TransactionType.swift in Sources */,
 				93517C432B88CD99009252E9 /* TestView.swift in Sources */,
 				93517C3F2B88CC3E009252E9 /* TestFeature+Action.swift in Sources */,
+				93335A9D2BA75331001F1610 /* ContactDetailFeature+State.swift in Sources */,
 				930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */,
 				9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */,
 				93373EC82B88F40800975A6B /* TestFeatureServices.swift in Sources */,
@@ -990,7 +1008,9 @@
 				93335A702BA45F56001F1610 /* Contact.swift in Sources */,
 				930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */,
 				9357DA042B5D7AC30097673C /* AppDetailColumn.swift in Sources */,
+				93335A972BA75313001F1610 /* ContactDetailFeature.swift in Sources */,
 				9312DEFF2B9B001800C3D441 /* GlobalCurrencySymbols.swift in Sources */,
+				93335A9B2BA7532A001F1610 /* ContactDetailFeature+Action.swift in Sources */,
 				93335A8E2BA751BC001F1610 /* AddContactFeature.swift in Sources */,
 				93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */,
 				93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */,

@@ -9,16 +9,17 @@ import ComposableArchitecture
 import Foundation
 
 ///  `ContactsFeature+State`
-
 extension ContactsFeature {
     
-  @ObservableState
-  struct State: Equatable {
-      
-    var contacts: IdentifiedArrayOf<Contact> = []
-      
-    @Presents var destination: Destination.State?
-      
-  }
+    @ObservableState
+    struct State: Equatable {
+        
+        var contacts: IdentifiedArrayOf<Contact> = []
+        
+        @Presents var destination: Destination.State?
+        
+        var path = StackState<ContactDetailFeature.State>()
+        
+    }
     
 }
