@@ -8,7 +8,6 @@
 import ComposableArchitecture
 import Foundation
 
-
 /// `ContactDetailFeature+Reducer
 @Reducer
 struct ContactDetailFeature {
@@ -17,7 +16,6 @@ struct ContactDetailFeature {
     @Dependency(\.dismiss) var dismiss
     
     // MARK: - Reducer
-    
     var body: some ReducerOf<Self> {
       Reduce { state, action in
         switch action {

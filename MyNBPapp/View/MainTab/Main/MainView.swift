@@ -11,35 +11,59 @@ import SwiftUI
 @ViewAction(for: MainFeature.self)
 struct MainView: View {
     
+    // MARK: - Environments
+    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    // MARK: - Properties
+    
     @Bindable var store: StoreOf<MainFeature>
+    
+    // MARK: - Lifecycle
     
     init() {
         self.store = Store(initialState: MainFeature.State(), reducer: { MainFeature() })
     }
     
+    // MARK: - View
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             ScrollView {
-                VStack {
-                    Divider()
-                    HStack {
+                if horizontalSizeClass  == .compact {
+                    VStack {
+                        Divider()
                         currencyRateBox
                         currencyTableBox
+                        currencyConverter
+                        Spacer()
                     }
-                    currencyConverter
-                    Spacer()
-                        .toolbar {
-                            toolbarButton
+                } else {
+                    VStack {
+                        Divider()
+                        HStack {
+                            currencyRateBox
+                            currencyTableBox
                         }
+                        currencyConverter
+                        Spacer()
+                    }
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .padding()
             }
+            .toolbar {
+                toolbarButton
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .padding()
+        } destination: { store in
+            CurrencyRateDetailView(store: store)
         }
         .onAppear {
             send(.viewDidAppear)
         }
     }
+    
+    // MARK: - Subview
     
     @ToolbarContentBuilder
     var toolbarButton: some ToolbarContent {
@@ -57,17 +81,7 @@ struct MainView: View {
             }
         }
     }
-    
-    @ViewBuilder
-    var currencyConverter: some View {
-        GroupBox {
-            CurrencyConverterView(store: store.scope(state: \.currencyConverter, action: \.currencyConverter))
-                .frame(height: 250)
-        } label: {
-            Label("Currency converter", systemImage: "plus.forwardslash.minus")
-        }
-    }
-    
+        
     @ViewBuilder
     var currencyRateBox: some View {
         GroupBox {
@@ -77,21 +91,26 @@ struct MainView: View {
             }
             .frame(height: 300)
         } label: {
-            currencyRatePicker
+            currencyRateBar
         }
     }
     
     @ViewBuilder
-    var currencyTableBox: some View {
-        GroupBox {
-            Text(store.selectedTransitionTab.title)
-                .frame(height: 300)
-        } label: {
-            currencyPicker
+    var currencyRateBar: some View {
+        HStack {
+            currencyRatePicker
+            Spacer()
+            expandButton
         }
-        .frame(width: 350)
     }
     
+    @ViewBuilder
+    var expandButton: some View {
+        NavigationLink(state: CurrencyRateDetailFeature.State()) {
+            Image(systemName: "arrow.down.left.arrow.up.right")
+        }
+    }
+
     @ViewBuilder
     var currencyRatePicker: some View {
         Picker("currency rate picker", selection: $store.selectedCurrency.sending(\.selectedCurrencyTabChange)) {
@@ -106,6 +125,17 @@ struct MainView: View {
     }
     
     @ViewBuilder
+    var currencyTableBox: some View {
+        GroupBox {
+            Text(store.selectedTransitionTab.title)
+                .frame(height: 300)
+        } label: {
+            currencyPicker
+        }
+        .frame(width: 350)
+    }
+    
+    @ViewBuilder
     var currencyPicker: some View {
         Picker("Currency picker", selection: $store.selectedTransitionTab.sending(\.selectedTabChange)) {
             ForEach(CurrencyTransactionType.allCases, id: \.self) {  item in
@@ -114,6 +144,16 @@ struct MainView: View {
             }
         }
         .pickerStyle(.segmented)
+    }
+    
+    @ViewBuilder
+    var currencyConverter: some View {
+        GroupBox {
+            CurrencyConverterView(store: store.scope(state: \.currencyConverter, action: \.currencyConverter))
+                .frame(height: 250)
+        } label: {
+            Label("Currency converter", systemImage: "plus.forwardslash.minus")
+        }
     }
     
 }

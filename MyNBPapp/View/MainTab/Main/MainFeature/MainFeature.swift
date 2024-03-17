@@ -39,6 +39,9 @@ struct MainFeature {
             Scope(state: \.currencyConverter, action: \.currencyConverter) {
                 CurrencyConverterFeature()
             }
+            .forEach(\.path, action: \.path) {
+                CurrencyRateDetailFeature()
+            }
         }
     }
     

@@ -8,12 +8,13 @@
 import ComposableArchitecture
 import Foundation
 
-///  `ContactsFeature+Action`
+/// `ContactsFeature+Action`
 extension ContactsFeature {
     
     @CasePathable
     enum Action {
         
+        // MARK: - Action
         case addButtonTapped
         
         case deleteButtonTapped(id: Contact.ID)
@@ -22,6 +23,7 @@ extension ContactsFeature {
         
         case path(StackAction<ContactDetailFeature.State, ContactDetailFeature.Action>)
         
+        // MARK: - Alert
         enum Alert: Equatable {
             case confirmDeletion(id: Contact.ID)
         }

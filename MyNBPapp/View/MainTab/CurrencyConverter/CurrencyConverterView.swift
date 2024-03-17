@@ -11,19 +11,37 @@ import SwiftUI
 @ViewAction(for: CurrencyConverterFeature.self)
 struct CurrencyConverterView: View {
     
+    // MARK: - Environments
+    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    // MARK: - Properties
+    
     @Bindable var store: StoreOf<CurrencyConverterFeature>
     @State var isMultipleSourcesEnabled: Bool = false
     
+    // MARK: - View
+    
     var body: some View {
-        HStack {
-            VStack {
-                transitionTypeView
-                amountView
-                paymentCurrencySelector
+        
+        if horizontalSizeClass  == .compact {
+            
+            // TODO: - 
+            
+        } else {
+            HStack {
+                VStack {
+                    transitionTypeView
+                    amountView
+                    paymentCurrencySelector
+                }
+                convertedAmountView
             }
-            convertedAmountView
         }
+
     }
+    
+    // MARK: - Subview
     
     @ViewBuilder
     var transitionTypeView: some View {
