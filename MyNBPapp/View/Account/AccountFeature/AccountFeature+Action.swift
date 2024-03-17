@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import Foundation
 
+/// `AccountFeature+State`
 extension AccountFeature {
     
     @CasePathable

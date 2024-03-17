@@ -7,7 +7,9 @@
 import ComposableArchitecture
 import Foundation
 
+/// `SettingsFeature+Action`
 extension SettingsFeature {
+    
     @CasePathable
     enum Action: ViewAction {
         

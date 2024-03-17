@@ -97,3 +97,6 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0014 TCA Navigation
     * A: Navigation
         - Your first presentation 
+    * B: Multiple presentation destinations
+    * C: Migration to TCA 1.8.2
+        - clean up the TCA code

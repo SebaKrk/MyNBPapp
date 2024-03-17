@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import Foundation
 
+/// `TestFeature+State`
 extension TestFeature {
     
     @ObservableState
