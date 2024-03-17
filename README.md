@@ -104,3 +104,8 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0015 Uporzadkowanie drzewa plików
     * A: Uporzadkowanie drzewa plików
+
+### IOS-0016 CurrencyRateDetailFeature
+    * A: dodanie NavigationStack
+    
+ 

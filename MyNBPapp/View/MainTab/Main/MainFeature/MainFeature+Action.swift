@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import Foundation
 
-///// `MainFeature+Action`
+/// `MainFeature+Action`
 extension MainFeature {
     
     @CasePathable
@@ -29,6 +29,9 @@ extension MainFeature {
             case viewDidAppear
         
         }
+        
+        // MARK: Path
+        case path(StackAction<CurrencyRateDetailFeature.State, CurrencyRateDetailFeature.Action>)
         
         // MARK: Children Action
         case currencyConverter(CurrencyConverterFeature.Action)

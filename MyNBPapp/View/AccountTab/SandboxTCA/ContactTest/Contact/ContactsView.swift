@@ -9,6 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct ContactsView: View {
+    
   @Bindable var store: StoreOf<ContactsFeature>
   
   var body: some View {
