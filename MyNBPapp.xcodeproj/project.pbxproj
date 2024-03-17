@@ -329,16 +329,14 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		9312DEF92B9AF8C200C3D441 /* Main */ = {
+		9312DEF92B9AF8C200C3D441 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				9312DEF32B9AF86800C3D441 /* Enum */,
-				9312DEFB2B9AF8D500C3D441 /* MainFeature */,
-				938C18A02B9A641000D92D50 /* MainView.swift */,
+				93335AA12BA7690F001F1610 /* Main */,
+				9312DF0B2B9B200C00C3D441 /* CurrencyConverter */,
 				93EC19462BA2445000273F13 /* MarketRate */,
-				93EC19432BA2443F00273F13 /* MarketRateView.swift */,
 			);
-			path = Main;
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 		9312DEFB2B9AF8D500C3D441 /* MainFeature */ = {
@@ -464,6 +462,26 @@
 			path = ContactDetailFeature;
 			sourceTree = "<group>";
 		};
+		93335A9F2BA767F9001F1610 /* SandboxTCA */ = {
+			isa = PBXGroup;
+			children = (
+				93335A662BA455E3001F1610 /* ContactTest */,
+				93517C392B88CBAB009252E9 /* TestFeature */,
+				93517C422B88CD99009252E9 /* TestView.swift */,
+			);
+			path = SandboxTCA;
+			sourceTree = "<group>";
+		};
+		93335AA12BA7690F001F1610 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9312DEF32B9AF86800C3D441 /* Enum */,
+				9312DEFB2B9AF8D500C3D441 /* MainFeature */,
+				938C18A02B9A641000D92D50 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		93373EC62B88F3FC00975A6B /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,11 +531,10 @@
 		9357DA0E2B5F10870097673C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9312DEF92B9AF8C200C3D441 /* Main */,
-				9312DF0B2B9B200C00C3D441 /* CurrencyConverter */,
-				9357DA132B6065D00097673C /* CurrencyRate */,
-				9357DA122B6065C90097673C /* Favorites */,
-				9357DA142B6065DA0097673C /* Account */,
+				9312DEF92B9AF8C200C3D441 /* MainTab */,
+				9357DA132B6065D00097673C /* CurrencyRateTab */,
+				9357DA122B6065C90097673C /* FavoritesTab */,
+				9357DA142B6065DA0097673C /* AccountTab */,
 				9312DF0C2B9B202600C3D441 /* Old */,
 			);
 			path = View;
@@ -532,15 +549,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		9357DA122B6065C90097673C /* Favorites */ = {
+		9357DA122B6065C90097673C /* FavoritesTab */ = {
 			isa = PBXGroup;
 			children = (
 				9357DA0C2B5D9B900097673C /* FavoritesView.swift */,
 			);
-			path = Favorites;
+			path = FavoritesTab;
 			sourceTree = "<group>";
 		};
-		9357DA132B6065D00097673C /* CurrencyRate */ = {
+		9357DA132B6065D00097673C /* CurrencyRateTab */ = {
 			isa = PBXGroup;
 			children = (
 				93E9A80A2B6E628600B37B26 /* ViewModel */,
@@ -548,21 +565,19 @@
 				93E9A80B2B6EB56C00B37B26 /* ChartView */,
 				9357DA0A2B5D9B4F0097673C /* CurrencyRateView.swift */,
 			);
-			path = CurrencyRate;
+			path = CurrencyRateTab;
 			sourceTree = "<group>";
 		};
-		9357DA142B6065DA0097673C /* Account */ = {
+		9357DA142B6065DA0097673C /* AccountTab */ = {
 			isa = PBXGroup;
 			children = (
-				93335A662BA455E3001F1610 /* ContactTest */,
-				93517C392B88CBAB009252E9 /* TestFeature */,
-				93517C422B88CD99009252E9 /* TestView.swift */,
+				93335A9F2BA767F9001F1610 /* SandboxTCA */,
 				930B2E9C2B667B0500BEB7B7 /* AccountFeature */,
 				9357DA0F2B6065120097673C /* AccountView.swift */,
 				930B2EA82B6694C900BEB7B7 /* SettingsFeature */,
 				9357DA152B6066F80097673C /* SettingsView.swift */,
 			);
-			path = Account;
+			path = AccountTab;
 			sourceTree = "<group>";
 		};
 		9357DA672B63CF240097673C /* Frameworks */ = {
@@ -716,6 +731,7 @@
 		93EC19462BA2445000273F13 /* MarketRate */ = {
 			isa = PBXGroup;
 			children = (
+				93EC19432BA2443F00273F13 /* MarketRateView.swift */,
 			);
 			path = MarketRate;
 			sourceTree = "<group>";
