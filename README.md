@@ -100,3 +100,4 @@ https://github.com/SebaKrk/MyNBPapp
     * B: Multiple presentation destinations
     * C: Migration to TCA 1.8.2
         - clean up the TCA code
+    * D: Improve domain modeling

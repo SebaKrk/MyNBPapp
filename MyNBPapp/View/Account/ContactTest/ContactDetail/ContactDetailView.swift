@@ -8,53 +8,32 @@
 import ComposableArchitecture
 import SwiftUI
 
-@Reducer
-struct ContactDetailFeature {
-    
-    @ObservableState
-    struct State: Equatable {
-        
-        var contact: Contact
-    
-    }
-    
-    @CasePathable
-    enum Action {
-        
-    }
-    
-    var body: some ReducerOf<Self> {
-        Reduce { state, action in
-            switch action {
-        
-            }
-        }
-    }
-}
-
 struct ContactDetailView: View {
     
-    let store: StoreOf<ContactDetailFeature>
+    @Bindable var store: StoreOf<ContactDetailFeature>
     
     var body: some View {
         Form {
-            
+            Button("Delete") {
+                store.send(.deleteButtonTapped)
+            }
         }
         .navigationTitle(Text(store.contact.name))
+        .alert($store.scope(state: \.alert, action: \.alert))
     }
     
 }
 
 #Preview {
-  NavigationStack {
-    ContactDetailView(
-      store: Store(
-        initialState: ContactDetailFeature.State(
-          contact: Contact(id: UUID(), name: "Blob")
+    NavigationStack {
+        ContactDetailView(
+            store: Store(
+                initialState: ContactDetailFeature.State(
+                    contact: Contact(id: UUID(), name: "Blob")
+                )
+            ) {
+                ContactDetailFeature()
+            }
         )
-      ) {
-          ContactDetailFeature()
-      }
-    )
-  }
+    }
 }
