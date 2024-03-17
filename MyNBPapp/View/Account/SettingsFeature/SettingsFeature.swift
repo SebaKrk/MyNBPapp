@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import Foundation
 
+/// `SettingsFeature+Reducer`
 @Reducer
 struct SettingsFeature {
     
@@ -23,5 +24,23 @@ struct SettingsFeature {
     // MARK: - Dependencies
 
     @Dependency(\.dismiss) var dismiss
+    
+    // MARK: - Reducer
+    
+    var body: some ReducerOf<Self> {
+        Reduce { state, action in
+            switch action {
+                
+            case .view(.userTapedDoneButton):
+                print("userTapedDoneButton")
+                return .none
+            case .view(.userTapedCancelButton):
+                print("userTapedCancelButton")
+                return .run { _ in
+                    await dismiss()
+                }
+            }
+        }
+    }
 
 }

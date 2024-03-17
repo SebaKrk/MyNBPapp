@@ -20,7 +20,8 @@ extension CurrencyRateView {
                         yStart: .value("Average rate", viewModel.difference(value: item.mid)),
                         yEnd: .value("Average rate", item.mid )
                     )
-                    .foregroundStyle(Color("GreenChart").opacity(0.1).gradient)
+                    .foregroundStyle(Color("GreenChart")
+                        .opacity(0.1).gradient)
                     
                     LineMark(
                         x: .value("Date", viewModel.convertDateToDay(item.effectiveDate)),

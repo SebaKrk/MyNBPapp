@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%.2f" : {
-
-    },
     "%@" : {
 
     },
@@ -19,6 +16,9 @@
           }
         }
       }
+    },
+    "%lf" : {
+
     },
     "1 Euro" : {
 
@@ -37,6 +37,9 @@
     "Account View" : {
 
     },
+    "Are you sure?" : {
+
+    },
     "Average rate" : {
 
     },
@@ -53,7 +56,28 @@
         }
       }
     },
+    "Chcę" : {
+
+    },
+    "Contacts" : {
+
+    },
+    "Currency converter" : {
+
+    },
+    "Currency picker" : {
+
+    },
+    "currency rate picker" : {
+
+    },
+    "Data: %@" : {
+
+    },
     "Date" : {
+
+    },
+    "Delete" : {
 
     },
     "Done" : {
@@ -65,6 +89,9 @@
           }
         }
       }
+    },
+    "Dostanę" : {
+
     },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
@@ -96,6 +123,9 @@
           }
         }
       }
+    },
+    "name" : {
+
     },
     "National Bank of Poland" : {
       "localizations" : {
@@ -133,6 +163,9 @@
         }
       }
     },
+    "Płacę" : {
+
+    },
     "PLN" : {
 
     },
@@ -146,6 +179,12 @@
           }
         }
       }
+    },
+    "Sales Picker" : {
+
+    },
+    "Save" : {
+
     },
     "select a tab" : {
       "localizations" : {
@@ -168,6 +207,9 @@
       }
     },
     "SettingsView" : {
+
+    },
+    "Wpisz liczbę do przekonwertowania" : {
 
     }
   },

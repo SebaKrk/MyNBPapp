@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import Foundation
 
+/// `SettingsFeature+State`
 extension SettingsFeature {
     
     @ObservableState
