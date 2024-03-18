@@ -19,6 +19,8 @@ extension TestFeature {
         enum View {
             case userTapedTestButton
         }
+        
+        case path(StackAction<TestFeature2.State, TestFeature2.Action>)
     }
     
 }

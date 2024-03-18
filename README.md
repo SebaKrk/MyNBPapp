@@ -107,5 +107,5 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-0016 CurrencyRateDetailFeature
     * A: dodanie NavigationStack
-    
- 
+        - dodanie horizontalSizeClass do MainView, CurrencyConverterView 
+

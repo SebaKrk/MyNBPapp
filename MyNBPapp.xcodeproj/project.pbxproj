@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930948712BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948702BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift */; };
+		930948732BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948722BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift */; };
+		930948772BA8FFA900CF6284 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948762BA8FFA900CF6284 /* TestView2.swift */; };
 		930B2E9E2B667B3D00BEB7B7 /* AccountFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */; };
 		930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */; };
 		930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2EA12B667BA600BEB7B7 /* AccountFeature+State.swift */; };
@@ -158,6 +161,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		930948702BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRateDetail+Action.swift"; sourceTree = "<group>"; };
+		930948722BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRateDetail+State.swift"; sourceTree = "<group>"; };
+		930948762BA8FFA900CF6284 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFeature.swift; sourceTree = "<group>"; };
 		930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+Action.swift"; sourceTree = "<group>"; };
 		930B2EA12B667BA600BEB7B7 /* AccountFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+State.swift"; sourceTree = "<group>"; };
@@ -473,6 +479,7 @@
 				93335A662BA455E3001F1610 /* ContactTest */,
 				93517C392B88CBAB009252E9 /* TestFeature */,
 				93517C422B88CD99009252E9 /* TestView.swift */,
+				930948762BA8FFA900CF6284 /* TestView2.swift */,
 			);
 			path = SandboxTCA;
 			sourceTree = "<group>";
@@ -508,6 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				934255202BA7A12F00D787D6 /* CurrencyRateDetailFeature.swift */,
+				930948722BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift */,
+				930948702BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift */,
 			);
 			path = CurrencyRateDetailFeature;
 			sourceTree = "<group>";
@@ -1034,6 +1043,7 @@
 				930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */,
 				93A3EB532B6584BB007BFCDC /* CurrencyCellWithBalance.swift in Sources */,
 				938C18A12B9A641000D92D50 /* MainView.swift in Sources */,
+				930948772BA8FFA900CF6284 /* TestView2.swift in Sources */,
 				9312DF132B9B209700C3D441 /* CurrencyConverterFeature.swift in Sources */,
 				9312DEFD2B9AF8F400C3D441 /* MainFeature.swift in Sources */,
 				9357DA102B6065120097673C /* AccountView.swift in Sources */,
@@ -1052,6 +1062,7 @@
 				93335A8E2BA751BC001F1610 /* AddContactFeature.swift in Sources */,
 				93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */,
 				93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */,
+				930948732BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift in Sources */,
 				93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */,
 				934255212BA7A12F00D787D6 /* CurrencyRateDetailFeature.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
@@ -1063,6 +1074,7 @@
 				9342551F2BA7A12400D787D6 /* CurrencyRateDetailView.swift in Sources */,
 				93EC19442BA2443F00273F13 /* MarketRateView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
+				930948712BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift in Sources */,
 				93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */,
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
 				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,
