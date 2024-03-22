@@ -7,6 +7,7 @@
 
 import Commons
 import ComposableArchitecture
+import DataModels
 import Foundation
 
 ///// `MainFeature+State`
@@ -14,8 +15,10 @@ extension MainFeature {
 
     @ObservableState
     struct State: Equatable {
-        
+    
         // MARK: Properties
+        var exchange: Exchange?
+        
         var selectedCurrencySymbol: GlobalCurrencySymbols = .polishZloty
         
         var selectedCurrency: MainCurrencyState = .euro
@@ -23,10 +26,20 @@ extension MainFeature {
         var selectedTransitionTab: CurrencyTransactionType = .average
         
         // MARK: Path
+        
         var path = StackState<CurrencyRateDetailFeature.State>()
         
         // MARK: Children state
+        
         var currencyConverter = CurrencyConverterFeature.State()
+        
+        
+        // MARK: - Equatable
+        
+        static func == (lhs: MainFeature.State, rhs: MainFeature.State) -> Bool {
+            lhs.exchange == rhs.exchange &&
+            lhs.exchange?.code == rhs.exchange?.code
+        }
     }
 
 }

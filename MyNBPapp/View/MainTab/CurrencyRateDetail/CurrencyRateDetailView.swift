@@ -9,7 +9,6 @@ import ComposableArchitecture
 import Charts
 import SwiftUI
 
-
 struct CurrencyRateDetailView: View {
     
     var store: StoreOf<CurrencyRateDetailFeature>

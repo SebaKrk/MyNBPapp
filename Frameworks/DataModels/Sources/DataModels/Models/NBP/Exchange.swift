@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Exchange: Decodable {
+public struct Exchange: Decodable, Equatable {
     
     public let table: String
     
@@ -40,5 +40,11 @@ public struct Exchange: Decodable {
         
         self.rates = rates
     }
+    
+    public static func == (lhs: Exchange, rhs: Exchange) -> Bool {
+           lhs.table == rhs.table &&
+           lhs.currency == rhs.currency &&
+           lhs.code == rhs.code 
+       }
     
 }

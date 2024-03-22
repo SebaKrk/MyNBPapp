@@ -12,6 +12,10 @@ import SwiftUI
 @Reducer
 struct MainFeature {
     
+    // MARK: - Properties
+    
+    let service = MainFeatureServicesCoordinator()
+    
     // MARK: - Reducer
     var body: some ReducerOf<Self> {
         CombineReducers {
