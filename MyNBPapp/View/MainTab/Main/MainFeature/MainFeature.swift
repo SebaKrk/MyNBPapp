@@ -34,8 +34,13 @@ struct MainFeature {
                     return .none
                     
                 case .view(.viewDidAppear):
-                    print("Strzał po dane")
-                    return .none
+                    return .run { send in
+                        let x = try await service.getNBPData(table: .a,
+                                                             symbol: .euro,
+                                                             from: Date(),
+                                                             to: Date())
+                        dump(x)
+                    }
                     
                 default: return .none
                 }
