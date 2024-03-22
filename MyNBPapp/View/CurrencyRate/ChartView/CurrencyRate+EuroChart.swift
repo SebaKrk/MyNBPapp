@@ -7,6 +7,7 @@
 
 import Charts
 import SwiftUI
+import DataModels
 
 extension CurrencyRateView {
     
@@ -14,20 +15,23 @@ extension CurrencyRateView {
     var euroChart: some View {
         Chart {
             if let rates = viewModel.exchange?.rates {
-                ForEach(rates, id: \.effectiveDate) { item in
-                    AreaMark(
-                        x: .value("Date", viewModel.convertDateToDay(item.effectiveDate)),
-                        yStart: .value("Average rate", viewModel.difference(value: item.mid)),
-                        yEnd: .value("Average rate", item.mid )
-                    )
-                    .foregroundStyle(Color("GreenChart")
-                        .opacity(0.1).gradient)
-                    
-                    LineMark(
-                        x: .value("Date", viewModel.convertDateToDay(item.effectiveDate)),
-                        y: .value("Average rate", item.mid)
-                    )
-                    .foregroundStyle(Color("GreenChart"))
+                ForEach(rates, id: \.no) { rate in
+                    if let item = rate as? RatesA {
+                        LineMark(
+                            x: .value("Date", item.effectiveDate),
+                            y: .value("Mid", item.mid)
+                        )
+                        .foregroundStyle(Color("GreenChart"))
+                        
+                        AreaMark(
+                            x: .value("Date", item.effectiveDate),
+                            yStart: .value("Average rate", viewModel.difference(value: item.mid)),
+                            yEnd: .value("Average rate", item.mid )
+                        )
+                        .foregroundStyle(Color("GreenChart"))
+                        .opacity(0.1)
+                        .interpolationMethod(.linear)
+                    }
                 }
             }
         }

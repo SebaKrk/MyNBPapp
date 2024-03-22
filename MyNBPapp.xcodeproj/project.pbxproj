@@ -84,6 +84,7 @@
 		93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */; };
 		93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */; };
 		93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8122B6EE15100B37B26 /* CurrencyRate+Widget.swift */; };
+		93EC19442BA2443F00273F13 /* MarketRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC19432BA2443F00273F13 /* MarketRateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+EuroChart.swift"; sourceTree = "<group>"; };
 		93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		93E9A8122B6EE15100B37B26 /* CurrencyRate+Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+Widget.swift"; sourceTree = "<group>"; };
+		93EC19432BA2443F00273F13 /* MarketRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,8 @@
 				9312DEF32B9AF86800C3D441 /* Enum */,
 				9312DEFB2B9AF8D500C3D441 /* MainFeature */,
 				938C18A02B9A641000D92D50 /* MainView.swift */,
+				93EC19462BA2445000273F13 /* MarketRate */,
+				93EC19432BA2443F00273F13 /* MarketRateView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -609,6 +613,13 @@
 			path = WidgetView;
 			sourceTree = "<group>";
 		};
+		93EC19462BA2445000273F13 /* MarketRate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MarketRate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -898,6 +909,7 @@
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */,
 				9312DF052B9B1D9200C3D441 /* MainFeature+Action.swift in Sources */,
+				93EC19442BA2443F00273F13 /* MarketRateView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */,
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,

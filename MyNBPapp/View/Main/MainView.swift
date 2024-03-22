@@ -5,6 +5,7 @@
 //  Created by Sebastian Sciuba on 07/03/2024.
 //
 
+import Commons
 import ComposableArchitecture
 import SwiftUI
 
@@ -71,14 +72,15 @@ struct MainView: View {
     @ViewBuilder
     var currencyRateBox: some View {
         GroupBox {
-            Text(store.selectedCurrency.title)
-                .frame(height: 300)
-            
+            HStack {
+                MarketRateView()
+                Text(store.selectedCurrency.title)
+            }
+            .frame(height: 300)
         } label: {
             currencyRatePicker
         }
     }
-    
     
     @ViewBuilder
     var currencyTableBox: some View {
@@ -114,4 +116,5 @@ struct MainView: View {
         }
         .pickerStyle(.segmented)
     }
+    
 }
