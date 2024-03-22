@@ -23,7 +23,7 @@ extension CurrencyRateView {
                 euroChart
             }
         } label: {
-            //Label("euro".uppercased(), systemImage: "chart.line.uptrend.xyaxis")
+//            Label("euro".uppercased(), systemImage: "chart.line.uptrend.xyaxis")
         }
         .padding()
     }
@@ -34,7 +34,7 @@ extension CurrencyRateView {
             Text("1 Euro")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-            Text(String(format: "%.2f Złoty", viewModel.currentExchangeRate))
+            Text(String(format: "%.3f Złoty", viewModel.currentExchangeRate))
                 .font(.headline)
         }
         .padding()

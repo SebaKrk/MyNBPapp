@@ -18,7 +18,7 @@ struct CurrencyRateView: View {
         }
         .onAppear {
             Task {
-                try await viewModel.fetchData()
+                try await viewModel.fetchData(viewModel.dateMinus30days, to: viewModel.todayDate)
             }
         }
     }

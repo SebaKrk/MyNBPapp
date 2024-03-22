@@ -12,8 +12,8 @@ import Foundation
 extension TestFeature {
     
     @ObservableState
-    struct State:Equatable {
-        
+    struct State: Equatable {
+        var path = StackState<TestFeature2.State>()
     }
     
 }

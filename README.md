@@ -93,6 +93,10 @@ https://github.com/SebaKrk/MyNBPapp
         - CurrencyConverterFeature
     * D: Dodanie feature toggle isMultipleSourcesEnabled
     * E: Stworzenie MarketRate
+    * F: Refactor Model, serwisu NBP, porzadki
+        - porządki w CurrencyRateViewModel
+        - porządki w CurrencyRate+EuroChart
+    * (F): Rozwiazanie konfliktów z developem
 
 ### IOS-0014 TCA Navigation
     * A: Navigation
@@ -106,6 +110,7 @@ https://github.com/SebaKrk/MyNBPapp
     * A: Uporzadkowanie drzewa plików
 
 ### IOS-0016 CurrencyRateDetailFeature
-    * A: dodanie NavigationStack
-    
- 
+    * A: UI CurrencyRateDetail
+        - dodanie NavigationStack
+        - dodanie horizontalSizeClass do MainView, CurrencyConverterView 
+        - wstępny szkic CurrencyRateDetailView

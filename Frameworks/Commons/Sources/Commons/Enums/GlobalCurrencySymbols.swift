@@ -60,5 +60,4 @@ public enum GlobalCurrencySymbols: String, Equatable, CaseIterable {
         case .chineseYuanRenminbi: return "chineseyuanrenminbisign.circle"
         }
     }
-    
 }
