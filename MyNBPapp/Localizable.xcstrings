@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "-,049 %" : {
+
+    },
+    "-0,0211 zl" : {
+
+    },
     "%@" : {
 
     },
@@ -20,6 +26,12 @@
     "%lf" : {
 
     },
+    "%lf zł" : {
+
+    },
+    "1 EUR - EUFGiW" : {
+
+    },
     "1 Euro" : {
 
     },
@@ -37,10 +49,10 @@
     "Account View" : {
 
     },
-    "Average rate" : {
+    "Are you sure?" : {
 
     },
-    "Button test" : {
+    "Average rate" : {
 
     },
     "Cancel" : {
@@ -56,6 +68,9 @@
     "Chcę" : {
 
     },
+    "Contacts" : {
+
+    },
     "Currency converter" : {
 
     },
@@ -69,6 +84,9 @@
 
     },
     "Date" : {
+
+    },
+    "Delete" : {
 
     },
     "Done" : {
@@ -116,6 +134,9 @@
       }
     },
     "Mid" : {
+
+    },
+    "name" : {
 
     },
     "National Bank of Poland" : {
@@ -174,6 +195,9 @@
     "Sales Picker" : {
 
     },
+    "Save" : {
+
+    },
     "select a tab" : {
       "localizations" : {
         "pl" : {
@@ -195,6 +219,9 @@
       }
     },
     "SettingsView" : {
+
+    },
+    "Tabela" : {
 
     },
     "Wpisz liczbę do przekonwertowania" : {
