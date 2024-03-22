@@ -21,7 +21,6 @@ struct TestFeature {
     
     let service = TestFeatureServices()
         
-    
     // MARK: - Reducer
     var body: some ReducerOf<Self> {
         Reduce { state , action in
@@ -29,8 +28,14 @@ struct TestFeature {
             case .view(.userTapedTestButton):
                 print("test")
                 return .none
+            case .path:
+                return .none
             }
         }
+        .forEach(\.path, action: \.path) {
+            TestFeature2()
+        }
+
     }
 
 }

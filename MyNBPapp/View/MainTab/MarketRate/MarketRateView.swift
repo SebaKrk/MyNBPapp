@@ -22,7 +22,6 @@ class MarketRateViewModel: ObservableObject {
     }
 }
 
-
 struct MarketRateView: View {
     
     @StateObject var viewModel = MarketRateViewModel()
