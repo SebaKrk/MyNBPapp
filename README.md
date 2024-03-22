@@ -96,3 +96,21 @@ https://github.com/SebaKrk/MyNBPapp
     * F: Refactor Model, serwisu NBP, porzadki
         - porządki w CurrencyRateViewModel
         - porządki w CurrencyRate+EuroChart
+    * (F): Rozwiazanie konfliktów z developem
+
+### IOS-0014 TCA Navigation
+    * A: Navigation
+        - Your first presentation 
+    * B: Multiple presentation destinations
+    * C: Migration to TCA 1.8.2
+        - clean up the TCA code
+    * D: Improve domain modeling
+    
+### IOS-0015 Uporzadkowanie drzewa plików
+    * A: Uporzadkowanie drzewa plików
+
+### IOS-0016 CurrencyRateDetailFeature
+    * A: UI CurrencyRateDetail
+        - dodanie NavigationStack
+        - dodanie horizontalSizeClass do MainView, CurrencyConverterView 
+        - wstępny szkic CurrencyRateDetailView
