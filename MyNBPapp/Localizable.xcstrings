@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "-,049 %" : {
+
+    },
+    "-0,0211 zl" : {
+
+    },
     "%@" : {
 
     },
@@ -18,6 +24,12 @@
       }
     },
     "%lf" : {
+
+    },
+    "%lf zł" : {
+
+    },
+    "1 EUR - EUFGiW" : {
 
     },
     "1 Euro" : {
@@ -66,9 +78,6 @@
 
     },
     "currency rate picker" : {
-
-    },
-    "CurrencyRateDetailFeature" : {
 
     },
     "Data: %@" : {
@@ -207,6 +216,9 @@
       }
     },
     "SettingsView" : {
+
+    },
+    "Tabela" : {
 
     },
     "Wpisz liczbę do przekonwertowania" : {

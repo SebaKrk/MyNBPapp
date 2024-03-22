@@ -106,6 +106,7 @@ https://github.com/SebaKrk/MyNBPapp
     * A: Uporzadkowanie drzewa plików
 
 ### IOS-0016 CurrencyRateDetailFeature
-    * A: dodanie NavigationStack
+    * A: UI CurrencyRateDetail
+        - dodanie NavigationStack
         - dodanie horizontalSizeClass do MainView, CurrencyConverterView 
-
+        - wstępny szkic CurrencyRateDetailView
