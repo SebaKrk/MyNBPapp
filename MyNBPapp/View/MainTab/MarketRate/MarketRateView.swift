@@ -31,6 +31,7 @@ struct MarketRateView: View {
         VStack {
             if let data = viewModel.data?.rates {
                 ForEach(data, id: \.self) { rate in
+                    createCell("Ostatni Kurs", rate.ask)
                     createCell("BID", rate.bid)
                     createCell("ASK", rate.ask)
                     Text("Data: \(rate.effectiveDate)")
@@ -38,7 +39,6 @@ struct MarketRateView: View {
             }
         }
         .frame(width: 150)
-        
     }
     
     @ViewBuilder
