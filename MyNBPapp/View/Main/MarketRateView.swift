@@ -5,14 +5,6 @@
 //  Created by Sebastian Sciuba on 13/03/2024.
 //
 
-//
-//            Text("Ostatni kurs")
-//            Text("Zmiana %")
-//            Text("Średnia")
-//            Text("BID")
-//            Text("ASK")
-//            Text("Data")
-
 import SwiftUI
 
 class MarketRateViewModel: ObservableObject {
@@ -40,6 +32,7 @@ struct MarketRateView: View {
         VStack {
             if let data = viewModel.data?.rates {
                 ForEach(data, id: \.self) { rate in
+                    createCell("Ostatni Kurs", rate.ask)
                     createCell("BID", rate.bid)
                     createCell("ASK", rate.ask)
                     Text("Data: \(rate.effectiveDate)")
@@ -47,7 +40,6 @@ struct MarketRateView: View {
             }
         }
         .frame(width: 150)
-        
     }
     
     @ViewBuilder

@@ -93,3 +93,6 @@ https://github.com/SebaKrk/MyNBPapp
         - CurrencyConverterFeature
     * D: Dodanie feature toggle isMultipleSourcesEnabled
     * E: Stworzenie MarketRate
+    * F: Refactor Model, serwisu NBP, porzadki
+        - porządki w CurrencyRateViewModel
+        - porządki w CurrencyRate+EuroChart
