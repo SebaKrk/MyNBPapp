@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import Charts
+import DataModels
 import SwiftUI
 
 struct CurrencyRateDetailView: View {
@@ -14,27 +15,27 @@ struct CurrencyRateDetailView: View {
     var store: StoreOf<CurrencyRateDetailFeature>
 
     var body: some View {
-        VStack {
-            chartTitle
-            HStack {
-                chartView
-                currencyTable
+        if let exchange = store.exchange {
+            VStack {
+                createChartTitle(exchange)
+                HStack {
+                    chartView
+                    currencyTable
+                }
+                option
             }
-            option
+            .padding()
+        } else {
+            Text("dupa")
         }
-        .padding()
     }
     
     /// aktualny kurs z dnia dzisiejszego (najbardziej aktualny)
     @ViewBuilder
-    var chartTitle: some View {
+    func createChartTitle(_ exchange: Exchange) -> some View {
         GroupBox {
             HStack {
-                Text("1 EUR - EUFGiW")
-                Spacer()
-                Text("\(4.3031) zł")
-                Text("-,049 %")
-                Text("-0,0211 zl")
+                Text(exchange.currency)
             }
         }
     }
@@ -48,21 +49,7 @@ struct CurrencyRateDetailView: View {
     
     @ViewBuilder
     var currencyTable: some View {
-        //Table( ... ) {
-        //    TableColumn ( ... )
-        //}
-        
-        // Sredni Kurs:
-        // Data poczatkowa
-        // Data Koncowa
-        // Zmiana %
-        // Zmiana PLN
-        // Minium
-        // Maximum
-        // Średnia w okresie
-        // Kupno
-        // Sprzedaż
-        
+
         Text("Tabela")
     }
     
@@ -79,3 +66,25 @@ struct CurrencyRateDetailView: View {
     }
     
 }
+
+//Table( ... ) {
+//    TableColumn ( ... )
+//}
+
+// Sredni Kurs:
+// Data poczatkowa
+// Data Koncowa
+// Zmiana %
+// Zmiana PLN
+// Minium
+// Maximum
+// Średnia w okresie
+// Kupno
+// Sprzedaż
+
+
+//Text("1 EUR - EUFGiW")
+//Spacer()
+//Text("\(4.3031) zł")
+//Text("-,049 %")
+//Text("-0,0211 zl")

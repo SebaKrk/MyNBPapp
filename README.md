@@ -116,4 +116,5 @@ https://github.com/SebaKrk/MyNBPapp
         - wstępny szkic CurrencyRateDetailView
     * B: Strzał do NBP
         - rozszsznie modeli o Equatable
-    * C: Wybór zakresu daty 
+    * C: Wybór zakresu daty w MainFeature 
+    * D: Przekazanie danych z MainFeature do CurrencyRateDetailFeature
