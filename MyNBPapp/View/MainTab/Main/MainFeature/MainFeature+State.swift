@@ -25,6 +25,8 @@ extension MainFeature {
         
         var selectedTransitionTab: CurrencyTransactionType = .average
         
+        var dateForm: CalendarCurrencyOption = .month
+        
         // MARK: Path
         
         var path = StackState<CurrencyRateDetailFeature.State>()
