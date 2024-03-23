@@ -115,36 +115,36 @@ struct MainView: View {
     
     @ViewBuilder
     var currencyRateBox: some View {
-        GroupBox {
-            Group {
-                if let rates = store.exchange?.rates {
+        if let exchange = store.exchange {
+            GroupBox {
+                Group {
                     List {
-                        ForEach(rates.compactMap { $0 as? RatesA }, id: \.no) { rateA in
+                        ForEach(exchange.rates.compactMap { $0 as? RatesA },
+                                id: \.no) { rateA in
                             Text("Mid: \(rateA.mid, specifier: "%.2f")")
                         }
                     }
-                    .padding(.top, 10)
                     .listStyle(.plain)
                 }
+                .frame(height: 300)
+            } label: {
+                currencyRateBar(exchange)
             }
-            .frame(height: 300)
-        } label: {
-            currencyRateBar
         }
     }
     
     @ViewBuilder
-    var currencyRateBar: some View {
+    func currencyRateBar(_ data: Exchange) -> some View {
         HStack {
             currencyRatePicker
             Spacer()
-            expandButton
+            expandButton(data)
         }
     }
     
     @ViewBuilder
-    var expandButton: some View {
-        NavigationLink(state: CurrencyRateDetailFeature.State()) {
+    func expandButton(_ data: Exchange) -> some View {
+        NavigationLink(state: CurrencyRateDetailFeature.State(exchange: data) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }
     }
