@@ -114,3 +114,6 @@ https://github.com/SebaKrk/MyNBPapp
         - dodanie NavigationStack
         - dodanie horizontalSizeClass do MainView, CurrencyConverterView 
         - wstępny szkic CurrencyRateDetailView
+    * B: Strzał do NBP
+        - rozszsznie modeli o Equatable
+    * C: Wybór zakresu daty 
