@@ -7,6 +7,7 @@
 
 import Commons
 import ComposableArchitecture
+import DataModels
 import Foundation
 
 /// `MainFeature+Action`
@@ -16,25 +17,33 @@ extension MainFeature {
     enum Action: ViewAction {
         
         // MARK: Action
-        case selectedTabChange(CurrencyTransactionType)
+        
+        case selectedTabTransactionChange(CurrencyTransactionType)
         
         case selectedCurrencyTabChange(MainCurrencyState)
         
+        case updateExchangeData(Exchange)
+        
         // MARK: View Action
+        
         case view(View)
         
         enum View {
             
             case selectedCurrencySymbolChange(GlobalCurrencySymbols)
             
+            case selectedCalendarCurrencyOptionChange(CalendarCurrencyOption)
+            
             case viewDidAppear
         
         }
         
         // MARK: Path
-        case path(StackAction<CurrencyRateDetailFeature.State, CurrencyRateDetailFeature.Action>)
+        
+        case path(StackAction<ContainerRateDetailFeature.State, ContainerRateDetailFeature.Action>)
         
         // MARK: Children Action
+        
         case currencyConverter(CurrencyConverterFeature.Action)
     }
     
