@@ -40,7 +40,7 @@ extension MainFeature {
         
         // MARK: Path
         
-        case path(StackAction<CurrencyRateDetailFeature.State, CurrencyRateDetailFeature.Action>)
+        case path(StackAction<ContainerRateDetailFeature.State, ContainerRateDetailFeature.Action>)
         
         // MARK: Children Action
         

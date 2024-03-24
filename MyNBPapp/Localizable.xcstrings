@@ -1,6 +1,15 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%.2f%%" : {
+
+    },
+    "%.3f zł" : {
+
+    },
+    "%.4f zł" : {
+
+    },
     "%@" : {
 
     },
@@ -43,6 +52,9 @@
     "Average rate" : {
 
     },
+    "brak danych" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "pl" : {
@@ -71,6 +83,9 @@
     "Data: %@" : {
 
     },
+    "date" : {
+
+    },
     "Date" : {
 
     },
@@ -90,9 +105,6 @@
     "Dostanę" : {
 
     },
-    "dupa" : {
-
-    },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
       "localizations" : {
@@ -105,6 +117,9 @@
       }
     },
     "FavoritesView" : {
+
+    },
+    "Kurs euro Strefa Euro NBP" : {
 
     },
     "Main" : {
@@ -216,6 +231,9 @@
 
     },
     "Tabela" : {
+
+    },
+    "value" : {
 
     },
     "Wpisz liczbę do przekonwertowania" : {

@@ -58,7 +58,7 @@ struct MainView: View {
             .navigationBarTitleDisplayMode(.inline)
             .padding()
         } destination: { store in
-            CurrencyRateDetailView(store: store)
+            ContainerRateDetailView(store: store)
         }
         .onAppear {
             send(.viewDidAppear)
@@ -144,7 +144,7 @@ struct MainView: View {
     
     @ViewBuilder
     func expandButton(_ data: Exchange) -> some View {
-        NavigationLink(state: CurrencyRateDetailFeature.State(exchange: data) ) {
+        NavigationLink(state: ContainerRateDetailFeature.State(exchange: data) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }
     }

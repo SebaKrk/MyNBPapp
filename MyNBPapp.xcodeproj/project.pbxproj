@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		930948712BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948702BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift */; };
-		930948732BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948722BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift */; };
+		930948712BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948702BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift */; };
+		930948732BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948722BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift */; };
 		930948772BA8FFA900CF6284 /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930948762BA8FFA900CF6284 /* TestView2.swift */; };
 		930B2E9E2B667B3D00BEB7B7 /* AccountFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */; };
 		930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */; };
@@ -45,7 +45,7 @@
 		93373EC82B88F40800975A6B /* TestFeatureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93373EC72B88F40800975A6B /* TestFeatureServices.swift */; };
 		9338604B2B8BCA4B0062DBC0 /* CurrencyRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9338604A2B8BCA4B0062DBC0 /* CurrencyRateCell.swift */; };
 		9342551F2BA7A12400D787D6 /* CurrencyRateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342551E2BA7A12400D787D6 /* CurrencyRateDetailView.swift */; };
-		934255212BA7A12F00D787D6 /* CurrencyRateDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934255202BA7A12F00D787D6 /* CurrencyRateDetailFeature.swift */; };
+		934255212BA7A12F00D787D6 /* ContainerRateDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934255202BA7A12F00D787D6 /* ContainerRateDetailFeature.swift */; };
 		93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C3A2B88CBB7009252E9 /* TestFeature.swift */; };
 		93517C3F2B88CC3E009252E9 /* TestFeature+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C3E2B88CC3E009252E9 /* TestFeature+Action.swift */; };
 		93517C412B88CCA2009252E9 /* TestFeature+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C402B88CCA2009252E9 /* TestFeature+State.swift */; };
@@ -103,6 +103,11 @@
 		93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */; };
 		93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8122B6EE15100B37B26 /* CurrencyRate+Widget.swift */; };
 		93EC19442BA2443F00273F13 /* MarketRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC19432BA2443F00273F13 /* MarketRateView.swift */; };
+		93F782942BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782932BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift */; };
+		93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782972BB0835C00ACB39A /* ContainerRateDetailView.swift */; };
+		93F7829E2BB0CB3C00ACB39A /* ChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7829D2BB0CB3C00ACB39A /* ChartType.swift */; };
+		93F782A22BB0CBC700ACB39A /* CurrencyChartViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782A12BB0CBC700ACB39A /* CurrencyChartViewFactory.swift */; };
+		93F782A42BB0CC1300ACB39A /* ChartViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782A32BB0CC1300ACB39A /* ChartViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,8 +167,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		930948702BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRateDetail+Action.swift"; sourceTree = "<group>"; };
-		930948722BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRateDetail+State.swift"; sourceTree = "<group>"; };
+		930948702BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRateDetailFeature+Action.swift"; sourceTree = "<group>"; };
+		930948722BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRateDetailFeature+State.swift"; sourceTree = "<group>"; };
 		930948762BA8FFA900CF6284 /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		930B2E9D2B667B3D00BEB7B7 /* AccountFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFeature.swift; sourceTree = "<group>"; };
 		930B2E9F2B667B5900BEB7B7 /* AccountFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountFeature+Action.swift"; sourceTree = "<group>"; };
@@ -199,7 +204,7 @@
 		93373EC72B88F40800975A6B /* TestFeatureServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFeatureServices.swift; sourceTree = "<group>"; };
 		9338604A2B8BCA4B0062DBC0 /* CurrencyRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateCell.swift; sourceTree = "<group>"; };
 		9342551E2BA7A12400D787D6 /* CurrencyRateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateDetailView.swift; sourceTree = "<group>"; };
-		934255202BA7A12F00D787D6 /* CurrencyRateDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateDetailFeature.swift; sourceTree = "<group>"; };
+		934255202BA7A12F00D787D6 /* ContainerRateDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRateDetailFeature.swift; sourceTree = "<group>"; };
 		93517C3A2B88CBB7009252E9 /* TestFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFeature.swift; sourceTree = "<group>"; };
 		93517C3E2B88CC3E009252E9 /* TestFeature+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestFeature+Action.swift"; sourceTree = "<group>"; };
 		93517C402B88CCA2009252E9 /* TestFeature+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestFeature+State.swift"; sourceTree = "<group>"; };
@@ -257,6 +262,11 @@
 		93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		93E9A8122B6EE15100B37B26 /* CurrencyRate+Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+Widget.swift"; sourceTree = "<group>"; };
 		93EC19432BA2443F00273F13 /* MarketRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRateView.swift; sourceTree = "<group>"; };
+		93F782932BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateDetailViewModel.swift; sourceTree = "<group>"; };
+		93F782972BB0835C00ACB39A /* ContainerRateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRateDetailView.swift; sourceTree = "<group>"; };
+		93F7829D2BB0CB3C00ACB39A /* ChartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartType.swift; sourceTree = "<group>"; };
+		93F782A12BB0CBC700ACB39A /* CurrencyChartViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartViewFactory.swift; sourceTree = "<group>"; };
+		93F782A32BB0CC1300ACB39A /* ChartViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,7 +356,7 @@
 			children = (
 				93335AA12BA7690F001F1610 /* Main */,
 				9312DF0B2B9B200C00C3D441 /* CurrencyConverter */,
-				9342551C2BA7A0CC00D787D6 /* CurrencyRateDetail */,
+				9342551C2BA7A0CC00D787D6 /* ContainerRateDetail */,
 				93EC19462BA2445000273F13 /* MarketRate */,
 			);
 			path = MainTab;
@@ -505,23 +515,25 @@
 			path = Utilites;
 			sourceTree = "<group>";
 		};
-		9342551C2BA7A0CC00D787D6 /* CurrencyRateDetail */ = {
+		9342551C2BA7A0CC00D787D6 /* ContainerRateDetail */ = {
 			isa = PBXGroup;
 			children = (
-				9342551D2BA7A11300D787D6 /* CurrencyRateDetailFeature */,
-				9342551E2BA7A12400D787D6 /* CurrencyRateDetailView.swift */,
+				93F7829C2BB0CB3300ACB39A /* Enum */,
+				9342551D2BA7A11300D787D6 /* ContainerRateDetailFeature */,
+				93F782972BB0835C00ACB39A /* ContainerRateDetailView.swift */,
+				93F782992BB0836C00ACB39A /* View */,
 			);
-			path = CurrencyRateDetail;
+			path = ContainerRateDetail;
 			sourceTree = "<group>";
 		};
-		9342551D2BA7A11300D787D6 /* CurrencyRateDetailFeature */ = {
+		9342551D2BA7A11300D787D6 /* ContainerRateDetailFeature */ = {
 			isa = PBXGroup;
 			children = (
-				934255202BA7A12F00D787D6 /* CurrencyRateDetailFeature.swift */,
-				930948722BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift */,
-				930948702BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift */,
+				934255202BA7A12F00D787D6 /* ContainerRateDetailFeature.swift */,
+				930948722BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift */,
+				930948702BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift */,
 			);
-			path = CurrencyRateDetailFeature;
+			path = ContainerRateDetailFeature;
 			sourceTree = "<group>";
 		};
 		93517C392B88CBAB009252E9 /* TestFeature */ = {
@@ -704,6 +716,7 @@
 				93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */,
 				93C6D7B72B5BA569006E28F7 /* ContentView.swift */,
 				9357D9FC2B5D2EE40097673C /* Navigation */,
+				93F782A02BB0CBA000ACB39A /* Factories */,
 				93A3EB4D2B657D8F007BFCDC /* SubViews */,
 				9357DA0E2B5F10870097673C /* View */,
 				93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */,
@@ -776,6 +789,48 @@
 				93EC19432BA2443F00273F13 /* MarketRateView.swift */,
 			);
 			path = MarketRate;
+			sourceTree = "<group>";
+		};
+		93F782992BB0836C00ACB39A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93F7829B2BB0838400ACB39A /* CurrencyRateDetailView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93F7829A2BB0837B00ACB39A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93F782932BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		93F7829B2BB0838400ACB39A /* CurrencyRateDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				93F7829A2BB0837B00ACB39A /* ViewModel */,
+				9342551E2BA7A12400D787D6 /* CurrencyRateDetailView.swift */,
+			);
+			path = CurrencyRateDetailView;
+			sourceTree = "<group>";
+		};
+		93F7829C2BB0CB3300ACB39A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				93F7829D2BB0CB3C00ACB39A /* ChartType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		93F782A02BB0CBA000ACB39A /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				93F782A12BB0CBC700ACB39A /* CurrencyChartViewFactory.swift */,
+				93F782A32BB0CC1300ACB39A /* ChartViewFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1026,6 +1081,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
+				93F782A42BB0CC1300ACB39A /* ChartViewFactory.swift in Sources */,
 				93517C462B88D77C009252E9 /* SettingsFeatureServices.swift in Sources */,
 				9312DEF82B9AF89000C3D441 /* MainCurrencyState.swift in Sources */,
 				9312DEF62B9AF87800C3D441 /* CurrencyTransactionType.swift in Sources */,
@@ -1037,6 +1093,7 @@
 				93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */,
 				9357DA092B5D9A7E0097673C /* MainViewOld.swift in Sources */,
 				9338604B2B8BCA4B0062DBC0 /* CurrencyRateCell.swift in Sources */,
+				93F7829E2BB0CB3C00ACB39A /* ChartType.swift in Sources */,
 				93335A8C2BA7511B001F1610 /* ContactsFeature.swift in Sources */,
 				93335A862BA750F4001F1610 /* ContactsFeature+Action.swift in Sources */,
 				93335A922BA751F2001F1610 /* AddContactFeature+Action.swift in Sources */,
@@ -1048,6 +1105,7 @@
 				930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */,
 				9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */,
 				93373EC82B88F40800975A6B /* TestFeatureServices.swift in Sources */,
+				93F782942BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift in Sources */,
 				93335A822BA6DE99001F1610 /* CurrencyConverterFeature+State.swift in Sources */,
 				930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */,
 				93335A892BA750FA001F1610 /* ContactsFeature+State.swift in Sources */,
@@ -1072,10 +1130,12 @@
 				93335A9B2BA7532A001F1610 /* ContactDetailFeature+Action.swift in Sources */,
 				93335A8E2BA751BC001F1610 /* AddContactFeature.swift in Sources */,
 				93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */,
+				93F782A22BB0CBC700ACB39A /* CurrencyChartViewFactory.swift in Sources */,
 				93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */,
-				930948732BA7AEAD00CF6284 /* CurrencyRateDetail+State.swift in Sources */,
+				93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */,
+				930948732BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift in Sources */,
 				93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */,
-				934255212BA7A12F00D787D6 /* CurrencyRateDetailFeature.swift in Sources */,
+				934255212BA7A12F00D787D6 /* ContainerRateDetailFeature.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */,
@@ -1086,7 +1146,7 @@
 				9342551F2BA7A12400D787D6 /* CurrencyRateDetailView.swift in Sources */,
 				93EC19442BA2443F00273F13 /* MarketRateView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
-				930948712BA7AE8F00CF6284 /* CurrencyRateDetail+Action.swift in Sources */,
+				930948712BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift in Sources */,
 				93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */,
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
 				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,

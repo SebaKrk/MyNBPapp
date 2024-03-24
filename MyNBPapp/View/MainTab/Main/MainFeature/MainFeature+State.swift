@@ -29,7 +29,7 @@ extension MainFeature {
         
         // MARK: Path
         
-        var path = StackState<CurrencyRateDetailFeature.State>()
+        var path = StackState<ContainerRateDetailFeature.State>()
         
         // MARK: Children state
         
