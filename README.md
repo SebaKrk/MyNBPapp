@@ -118,3 +118,7 @@ https://github.com/SebaKrk/MyNBPapp
         - rozszsznie modeli o Equatable
     * C: Wybór zakresu daty w MainFeature 
     * D: Przekazanie danych z MainFeature do CurrencyRateDetailFeature
+    * E: CurrencyRateDetailViewModel
+        - nowa logika do ViewModelu
+        - zmiana nazwy ContainerRateDetailFeature
+        - dodany CurrencyChartViewFactory

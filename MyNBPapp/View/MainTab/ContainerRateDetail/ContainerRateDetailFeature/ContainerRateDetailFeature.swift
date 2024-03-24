@@ -1,5 +1,5 @@
 //
-//  CurrencyRateDetailFeature.swift
+//  ContainerRateDetailFeature.swift
 //  MyNBPapp
 //
 //  Created by Sebastian Sciuba on 17/03/2024.
@@ -8,16 +8,20 @@
 import ComposableArchitecture
 import Foundation
 
-/// `CurrencyRateDetail+Reducer`
+/// `ContainerRateDetail+Reducer`
 @Reducer
-struct CurrencyRateDetailFeature {
+struct ContainerRateDetailFeature {
     
     // MARK: - Reducer
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            default: return .none
+            
+            case let .changeChartType(chartType):
+                state.chartType = chartType
+                return .none
             }
+            
         }
     }
     

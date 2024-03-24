@@ -67,7 +67,7 @@ struct MainFeature {
                 CurrencyConverterFeature()
             }
             .forEach(\.path, action: \.path) {
-                CurrencyRateDetailFeature()
+                ContainerRateDetailFeature()
             }
         }
     }
