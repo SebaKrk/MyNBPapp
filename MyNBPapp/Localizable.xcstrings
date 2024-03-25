@@ -1,10 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "-,049 %" : {
+    "%.2f%%" : {
 
     },
-    "-0,0211 zl" : {
+    "%.3f zł" : {
+
+    },
+    "%.4f zł" : {
 
     },
     "%@" : {
@@ -24,12 +27,6 @@
       }
     },
     "%lf" : {
-
-    },
-    "%lf zł" : {
-
-    },
-    "1 EUR - EUFGiW" : {
 
     },
     "1 Euro" : {
@@ -53,6 +50,9 @@
 
     },
     "Average rate" : {
+
+    },
+    "brak danych" : {
 
     },
     "Cancel" : {
@@ -81,6 +81,9 @@
 
     },
     "Data: %@" : {
+
+    },
+    "date" : {
 
     },
     "Date" : {
@@ -116,6 +119,9 @@
     "FavoritesView" : {
 
     },
+    "Kurs euro Strefa Euro NBP" : {
+
+    },
     "Main" : {
       "comment" : "The Main Tab presents the primary view of the application.",
       "localizations" : {
@@ -134,6 +140,9 @@
       }
     },
     "Mid" : {
+
+    },
+    "Mid: %.2f" : {
 
     },
     "name" : {
@@ -222,6 +231,9 @@
 
     },
     "Tabela" : {
+
+    },
+    "value" : {
 
     },
     "Wpisz liczbę do przekonwertowania" : {

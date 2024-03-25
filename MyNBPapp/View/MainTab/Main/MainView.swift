@@ -8,6 +8,7 @@
 import Commons
 import ComposableArchitecture
 import SwiftUI
+import DataModels
 
 @ViewAction(for: MainFeature.self)
 struct MainView: View {
@@ -57,7 +58,7 @@ struct MainView: View {
             .navigationBarTitleDisplayMode(.inline)
             .padding()
         } destination: { store in
-            CurrencyRateDetailView(store: store)
+            ContainerRateDetailView(store: store)
         }
         .onAppear {
             send(.viewDidAppear)
@@ -69,49 +70,85 @@ struct MainView: View {
     @ToolbarContentBuilder
     var toolbarButton: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
-            Menu {
-                ForEach(GlobalCurrencySymbols.allCases, id:\.self) { item in
-                    Button {
-                        send(.selectedCurrencySymbolChange(item))
-                    } label: {
-                        Label(item.title, systemImage: item.sfSymbol)
-                    }
-                }
-            } label: {
-                Text(store.selectedCurrencySymbol.title)
+            HStack {
+                chartRangeDate
+                globalCurrencySymbolButton
             }
         }
-    }
         
+    }
+    
     @ViewBuilder
-    var currencyRateBox: some View {
-        GroupBox {
-            HStack {
-                MarketRateView()
-                Text(store.selectedCurrency.title)
-            }
-            .frame(height: 300)
+    var globalCurrencySymbolButton: some View {
+        Menu {
+            globalCurrencySymbolMenu
         } label: {
-            currencyRateBar
+            Text(store.selectedCurrencySymbol.title)
         }
     }
     
     @ViewBuilder
-    var currencyRateBar: some View {
+    var globalCurrencySymbolMenu: some View {
+        ForEach(GlobalCurrencySymbols.allCases, id:\.self) { item in
+            Button {
+                send(.selectedCurrencySymbolChange(item))
+            } label: {
+                Label(item.title, systemImage: item.sfSymbol)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var chartRangeDate: some View {
+        Menu {
+            ForEach(CalendarCurrencyOption.allCases, id:\.self) { item in
+                Button {
+                    send(.selectedCalendarCurrencyOptionChange(item))
+                } label: {
+                    Text(item.title)
+                }
+            }
+        } label: {
+            Image(systemName: "rectangle.grid.2x2")
+        }
+    }
+    
+    @ViewBuilder
+    var currencyRateBox: some View {
+        if let exchange = store.exchange {
+            GroupBox {
+                Group {
+                    List {
+                        ForEach(exchange.rates.compactMap { $0 as? RatesA },
+                                id: \.no) { rateA in
+                            Text("Mid: \(rateA.mid, specifier: "%.2f")")
+                        }
+                    }
+                    .listStyle(.plain)
+                }
+                .frame(height: 300)
+            } label: {
+                currencyRateBar(exchange)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func currencyRateBar(_ data: Exchange) -> some View {
         HStack {
             currencyRatePicker
             Spacer()
-            expandButton
+            expandButton(data)
         }
     }
     
     @ViewBuilder
-    var expandButton: some View {
-        NavigationLink(state: CurrencyRateDetailFeature.State()) {
+    func expandButton(_ data: Exchange) -> some View {
+        NavigationLink(state: ContainerRateDetailFeature.State(exchange: data) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }
     }
-
+    
     @ViewBuilder
     var currencyRatePicker: some View {
         Picker("currency rate picker", selection: $store.selectedCurrency.sending(\.selectedCurrencyTabChange)) {
@@ -138,7 +175,7 @@ struct MainView: View {
     
     @ViewBuilder
     var currencyPicker: some View {
-        Picker("Currency picker", selection: $store.selectedTransitionTab.sending(\.selectedTabChange)) {
+        Picker("Currency picker", selection: $store.selectedTransitionTab.sending(\.selectedTabTransactionChange)) {
             ForEach(CurrencyTransactionType.allCases, id: \.self) {  item in
                 Text(item.title)
                     .tag(item)

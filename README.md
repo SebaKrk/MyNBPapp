@@ -114,3 +114,11 @@ https://github.com/SebaKrk/MyNBPapp
         - dodanie NavigationStack
         - dodanie horizontalSizeClass do MainView, CurrencyConverterView 
         - wstępny szkic CurrencyRateDetailView
+    * B: Strzał do NBP
+        - rozszsznie modeli o Equatable
+    * C: Wybór zakresu daty w MainFeature 
+    * D: Przekazanie danych z MainFeature do CurrencyRateDetailFeature
+    * E: CurrencyRateDetailViewModel
+        - nowa logika do ViewModelu
+        - zmiana nazwy ContainerRateDetailFeature
+        - dodany CurrencyChartViewFactory
