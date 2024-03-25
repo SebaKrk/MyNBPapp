@@ -125,3 +125,5 @@ https://github.com/SebaKrk/MyNBPapp
     * F: Dependencies
         - utworzenie Dependencies w głównym
         - uporzadkowanie drzewia plików
+        
+### IOS-0017 CurrencyRateDetailView
