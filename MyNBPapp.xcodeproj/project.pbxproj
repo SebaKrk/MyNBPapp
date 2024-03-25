@@ -108,6 +108,7 @@
 		93F7829E2BB0CB3C00ACB39A /* ChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7829D2BB0CB3C00ACB39A /* ChartType.swift */; };
 		93F782A22BB0CBC700ACB39A /* CurrencyChartViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782A12BB0CBC700ACB39A /* CurrencyChartViewFactory.swift */; };
 		93F782A42BB0CC1300ACB39A /* ChartViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782A32BB0CC1300ACB39A /* ChartViewFactory.swift */; };
+		93FE949C2BB1CD6B0087104D /*  Container+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE949B2BB1CD6B0087104D /*  Container+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +268,7 @@
 		93F7829D2BB0CB3C00ACB39A /* ChartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartType.swift; sourceTree = "<group>"; };
 		93F782A12BB0CBC700ACB39A /* CurrencyChartViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartViewFactory.swift; sourceTree = "<group>"; };
 		93F782A32BB0CC1300ACB39A /* ChartViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewFactory.swift; sourceTree = "<group>"; };
+		93FE949B2BB1CD6B0087104D /*  Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Container+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,10 +356,8 @@
 		9312DEF92B9AF8C200C3D441 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				93335AA12BA7690F001F1610 /* Main */,
-				9312DF0B2B9B200C00C3D441 /* CurrencyConverter */,
-				9342551C2BA7A0CC00D787D6 /* ContainerRateDetail */,
-				93EC19462BA2445000273F13 /* MarketRate */,
+				93FE94A22BB1D4C70087104D /* Features */,
+				93F782992BB0836C00ACB39A /* View */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -518,10 +518,10 @@
 		9342551C2BA7A0CC00D787D6 /* ContainerRateDetail */ = {
 			isa = PBXGroup;
 			children = (
+				93FE949D2BB1D1F60087104D /* Utilities */,
 				93F7829C2BB0CB3300ACB39A /* Enum */,
 				9342551D2BA7A11300D787D6 /* ContainerRateDetailFeature */,
 				93F782972BB0835C00ACB39A /* ContainerRateDetailView.swift */,
-				93F782992BB0836C00ACB39A /* View */,
 			);
 			path = ContainerRateDetail;
 			sourceTree = "<group>";
@@ -715,6 +715,7 @@
 			children = (
 				93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */,
 				93C6D7B72B5BA569006E28F7 /* ContentView.swift */,
+				93FE949A2BB1CD4D0087104D /* Dependencies */,
 				9357D9FC2B5D2EE40097673C /* Navigation */,
 				93F782A02BB0CBA000ACB39A /* Factories */,
 				93A3EB4D2B657D8F007BFCDC /* SubViews */,
@@ -831,6 +832,32 @@
 				93F782A32BB0CC1300ACB39A /* ChartViewFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		93FE949A2BB1CD4D0087104D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				93FE949B2BB1CD6B0087104D /*  Container+Extension.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		93FE949D2BB1D1F60087104D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		93FE94A22BB1D4C70087104D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				93335AA12BA7690F001F1610 /* Main */,
+				9312DF0B2B9B200C00C3D441 /* CurrencyConverter */,
+				9342551C2BA7A0CC00D787D6 /* ContainerRateDetail */,
+				93EC19462BA2445000273F13 /* MarketRate */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1102,6 +1129,7 @@
 				93517C432B88CD99009252E9 /* TestView.swift in Sources */,
 				93517C3F2B88CC3E009252E9 /* TestFeature+Action.swift in Sources */,
 				93335A9D2BA75331001F1610 /* ContactDetailFeature+State.swift in Sources */,
+				93FE949C2BB1CD6B0087104D /*  Container+Extension.swift in Sources */,
 				930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */,
 				9357DA0B2B5D9B4F0097673C /* CurrencyRateView.swift in Sources */,
 				93373EC82B88F40800975A6B /* TestFeatureServices.swift in Sources */,

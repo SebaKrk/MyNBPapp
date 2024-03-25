@@ -19,6 +19,7 @@ struct ContainerRateDetailFeature {
             
             case let .changeChartType(chartType):
                 state.chartType = chartType
+                
                 return .none
             }
             
