@@ -6,14 +6,14 @@
 //
 
 import ComposableArchitecture
+import Factory
 import SwiftUI
 
 struct ContainerRateDetailView: View {
     
     var store: StoreOf<ContainerRateDetailFeature>
     
-    // TODO:  @Injected private
-    var viewFactory: CurrencyChartViewFactory = CurrencyChartViewFactory()
+    @Injected(\.chartViewFactory) private var viewFactory
     
     var body: some View {
         HStack {

@@ -122,3 +122,6 @@ https://github.com/SebaKrk/MyNBPapp
         - nowa logika do ViewModelu
         - zmiana nazwy ContainerRateDetailFeature
         - dodany CurrencyChartViewFactory
+    * F: Dependencies
+        - utworzenie Dependencies w głównym
+        - uporzadkowanie drzewia plików
