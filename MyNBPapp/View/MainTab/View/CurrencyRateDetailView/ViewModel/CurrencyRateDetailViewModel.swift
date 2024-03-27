@@ -16,6 +16,9 @@ class CurrencyRateDetailViewModel: ObservableObject {
         self.exchange = exchange
     }
     
+//    shortDate
+    
+    
     var actualRate: Double? {
         exchange.rates.compactMap({ $0 as? RatesA }).last?.mid
     }
@@ -44,6 +47,21 @@ class CurrencyRateDetailViewModel: ObservableObject {
     var maxMidValue: Double {
         let midValues = exchange.rates.compactMap { $0 as? RatesA }.map { $0.mid }
         return midValues.max() ?? 0
+    }
+    
+    var averageCurrencyRate: Double {
+        let midValues = exchange.rates.compactMap { $0 as? RatesA }.map { $0.mid }
+        guard !midValues.isEmpty else {
+            return 0
+        }
+        let sum = midValues.reduce(0, +)
+        return sum / Double(midValues.count)
+    }
+    
+    func difference(value: Double) -> Double {
+        let numberToCompare = minMidValue - 0.01
+        let difference = value - numberToCompare
+        return value - difference
     }
     
 }

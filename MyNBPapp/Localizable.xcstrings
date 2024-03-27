@@ -49,6 +49,12 @@
     "Are you sure?" : {
 
     },
+    "Average" : {
+
+    },
+    "average currency rate: %.3f" : {
+
+    },
     "Average rate" : {
 
     },
@@ -139,6 +145,9 @@
         }
       }
     },
+    "mid" : {
+
+    },
     "Mid" : {
 
     },
@@ -188,6 +197,21 @@
 
     },
     "PLN" : {
+
+    },
+    "Pokaż dni tygodnia" : {
+
+    },
+    "Pokaż miesiące" : {
+
+    },
+    "Pokaż numer tygodnia" : {
+
+    },
+    "Pokaż średni kurs" : {
+
+    },
+    "Pokaż symbol" : {
 
     },
     "Rates" : {
