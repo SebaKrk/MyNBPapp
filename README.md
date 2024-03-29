@@ -129,3 +129,4 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0017 CurrencyRateDetailView
     A: AxisMarks
         - tworzenie toggle switch dla AxisMarks
+    B: Dodanie annotationSelectionView

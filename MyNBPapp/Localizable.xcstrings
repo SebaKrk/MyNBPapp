@@ -128,6 +128,9 @@
     "Kurs euro Strefa Euro NBP" : {
 
     },
+    "kurs:" : {
+
+    },
     "Main" : {
       "comment" : "The Main Tab presents the primary view of the application.",
       "localizations" : {
@@ -211,9 +214,6 @@
     "Pokaż średni kurs" : {
 
     },
-    "Pokaż symbol" : {
-
-    },
     "Rates" : {
       "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts.",
       "localizations" : {
@@ -241,6 +241,9 @@
         }
       }
     },
+    "Selected" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "pl" : {
@@ -255,6 +258,9 @@
 
     },
     "Tabela" : {
+
+    },
+    "Ukryj symbol" : {
 
     },
     "value" : {

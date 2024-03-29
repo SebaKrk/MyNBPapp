@@ -17,7 +17,7 @@ struct CurrencyRateDetailView: View {
     
     @State var showAverage: Bool = false
     @State var isExpand: Bool = false
-    @State var showSymbol: Bool = false
+    @State var hideSymbol: Bool = false
     @State var showWeekday: Bool = false
     @State var showMonth: Bool = false
     @State var showWeekOfYear: Bool = false
@@ -53,29 +53,36 @@ struct CurrencyRateDetailView: View {
                 createExchangeRateDifferenceText(exchange)
                 createCurrencyFluctuationText(exchange)
             }
+            .opacity(viewModel.selectedDate == nil  ? 1.0 : 0.0)
         }
     }
-    
-    // .chartXSelection(value: $viewModel.selectedDate)
-    
+        
     @ViewBuilder
     func createChartView(_ exchange: Exchange) -> some View {
         GroupBox {
             Chart {
                 ForEach(exchange.rates.compactMap { $0 as? RatesA }, id: \.no) { data in
-                    if showSymbol {
-                        createLineMarkWithSymbol(data)
-                    } else {
+                    if hideSymbol {
                         createLineMark(data)
+                    } else {
+                        createLineMarkWithSymbol(data)
                     }
                     createAreaMark(data)
                     if showAverage {
                         createRuleMark(data)
                     }
+                    if let date = viewModel.selectedDate {
+                        createRuleMark(selectedDate: date)
+                            .annotation(position: .top,
+                                        spacing: 0,
+                                        overflowResolution: .init(x: .fit(to: .chart), y: .disabled)) {
+                                annotationSelectionView
+                            }
+                    }
                 }
             }
             .chartYScale(domain: viewModel.minMidValue - 0.01...(viewModel.maxMidValue + 0.01))
-            
+            .chartXSelection(value: $viewModel.selectedDate)
             .chartXAxis {
                 if showWeekday {
                     AxisMarks(values: .stride(by: .day)) { _ in
@@ -84,8 +91,7 @@ struct CurrencyRateDetailView: View {
                         AxisValueLabel(format: .dateTime.weekday(.narrow), centered: true)
                     }
                 } else if showMonth {
-                    AxisMarks(values: .stride(by: .month)) {
-                        AxisTick()
+                    AxisMarks(position: .top, values: .stride(by: .month)) {
                         AxisGridLine()
                         AxisValueLabel(format: .dateTime.month(.wide))
                     }
@@ -125,10 +131,10 @@ struct CurrencyRateDetailView: View {
             Section {
                 Group {
                     Toggle(isOn: $showAverage) { Text("Pokaż średni kurs") }
-                    Toggle(isOn: $showSymbol) { Text("Pokaż symbol") }
+                    Toggle(isOn: $hideSymbol) { Text("Ukryj symbol") }
                     Toggle(isOn: $showWeekday) { Text("Pokaż dni tygodnia") }
                     Toggle(isOn: $showMonth) { Text("Pokaż miesiące") }
-                    Toggle(isOn: $showWeekOfYear) { Text("Pokaż numer tydodnia") }
+                    Toggle(isOn: $showWeekOfYear) { Text("Pokaż numer tygodnia") }
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
             } header: {
@@ -169,6 +175,28 @@ struct CurrencyRateDetailView: View {
             .foregroundStyle(value >= 0 ? .green : .red)
             .bold()
     }
+    
+        @ViewBuilder
+        var annotationSelectionView: some View {
+            if let selectedDate = viewModel.selectedDate, let sales = viewModel.findMidValue(for: selectedDate) {
+                VStack(alignment: .leading) {
+                    Text(Formatters.Date.createString(from: selectedDate, with: .shortDate))
+                        .foregroundStyle(.secondary)
+                        .fixedSize()
+                    HStack {
+                        Text("kurs:")
+                            .foregroundStyle(.secondary)
+                        Text(sales, format: .number.precision(.fractionLength(4)))
+                            .bold()
+                    }
+                }
+                .padding()
+                .background {
+                    RoundedRectangle(cornerRadius: 4)
+                        .foregroundStyle(.regularMaterial)
+                }
+            }
+        }
     
     func createLineMarkWithSymbol(_ data: RatesA) -> some ChartContent {
         
@@ -213,10 +241,16 @@ struct CurrencyRateDetailView: View {
         }
     }
     
+    func createRuleMark(selectedDate: Date) -> some ChartContent {
+        RuleMark(
+            x: .value("Selected", selectedDate, unit: .day)
+        )
+        .foregroundStyle(Color.gray.opacity(0.3))
+    }
+    
     var symbolPoint: some ChartSymbolShape {
         Circle()
             .strokeBorder(lineWidth: 2)
     }
-
     
 }
