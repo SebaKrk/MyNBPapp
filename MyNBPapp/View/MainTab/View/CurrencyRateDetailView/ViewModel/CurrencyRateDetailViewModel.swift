@@ -11,11 +11,12 @@ import SwiftUI
 class CurrencyRateDetailViewModel: ObservableObject {
     
     @Published var exchange: Exchange
+    @Published var selectedDate: Date? = nil
     
     init(exchange: Exchange) {
         self.exchange = exchange
     }
-    
+
     var actualRate: Double? {
         exchange.rates.compactMap({ $0 as? RatesA }).last?.mid
     }
@@ -46,4 +47,30 @@ class CurrencyRateDetailViewModel: ObservableObject {
         return midValues.max() ?? 0
     }
     
+    var averageCurrencyRate: Double {
+        let midValues = exchange.rates.compactMap { $0 as? RatesA }.map { $0.mid }
+        guard !midValues.isEmpty else {
+            return 0
+        }
+        let sum = midValues.reduce(0, +)
+        return sum / Double(midValues.count)
+    }
+    
+    func difference(value: Double) -> Double {
+        let numberToCompare = minMidValue - 0.01
+        let difference = value - numberToCompare
+        return value - difference
+    }
+    
+    func findMidValue(for searchDate: Date) -> Double? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let calendar = Calendar.current
+        let rates = exchange.rates.compactMap({ $0 as? RatesA })
+        return rates.first { rate in
+            guard let rateDate = dateFormatter.date(from: rate.effectiveDate) else { return false }
+            return calendar.isDate(rateDate, inSameDayAs: searchDate)
+        }?.mid
+    }
+
 }

@@ -127,3 +127,6 @@ https://github.com/SebaKrk/MyNBPapp
         - uporzadkowanie drzewia plików
         
 ### IOS-0017 CurrencyRateDetailView
+    A: AxisMarks
+        - tworzenie toggle switch dla AxisMarks
+    B: Dodanie annotationSelectionView
