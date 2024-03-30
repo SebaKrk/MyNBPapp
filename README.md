@@ -130,3 +130,5 @@ https://github.com/SebaKrk/MyNBPapp
     A: AxisMarks
         - tworzenie toggle switch dla AxisMarks
     B: Dodanie annotationSelectionView
+    C: PeriodsCurrencyOption
+        - przekaż `Periods`

@@ -13,6 +13,13 @@ class CurrencyRateDetailViewModel: ObservableObject {
     @Published var exchange: Exchange
     @Published var selectedDate: Date? = nil
     
+    @Published var showAverage: Bool = false
+    @Published var isExpand: Bool = false
+    @Published var hideSymbol: Bool = false
+    @Published var showWeekday: Bool = false
+    @Published var showMonth: Bool = false
+    @Published var showWeekOfYear: Bool = false
+    
     init(exchange: Exchange) {
         self.exchange = exchange
     }

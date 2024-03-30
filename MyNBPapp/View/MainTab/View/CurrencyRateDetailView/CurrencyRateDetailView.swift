@@ -14,14 +14,7 @@ import SwiftUI
 struct CurrencyRateDetailView: View {
     
     @StateObject var viewModel: CurrencyRateDetailViewModel
-    
-    @State var showAverage: Bool = false
-    @State var isExpand: Bool = false
-    @State var hideSymbol: Bool = false
-    @State var showWeekday: Bool = false
-    @State var showMonth: Bool = false
-    @State var showWeekOfYear: Bool = false
-    
+
     var body: some View {
         VStack {
             createChartTitle(viewModel.exchange)
@@ -53,28 +46,27 @@ struct CurrencyRateDetailView: View {
                 createExchangeRateDifferenceText(exchange)
                 createCurrencyFluctuationText(exchange)
             }
-            .opacity(viewModel.selectedDate == nil  ? 1.0 : 0.0)
         }
     }
-        
+
     @ViewBuilder
     func createChartView(_ exchange: Exchange) -> some View {
         GroupBox {
             Chart {
                 ForEach(exchange.rates.compactMap { $0 as? RatesA }, id: \.no) { data in
-                    if hideSymbol {
+                    if viewModel.hideSymbol {
                         createLineMark(data)
                     } else {
                         createLineMarkWithSymbol(data)
                     }
                     createAreaMark(data)
-                    if showAverage {
+                    if viewModel.showAverage {
                         createRuleMark(data)
                     }
                     if let date = viewModel.selectedDate {
                         createRuleMark(selectedDate: date)
-                            .annotation(position: .top,
-                                        spacing: 0,
+                            .annotation(position: .trailing,
+                                        spacing: 5,
                                         overflowResolution: .init(x: .fit(to: .chart), y: .disabled)) {
                                 annotationSelectionView
                             }
@@ -84,18 +76,18 @@ struct CurrencyRateDetailView: View {
             .chartYScale(domain: viewModel.minMidValue - 0.01...(viewModel.maxMidValue + 0.01))
             .chartXSelection(value: $viewModel.selectedDate)
             .chartXAxis {
-                if showWeekday {
+                if viewModel.showWeekday {
                     AxisMarks(values: .stride(by: .day)) { _ in
                         AxisTick()
                         AxisGridLine()
                         AxisValueLabel(format: .dateTime.weekday(.narrow), centered: true)
                     }
-                } else if showMonth {
+                } else if viewModel.showMonth {
                     AxisMarks(position: .top, values: .stride(by: .month)) {
                         AxisGridLine()
                         AxisValueLabel(format: .dateTime.month(.wide))
                     }
-                } else if showWeekOfYear {
+                } else if viewModel.showWeekOfYear {
                     AxisMarks(values: .stride(by: .weekOfYear)) { _ in
                         AxisTick()
                         AxisGridLine()
@@ -111,7 +103,6 @@ struct CurrencyRateDetailView: View {
             }
         }
     }
-    
     
     @ViewBuilder
     var currencyTable: some View {
@@ -130,11 +121,11 @@ struct CurrencyRateDetailView: View {
         List {
             Section {
                 Group {
-                    Toggle(isOn: $showAverage) { Text("Pokaż średni kurs") }
-                    Toggle(isOn: $hideSymbol) { Text("Ukryj symbol") }
-                    Toggle(isOn: $showWeekday) { Text("Pokaż dni tygodnia") }
-                    Toggle(isOn: $showMonth) { Text("Pokaż miesiące") }
-                    Toggle(isOn: $showWeekOfYear) { Text("Pokaż numer tygodnia") }
+                    Toggle(isOn: $viewModel.showAverage) { Text("Pokaż średni kurs") }
+                    Toggle(isOn: $viewModel.hideSymbol) { Text("Ukryj symbol") }
+                    Toggle(isOn: $viewModel.showWeekday) { Text("Pokaż dni tygodnia") }
+                    Toggle(isOn: $viewModel.showMonth) { Text("Pokaż miesiące") }
+                    Toggle(isOn: $viewModel.showWeekOfYear) { Text("Pokaż numer tygodnia") }
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
             } header: {
@@ -176,27 +167,31 @@ struct CurrencyRateDetailView: View {
             .bold()
     }
     
-        @ViewBuilder
-        var annotationSelectionView: some View {
-            if let selectedDate = viewModel.selectedDate, let sales = viewModel.findMidValue(for: selectedDate) {
-                VStack(alignment: .leading) {
-                    Text(Formatters.Date.createString(from: selectedDate, with: .shortDate))
+    @ViewBuilder
+    var annotationSelectionView: some View {
+        if let selectedDate = viewModel.selectedDate, let sales = viewModel.findMidValue(for: selectedDate) {
+            VStack(alignment: .leading) {
+                Text(Formatters.Date.createString(from: selectedDate, with: .shortDate))
+                    .foregroundStyle(.secondary)
+                    .fixedSize()
+                HStack {
+                    Text("kurs:")
                         .foregroundStyle(.secondary)
-                        .fixedSize()
-                    HStack {
-                        Text("kurs:")
-                            .foregroundStyle(.secondary)
-                        Text(sales, format: .number.precision(.fractionLength(4)))
-                            .bold()
-                    }
-                }
-                .padding()
-                .background {
-                    RoundedRectangle(cornerRadius: 4)
-                        .foregroundStyle(.regularMaterial)
+                    Text(sales, format: .number.precision(.fractionLength(4)))
+                        .bold()
                 }
             }
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 4)
+                    .foregroundStyle(.regularMaterial)
+            }
+            .overlay(
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
         }
+    }
     
     func createLineMarkWithSymbol(_ data: RatesA) -> some ChartContent {
         
@@ -205,9 +200,11 @@ struct CurrencyRateDetailView: View {
             y: .value("value", data.mid)
         )
         .foregroundStyle(viewModel.yesterdayRateValueChange >= 0 ? Color("GreenChart") : .red)
-        .opacity(showAverage == true ? 0.5 : 1 )
+        .opacity(viewModel.showAverage == true ? 0.5 : 1 )
         .symbol(symbolPoint)
     }
+    
+//    MARK: - ChartContent
     
     func createLineMark(_ data: RatesA) -> some ChartContent {
         LineMark(
@@ -215,7 +212,7 @@ struct CurrencyRateDetailView: View {
             y: .value("value", data.mid)
         )
         .foregroundStyle(viewModel.yesterdayRateValueChange >= 0 ? Color("GreenChart") : .red)
-        .opacity(showAverage == true ? 0.5 : 1 )
+        .opacity(viewModel.showAverage == true ? 0.5 : 1 )
     }
     
     func createAreaMark(_ data: RatesA) -> some ChartContent {
@@ -225,7 +222,7 @@ struct CurrencyRateDetailView: View {
             yEnd: .value("mid", data.mid )
         )
         .foregroundStyle(viewModel.yesterdayRateValueChange >= 0 ? Color("GreenChart") : .red)
-        .opacity(showAverage == true ? 0.1 : 0.2 )
+        .opacity(viewModel.showAverage == true ? 0.1 : 0.2 )
         .interpolationMethod(.linear)
     }
     

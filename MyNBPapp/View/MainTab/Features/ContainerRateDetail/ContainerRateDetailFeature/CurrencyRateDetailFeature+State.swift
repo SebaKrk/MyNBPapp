@@ -17,6 +17,9 @@ extension ContainerRateDetailFeature {
         var exchange: Exchange?
         
         var chartType: ChartType = .lineMark
+        
+        var selectedPeriod: PeriodsCurrencyOption
+        
     }
     
 }

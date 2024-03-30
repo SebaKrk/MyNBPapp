@@ -38,7 +38,11 @@ struct MainFeature {
                     state.selectedCurrencySymbol = globalSymbols
                     return .none
                     
-                case let .view(.selectedCalendarCurrencyOptionChange(date)):
+                case let .updatePeriod(period):
+                    state.dateForm = period
+                    return .none
+                    
+                case let .view(.selectedPeriodChange(date)):
                     return .run { send in
                         let from = date.chartRangeStartDate
                         let today = Date()
@@ -46,6 +50,7 @@ struct MainFeature {
                                                                     symbol: .euro,
                                                                     from: from,
                                                                     to: today)
+                        await send(.updatePeriod(date))
                         await send(.updateExchangeData(exchange))
                     }
                     

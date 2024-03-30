@@ -25,12 +25,18 @@ struct ContainerRateDetailView: View {
         .toolbar {
             toolbarButton
         }
+        .onAppear {
+            print(store.selectedPeriod.title)
+        }
     }
     
     @ToolbarContentBuilder
     var toolbarButton: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
-            charTypeMenu
+            HStack {
+                selectedPeriod
+                charTypeMenu
+            }
         }
     }
     
@@ -47,6 +53,11 @@ struct ContainerRateDetailView: View {
         } label: {
             Image(systemName: "chart.bar")
         }
+    }
+    
+    @ViewBuilder
+    var selectedPeriod: some View {
+        Text(store.selectedPeriod.title)
     }
     
 }

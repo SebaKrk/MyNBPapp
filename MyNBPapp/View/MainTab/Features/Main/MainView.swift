@@ -101,9 +101,9 @@ struct MainView: View {
     @ViewBuilder
     var chartRangeDate: some View {
         Menu {
-            ForEach(CalendarCurrencyOption.allCases, id:\.self) { item in
+            ForEach(PeriodsCurrencyOption.allCases, id:\.self) { item in
                 Button {
-                    send(.selectedCalendarCurrencyOptionChange(item))
+                    send(.selectedPeriodChange(item))
                 } label: {
                     Text(item.title)
                 }
@@ -118,6 +118,7 @@ struct MainView: View {
         if let exchange = store.exchange {
             GroupBox {
                 Group {
+                    // stwórz nowy feature
                     List {
                         ForEach(exchange.rates.compactMap { $0 as? RatesA },
                                 id: \.no) { rateA in
@@ -144,7 +145,9 @@ struct MainView: View {
     
     @ViewBuilder
     func expandButton(_ data: Exchange) -> some View {
-        NavigationLink(state: ContainerRateDetailFeature.State(exchange: data) ) {
+        // przekazać jaki okres jest wybrany - chartRangeDate
+        NavigationLink(state: ContainerRateDetailFeature.State(exchange: data,
+                                                               selectedPeriod: store.dateForm) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }
     }
