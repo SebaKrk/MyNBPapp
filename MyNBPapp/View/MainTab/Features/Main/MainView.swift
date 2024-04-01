@@ -7,8 +7,9 @@
 
 import Commons
 import ComposableArchitecture
-import SwiftUI
 import DataModels
+import Factory
+import SwiftUI
 
 @ViewAction(for: MainFeature.self)
 struct MainView: View {
@@ -16,6 +17,10 @@ struct MainView: View {
     // MARK: - Environments
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    // MARK: - Dependency
+    
+    @Injected(\.chartViewFactory) private var viewFactory
     
     // MARK: - Properties
     
@@ -75,7 +80,6 @@ struct MainView: View {
                 globalCurrencySymbolButton
             }
         }
-        
     }
     
     @ViewBuilder
@@ -118,18 +122,17 @@ struct MainView: View {
         if let exchange = store.exchange {
             GroupBox {
                 Group {
-                    // stwórz nowy feature
-                    List {
-                        ForEach(exchange.rates.compactMap { $0 as? RatesA },
-                                id: \.no) { rateA in
-                            Text("Mid: \(rateA.mid, specifier: "%.2f")")
-                        }
-                    }
-                    .listStyle(.plain)
+                    viewFactory.createCurrencyDetailsViews(chart: .lineMark,
+                                                           exchange: exchange,
+                                                           isExpand: false)
                 }
                 .frame(height: 300)
             } label: {
-                currencyRateBar(exchange)
+                HStack {
+                    Text("Data \(exchange.rates[0].effectiveDate)")
+                    Spacer()
+                    currencyRateBar(exchange)
+                }
             }
         }
     }
@@ -145,7 +148,6 @@ struct MainView: View {
     
     @ViewBuilder
     func expandButton(_ data: Exchange) -> some View {
-        // przekazać jaki okres jest wybrany - chartRangeDate
         NavigationLink(state: ContainerRateDetailFeature.State(exchange: data,
                                                                selectedPeriod: store.dateForm) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
@@ -198,3 +200,4 @@ struct MainView: View {
     }
     
 }
+

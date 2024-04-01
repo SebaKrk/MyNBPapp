@@ -13,18 +13,23 @@ import SwiftUI
 
 struct CurrencyRateDetailView: View {
     
-    @StateObject var viewModel: CurrencyRateDetailViewModel
+    @ObservedObject  var viewModel: CurrencyRateDetailViewModel
 
     var body: some View {
-        VStack {
-            createChartTitle(viewModel.exchange)
-            HStack {
-                createChartView(viewModel.exchange)
-                currencyTable
+        if viewModel.isExpand {
+            VStack {
+                createChartTitle(viewModel.exchange)
+                HStack {
+                    createChartView(viewModel.exchange)
+                        .chartXSelection(value: $viewModel.selectedDate)
+                    currencyTable
+                }
+                option
             }
-            option
+            .padding()
+        } else {
+            createChartView(viewModel.exchange)
         }
-        .padding()
     }
     
     @ViewBuilder
@@ -48,7 +53,7 @@ struct CurrencyRateDetailView: View {
             }
         }
     }
-
+    
     @ViewBuilder
     func createChartView(_ exchange: Exchange) -> some View {
         GroupBox {
@@ -74,7 +79,6 @@ struct CurrencyRateDetailView: View {
                 }
             }
             .chartYScale(domain: viewModel.minMidValue - 0.01...(viewModel.maxMidValue + 0.01))
-            .chartXSelection(value: $viewModel.selectedDate)
             .chartXAxis {
                 if viewModel.showWeekday {
                     AxisMarks(values: .stride(by: .day)) { _ in

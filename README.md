@@ -132,3 +132,5 @@ https://github.com/SebaKrk/MyNBPapp
     B: Dodanie annotationSelectionView
     C: PeriodsCurrencyOption
         - przekaż `Periods`
+        - dodać flagę `isExpand` do widoku wykresu
+        - MainView zasilić widokiem 

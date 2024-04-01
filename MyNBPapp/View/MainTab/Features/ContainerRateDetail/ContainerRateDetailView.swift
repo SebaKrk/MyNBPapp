@@ -19,14 +19,12 @@ struct ContainerRateDetailView: View {
         HStack {
             if let exchange = store.exchange {
                 viewFactory.createCurrencyDetailsViews(chart: store.chartType,
-                                                       exchange: exchange)
+                                                       exchange: exchange,
+                                                       isExpand: true)
             }
         }
         .toolbar {
             toolbarButton
-        }
-        .onAppear {
-            print(store.selectedPeriod.title)
         }
     }
     

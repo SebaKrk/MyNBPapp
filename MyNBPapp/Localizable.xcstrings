@@ -86,6 +86,9 @@
     "currency rate picker" : {
 
     },
+    "Data %@" : {
+
+    },
     "Data: %@" : {
 
     },
@@ -152,9 +155,6 @@
 
     },
     "Mid" : {
-
-    },
-    "Mid: %.2f" : {
 
     },
     "name" : {

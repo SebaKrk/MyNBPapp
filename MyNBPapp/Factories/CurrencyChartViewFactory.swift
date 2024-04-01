@@ -5,21 +5,23 @@
 //  Created by Sebastian Sciuba on 24/03/2024.
 //
 
-import SwiftUI
+import Commons
 import DataModels
+import SwiftUI
 
 final class CurrencyChartViewFactory: ChartViewFactory {
     
     @ViewBuilder
     func createCurrencyDetailsViews(chart type: ChartType,
-                                    exchange: Exchange) -> some View {
+                                    exchange: Exchange,
+                                    isExpand: Bool) -> some View {
         switch type {
         case .lineMark:
-            let viewModel = CurrencyRateDetailViewModel(exchange: exchange)
+            let viewModel = CurrencyRateDetailViewModel(exchange: exchange,
+                                                        isExpand: isExpand)
             CurrencyRateDetailView(viewModel: viewModel)
         case .barMark:
             EmptyView()
         }
     }
 }
-

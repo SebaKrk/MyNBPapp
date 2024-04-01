@@ -62,6 +62,7 @@ struct MainFeature {
                                                                     symbol: .euro,
                                                                     from: from,
                                                                     to: today)
+                        await send(.updatePeriod(date))
                         await send(.updateExchangeData(exchange))
                     }
                     
