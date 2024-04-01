@@ -19,7 +19,9 @@ struct ContainerRateDetailView: View {
         HStack {
             if let exchange = store.exchange {
                 viewFactory.createCurrencyDetailsViews(chart: store.chartType,
-                                                       exchange: exchange)
+                                                       exchange: exchange,
+                                                       selectedPeriod: store.selectedPeriod,
+                                                       isExpand: true)
             }
         }
         .toolbar {
@@ -30,7 +32,10 @@ struct ContainerRateDetailView: View {
     @ToolbarContentBuilder
     var toolbarButton: some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
-            charTypeMenu
+            HStack {
+                selectedPeriod
+                charTypeMenu
+            }
         }
     }
     
@@ -47,6 +52,11 @@ struct ContainerRateDetailView: View {
         } label: {
             Image(systemName: "chart.bar")
         }
+    }
+    
+    @ViewBuilder
+    var selectedPeriod: some View {
+        Text(store.selectedPeriod.title)
     }
     
 }

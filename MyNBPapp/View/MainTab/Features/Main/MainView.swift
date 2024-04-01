@@ -7,8 +7,9 @@
 
 import Commons
 import ComposableArchitecture
-import SwiftUI
 import DataModels
+import Factory
+import SwiftUI
 
 @ViewAction(for: MainFeature.self)
 struct MainView: View {
@@ -16,6 +17,10 @@ struct MainView: View {
     // MARK: - Environments
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    // MARK: - Dependency
+    
+    @Injected(\.chartViewFactory) private var viewFactory
     
     // MARK: - Properties
     
@@ -75,7 +80,6 @@ struct MainView: View {
                 globalCurrencySymbolButton
             }
         }
-        
     }
     
     @ViewBuilder
@@ -101,9 +105,9 @@ struct MainView: View {
     @ViewBuilder
     var chartRangeDate: some View {
         Menu {
-            ForEach(CalendarCurrencyOption.allCases, id:\.self) { item in
+            ForEach(PeriodsCurrencyOption.allCases, id:\.self) { item in
                 Button {
-                    send(.selectedCalendarCurrencyOptionChange(item))
+                    send(.selectedPeriodChange(item))
                 } label: {
                     Text(item.title)
                 }
@@ -118,17 +122,16 @@ struct MainView: View {
         if let exchange = store.exchange {
             GroupBox {
                 Group {
-                    List {
-                        ForEach(exchange.rates.compactMap { $0 as? RatesA },
-                                id: \.no) { rateA in
-                            Text("Mid: \(rateA.mid, specifier: "%.2f")")
-                        }
-                    }
-                    .listStyle(.plain)
+                    viewFactory.createCurrencyDetailsViews(chart: .lineMark,
+                                                           exchange: exchange,
+                                                           selectedPeriod: store.dateForm,
+                                                           isExpand: false)
                 }
                 .frame(height: 300)
             } label: {
-                currencyRateBar(exchange)
+                HStack {
+                    currencyRateBar(exchange)
+                }
             }
         }
     }
@@ -144,7 +147,8 @@ struct MainView: View {
     
     @ViewBuilder
     func expandButton(_ data: Exchange) -> some View {
-        NavigationLink(state: ContainerRateDetailFeature.State(exchange: data) ) {
+        NavigationLink(state: ContainerRateDetailFeature.State(exchange: data,
+                                                               selectedPeriod: store.dateForm) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }
     }
@@ -195,3 +199,4 @@ struct MainView: View {
     }
     
 }
+
