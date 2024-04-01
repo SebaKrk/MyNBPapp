@@ -25,7 +25,7 @@ extension MainFeature {
         
         var selectedTransitionTab: CurrencyTransactionType = .average
         
-        var dateForm: CalendarCurrencyOption = .month
+        var dateForm: PeriodsCurrencyOption = .month
         
         // MARK: Path
         

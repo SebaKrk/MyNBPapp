@@ -49,6 +49,12 @@
     "Are you sure?" : {
 
     },
+    "Average" : {
+
+    },
+    "average currency rate: %.3f" : {
+
+    },
     "Average rate" : {
 
     },
@@ -122,6 +128,9 @@
     "Kurs euro Strefa Euro NBP" : {
 
     },
+    "kurs:" : {
+
+    },
     "Main" : {
       "comment" : "The Main Tab presents the primary view of the application.",
       "localizations" : {
@@ -139,10 +148,10 @@
         }
       }
     },
-    "Mid" : {
+    "mid" : {
 
     },
-    "Mid: %.2f" : {
+    "Mid" : {
 
     },
     "name" : {
@@ -190,6 +199,18 @@
     "PLN" : {
 
     },
+    "Pokaż dni tygodnia" : {
+
+    },
+    "Pokaż miesiące" : {
+
+    },
+    "Pokaż numer tygodnia" : {
+
+    },
+    "Pokaż średni kurs" : {
+
+    },
     "Rates" : {
       "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts.",
       "localizations" : {
@@ -217,6 +238,9 @@
         }
       }
     },
+    "Selected" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "pl" : {
@@ -231,6 +255,9 @@
 
     },
     "Tabela" : {
+
+    },
+    "Ukryj symbol" : {
 
     },
     "value" : {

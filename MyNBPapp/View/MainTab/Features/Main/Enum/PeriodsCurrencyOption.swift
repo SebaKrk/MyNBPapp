@@ -1,5 +1,5 @@
 //
-//  CalendarCurrencyOption.swift
+//  PeriodsCurrencyOption.swift
 //  MyNBPapp
 //
 //  Created by Sebastian Sciuba on 23/03/2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CalendarCurrencyOption: Equatable, CaseIterable {
+enum PeriodsCurrencyOption: Equatable, CaseIterable {
     
     case month
     case quoter
