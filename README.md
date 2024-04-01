@@ -122,3 +122,16 @@ https://github.com/SebaKrk/MyNBPapp
         - nowa logika do ViewModelu
         - zmiana nazwy ContainerRateDetailFeature
         - dodany CurrencyChartViewFactory
+    * F: Dependencies
+        - utworzenie Dependencies w głównym
+        - uporzadkowanie drzewia plików
+        
+### IOS-0017 CurrencyRateDetailView
+    A: AxisMarks
+        - tworzenie toggle switch dla AxisMarks
+    B: Dodanie annotationSelectionView
+    C: PeriodsCurrencyOption
+        - przekaż `Periods`
+        - dodać flagę `isExpand` do widoku wykresu
+        - MainView zasilić widokiem 
+        - Przy wybranym periods widoczne są tylko odpowiednie toggle 
