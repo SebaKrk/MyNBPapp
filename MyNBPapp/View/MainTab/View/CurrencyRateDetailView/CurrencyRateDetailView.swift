@@ -13,27 +13,48 @@ import SwiftUI
 
 struct CurrencyRateDetailView: View {
     
-    @ObservedObject  var viewModel: CurrencyRateDetailViewModel
+    @ObservedObject var viewModel: CurrencyRateDetailViewModel
 
     var body: some View {
         if viewModel.isExpand {
             VStack {
-                createChartTitle(viewModel.exchange)
+                createExpandTitle(viewModel.exchange)
                 HStack {
-                    createChartView(viewModel.exchange)
-                        .chartXSelection(value: $viewModel.selectedDate)
+                    GroupBox {
+                        createChartView(viewModel.exchange)
+                            .chartXSelection(value: $viewModel.selectedDate)
+                    }
                     currencyTable
                 }
                 option
             }
             .padding()
         } else {
-            createChartView(viewModel.exchange)
+            VStack {
+                createTitle(viewModel.exchange)
+                createChartView(viewModel.exchange)
+            }
         }
     }
     
     @ViewBuilder
-    func createChartTitle(_ exchange: Exchange) -> some View {
+    func createTitle(_ exchange: Exchange) -> some View {
+        if let actual = viewModel.actualRate {
+            VStack {
+                Divider()
+                    .padding(.top, 8)
+                HStack {
+                    Spacer()
+                    Text("\(actual, specifier: "%.3f") zł")
+                        .bold()
+                    createExchangeRateDifferenceText(exchange)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func createExpandTitle(_ exchange: Exchange) -> some View {
         GroupBox {
             HStack {
                 VStack(alignment: .leading) {
@@ -49,6 +70,7 @@ struct CurrencyRateDetailView: View {
                 Spacer()
                 createActualCourseText(exchange)
                 createExchangeRateDifferenceText(exchange)
+                    .font(.title2)
                 createCurrencyFluctuationText(exchange)
             }
         }
@@ -56,53 +78,51 @@ struct CurrencyRateDetailView: View {
     
     @ViewBuilder
     func createChartView(_ exchange: Exchange) -> some View {
-        GroupBox {
-            Chart {
-                ForEach(exchange.rates.compactMap { $0 as? RatesA }, id: \.no) { data in
-                    if viewModel.hideSymbol {
-                        createLineMark(data)
-                    } else {
-                        createLineMarkWithSymbol(data)
-                    }
-                    createAreaMark(data)
-                    if viewModel.showAverage {
-                        createRuleMark(data)
-                    }
-                    if let date = viewModel.selectedDate {
-                        createRuleMark(selectedDate: date)
-                            .annotation(position: .trailing,
-                                        spacing: 5,
-                                        overflowResolution: .init(x: .fit(to: .chart), y: .disabled)) {
-                                annotationSelectionView
-                            }
-                    }
+        Chart {
+            ForEach(exchange.rates.compactMap { $0 as? RatesA }, id: \.no) { data in
+                if viewModel.hideSymbol || !viewModel.isExpand {
+                    createLineMark(data)
+                } else {
+                    createLineMarkWithSymbol(data)
+                }
+                createAreaMark(data)
+                if viewModel.showAverage {
+                    createRuleMark(data)
+                }
+                if let date = viewModel.selectedDate {
+                    createRuleMark(selectedDate: date)
+                        .annotation(position: .trailing,
+                                    spacing: 5,
+                                    overflowResolution: .init(x: .fit(to: .chart), y: .disabled)) {
+                            annotationSelectionView
+                        }
                 }
             }
-            .chartYScale(domain: viewModel.minMidValue - 0.01...(viewModel.maxMidValue + 0.01))
-            .chartXAxis {
-                if viewModel.showWeekday {
-                    AxisMarks(values: .stride(by: .day)) { _ in
-                        AxisTick()
-                        AxisGridLine()
-                        AxisValueLabel(format: .dateTime.weekday(.narrow), centered: true)
-                    }
-                } else if viewModel.showMonth {
-                    AxisMarks(position: .top, values: .stride(by: .month)) {
-                        AxisGridLine()
-                        AxisValueLabel(format: .dateTime.month(.wide))
-                    }
-                } else if viewModel.showWeekOfYear {
-                    AxisMarks(values: .stride(by: .weekOfYear)) { _ in
-                        AxisTick()
-                        AxisGridLine()
-                        AxisValueLabel(format: .dateTime.week(.twoDigits), centered: true)
-                    }
-                } else {
-                    AxisMarks() {
-                           AxisTick()
-                           AxisGridLine()
-                           AxisValueLabel()
-                       }
+        }
+        .chartYScale(domain: viewModel.minMidValue - 0.01...(viewModel.maxMidValue + 0.01))
+        .chartXAxis {
+            if viewModel.showWeekday {
+                AxisMarks(values: .stride(by: .day)) { _ in
+                    AxisTick()
+                    AxisGridLine()
+                    AxisValueLabel(format: .dateTime.weekday(.narrow), centered: true)
+                }
+            } else if viewModel.showMonth {
+                AxisMarks(position: .top, values: .stride(by: .month)) {
+                    AxisGridLine()
+                    AxisValueLabel(format: .dateTime.month(.wide))
+                }
+            } else if viewModel.showWeekOfYear {
+                AxisMarks(values: .stride(by: .weekOfYear)) { _ in
+                    AxisTick()
+                    AxisGridLine()
+                    AxisValueLabel(format: .dateTime.week(.twoDigits), centered: true)
+                }
+            } else {
+                AxisMarks() {
+                    AxisTick()
+                    AxisGridLine()
+                    AxisValueLabel()
                 }
             }
         }
@@ -127,9 +147,13 @@ struct CurrencyRateDetailView: View {
                 Group {
                     Toggle(isOn: $viewModel.showAverage) { Text("Pokaż średni kurs") }
                     Toggle(isOn: $viewModel.hideSymbol) { Text("Ukryj symbol") }
-                    Toggle(isOn: $viewModel.showWeekday) { Text("Pokaż dni tygodnia") }
+                    if viewModel.selectedPeriod == .month {
+                        Toggle(isOn: $viewModel.showWeekday) { Text("Pokaż dni tygodnia") }
+                    }
+                    if viewModel.selectedPeriod == .month || viewModel.selectedPeriod == .quoter {
+                        Toggle(isOn: $viewModel.showWeekOfYear) { Text("Pokaż numer tygodnia") }
+                    }
                     Toggle(isOn: $viewModel.showMonth) { Text("Pokaż miesiące") }
-                    Toggle(isOn: $viewModel.showWeekOfYear) { Text("Pokaż numer tygodnia") }
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
             } header: {
@@ -157,7 +181,6 @@ struct CurrencyRateDetailView: View {
     func createExchangeRateDifferenceText(_ exchange: Exchange) -> some View {
         let value = viewModel.yesterdayRatePercentageChange
         Text("\(value, specifier: "%.2f")%")
-            .font(.title2)
             .foregroundStyle(value >= 0 ? .green : .red)
             .bold()
     }

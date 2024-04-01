@@ -20,6 +20,7 @@ struct ContainerRateDetailView: View {
             if let exchange = store.exchange {
                 viewFactory.createCurrencyDetailsViews(chart: store.chartType,
                                                        exchange: exchange,
+                                                       selectedPeriod: store.selectedPeriod,
                                                        isExpand: true)
             }
         }

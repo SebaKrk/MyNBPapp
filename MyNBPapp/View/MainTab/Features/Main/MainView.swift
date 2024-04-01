@@ -124,13 +124,12 @@ struct MainView: View {
                 Group {
                     viewFactory.createCurrencyDetailsViews(chart: .lineMark,
                                                            exchange: exchange,
+                                                           selectedPeriod: store.dateForm,
                                                            isExpand: false)
                 }
                 .frame(height: 300)
             } label: {
                 HStack {
-                    Text("Data \(exchange.rates[0].effectiveDate)")
-                    Spacer()
                     currencyRateBar(exchange)
                 }
             }

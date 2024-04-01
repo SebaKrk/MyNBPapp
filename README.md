@@ -134,3 +134,4 @@ https://github.com/SebaKrk/MyNBPapp
         - przekaż `Periods`
         - dodać flagę `isExpand` do widoku wykresu
         - MainView zasilić widokiem 
+        - Przy wybranym periods widoczne są tylko odpowiednie toggle 
