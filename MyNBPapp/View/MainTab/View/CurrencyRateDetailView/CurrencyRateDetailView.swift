@@ -133,10 +133,10 @@ struct CurrencyRateDetailView: View {
         GroupBox {
             VStack {
                 Spacer()
-                Text("Tabela")
+                CurrencyTableView()
                 Spacer()
             }
-            .frame(width: 200)
+            .frame(width: 250)
         }
     }
     
