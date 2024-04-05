@@ -15,7 +15,7 @@ protocol ChartViewFactory {
     
     func createCurrencyDetailsViews(chart type: ChartType,
                                     exchange: Exchange,
-                                    cashExchangeRates: Exchange,
+                                    cashExchangeRates: [RatesC],
                                     selectedPeriod: PeriodsCurrencyOption,
                                     isExpand: Bool) -> Content
 }

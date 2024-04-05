@@ -17,7 +17,7 @@ extension ContainerRateDetailFeature {
         
         var exchange: Exchange?
         
-        var cashExchangeRates: Exchange?
+        var cashExchangeRates: [RatesC]?
         
         var chartType: ChartType = .lineMark
         

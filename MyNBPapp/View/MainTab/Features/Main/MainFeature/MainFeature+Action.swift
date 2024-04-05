@@ -24,7 +24,7 @@ extension MainFeature {
         
         case updateExchangeData(Exchange)
         
-        case updateCashExchangeRatesData(Exchange)
+        case updateCashExchangeRatesData([RatesC])
         
         case updatePeriod(PeriodsCurrencyOption)
         
