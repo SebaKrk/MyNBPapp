@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import DataModels
 import Foundation
+import Commons
 
 /// `ContainerRateDetail+State`
 extension ContainerRateDetailFeature {
@@ -19,7 +20,7 @@ extension ContainerRateDetailFeature {
         
         var cashExchangeRates: [RatesC]?
         
-        var chartType: ChartType = .lineMark
+        var chartType: TableNBP = .a
         
         var selectedPeriod: PeriodsCurrencyOption
         

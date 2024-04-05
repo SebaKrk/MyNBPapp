@@ -5,15 +5,18 @@
 //  Created by Sebastian Sciuba on 17/03/2024.
 //
 
-import ComposableArchitecture
+//import ComposableArchitecture
 import Charts
 import Commons
 import DataModels
 import SwiftUI
+import Factory
 
 struct CurrencyRateDetailView: View {
     
     @ObservedObject var viewModel: CurrencyRateDetailViewModel
+    @Injected(\.currencyChartTypeTableViewFactory) private var viewFactory
+    var chartType: TableNBP
 
     var body: some View {
         if viewModel.isExpand {
@@ -93,9 +96,9 @@ struct CurrencyRateDetailView: View {
         }
     }
     
-    @ViewBuilder
+    
     func createChartView() -> some View {
-        CurrencyChartView(viewModel)
+        viewFactory.createChartView(chart: chartType, viewModel)
     }
     
     @ViewBuilder
