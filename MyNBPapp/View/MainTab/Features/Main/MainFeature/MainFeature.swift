@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import DataModels
 import SwiftUI
 
 /// `MainFeature+Reducer`
@@ -52,11 +53,12 @@ struct MainFeature {
                         let today = Date()
                         
                         let exchange = try await service.getNBPData(table: .a, symbol: .euro, from: from, to: today)
-                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: .euro, from: from, to: today)
+                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: .euro, from: from, to: today).rates
+                        
                         
                         await send(.updatePeriod(date))
                         await send(.updateExchangeData(exchange))
-                        await send(.updateCashExchangeRatesData(cashExchangeRates))
+                        await send(.updateCashExchangeRatesData(cashExchangeRates as! [RatesC]))
                     }
                     
                 case .view(.viewDidAppear):
@@ -65,11 +67,11 @@ struct MainFeature {
                         let today = Date()
                         
                         let exchange = try await service.getNBPData(table: .a, symbol: .euro, from: from, to: today)
-                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: .euro, from: from, to: today)
+                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: .euro, from: from, to: today).rates
                         
                         await send(.updatePeriod(date))
                         await send(.updateExchangeData(exchange))
-                        await send(.updateCashExchangeRatesData(cashExchangeRates))
+                        await send(.updateCashExchangeRatesData(cashExchangeRates as! [RatesC]))
                     }
                     
                 default: return .none

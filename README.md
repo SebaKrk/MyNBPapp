@@ -142,4 +142,5 @@ https://github.com/SebaKrk/MyNBPapp
     B: Budowanie UI cz.2
         - wydzielenie ChartView oraz TableView do odizlenycch klas.
         - dostarczenie poprawnych danych z NBP data C.
-        
+    C: Aktualizacja typów zmiennych
+        - zmiana typu zmiennej i rzutowania typów: `RatesC`

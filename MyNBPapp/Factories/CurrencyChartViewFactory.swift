@@ -14,7 +14,7 @@ final class CurrencyChartViewFactory: ChartViewFactory {
     @ViewBuilder
     func createCurrencyDetailsViews(chart type: ChartType,
                                     exchange: Exchange,
-                                    cashExchangeRates: Exchange,
+                                    cashExchangeRates: [RatesC],
                                     selectedPeriod: PeriodsCurrencyOption,
                                     isExpand: Bool) -> some View {
         switch type {

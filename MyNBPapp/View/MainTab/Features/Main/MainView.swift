@@ -138,7 +138,7 @@ struct MainView: View {
     }
     
     @ViewBuilder
-    func currencyRateBar(_ dataA: Exchange, _ dataC: Exchange) -> some View {
+    func currencyRateBar(_ dataA: Exchange, _ dataC: [RatesC]) -> some View {
         HStack {
             currencyRatePicker
             Spacer()
@@ -147,7 +147,7 @@ struct MainView: View {
     }
     
     @ViewBuilder
-    func expandButton(_ dataA: Exchange, _ dataC: Exchange) -> some View {
+    func expandButton(_ dataA: Exchange, _ dataC: [RatesC]) -> some View {
         NavigationLink(state: ContainerRateDetailFeature.State(exchange: dataA,
                                                                cashExchangeRates: dataC,
                                                                selectedPeriod: store.dateForm) ) {

@@ -11,7 +11,7 @@ import SwiftUI
 class CurrencyRateDetailViewModel: ObservableObject {
     
     @Published var exchange: Exchange
-    @Published var cashExchangeRates: Exchange
+    @Published var cashExchangeRates: [RatesC]
     
     @Published var selectedDate: Date? = nil
     @Published var isExpand: Bool = false
@@ -24,7 +24,7 @@ class CurrencyRateDetailViewModel: ObservableObject {
     @Published var showWeekOfYear: Bool = false
     
     init(exchange: Exchange,
-         cashExchangeRates: Exchange,
+         cashExchangeRates: [RatesC],
          selectedPeriod: PeriodsCurrencyOption,
          isExpand: Bool) {
         self.exchange = exchange
@@ -38,7 +38,7 @@ class CurrencyRateDetailViewModel: ObservableObject {
     }
     
     var dataC: [RatesC] {
-        cashExchangeRates.rates.compactMap { $0 as? RatesC }
+        cashExchangeRates.compactMap { $0 }
     }
 
     var actualRate: Double? {
