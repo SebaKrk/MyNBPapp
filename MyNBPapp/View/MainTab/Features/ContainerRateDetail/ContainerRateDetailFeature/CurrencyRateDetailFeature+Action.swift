@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Commons
 import Foundation
 
 /// `ContainerRateDetail+Action`
@@ -14,7 +15,7 @@ extension ContainerRateDetailFeature {
     @CasePathable
     enum Action {
         
-        case changeChartType(ChartType)
+        case changeChartType(TableNBP)
     }
     
 }

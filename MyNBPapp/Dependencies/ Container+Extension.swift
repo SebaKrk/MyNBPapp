@@ -14,4 +14,9 @@ extension Container {
         Factory(self) { CurrencyChartViewFactory() }
     }
     
+    var currencyChartTypeTableViewFactory: Factory<CurrencyChartTypeTableViewFactory> {
+        Factory(self) { CurrencyChartTypeTableViewFactory() }
+    }
+    
+    
 }

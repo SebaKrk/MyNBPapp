@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Commons
 import Factory
 import SwiftUI
 
@@ -18,11 +19,16 @@ struct ContainerRateDetailView: View {
     var body: some View {
         HStack {
             if let exchange = store.exchange, let cashExchangeRates = store.cashExchangeRates {
-                viewFactory.createCurrencyDetailsViews(chart: store.chartType,
-                                                       exchange: exchange,
-                                                       cashExchangeRates: cashExchangeRates,
-                                                       selectedPeriod: store.selectedPeriod,
-                                                       isExpand: true)
+//                viewFactory.createCurrencyDetailsViews(chart: store.chartType,
+//                                                       exchange: exchange,
+//                                                       cashExchangeRates: cashExchangeRates,
+//                                                       selectedPeriod: store.selectedPeriod,
+//                                                       isExpand: true)
+                let viewModel = CurrencyRateDetailViewModel(exchange: exchange,
+                                                            cashExchangeRates: cashExchangeRates,
+                                                            selectedPeriod: store.selectedPeriod,
+                                                            isExpand: true)
+                CurrencyRateDetailView(viewModel: viewModel, chartType: store.chartType)
             }
         }
         .toolbar {
@@ -43,7 +49,7 @@ struct ContainerRateDetailView: View {
     @ViewBuilder
     var charTypeMenu: some View {
         Menu {
-            ForEach(ChartType.allCases, id: \.self) { item in
+            ForEach(TableNBP.allCases, id: \.self) { item in
                 Button {
                     store.send(.changeChartType(item))
                 } label: {
