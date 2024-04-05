@@ -17,9 +17,10 @@ struct ContainerRateDetailView: View {
     
     var body: some View {
         HStack {
-            if let exchange = store.exchange {
+            if let exchange = store.exchange, let cashExchangeRates = store.cashExchangeRates {
                 viewFactory.createCurrencyDetailsViews(chart: store.chartType,
                                                        exchange: exchange,
+                                                       cashExchangeRates: cashExchangeRates,
                                                        selectedPeriod: store.selectedPeriod,
                                                        isExpand: true)
             }

@@ -14,7 +14,10 @@ extension ContainerRateDetailFeature {
     
     @ObservableState
     struct State: Equatable {
+        
         var exchange: Exchange?
+        
+        var cashExchangeRates: Exchange?
         
         var chartType: ChartType = .lineMark
         

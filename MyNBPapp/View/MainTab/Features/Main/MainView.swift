@@ -119,35 +119,37 @@ struct MainView: View {
     
     @ViewBuilder
     var currencyRateBox: some View {
-        if let exchange = store.exchange {
+        if let exchange = store.exchange, let cashExchangeRates = store.cashExchangeRates  {
             GroupBox {
                 Group {
                     viewFactory.createCurrencyDetailsViews(chart: .lineMark,
                                                            exchange: exchange,
+                                                           cashExchangeRates: cashExchangeRates,
                                                            selectedPeriod: store.dateForm,
                                                            isExpand: false)
                 }
                 .frame(height: 300)
             } label: {
                 HStack {
-                    currencyRateBar(exchange)
+                    currencyRateBar(exchange, cashExchangeRates)
                 }
             }
         }
     }
     
     @ViewBuilder
-    func currencyRateBar(_ data: Exchange) -> some View {
+    func currencyRateBar(_ dataA: Exchange, _ dataC: Exchange) -> some View {
         HStack {
             currencyRatePicker
             Spacer()
-            expandButton(data)
+            expandButton(dataA, dataC)
         }
     }
     
     @ViewBuilder
-    func expandButton(_ data: Exchange) -> some View {
-        NavigationLink(state: ContainerRateDetailFeature.State(exchange: data,
+    func expandButton(_ dataA: Exchange, _ dataC: Exchange) -> some View {
+        NavigationLink(state: ContainerRateDetailFeature.State(exchange: dataA,
+                                                               cashExchangeRates: dataC,
                                                                selectedPeriod: store.dateForm) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }

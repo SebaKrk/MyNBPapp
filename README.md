@@ -139,3 +139,7 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0018 Szczegóły waluty
     A: Budowanie UI
         - hardcore data
+    B: Budowanie UI cz.2
+        - wydzielenie ChartView oraz TableView do odizlenycch klas.
+        - dostarczenie poprawnych danych z NBP data C.
+        

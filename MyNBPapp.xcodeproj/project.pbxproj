@@ -99,6 +99,7 @@
 		93C6D7D12B5BA56A006E28F7 /* MyNBPappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7D02B5BA56A006E28F7 /* MyNBPappUITests.swift */; };
 		93C6D7D32B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7D22B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift */; };
 		93D430762BBC9CCB00FBBDBD /* CurrencyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D430752BBC9CCB00FBBDBD /* CurrencyTableView.swift */; };
+		93D430782BBFCE5300FBBDBD /* CurrencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D430772BBFCE5300FBBDBD /* CurrencyChartView.swift */; };
 		93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */; };
 		93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */; };
 		93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */; };
@@ -260,6 +261,7 @@
 		93C6D7D02B5BA56A006E28F7 /* MyNBPappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappUITests.swift; sourceTree = "<group>"; };
 		93C6D7D22B5BA56A006E28F7 /* MyNBPappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93D430752BBC9CCB00FBBDBD /* CurrencyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableView.swift; sourceTree = "<group>"; };
+		93D430772BBFCE5300FBBDBD /* CurrencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartView.swift; sourceTree = "<group>"; };
 		93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewModel.swift; sourceTree = "<group>"; };
 		93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+EuroChart.swift"; sourceTree = "<group>"; };
 		93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
@@ -754,6 +756,15 @@
 			path = MyNBPappUITests;
 			sourceTree = "<group>";
 		};
+		93D4307A2BBFCE8E00FBBDBD /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				93D430752BBC9CCB00FBBDBD /* CurrencyTableView.swift */,
+				93D430772BBFCE5300FBBDBD /* CurrencyChartView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
 		93E9A80A2B6E628600B37B26 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,8 +825,8 @@
 			isa = PBXGroup;
 			children = (
 				93F7829A2BB0837B00ACB39A /* ViewModel */,
+				93D4307A2BBFCE8E00FBBDBD /* SubView */,
 				9342551E2BA7A12400D787D6 /* CurrencyRateDetailView.swift */,
-				93D430752BBC9CCB00FBBDBD /* CurrencyTableView.swift */,
 			);
 			path = CurrencyRateDetailView;
 			sourceTree = "<group>";
@@ -1120,6 +1131,7 @@
 				93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */,
 				93335A842BA6DEA1001F1610 /* CurrencyConverterFeature+Action.swift in Sources */,
 				935180E52BADC73700F04301 /* MainFeatureServicesCoordinator.swift in Sources */,
+				93D430782BBFCE5300FBBDBD /* CurrencyChartView.swift in Sources */,
 				93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */,
 				9357DA092B5D9A7E0097673C /* MainViewOld.swift in Sources */,
 				9338604B2B8BCA4B0062DBC0 /* CurrencyRateCell.swift in Sources */,
