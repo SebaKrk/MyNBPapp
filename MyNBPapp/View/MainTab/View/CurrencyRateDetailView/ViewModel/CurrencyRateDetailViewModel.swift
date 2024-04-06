@@ -11,6 +11,8 @@ import SwiftUI
 class CurrencyRateDetailViewModel: ObservableObject {
     
     @Published var exchange: Exchange
+    @Published var cashExchangeRates: [RatesC]
+    
     @Published var selectedDate: Date? = nil
     @Published var isExpand: Bool = false
     @Published var selectedPeriod: PeriodsCurrencyOption = .month
@@ -22,45 +24,97 @@ class CurrencyRateDetailViewModel: ObservableObject {
     @Published var showWeekOfYear: Bool = false
     
     init(exchange: Exchange,
+         cashExchangeRates: [RatesC],
          selectedPeriod: PeriodsCurrencyOption,
          isExpand: Bool) {
         self.exchange = exchange
+        self.cashExchangeRates = cashExchangeRates
         self.selectedPeriod = selectedPeriod
         self.isExpand = isExpand
     }
-
-    var actualRate: Double? {
-        exchange.rates.compactMap({ $0 as? RatesA }).last?.mid
+    
+    var dataA: [RatesA] {
+        exchange.rates.compactMap { $0 as? RatesA }
     }
     
+    var dataC: [RatesC] {
+        cashExchangeRates.compactMap { $0 }
+    }
+
+    var actualRate: Double? {
+        dataA.last?.mid
+    }
+    
+    var actualAsk: Double {
+        dataC.last?.ask ?? 0
+    }
+    
+    var actualBid: Double {
+        dataC.last?.bid ?? 0
+    }
     var yesterdayRateValueChange: Double {
-        guard let todayRate = (exchange.rates.last as? RatesA)?.mid,
-              let yesterdayRate = (exchange.rates.dropLast().last as? RatesA)?.mid else {
+        guard let todayRate = dataA.last?.mid,
+              let yesterdayRate = dataA.dropLast().last?.mid else {
             return 0
         }
         return todayRate - yesterdayRate
     }
+    
+    var rateValueChange: Double {
+        guard let lastRate = dataA.last?.mid,
+              let firstRate = dataA.first?.mid
+        else {
+            return 0
+        }
+         return lastRate - firstRate
+    }
+    var ratePercentageChange: Double {
+        guard let lastRate = dataA.last?.mid,
+              let firstRate = dataA.first?.mid
+        else {
+            return 0
+        }
+         return (lastRate - firstRate) / firstRate * 100
+    }
 
     var yesterdayRatePercentageChange: Double {
-        guard let todayRate = (exchange.rates.last as? RatesA)?.mid,
-              let yesterdayRate = (exchange.rates.dropLast().last as? RatesA)?.mid, yesterdayRate != 0 else {
+        guard let todayRate = dataA.last?.mid,
+              let yesterdayRate = dataA.dropLast().last?.mid, yesterdayRate != 0 else {
             return 0
         }
         return (todayRate - yesterdayRate) / yesterdayRate * 100
     }
     
     var minMidValue: Double {
-        let midValues = exchange.rates.compactMap { $0 as? RatesA }.map { $0.mid }
+        let midValues = dataA.map { $0.mid }
         return midValues.min() ?? 0
     }
     
     var maxMidValue: Double {
-        let midValues = exchange.rates.compactMap { $0 as? RatesA }.map { $0.mid }
+        let midValues = dataA.compactMap { $0 }.map { $0.mid }
         return midValues.max() ?? 0
     }
     
+    var minBidValue: Double {
+        let bidValue = dataC.map { $0.bid }
+        return bidValue.min() ?? 0
+    }
+    
+    var maxBidValue: Double {
+        let bidValue = dataC.map { $0.bid }
+        return bidValue.max() ?? 0
+    }
+    
+    var averageBidValue: Double {
+        let bidValues = dataC.map { $0.bid }
+        guard !bidValues.isEmpty else { return 0 }
+        let sumOfBids = bidValues.reduce(0, +)
+        let averageBid = sumOfBids / Double(bidValues.count)
+        return averageBid
+    }
+    
     var averageCurrencyRate: Double {
-        let midValues = exchange.rates.compactMap { $0 as? RatesA }.map { $0.mid }
+        let midValues = dataA.compactMap { $0 }.map { $0.mid }
         guard !midValues.isEmpty else {
             return 0
         }

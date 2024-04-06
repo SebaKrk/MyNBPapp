@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import DataModels
 import SwiftUI
 
 /// `MainFeature+Reducer`
@@ -34,6 +35,10 @@ struct MainFeature {
                     state.exchange = data
                     return .none
                     
+                case let .updateCashExchangeRatesData(dataC):
+                    state.cashExchangeRates = dataC
+                    return .none
+                    
                 case let .view(.selectedCurrencySymbolChange(globalSymbols)):
                     state.selectedCurrencySymbol = globalSymbols
                     return .none
@@ -46,24 +51,27 @@ struct MainFeature {
                     return .run { send in
                         let from = date.chartRangeStartDate
                         let today = Date()
-                        let exchange = try await service.getNBPData(table: .a,
-                                                                    symbol: .euro,
-                                                                    from: from,
-                                                                    to: today)
+                        
+                        let exchange = try await service.getNBPData(table: .a, symbol: .euro, from: from, to: today)
+                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: .euro, from: from, to: today).rates
+                        
+                        
                         await send(.updatePeriod(date))
                         await send(.updateExchangeData(exchange))
+                        await send(.updateCashExchangeRatesData(cashExchangeRates as! [RatesC]))
                     }
                     
                 case .view(.viewDidAppear):
                     return .run { [date = state.dateForm] send in
                         let from = date.chartRangeStartDate
                         let today = Date()
-                        let exchange = try await service.getNBPData(table: .a,
-                                                                    symbol: .euro,
-                                                                    from: from,
-                                                                    to: today)
+                        
+                        let exchange = try await service.getNBPData(table: .a, symbol: .euro, from: from, to: today)
+                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: .euro, from: from, to: today).rates
+                        
                         await send(.updatePeriod(date))
                         await send(.updateExchangeData(exchange))
+                        await send(.updateCashExchangeRatesData(cashExchangeRates as! [RatesC]))
                     }
                     
                 default: return .none

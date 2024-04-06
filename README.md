@@ -135,3 +135,12 @@ https://github.com/SebaKrk/MyNBPapp
         - dodać flagę `isExpand` do widoku wykresu
         - MainView zasilić widokiem 
         - Przy wybranym periods widoczne są tylko odpowiednie toggle 
+        
+### IOS-0018 Szczegóły waluty
+    A: Budowanie UI
+        - hardcore data
+    B: Budowanie UI cz.2
+        - wydzielenie ChartView oraz TableView do odizlenycch klas.
+        - dostarczenie poprawnych danych z NBP data C.
+    C: Aktualizacja typów zmiennych
+        - zmiana typu zmiennej i rzutowania typów: `RatesC`

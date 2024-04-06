@@ -19,6 +19,8 @@ extension MainFeature {
         // MARK: Properties
         var exchange: Exchange?
         
+        var cashExchangeRates: [RatesC]?
+        
         var selectedCurrencySymbol: GlobalCurrencySymbols = .polishZloty
         
         var selectedCurrency: MainCurrencyState = .euro
