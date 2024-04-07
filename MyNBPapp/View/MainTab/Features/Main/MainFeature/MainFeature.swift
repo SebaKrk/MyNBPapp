@@ -71,6 +71,7 @@ struct MainFeature {
                     }
                     
                 case let .selectedCurrencyTabChange(selectedCurrency):
+                    state.selectedCurrency = selectedCurrency
                     return .run { [date = state.dateForm] send in
                         let from = date.chartRangeStartDate
                         let today = Date()

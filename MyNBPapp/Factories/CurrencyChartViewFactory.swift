@@ -12,63 +12,21 @@ import SwiftUI
 final class CurrencyChartViewFactory: ChartViewFactory {
     
         @ViewBuilder
-        func createCurrencyDetailsViews(chart type: TableNBP,
+        func createCurrencyDetailsViews(chart type: CurrencyExchangeChartType,
                                         exchange: Exchange,
                                         cashExchangeRates: [RatesC],
                                         selectedPeriod: PeriodsCurrencyOption,
                                         isExpand: Bool) -> some View {
             switch type {
-            case .a:
+            case .exchange:
                 let viewModel = CurrencyRateDetailViewModel(exchange: exchange,
                                                             cashExchangeRates: cashExchangeRates,
                                                             selectedPeriod: selectedPeriod,
+                                                            chartType: type,
                                                             isExpand: isExpand)
-                CurrencyRateDetailView(viewModel: viewModel, chartType: type)
-            case .c:
+                CurrencyRateDetailView(viewModel: viewModel)
+            default:
                 EmptyView()
             }
         }
-    
-
-//    @ViewBuilder
-//    func createCurrencyDetailsViews(chart type: ChartType,
-//                                    exchange: Exchange,
-//                                    cashExchangeRates: [RatesC],
-//                                    selectedPeriod: PeriodsCurrencyOption,
-//                                    isExpand: Bool) -> some View {
-//        switch type {
-//        case .lineMark:
-//            let viewModel = CurrencyRateDetailViewModel(exchange: exchange,
-//                                                        cashExchangeRates: cashExchangeRates,
-//                                                        selectedPeriod: selectedPeriod,
-//                                                        isExpand: isExpand)
-//            CurrencyRateDetailView(viewModel: viewModel, chartType: type)
-//        case .barMark:
-//            EmptyView()
-//        }
-//    }
- 
 }
-protocol ChartTypeTableViewFactory {
-    
-    associatedtype Content: View
-    
-    func createChartView(chart type: TableNBP, _ viewModel: CurrencyRateDetailViewModel) -> Content
-}
-
-final class CurrencyChartTypeTableViewFactory: ChartTypeTableViewFactory {
-    
-    @ViewBuilder
-    func createChartView(chart type: TableNBP, _ viewModel: CurrencyRateDetailViewModel) -> some View {
-        switch type {
-        case .a:
-            CurrencyChartView(viewModel)
-        case .c:
-            CashExchangeChartView(viewModel)
-        default:
-            EmptyView()
-        }
-    }
-    
-}
-
