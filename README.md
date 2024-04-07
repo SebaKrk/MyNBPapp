@@ -150,3 +150,4 @@ https://github.com/SebaKrk/MyNBPapp
         - piaskownica 
 
 ### IOS-0020 Wybór kursu walutowego w z `MainFeature`
+        A: Obsługa zapytania w zależności od wybranego kursu 

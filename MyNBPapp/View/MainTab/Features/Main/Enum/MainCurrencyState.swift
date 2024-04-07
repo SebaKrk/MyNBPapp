@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Commons
 
 enum MainCurrencyState: Equatable, CaseIterable {
     
@@ -23,6 +24,19 @@ enum MainCurrencyState: Equatable, CaseIterable {
         case .dolar: return "usd"
         case .funt: return "gbp"
         case .jen: return "jpy"
+        }
+    }
+    /// change to GlobalCurrencySymbol
+    func changeGCSymbol() -> GlobalCurrencySymbols {
+        switch self {
+        case .euro:
+            return .euro
+        case .dolar:
+            return .dolar
+        case .funt:
+            return .sterling
+        case .jen:
+            return .yen
         }
     }
 }
