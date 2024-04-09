@@ -24,6 +24,7 @@ extension ContainerRateDetailFeature {
         
         var selectedPeriod: PeriodsCurrencyOption
         
+        var selectedCurrency: MainCurrencyState
     }
     
 }

@@ -28,6 +28,7 @@ extension MainFeature {
         
         case updatePeriod(PeriodsCurrencyOption)
         
+        
         // MARK: View Action
         
         case view(View)
@@ -37,6 +38,8 @@ extension MainFeature {
             case selectedCurrencySymbolChange(GlobalCurrencySymbols)
             
             case selectedPeriodChange(PeriodsCurrencyOption)
+            
+            case updateCurrencyTab(MainCurrencyState)
             
             case viewDidAppear
         

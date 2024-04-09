@@ -24,16 +24,19 @@ class CurrencyRateDetailViewModel: ObservableObject {
     @Published var showWeekOfYear: Bool = false
     
     @Published var chartType: CurrencyExchangeChartType
+    @Published var selectedCurrency: MainCurrencyState
     
     init(exchange: Exchange,
          cashExchangeRates: [RatesC],
          selectedPeriod: PeriodsCurrencyOption,
          chartType: CurrencyExchangeChartType,
+         selectedCurrency: MainCurrencyState,
          isExpand: Bool) {
         self.exchange = exchange
         self.cashExchangeRates = cashExchangeRates
         self.selectedPeriod = selectedPeriod
         self.chartType = chartType
+        self.selectedCurrency = selectedCurrency
         self.isExpand = isExpand
     }
     

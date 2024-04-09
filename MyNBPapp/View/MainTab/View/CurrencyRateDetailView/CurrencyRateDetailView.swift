@@ -71,7 +71,7 @@ struct CurrencyRateDetailView: View {
                                 .font(.title)
                                 .bold()
                             
-                            Text("Kurs euro Strefa Euro NBP")
+                            Text(viewModel.selectedCurrency.subTitle)
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
                         }
