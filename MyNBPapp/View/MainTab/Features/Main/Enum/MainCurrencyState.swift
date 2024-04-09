@@ -26,6 +26,19 @@ enum MainCurrencyState: Equatable, CaseIterable {
         case .jen: return "jpy"
         }
     }
+    
+    var subTitle: String {
+        switch self {
+        case .euro:
+            return "Kurs euro Strefa Euro NBP"
+        case .dolar:
+            return "Kurs dolara Stany Zjednoczone NBP"
+        case .funt:
+            return "Kurs funta Wielka Brytania NBP"
+        case .jen:
+            return "Kurs jena Japonia NBP"
+        }
+    }
     /// change to GlobalCurrencySymbol
     func changeGCSymbol() -> GlobalCurrencySymbols {
         switch self {

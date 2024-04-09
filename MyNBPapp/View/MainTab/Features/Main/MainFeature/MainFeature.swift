@@ -58,12 +58,13 @@ struct MainFeature {
                     }
                     
                 case .view(.viewDidAppear):
-                    return .run { [date = state.dateForm] send in
+                    return .run { [date = state.dateForm, symbol = state.selectedCurrency] send in
                         let from = date.chartRangeStartDate
                         let today = Date()
+                        let symbol = symbol.changeGCSymbol()
                         
-                        let exchange = try await service.getNBPData(table: .a, symbol: .euro, from: from, to: today)
-                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: .euro, from: from, to: today).rates
+                        let exchange = try await service.getNBPData(table: .a, symbol: symbol, from: from, to: today)
+                        let cashExchangeRates = try await service.getNBPData(table: .c, symbol: symbol, from: from, to: today).rates
                         
                         await send(.updatePeriod(date))
                         await send(.updateExchangeData(exchange))
@@ -71,7 +72,7 @@ struct MainFeature {
                     }
                     
                 case let .selectedCurrencyTabChange(selectedCurrency):
-                    state.selectedCurrency = selectedCurrency
+                    
                     return .run { [date = state.dateForm] send in
                         let from = date.chartRangeStartDate
                         let today = Date()
@@ -80,12 +81,17 @@ struct MainFeature {
                         let exchange = try await service.getNBPData(table: .a, symbol: symbol , from: from, to: today)
                         let cashExchangeRates = try await service.getNBPData(table: .c, symbol: symbol, from: from, to: today).rates
                         
+                        await send(.view(.updateCurrencyTab(selectedCurrency)))
                         await send(.updateExchangeData(exchange))
                         await send(.updateCashExchangeRatesData(cashExchangeRates as! [RatesC]))
                     }
                     
                 case let .view(.selectedCurrencySymbolChange(globalSymbols)):
                     state.selectedCurrencySymbol = globalSymbols
+                    return .none
+                    
+                case let .view(.updateCurrencyTab(mainCurrencyItem)):
+                    state.selectedCurrency = mainCurrencyItem
                     return .none
                     
                 default: return .none

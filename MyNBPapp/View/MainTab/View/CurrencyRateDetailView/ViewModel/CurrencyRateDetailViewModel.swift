@@ -24,16 +24,19 @@ class CurrencyRateDetailViewModel: ObservableObject {
     @Published var showWeekOfYear: Bool = false
     
     @Published var chartType: CurrencyExchangeChartType
+    @Published var selectedCurrency: MainCurrencyState
     
     init(exchange: Exchange,
          cashExchangeRates: [RatesC],
          selectedPeriod: PeriodsCurrencyOption,
          chartType: CurrencyExchangeChartType,
+         selectedCurrency: MainCurrencyState,
          isExpand: Bool) {
         self.exchange = exchange
         self.cashExchangeRates = cashExchangeRates
         self.selectedPeriod = selectedPeriod
         self.chartType = chartType
+        self.selectedCurrency = selectedCurrency
         self.isExpand = isExpand
     }
     
@@ -127,6 +130,14 @@ class CurrencyRateDetailViewModel: ObservableObject {
         let sumOfBids = bidValues.reduce(0, +)
         let averageBid = sumOfBids / Double(bidValues.count)
         return averageBid
+    }
+    
+    var averageAskValue: Double {
+        let askValues = dataC.map { $0.ask }
+        guard !askValues.isEmpty else { return 0 }
+        let sumOfAsks = askValues.reduce(0, +)
+        let averageAsk = sumOfAsks / Double(askValues.count)
+        return averageAsk
     }
     
     var averageCurrencyRate: Double {
