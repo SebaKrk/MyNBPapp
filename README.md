@@ -148,3 +148,10 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0019 Rozbudowa widoku `CurrencyRateDetailView`
     A: Rozróżnienie miedzy RateA a RateC
         - piaskownica 
+
+### IOS-0020 Wybór kursu walutowego w z `MainFeature`
+    A: Obsługa zapytania w zależności od wybranego kursu 
+    B: Poprawka stanu oraz akacji
+        - selectedCurrency: MainCurrencyState
+        - tytuł kontenera chart by hardcode, roszenie `MainCurrencyState` o subtitle
+        - przekazanie wybranej waluty przez feature-y

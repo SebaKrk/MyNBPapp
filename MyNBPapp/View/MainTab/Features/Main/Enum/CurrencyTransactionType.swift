@@ -23,4 +23,3 @@ enum CurrencyTransactionType: Equatable, CaseIterable {
         }
     }
 }
-

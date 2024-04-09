@@ -16,7 +16,7 @@ struct CurrencyRateDetailView: View {
     
     @ObservedObject var viewModel: CurrencyRateDetailViewModel
     @Injected(\.currencyChartTypeTableViewFactory) private var viewFactory
-    var chartType: TableNBP
+   
 
     var body: some View {
         if viewModel.isExpand {
@@ -71,7 +71,7 @@ struct CurrencyRateDetailView: View {
                                 .font(.title)
                                 .bold()
                             
-                            Text("Kurs euro Strefa Euro NBP")
+                            Text(viewModel.selectedCurrency.subTitle)
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
                         }
@@ -98,7 +98,7 @@ struct CurrencyRateDetailView: View {
     
     
     func createChartView() -> some View {
-        viewFactory.createChartView(chart: chartType, viewModel)
+        viewFactory.createChartView(viewModel)
     }
     
     @ViewBuilder

@@ -26,9 +26,6 @@
         }
       }
     },
-    "%lf" : {
-
-    },
     "1 Euro" : {
 
     },
@@ -86,9 +83,6 @@
     "currency rate picker" : {
 
     },
-    "Data: %@" : {
-
-    },
     "date" : {
 
     },
@@ -123,9 +117,6 @@
       }
     },
     "FavoritesView" : {
-
-    },
-    "Kurs euro Strefa Euro NBP" : {
 
     },
     "kurs:" : {
