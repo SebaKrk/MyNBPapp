@@ -9,7 +9,7 @@ import Foundation
 
 public enum GlobalCurrencySymbols: String, Equatable, CaseIterable {
     case polishZloty
-    case dollar
+    case dolar
     case yen
     case sterling
     case franc
@@ -26,7 +26,7 @@ public enum GlobalCurrencySymbols: String, Equatable, CaseIterable {
     public var title: String {
         switch self {
         case .polishZloty: return "PLN"
-        case .dollar: return "USD"
+        case .dolar: return "USD"
         case .yen: return "JPY"
         case .sterling: return "GBP"
         case .franc: return "CHF"
@@ -45,7 +45,7 @@ public enum GlobalCurrencySymbols: String, Equatable, CaseIterable {
     public var sfSymbol: String {
         switch self {
         case .polishZloty: return "polishzlotysign.circle"
-        case .dollar: return "dollarsign.circle"
+        case .dolar: return "dollarsign.circle"
         case .yen: return "yensign.circle"
         case .sterling: return "sterlingsign.circle"
         case .franc: return "francsign.circle"

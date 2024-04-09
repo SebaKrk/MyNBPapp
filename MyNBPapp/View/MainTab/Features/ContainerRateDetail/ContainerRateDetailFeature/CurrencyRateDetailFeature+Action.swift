@@ -15,7 +15,7 @@ extension ContainerRateDetailFeature {
     @CasePathable
     enum Action {
         
-        case changeChartType(TableNBP)
+        case changeChartType(CurrencyExchangeChartType)
     }
     
 }

@@ -122,7 +122,7 @@ struct MainView: View {
         if let exchange = store.exchange, let cashExchangeRates = store.cashExchangeRates  {
             GroupBox {
                 Group {
-                    viewFactory.createCurrencyDetailsViews(chart: .a,
+                    viewFactory.createCurrencyDetailsViews(chart: .exchange,
                                                            exchange: exchange,
                                                            cashExchangeRates: cashExchangeRates,
                                                            selectedPeriod: store.dateForm,
@@ -162,7 +162,7 @@ struct MainView: View {
                 Text(item.title)
                     .textCase(.uppercase)
                     .tag(item)
-            }
+            } 
         }
         .pickerStyle(.segmented)
         .frame(width: 200)

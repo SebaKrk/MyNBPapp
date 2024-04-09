@@ -14,15 +14,9 @@ protocol ChartViewFactory {
     
     associatedtype Content: View
     
-        func createCurrencyDetailsViews(chart type: TableNBP,
+        func createCurrencyDetailsViews(chart type: CurrencyExchangeChartType,
                                         exchange: Exchange,
                                         cashExchangeRates: [RatesC],
                                         selectedPeriod: PeriodsCurrencyOption,
                                         isExpand: Bool) -> Content
-//
-//    func createCurrencyDetailsViews(chart type: ChartType,
-//                                    exchange: Exchange,
-//                                    cashExchangeRates: [RatesC],
-//                                    selectedPeriod: PeriodsCurrencyOption,
-//                                    isExpand: Bool) -> Content
 }

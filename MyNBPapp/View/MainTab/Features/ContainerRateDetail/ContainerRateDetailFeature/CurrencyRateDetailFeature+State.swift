@@ -20,7 +20,7 @@ extension ContainerRateDetailFeature {
         
         var cashExchangeRates: [RatesC]?
         
-        var chartType: TableNBP = .a
+        var chartType: CurrencyExchangeChartType = .exchange
         
         var selectedPeriod: PeriodsCurrencyOption
         

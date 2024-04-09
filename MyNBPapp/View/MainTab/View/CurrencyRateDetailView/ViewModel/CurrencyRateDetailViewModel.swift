@@ -23,13 +23,17 @@ class CurrencyRateDetailViewModel: ObservableObject {
     @Published var showMonth: Bool = false
     @Published var showWeekOfYear: Bool = false
     
+    @Published var chartType: CurrencyExchangeChartType
+    
     init(exchange: Exchange,
          cashExchangeRates: [RatesC],
          selectedPeriod: PeriodsCurrencyOption,
+         chartType: CurrencyExchangeChartType,
          isExpand: Bool) {
         self.exchange = exchange
         self.cashExchangeRates = cashExchangeRates
         self.selectedPeriod = selectedPeriod
+        self.chartType = chartType
         self.isExpand = isExpand
     }
     
@@ -52,6 +56,7 @@ class CurrencyRateDetailViewModel: ObservableObject {
     var actualBid: Double {
         dataC.last?.bid ?? 0
     }
+    
     var yesterdayRateValueChange: Double {
         guard let todayRate = dataA.last?.mid,
               let yesterdayRate = dataA.dropLast().last?.mid else {
@@ -68,6 +73,7 @@ class CurrencyRateDetailViewModel: ObservableObject {
         }
          return lastRate - firstRate
     }
+    
     var ratePercentageChange: Double {
         guard let lastRate = dataA.last?.mid,
               let firstRate = dataA.first?.mid
@@ -103,6 +109,16 @@ class CurrencyRateDetailViewModel: ObservableObject {
     var maxBidValue: Double {
         let bidValue = dataC.map { $0.bid }
         return bidValue.max() ?? 0
+    }
+    
+    var minAskValue: Double {
+        let askValue = dataC.map { $0.ask }
+        return askValue.min() ?? 0
+    }
+    
+    var maxAskValue: Double {
+        let askValue = dataC.map { $0.ask }
+        return askValue.max() ?? 0
     }
     
     var averageBidValue: Double {
