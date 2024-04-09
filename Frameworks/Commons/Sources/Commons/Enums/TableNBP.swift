@@ -7,17 +7,22 @@
 
 import Foundation
 
-public enum TableNBP: String {
+public enum TableNBP: String, Equatable, CaseIterable  {
     
     case a = "a"
-    case b = "b"
     case c = "c"
     
     var type: String {
         switch self {
         case .a: return "a"
-        case .b: return "b"
         case .c: return "c"
+        }
+    }
+    
+    public var title: String {
+        switch self {
+        case .a: return "Kurs Walut"
+        case .c: return "Kupno/Sprzedaż"
         }
     }
 }

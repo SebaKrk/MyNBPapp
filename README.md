@@ -144,3 +144,7 @@ https://github.com/SebaKrk/MyNBPapp
         - dostarczenie poprawnych danych z NBP data C.
     C: Aktualizacja typów zmiennych
         - zmiana typu zmiennej i rzutowania typów: `RatesC`
+
+### IOS-0019 Rozbudowa widoku `CurrencyRateDetailView`
+    A: Rozróżnienie miedzy RateA a RateC
+        - piaskownica 
