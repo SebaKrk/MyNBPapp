@@ -122,10 +122,11 @@ struct MainView: View {
         if let exchange = store.exchange, let cashExchangeRates = store.cashExchangeRates  {
             GroupBox {
                 Group {
-                    viewFactory.createCurrencyDetailsViews(chart: .lineMark,
+                    viewFactory.createCurrencyDetailsViews(chart: .exchange,
                                                            exchange: exchange,
                                                            cashExchangeRates: cashExchangeRates,
                                                            selectedPeriod: store.dateForm,
+                                                           selectedCurrency: store.selectedCurrency,
                                                            isExpand: false)
                 }
                 .frame(height: 300)
@@ -150,7 +151,8 @@ struct MainView: View {
     func expandButton(_ dataA: Exchange, _ dataC: [RatesC]) -> some View {
         NavigationLink(state: ContainerRateDetailFeature.State(exchange: dataA,
                                                                cashExchangeRates: dataC,
-                                                               selectedPeriod: store.dateForm) ) {
+                                                               selectedPeriod: store.dateForm,
+                                                               selectedCurrency: store.selectedCurrency) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }
     }
@@ -162,7 +164,7 @@ struct MainView: View {
                 Text(item.title)
                     .textCase(.uppercase)
                     .tag(item)
-            }
+            } 
         }
         .pickerStyle(.segmented)
         .frame(width: 200)
