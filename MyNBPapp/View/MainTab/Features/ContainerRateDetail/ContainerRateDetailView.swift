@@ -23,6 +23,7 @@ struct ContainerRateDetailView: View {
                                                             cashExchangeRates: cashExchangeRates,
                                                             selectedPeriod: store.selectedPeriod,
                                                             chartType: store.chartType,
+                                                            selectedCurrency: store.selectedCurrency,
                                                             isExpand: true)
                 CurrencyRateDetailView(viewModel: viewModel)
             }

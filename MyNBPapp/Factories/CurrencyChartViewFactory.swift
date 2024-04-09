@@ -16,6 +16,7 @@ final class CurrencyChartViewFactory: ChartViewFactory {
                                         exchange: Exchange,
                                         cashExchangeRates: [RatesC],
                                         selectedPeriod: PeriodsCurrencyOption,
+                                        selectedCurrency: MainCurrencyState,
                                         isExpand: Bool) -> some View {
             switch type {
             case .exchange:
@@ -23,6 +24,7 @@ final class CurrencyChartViewFactory: ChartViewFactory {
                                                             cashExchangeRates: cashExchangeRates,
                                                             selectedPeriod: selectedPeriod,
                                                             chartType: type,
+                                                            selectedCurrency: selectedCurrency,
                                                             isExpand: isExpand)
                 CurrencyRateDetailView(viewModel: viewModel)
             default:

@@ -18,5 +18,6 @@ protocol ChartViewFactory {
                                         exchange: Exchange,
                                         cashExchangeRates: [RatesC],
                                         selectedPeriod: PeriodsCurrencyOption,
+                                        selectedCurrency: MainCurrencyState,
                                         isExpand: Bool) -> Content
 }

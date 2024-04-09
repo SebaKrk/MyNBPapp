@@ -126,6 +126,7 @@ struct MainView: View {
                                                            exchange: exchange,
                                                            cashExchangeRates: cashExchangeRates,
                                                            selectedPeriod: store.dateForm,
+                                                           selectedCurrency: store.selectedCurrency,
                                                            isExpand: false)
                 }
                 .frame(height: 300)
@@ -150,7 +151,8 @@ struct MainView: View {
     func expandButton(_ dataA: Exchange, _ dataC: [RatesC]) -> some View {
         NavigationLink(state: ContainerRateDetailFeature.State(exchange: dataA,
                                                                cashExchangeRates: dataC,
-                                                               selectedPeriod: store.dateForm) ) {
+                                                               selectedPeriod: store.dateForm,
+                                                               selectedCurrency: store.selectedCurrency) ) {
             Image(systemName: "arrow.down.left.arrow.up.right")
         }
     }
