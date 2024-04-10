@@ -155,3 +155,4 @@ https://github.com/SebaKrk/MyNBPapp
         - selectedCurrency: MainCurrencyState
         - tytuł kontenera chart by hardcode, roszenie `MainCurrencyState` o subtitle
         - przekazanie wybranej waluty przez feature-y
+    C: Opcje dla bid oraz ask

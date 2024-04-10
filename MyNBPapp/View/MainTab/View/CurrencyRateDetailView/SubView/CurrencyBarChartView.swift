@@ -33,6 +33,9 @@ struct CashExchangeChartView: View {
                     y: .value("value", dataC.bid)
                 )
                 .foregroundStyle(.orange)
+                if viewModel.showAverage {
+                    createRuleMarkBid()
+                }
             }
         }
         .chartYScale(domain: viewModel.minBidValue - 0.01...(viewModel.maxBidValue + 0.01))
@@ -46,8 +49,33 @@ struct CashExchangeChartView: View {
                     y: .value("value", dataC.ask)
                 )
                 .foregroundStyle(.purple)
+                if viewModel.showAverage {
+                    createRuleMarkAsk()
+                }
             }
         }
         .chartYScale(domain: viewModel.minAskValue - 0.01...(viewModel.maxAskValue + 0.01))
+    }
+    
+    func createRuleMarkBid() -> some ChartContent {
+        RuleMark(
+            y: .value("Average", viewModel.averageBidValue)
+        )
+        .foregroundStyle(.gray)
+        .annotation(position: .top, alignment: .leading) {
+            Text("\(viewModel.averageBidValue, specifier: "%.3f")")
+                .foregroundStyle(.gray)
+        }
+    }
+    
+    func createRuleMarkAsk() -> some ChartContent {
+        RuleMark(
+            y: .value("Average", viewModel.averageAskValue)
+        )
+        .foregroundStyle(.gray)
+        .annotation(position: .top, alignment: .leading) {
+            Text("\(viewModel.averageAskValue, specifier: "%.3f")")
+                .foregroundStyle(.gray)
+        }
     }
 }

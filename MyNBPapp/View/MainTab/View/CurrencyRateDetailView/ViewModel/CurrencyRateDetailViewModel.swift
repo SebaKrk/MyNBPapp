@@ -132,6 +132,14 @@ class CurrencyRateDetailViewModel: ObservableObject {
         return averageBid
     }
     
+    var averageAskValue: Double {
+        let askValues = dataC.map { $0.ask }
+        guard !askValues.isEmpty else { return 0 }
+        let sumOfAsks = askValues.reduce(0, +)
+        let averageAsk = sumOfAsks / Double(askValues.count)
+        return averageAsk
+    }
+    
     var averageCurrencyRate: Double {
         let midValues = dataA.compactMap { $0 }.map { $0.mid }
         guard !midValues.isEmpty else {
