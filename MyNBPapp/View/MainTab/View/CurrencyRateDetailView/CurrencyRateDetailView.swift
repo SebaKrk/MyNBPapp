@@ -77,7 +77,7 @@ struct CurrencyRateDetailView: View {
                         }
                         HStack {
                             createCell("Data początkowa:",
-                                       value: Formatters.Date.createString(from:viewModel.selectedPeriod.chartRangeStartDate,
+                                       value: Formatters.Date.createString(from: viewModel.selectedPeriod.chartRangeStartDate,
                                                                            with: .shortDate))
                             createCell("Data końcowa:",
                                        value: Formatters.Date.createString(from: Date(),
@@ -118,15 +118,14 @@ struct CurrencyRateDetailView: View {
         List {
             Section {
                 Group {
-                    Toggle(isOn: $viewModel.showAverage) { Text("Pokaż średni kurs") }
-                    Toggle(isOn: $viewModel.hideSymbol) { Text("Ukryj symbol") }
-                    if viewModel.selectedPeriod == .month {
-                        Toggle(isOn: $viewModel.showWeekday) { Text("Pokaż dni tygodnia") }
+                    switch viewModel.chartType {
+                    case .exchange:
+                        exchangeOption
+                    case .ask:
+                        askOption
+                    case .bid:
+                        bidOption
                     }
-                    if viewModel.selectedPeriod == .month || viewModel.selectedPeriod == .quoter {
-                        Toggle(isOn: $viewModel.showWeekOfYear) { Text("Pokaż numer tygodnia") }
-                    }
-                    Toggle(isOn: $viewModel.showMonth) { Text("Pokaż miesiące") }
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .blue))
             } header: {
@@ -134,6 +133,29 @@ struct CurrencyRateDetailView: View {
             }
         }
         .listStyle(.plain)
+    }
+    
+    @ViewBuilder
+    var exchangeOption: some View {
+        Toggle(isOn: $viewModel.showAverage) { Text("Pokaż średni kurs") }
+        Toggle(isOn: $viewModel.hideSymbol) { Text("Ukryj symbol") }
+        if viewModel.selectedPeriod == .month {
+            Toggle(isOn: $viewModel.showWeekday) { Text("Pokaż dni tygodnia") }
+        }
+        if viewModel.selectedPeriod == .month || viewModel.selectedPeriod == .quoter {
+            Toggle(isOn: $viewModel.showWeekOfYear) { Text("Pokaż numer tygodnia") }
+        }
+        Toggle(isOn: $viewModel.showMonth) { Text("Pokaż miesiące") }
+    }
+    
+    @ViewBuilder
+    var askOption: some View {
+        Toggle(isOn: $viewModel.showAverage) { Text("Pokaż średni kurs") }
+    }
+    
+    @ViewBuilder
+    var bidOption: some View {
+        Toggle(isOn: $viewModel.showAverage) { Text("Pokaż średni kurs") }
     }
     
     @ViewBuilder
