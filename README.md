@@ -156,3 +156,5 @@ https://github.com/SebaKrk/MyNBPapp
         - tytuł kontenera chart by hardcode, roszenie `MainCurrencyState` o subtitle
         - przekazanie wybranej waluty przez feature-y
     C: Opcje dla bid oraz ask
+
+### IOS-0021 `WidgetKit`
