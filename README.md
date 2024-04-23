@@ -158,3 +158,4 @@ https://github.com/SebaKrk/MyNBPapp
     C: Opcje dla bid oraz ask
 
 ### IOS-0021 `WidgetKit`
+    A: Stworzenie Widgetu z mokowymi danymi 
