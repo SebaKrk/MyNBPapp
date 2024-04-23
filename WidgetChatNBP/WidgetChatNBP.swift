@@ -50,16 +50,55 @@ struct WidgetProvider: TimelineProvider {
 }
 
 struct WidgetChartView: View {
+    @Environment(\.widgetFamily) var widgetFamily
     var entry: WidgetProvider.Entry
     
+    
     var body: some View {
-        Chart {
-            ForEach(entry.chartData, id: \.self) { data in
-               createLineMark(data)
-                createAreaMark(data)
+        VStack {
+            switchTitle
+            Chart {
+                ForEach(entry.chartData, id: \.self) { data in
+                    createLineMark(data)
+                    createAreaMark(data)
+                }
+            }
+            .chartYScale(domain: 4.22...4.36)
+            .chartXAxis(.hidden)
+        }
+    }
+    
+    var switchTitle: some View {
+        Group {
+            switch widgetFamily {
+            case .systemSmall:
+                HStack {
+                    Spacer()
+                    Text("4,334 zł")
+                        .font(.title3)
+                        .bold()
+                    Spacer()
+                }
+            default:
+                headerTitle
             }
         }
-        .chartYScale(domain: 4.2...4.4)
+    }
+    
+    var headerTitle: some View {
+        HStack {
+            Text("Euro")
+                .font(.title3)
+                .textCase(.uppercase)
+                .bold()
+            Text("Strefa Euro NBP")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Spacer()
+            Text("4,334 zł")
+                .font(.title3)
+                .bold()
+        }
     }
     
     func createLineMark(_ data: ChartData) -> some ChartContent {
@@ -73,8 +112,7 @@ struct WidgetChartView: View {
     func createAreaMark(_ data: ChartData) -> some ChartContent {
         AreaMark(
             x: .value("date",  data.effectiveDate),
-            
-            yStart: .value("mid", 4.2),
+            yStart: .value("mid", 4.24),
             yEnd: .value("mid", data.mid )
         )
         .foregroundStyle(.green)
@@ -87,8 +125,7 @@ struct WidgetChatNBP: Widget {
     let kind: String = "WidgetChatNBP"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: WidgetProvider()) { entry in
-            
+         StaticConfiguration(kind: kind, provider: WidgetProvider()) { entry in
             if #available(iOS 17.0, *) {
                 WidgetChartView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
@@ -98,6 +135,7 @@ struct WidgetChatNBP: Widget {
                     .background()
             }
         }
+         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
