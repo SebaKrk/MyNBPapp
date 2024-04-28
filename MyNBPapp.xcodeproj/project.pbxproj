@@ -101,6 +101,12 @@
 		93A5FFB02BD8076A00D9696B /* WidgetChatNBP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */; };
 		93A5FFB22BD8076B00D9696B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A5FFB12BD8076B00D9696B /* Assets.xcassets */; };
 		93A5FFB62BD8076B00D9696B /* WidgetChatNBPExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 93A5FFA92BD8076A00D9696B /* WidgetChatNBPExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93BDCE2F2BDED2A000FAD14A /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = 93BDCE2E2BDED2A000FAD14A /* Commons */; };
+		93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE382BDEE5F800FAD14A /* Exchange.swift */; };
+		93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */; };
+		93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */; };
+		93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */; };
+		93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -276,6 +282,11 @@
 		93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChatNBP.swift; sourceTree = "<group>"; };
 		93A5FFB12BD8076B00D9696B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93A5FFB32BD8076B00D9696B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BDCE382BDEE5F800FAD14A /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
+		93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
+		93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
+		93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChartView.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -323,6 +334,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BDCE2F2BDED2A000FAD14A /* Commons in Frameworks */,
 				93A5FFAB2BD8076A00D9696B /* SwiftUI.framework in Frameworks */,
 				93A5FFAA2BD8076A00D9696B /* WidgetKit.framework in Frameworks */,
 			);
@@ -723,11 +735,48 @@
 			isa = PBXGroup;
 			children = (
 				93A5FFAD2BD8076A00D9696B /* WidgetChatNBPBundle.swift */,
-				93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */,
+				93BDCE372BDEE5D300FAD14A /* Model */,
+				93BDCE462BDEE81F00FAD14A /* Provider */,
+				93BDCE442BDEE76700FAD14A /* Widget */,
+				93BDCE452BDEE76F00FAD14A /* View */,
 				93A5FFB12BD8076B00D9696B /* Assets.xcassets */,
 				93A5FFB32BD8076B00D9696B /* Info.plist */,
 			);
 			path = WidgetChatNBP;
+			sourceTree = "<group>";
+		};
+		93BDCE372BDEE5D300FAD14A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE382BDEE5F800FAD14A /* Exchange.swift */,
+				93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */,
+				93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93BDCE442BDEE76700FAD14A /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		93BDCE452BDEE76F00FAD14A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93BDCE462BDEE81F00FAD14A /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		93C6D7A92B5BA569006E28F7 = {
@@ -983,6 +1032,9 @@
 			dependencies = (
 			);
 			name = WidgetChatNBPExtension;
+			packageProductDependencies = (
+				93BDCE2E2BDED2A000FAD14A /* Commons */,
+			);
 			productName = WidgetChatNBPExtension;
 			productReference = 93A5FFA92BD8076A00D9696B /* WidgetChatNBPExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1193,8 +1245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */,
+				93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */,
+				93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */,
 				93A5FFB02BD8076A00D9696B /* WidgetChatNBP.swift in Sources */,
 				93A5FFAE2BD8076A00D9696B /* WidgetChatNBPBundle.swift in Sources */,
+				93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */,
+				93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1930,6 +1987,10 @@
 		93A3EB4B2B640291007BFCDC /* MonumentKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MonumentKit;
+		};
+		93BDCE2E2BDED2A000FAD14A /* Commons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Commons;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
