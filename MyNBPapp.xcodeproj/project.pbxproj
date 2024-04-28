@@ -95,6 +95,18 @@
 		93A3EB552B6585F4007BFCDC /* CurrencyRatePrimaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */; };
 		93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB562B658655007BFCDC /* MainViewModel.swift */; };
 		93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB582B65894A007BFCDC /* FlagView.swift */; };
+		93A5FFAA2BD8076A00D9696B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936774FF2B7007A500816C92 /* WidgetKit.framework */; };
+		93A5FFAB2BD8076A00D9696B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936775012B7007A500816C92 /* SwiftUI.framework */; };
+		93A5FFAE2BD8076A00D9696B /* WidgetChatNBPBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5FFAD2BD8076A00D9696B /* WidgetChatNBPBundle.swift */; };
+		93A5FFB02BD8076A00D9696B /* WidgetChatNBP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */; };
+		93A5FFB22BD8076B00D9696B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A5FFB12BD8076B00D9696B /* Assets.xcassets */; };
+		93A5FFB62BD8076B00D9696B /* WidgetChatNBPExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 93A5FFA92BD8076A00D9696B /* WidgetChatNBPExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93BDCE2F2BDED2A000FAD14A /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = 93BDCE2E2BDED2A000FAD14A /* Commons */; };
+		93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE382BDEE5F800FAD14A /* Exchange.swift */; };
+		93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */; };
+		93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */; };
+		93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */; };
+		93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -131,6 +143,13 @@
 			remoteGlobalIDString = 93834AD22B7A004B00A5744C;
 			remoteInfo = ExchangeRateClient;
 		};
+		93A5FFB42BD8076B00D9696B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93C6D7AA2B5BA569006E28F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93A5FFA82BD8076A00D9696B;
+			remoteInfo = WidgetChatNBPExtension;
+		};
 		93C6D7C32B5BA56A006E28F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 93C6D7AA2B5BA569006E28F7 /* Project object */;
@@ -155,6 +174,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				936775112B7007A600816C92 /* WidgetNBPExtension.appex in Embed Foundation Extensions */,
+				93A5FFB62BD8076B00D9696B /* WidgetChatNBPExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +277,16 @@
 		93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRatePrimaryView.swift; sourceTree = "<group>"; };
 		93A3EB562B658655007BFCDC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		93A3EB582B65894A007BFCDC /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
+		93A5FFA92BD8076A00D9696B /* WidgetChatNBPExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetChatNBPExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A5FFAD2BD8076A00D9696B /* WidgetChatNBPBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChatNBPBundle.swift; sourceTree = "<group>"; };
+		93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChatNBP.swift; sourceTree = "<group>"; };
+		93A5FFB12BD8076B00D9696B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93A5FFB32BD8076B00D9696B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BDCE382BDEE5F800FAD14A /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
+		93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
+		93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
+		93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChartView.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -297,6 +327,16 @@
 			files = (
 				93834AE92B7A044900A5744C /* OpenAPIURLSession in Frameworks */,
 				93834AE22B7A00EC00A5744C /* OpenAPIRuntime in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93A5FFA62BD8076A00D9696B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BDCE2F2BDED2A000FAD14A /* Commons in Frameworks */,
+				93A5FFAB2BD8076A00D9696B /* SwiftUI.framework in Frameworks */,
+				93A5FFAA2BD8076A00D9696B /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +731,54 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		93A5FFAC2BD8076A00D9696B /* WidgetChatNBP */ = {
+			isa = PBXGroup;
+			children = (
+				93A5FFAD2BD8076A00D9696B /* WidgetChatNBPBundle.swift */,
+				93BDCE372BDEE5D300FAD14A /* Model */,
+				93BDCE462BDEE81F00FAD14A /* Provider */,
+				93BDCE442BDEE76700FAD14A /* Widget */,
+				93BDCE452BDEE76F00FAD14A /* View */,
+				93A5FFB12BD8076B00D9696B /* Assets.xcassets */,
+				93A5FFB32BD8076B00D9696B /* Info.plist */,
+			);
+			path = WidgetChatNBP;
+			sourceTree = "<group>";
+		};
+		93BDCE372BDEE5D300FAD14A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE382BDEE5F800FAD14A /* Exchange.swift */,
+				93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */,
+				93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93BDCE442BDEE76700FAD14A /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		93BDCE452BDEE76F00FAD14A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93BDCE462BDEE81F00FAD14A /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		93C6D7A92B5BA569006E28F7 = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +791,7 @@
 				93C6D7CF2B5BA56A006E28F7 /* MyNBPappUITests */,
 				936775032B7007A500816C92 /* WidgetNBP */,
 				93834AD42B7A004B00A5744C /* ExchangeRateClient */,
+				93A5FFAC2BD8076A00D9696B /* WidgetChatNBP */,
 				93C6D7B32B5BA569006E28F7 /* Products */,
 				9357DA672B63CF240097673C /* Frameworks */,
 			);
@@ -716,6 +805,7 @@
 				93C6D7CC2B5BA56A006E28F7 /* MyNBPappUITests.xctest */,
 				936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */,
 				93834AD32B7A004B00A5744C /* ExchangeRateClient.framework */,
+				93A5FFA92BD8076A00D9696B /* WidgetChatNBPExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -929,6 +1019,26 @@
 			productReference = 93834AD32B7A004B00A5744C /* ExchangeRateClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		93A5FFA82BD8076A00D9696B /* WidgetChatNBPExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93A5FFB92BD8076B00D9696B /* Build configuration list for PBXNativeTarget "WidgetChatNBPExtension" */;
+			buildPhases = (
+				93A5FFA52BD8076A00D9696B /* Sources */,
+				93A5FFA62BD8076A00D9696B /* Frameworks */,
+				93A5FFA72BD8076A00D9696B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetChatNBPExtension;
+			packageProductDependencies = (
+				93BDCE2E2BDED2A000FAD14A /* Commons */,
+			);
+			productName = WidgetChatNBPExtension;
+			productReference = 93A5FFA92BD8076A00D9696B /* WidgetChatNBPExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		93C6D7B12B5BA569006E28F7 /* MyNBPapp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93C6D7D62B5BA56A006E28F7 /* Build configuration list for PBXNativeTarget "MyNBPapp" */;
@@ -944,6 +1054,7 @@
 			dependencies = (
 				936775102B7007A600816C92 /* PBXTargetDependency */,
 				93834AD82B7A004B00A5744C /* PBXTargetDependency */,
+				93A5FFB52BD8076B00D9696B /* PBXTargetDependency */,
 			);
 			name = MyNBPapp;
 			packageProductDependencies = (
@@ -1001,7 +1112,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					936774FD2B7007A500816C92 = {
@@ -1010,6 +1121,9 @@
 					93834AD22B7A004B00A5744C = {
 						CreatedOnToolsVersion = 15.2;
 						LastSwiftMigration = 1520;
+					};
+					93A5FFA82BD8076A00D9696B = {
+						CreatedOnToolsVersion = 15.3;
 					};
 					93C6D7B12B5BA569006E28F7 = {
 						CreatedOnToolsVersion = 15.2;
@@ -1050,6 +1164,7 @@
 				93C6D7CB2B5BA56A006E28F7 /* MyNBPappUITests */,
 				936774FD2B7007A500816C92 /* WidgetNBPExtension */,
 				93834AD22B7A004B00A5744C /* ExchangeRateClient */,
+				93A5FFA82BD8076A00D9696B /* WidgetChatNBPExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1069,6 +1184,14 @@
 			files = (
 				93834AED2B7A04CE00A5744C /* openapi.yaml in Resources */,
 				93834AEF2B7A04DF00A5744C /* openapi-generator-config.yaml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93A5FFA72BD8076A00D9696B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93A5FFB22BD8076B00D9696B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1115,6 +1238,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				93834AF22B7A056A00A5744C /* ExchangeRateClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93A5FFA52BD8076A00D9696B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */,
+				93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */,
+				93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */,
+				93A5FFB02BD8076A00D9696B /* WidgetChatNBP.swift in Sources */,
+				93A5FFAE2BD8076A00D9696B /* WidgetChatNBPBundle.swift in Sources */,
+				93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */,
+				93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1237,6 +1374,11 @@
 		93834AEB2B7A045400A5744C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 93834AEA2B7A045400A5744C /* OpenAPIGenerator */;
+		};
+		93A5FFB52BD8076B00D9696B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93A5FFA82BD8076A00D9696B /* WidgetChatNBPExtension */;
+			targetProxy = 93A5FFB42BD8076B00D9696B /* PBXContainerItemProxy */;
 		};
 		93C6D7C42B5BA56A006E28F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1375,6 +1517,62 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		93A5FFB72BD8076B00D9696B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RH4482R36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetChatNBP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetChatNBP;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ss.MyNBPapp.WidgetChatNBP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93A5FFB82BD8076B00D9696B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8RH4482R36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetChatNBP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetChatNBP;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ss.MyNBPapp.WidgetChatNBP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1658,6 +1856,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		93A5FFB92BD8076B00D9696B /* Build configuration list for PBXNativeTarget "WidgetChatNBPExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93A5FFB72BD8076B00D9696B /* Debug */,
+				93A5FFB82BD8076B00D9696B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		93C6D7AD2B5BA569006E28F7 /* Build configuration list for PBXProject "MyNBPapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1780,6 +1987,10 @@
 		93A3EB4B2B640291007BFCDC /* MonumentKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MonumentKit;
+		};
+		93BDCE2E2BDED2A000FAD14A /* Commons */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Commons;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
