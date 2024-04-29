@@ -162,4 +162,7 @@ https://github.com/SebaKrk/MyNBPapp
     B: Wstępna implantacja api, przekazanie rzeczywistych danych do widgetu
         - wydzielenie plików
     C: Poprawa cześci serwisowej
-    
+    D: `AppIntents` / WidgetConfigurationIntent
+     - Rozdzielenie starej części od nowej związanej z AppInten
+     - Zapytanie api musi być asynchroniczne
+     - Opcja edycji widgetu , przekazania innych parametrów
