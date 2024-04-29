@@ -11,4 +11,5 @@ import WidgetKit
 struct WidgetEntry: TimelineEntry {
     let date: Date
     let chartData: [ChartData]
+    var statusMessage: String? 
 }

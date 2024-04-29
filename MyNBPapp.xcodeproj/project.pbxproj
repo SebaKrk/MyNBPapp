@@ -107,6 +107,8 @@
 		93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */; };
 		93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */; };
 		93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */; };
+		93BDCE4B2BDF89A700FAD14A /* WidgetNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE4A2BDF89A700FAD14A /* WidgetNetworkError.swift */; };
+		93BDCE4F2BDF8BA700FAD14A /* WidgetNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE4E2BDF8BA700FAD14A /* WidgetNetworkManager.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -287,6 +289,8 @@
 		93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
 		93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
 		93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChartView.swift; sourceTree = "<group>"; };
+		93BDCE4A2BDF89A700FAD14A /* WidgetNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNetworkError.swift; sourceTree = "<group>"; };
+		93BDCE4E2BDF8BA700FAD14A /* WidgetNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNetworkManager.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -735,6 +739,8 @@
 			isa = PBXGroup;
 			children = (
 				93A5FFAD2BD8076A00D9696B /* WidgetChatNBPBundle.swift */,
+				93BDCE492BDF898E00FAD14A /* Enum */,
+				93BDCE4D2BDF8B8600FAD14A /* Services */,
 				93BDCE372BDEE5D300FAD14A /* Model */,
 				93BDCE462BDEE81F00FAD14A /* Provider */,
 				93BDCE442BDEE76700FAD14A /* Widget */,
@@ -777,6 +783,22 @@
 				93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		93BDCE492BDF898E00FAD14A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE4A2BDF89A700FAD14A /* WidgetNetworkError.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		93BDCE4D2BDF8B8600FAD14A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE4E2BDF8BA700FAD14A /* WidgetNetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		93C6D7A92B5BA569006E28F7 = {
@@ -1248,7 +1270,9 @@
 				93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */,
 				93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */,
 				93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */,
+				93BDCE4B2BDF89A700FAD14A /* WidgetNetworkError.swift in Sources */,
 				93A5FFB02BD8076A00D9696B /* WidgetChatNBP.swift in Sources */,
+				93BDCE4F2BDF8BA700FAD14A /* WidgetNetworkManager.swift in Sources */,
 				93A5FFAE2BD8076A00D9696B /* WidgetChatNBPBundle.swift in Sources */,
 				93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */,
 				93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */,
