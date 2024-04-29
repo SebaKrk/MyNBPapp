@@ -28,39 +28,23 @@ struct WidgetProvider: TimelineProvider {
         let calendar = Calendar.current
         let fromDate = calendar.date(byAdding: .day, value: -30, to: currentDate)!
         
-        getDataFromNBP(from: fromDate) { exchange in
-            let data = WidgetEntry(date: currentDate, chartData: exchange.rates)
-            let nextUpdate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)
-            
-            let timeline = Timeline(entries: [data], policy: .after(nextUpdate!))
-
-            completion(timeline)
+        WidgetNetworkManager.shared.getDataFromNBP(from: fromDate) { result in
+            switch result {
+            case .success(let exchange):
+                let data = WidgetEntry(date: currentDate, chartData: exchange.rates)
+                let nextUpdate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)
+                
+                let timeline = Timeline(entries: [data], policy: .after(nextUpdate!))
+                
+                completion(timeline)
+                
+            case .failure(let failure):
+                let errorEntry = WidgetEntry(date: currentDate, chartData: [], statusMessage: "Error loading data: \(failure)")
+                let retryDate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)
+                let timeline = Timeline(entries: [errorEntry], policy: .after(retryDate!))
+                completion(timeline)
+            }
         }
     }
-    
-}
-
-func getDataFromNBP(from: Date, completion: @escaping (Exchange) -> ()) {
-    let fromDate = Formatters.Date.createString(from: from, with: .shortDate)
-    let today = Formatters.Date.createString(from: Date(), with: .shortDate)
-    
-    let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/eur/\(fromDate)/\(today)/?format=json"
-    
-    guard let url = URL(string: endpoint) else { return }
-    let session = URLSession(configuration: .default)
-    session.dataTask(with: url) { (data, _, error) in
-        if error != nil {
-            print(error!.localizedDescription)
-            return
-        }
-        
-        do {
-            let jsonData = try JSONDecoder().decode(Exchange.self, from: data!)
-            completion(jsonData)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    .resume()
     
 }

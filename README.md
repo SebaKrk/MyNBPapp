@@ -160,3 +160,6 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0021 `WidgetKit`
     A: Stworzenie Widgetu z mok-owymi danymi 
     B: Wstępna implantacja api, przekazanie rzeczywistych danych do widgetu
+        - wydzielenie plików
+    C: Poprawa cześci serwisowej
+    

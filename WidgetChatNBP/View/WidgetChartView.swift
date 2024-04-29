@@ -15,16 +15,20 @@ struct WidgetChartView: View {
     var entry: WidgetProvider.Entry
     
     var body: some View {
-        VStack {
-            switchTitle
-            Chart {
-                ForEach(entry.chartData, id: \.self) { data in
-                    createLineMark(data)
-                    createAreaMark(data)
+        if let statusMessage = entry.statusMessage {
+            errorMessage(statusMessage)
+        } else {
+            VStack {
+                switchTitle
+                Chart {
+                    ForEach(entry.chartData, id: \.self) { data in
+                        createLineMark(data)
+                        createAreaMark(data)
+                    }
                 }
+                .chartYScale(domain: 4.22...4.36)
+                .chartXAxis(.hidden)
             }
-            .chartYScale(domain: 4.22...4.36)
-            .chartXAxis(.hidden)
         }
     }
     
@@ -34,7 +38,7 @@ struct WidgetChartView: View {
             case .systemSmall:
                 HStack {
                     Spacer()
-                    Text("\(entry.chartData.last?.mid ?? 0) zł")
+                    Text("\(entry.chartData.last?.mid ?? 0, specifier: "%.3f") zł")
                         .font(.title3)
                         .bold()
                     Spacer()
@@ -47,7 +51,7 @@ struct WidgetChartView: View {
     
     var headerTitle: some View {
         HStack {
-            Text("Euro")
+            Text("EURO")
                 .font(.title3)
                 .textCase(.uppercase)
                 .bold()
@@ -55,10 +59,17 @@ struct WidgetChartView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             Spacer()
-            Text("\(entry.chartData.last?.mid ?? 0) zł")
+            Text("\(entry.chartData.last?.mid ?? 0, specifier: "%.3f") zł")
                 .font(.title3)
                 .bold()
         }
+    }
+    
+    func errorMessage(_ statusMessage: String) -> some View {
+        Text(statusMessage)
+            .padding()
+            .multilineTextAlignment(.center)
+            .foregroundColor(.red)
     }
     
     func createLineMark(_ data: ChartData) -> some ChartContent {
