@@ -29,7 +29,7 @@ final class WidgetNetworkManager {
                 completion(.failure(.other(error)))
                 return
             }
-
+            
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(.invalidResponse))
                 return
@@ -53,6 +53,38 @@ final class WidgetNetworkManager {
             }
             
         }.resume()
+    }
+    
+    func getDataFromNBP(from date: Date) async throws -> Exchange {
+        let fromDate = Formatters.Date.createString(from: date, with: .shortDate)
+        let today = Formatters.Date.createString(from: Date(), with: .shortDate)
+        
+        let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/eur/\(fromDate)/\(today)/?format=json"
+        
+        guard let url = URL(string: endpoint) else {
+            throw WidgetNetworkError.invalidURL
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw WidgetNetworkError.invalidResponse
+        }
+        
+        switch httpResponse.statusCode {
+        case 200:
+            break 
+        case 400, 404:
+            throw WidgetNetworkError.statusCode(httpResponse.statusCode)
+        default:
+            throw WidgetNetworkError.noData
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(Exchange.self, from: data)
+        } catch {
+            throw WidgetNetworkError.decodingError(error)
+        }
     }
     
 }

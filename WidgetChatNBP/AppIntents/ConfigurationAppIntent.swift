@@ -1,19 +1,21 @@
 //
-//  AppIntent.swift
-//  WidgetNBP
+//  ConfigurationAppIntent.swift
+//  WidgetChatNBPExtension
 //
-//  Created by Sebastian Sciuba on 04/02/2024.
+//  Created by Sebastian Sciuba on 29/04/2024.
 //
 
-import WidgetKit
+import Foundation
 import AppIntents
 
 struct ConfigurationAppIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Configuration"
     static var description = IntentDescription("This is an example widget.")
 
-    // An example configurable parameter.
     @Parameter(title: "Favorite Emoji", default: "😃")
     var favoriteEmoji: String
-
+    
+    @Parameter(title: "cos", default: "😃")
+    var cos: String
+    
 }

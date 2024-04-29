@@ -8,42 +8,39 @@
 import Commons
 import WidgetKit
 import SwiftUI
+import AppIntents
 
-struct WidgetProvider: TimelineProvider {
+struct WidgetProvider: AppIntentTimelineProvider {
     
-    func placeholder(in context: Context) ->  WidgetEntry {
-        return WidgetEntry(date: Date(),
-                           chartData: mockData)
+    func placeholder(in context: Context) -> WidgetEntryConfiguration {
+        return WidgetEntryConfiguration(date: Date(), chartData: mockData, configuration: ConfigurationAppIntent())
     }
     
-    func getSnapshot(in context: Context, completion: @escaping (WidgetEntry) -> ()) {
-        let entry = WidgetEntry(date: Date(),
-                                chartData: mockData)
-        completion(entry)
+    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WidgetEntryConfiguration {
+        WidgetEntryConfiguration(date: Date(),
+                                 chartData: mockData,
+                                 configuration: configuration)
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WidgetEntryConfiguration> {
         let currentDate = Date()
-        
         let calendar = Calendar.current
         let fromDate = calendar.date(byAdding: .day, value: -30, to: currentDate)!
         
-        WidgetNetworkManager.shared.getDataFromNBP(from: fromDate) { result in
-            switch result {
-            case .success(let exchange):
-                let data = WidgetEntry(date: currentDate, chartData: exchange.rates)
-                let nextUpdate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)
-                
-                let timeline = Timeline(entries: [data], policy: .after(nextUpdate!))
-                
-                completion(timeline)
-                
-            case .failure(let failure):
-                let errorEntry = WidgetEntry(date: currentDate, chartData: [], statusMessage: "Error loading data: \(failure)")
-                let retryDate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)
-                let timeline = Timeline(entries: [errorEntry], policy: .after(retryDate!))
-                completion(timeline)
-            }
+        do {
+            let exchange = try await WidgetNetworkManager.shared.getDataFromNBP(from: fromDate)
+            let data = WidgetEntryConfiguration(date: currentDate,
+                                                chartData: exchange.rates,
+                                                configuration: configuration)
+            let nextUpdate = Calendar.current.date(byAdding: .minute, value: 30, to: currentDate)
+            return Timeline(entries: [data], policy: .after(nextUpdate!))
+        } catch {
+            let errorEntry = WidgetEntryConfiguration(date: currentDate,
+                                                      chartData: [],
+                                                      statusMessage: "Async error loading data: \(error.localizedDescription)",
+                                                      configuration: configuration)
+            let retryDate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)
+            return Timeline(entries: [errorEntry], policy: .after(retryDate!))
         }
     }
     
