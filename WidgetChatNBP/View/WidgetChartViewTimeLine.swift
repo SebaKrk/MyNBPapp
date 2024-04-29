@@ -1,18 +1,19 @@
 //
-//  WidgetChartView.swift
+//  WidgetChartViewTimeLine.swift
 //  WidgetChatNBPExtension
 //
-//  Created by Sebastian Sciuba on 28/04/2024.
+//  Created by Sebastian Sciuba on 29/04/2024.
 //
+
 
 import Charts
 import WidgetKit
 import SwiftUI
 
-struct WidgetChartView: View {
+struct WidgetChartViewTimeLine: View {
     
     @Environment(\.widgetFamily) var widgetFamily
-    var entry: WidgetProvider.Entry
+    var entry: WidgetProviderWithTimeline.Entry
     
     var body: some View {
         if let statusMessage = entry.statusMessage {
