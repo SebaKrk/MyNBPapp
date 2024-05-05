@@ -28,9 +28,16 @@ struct WidgetChartView: View {
                 }
                 .chartYScale(domain: 4.22...4.36)
                 .chartXAxis(.hidden)
+                Text("\(Date())")
             }
         }
     }
+    
+//    var buttonDate: some View {
+//        Button(intent: <#T##AppIntent#>) { 
+//            <#code#>
+//        }
+//    }
     
     var switchTitle: some View {
         Group {

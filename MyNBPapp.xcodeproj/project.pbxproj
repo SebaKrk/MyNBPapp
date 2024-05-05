@@ -112,6 +112,7 @@
 		93BDCE542BE0173B00FAD14A /* ConfigurationAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE532BE0173B00FAD14A /* ConfigurationAppIntent.swift */; };
 		93BDCE562BE01B1800FAD14A /* WidgetChartViewTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE552BE01B1800FAD14A /* WidgetChartViewTimeLine.swift */; };
 		93BDCE592BE01D6400FAD14A /* WidgetProviderWithTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE582BE01D6400FAD14A /* WidgetProviderWithTimeline.swift */; };
+		93BDCE5C2BE15DDE00FAD14A /* ChouseCocurency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE5B2BE15DDE00FAD14A /* ChouseCocurency.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -297,6 +298,7 @@
 		93BDCE532BE0173B00FAD14A /* ConfigurationAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationAppIntent.swift; sourceTree = "<group>"; };
 		93BDCE552BE01B1800FAD14A /* WidgetChartViewTimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChartViewTimeLine.swift; sourceTree = "<group>"; };
 		93BDCE582BE01D6400FAD14A /* WidgetProviderWithTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProviderWithTimeline.swift; sourceTree = "<group>"; };
+		93BDCE5B2BE15DDE00FAD14A /* ChouseCocurency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChouseCocurency.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -814,6 +816,7 @@
 			isa = PBXGroup;
 			children = (
 				93BDCE532BE0173B00FAD14A /* ConfigurationAppIntent.swift */,
+				93BDCE5B2BE15DDE00FAD14A /* ChouseCocurency.swift */,
 			);
 			path = AppIntents;
 			sourceTree = "<group>";
@@ -1295,6 +1298,7 @@
 				93BDCE4F2BDF8BA700FAD14A /* WidgetNetworkManager.swift in Sources */,
 				93A5FFAE2BD8076A00D9696B /* WidgetChatNBPBundle.swift in Sources */,
 				93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */,
+				93BDCE5C2BE15DDE00FAD14A /* ChouseCocurency.swift in Sources */,
 				93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

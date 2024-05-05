@@ -13,16 +13,16 @@ import AppIntents
 struct WidgetProvider: AppIntentTimelineProvider {
     
     func placeholder(in context: Context) -> WidgetEntryConfiguration {
-        return WidgetEntryConfiguration(date: Date(), chartData: mockData, configuration: ConfigurationAppIntent())
+        return WidgetEntryConfiguration(date: Date(), chartData: mockData, configuration: ConfigurationAppIntentNBP())
     }
     
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> WidgetEntryConfiguration {
+    func snapshot(for configuration: ConfigurationAppIntentNBP, in context: Context) async -> WidgetEntryConfiguration {
         WidgetEntryConfiguration(date: Date(),
                                  chartData: mockData,
                                  configuration: configuration)
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<WidgetEntryConfiguration> {
+    func timeline(for configuration: ConfigurationAppIntentNBP, in context: Context) async -> Timeline<WidgetEntryConfiguration> {
         let currentDate = Date()
         let calendar = Calendar.current
         let fromDate = calendar.date(byAdding: .day, value: -30, to: currentDate)!
