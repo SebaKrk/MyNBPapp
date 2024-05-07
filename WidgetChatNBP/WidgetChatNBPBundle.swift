@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct WidgetChatNBPBundle: WidgetBundle {
     var body: some Widget {
-        //WidgetChatNBP()
-        ColoredWidget()
+        WidgetChatNBP()
+//        ColoredWidget()
     }
 }

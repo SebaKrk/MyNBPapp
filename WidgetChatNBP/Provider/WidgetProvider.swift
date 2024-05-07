@@ -45,3 +45,11 @@ struct WidgetProvider: AppIntentTimelineProvider {
     }
     
 }
+
+struct WidgetEntryConfiguration: TimelineEntry {
+    let date: Date
+    let chartData: [ChartData]
+    var statusMessage: String?
+    let configuration: ConfigurationAppIntentNBP?
+}
+
