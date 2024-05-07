@@ -55,7 +55,10 @@ struct WidgetNBP: Widget {
     let kind: String = "WidgetNBP"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
+        AppIntentConfiguration(
+            kind: kind,
+            intent: ConfigurationAppIntent.self,
+            provider: Provider()) { entry in
             WidgetNBPEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
