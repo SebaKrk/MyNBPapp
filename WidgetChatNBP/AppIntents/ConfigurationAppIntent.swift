@@ -17,8 +17,8 @@ struct ConfigurationAppIntentNBP: WidgetConfigurationIntent, AppIntent {
     @Parameter(title: "Waluta")
     var currency: Currency
     
-//    @Parameter(title: "Date")
-//    var date: Date
+    @Parameter(title: "Date")
+    var date: Date
     
 //    @MainActor
 //    func perform() async throws -> some IntentResult {
