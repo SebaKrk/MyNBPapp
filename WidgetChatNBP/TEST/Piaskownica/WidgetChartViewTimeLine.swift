@@ -1,18 +1,19 @@
 //
-//  WidgetChartView.swift
+//  WidgetChartViewTimeLine.swift
 //  WidgetChatNBPExtension
 //
-//  Created by Sebastian Sciuba on 28/04/2024.
+//  Created by Sebastian Sciuba on 29/04/2024.
 //
+
 
 import Charts
 import WidgetKit
 import SwiftUI
 
-struct WidgetChartView: View {
+struct WidgetChartViewTimeLine: View {
     
     @Environment(\.widgetFamily) var widgetFamily
-    var entry: WidgetProvider.Entry
+    var entry: WidgetProviderWithTimeline.Entry
     
     var body: some View {
         if let statusMessage = entry.statusMessage {
@@ -26,20 +27,10 @@ struct WidgetChartView: View {
                         createAreaMark(data)
                     }
                 }
-                .chartYScale(domain: minMidValue - 0.01...maxMidValue + 0.01)
+                .chartYScale(domain: 4.22...4.36)
                 .chartXAxis(.hidden)
-                
-                HStack {
-                    Text("\(Date(), format: .dateTime)")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                }
             }
-            .background(entry.widgetColor.color)
-            .ignoresSafeArea()
         }
-            
     }
     
     var switchTitle: some View {
@@ -61,11 +52,11 @@ struct WidgetChartView: View {
     
     var headerTitle: some View {
         HStack {
-            Text(entry.configuration?.currency.currency ?? "bład")
+            Text("EURO")
                 .font(.title3)
                 .textCase(.uppercase)
                 .bold()
-            Text(entry.configuration?.currency.subTitle ?? "bład")
+            Text("Strefa Euro NBP")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             Spacer()
@@ -82,57 +73,23 @@ struct WidgetChartView: View {
             .foregroundColor(.red)
     }
     
-    // MARK: - ChartContent
-    
     func createLineMark(_ data: ChartData) -> some ChartContent {
         LineMark(
             x: .value("date", data.effectiveDate),
             y: .value("value", data.mid)
         )
-        .foregroundStyle(yesterdayRateValueChange >= 0 ? .green : .red)
+        .foregroundStyle(.green)
     }
     
     func createAreaMark(_ data: ChartData) -> some ChartContent {
         AreaMark(
             x: .value("date",  data.effectiveDate),
-            yStart: .value("mid", difference(value: data.mid)),
+            yStart: .value("mid", 4.24),
             yEnd: .value("mid", data.mid )
         )
-        .foregroundStyle(yesterdayRateValueChange >= 0 ? .green : .red)
+        .foregroundStyle(.green)
         .opacity(0.2)
         .interpolationMethod(.linear)
     }
     
-    
-    // MARK: - Methods
-    var minMidValue: Double {
-        let midValues = entry.chartData.map { $0.mid }
-        return midValues.min() ?? 0
-    }
-    
-    var maxMidValue: Double {
-        let midValues = entry.chartData.compactMap { $0 }.map { $0.mid }
-        return midValues.max() ?? 0
-    }
-    
-    var yesterdayRateValueChange: Double {
-        guard let todayRate = entry.chartData.last?.mid,
-              let yesterdayRate = entry.chartData.dropLast().last?.mid else {
-            return 0
-        }
-        return todayRate - yesterdayRate
-    }
-    
-    func difference(value: Double) -> Double {
-        let numberToCompare = minMidValue - 0.01
-        let difference = value - numberToCompare
-        return value - difference
-    }
 }
-
-
-//    var buttonDate: some View {
-//        Button(intent: <#T##AppIntent#>) {
-//            <#code#>
-//        }
-//    }

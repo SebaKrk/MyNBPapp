@@ -8,59 +8,56 @@
 import Commons
 import WidgetKit
 import SwiftUI
+import AppIntents
 
-struct WidgetProvider: TimelineProvider {
+struct WidgetEntryConfiguration: TimelineEntry {
+    let date: Date
+    let chartData: [ChartData]
+    var statusMessage: String?
+    let configuration: ConfigurationAppIntentNBP?
+    let widgetColor: WidgetColor
+}
+
+
+struct WidgetProvider: AppIntentTimelineProvider {
     
-    func placeholder(in context: Context) ->  WidgetEntry {
-        return WidgetEntry(date: Date(),
-                           chartData: mockData)
+    func placeholder(in context: Context) -> WidgetEntryConfiguration {
+        return WidgetEntryConfiguration(date: .now,
+                                        chartData: mockData,
+                                        configuration: ConfigurationAppIntentNBP(),
+                                        widgetColor: WidgetColor.allColors[0])
     }
     
-    func getSnapshot(in context: Context, completion: @escaping (WidgetEntry) -> ()) {
-        let entry = WidgetEntry(date: Date(),
-                                chartData: mockData)
-        completion(entry)
+    func snapshot(for configuration: ConfigurationAppIntentNBP, in context: Context) async -> WidgetEntryConfiguration {
+        WidgetEntryConfiguration(date: .now,
+                                 chartData: mockData,
+                                 configuration: configuration,
+                                 widgetColor: configuration.accentColor)
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func timeline(for configuration: ConfigurationAppIntentNBP, in context: Context) async -> Timeline<WidgetEntryConfiguration> {
         let currentDate = Date()
-        
         let calendar = Calendar.current
         let fromDate = calendar.date(byAdding: .day, value: -30, to: currentDate)!
         
-        getDataFromNBP(from: fromDate) { exchange in
-            let data = WidgetEntry(date: currentDate, chartData: exchange.rates)
-            let nextUpdate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)
-            
-            let timeline = Timeline(entries: [data], policy: .after(nextUpdate!))
-
-            completion(timeline)
-        }
-    }
-    
-}
-
-func getDataFromNBP(from: Date, completion: @escaping (Exchange) -> ()) {
-    let fromDate = Formatters.Date.createString(from: from, with: .shortDate)
-    let today = Formatters.Date.createString(from: Date(), with: .shortDate)
-    
-    let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/eur/\(fromDate)/\(today)/?format=json"
-    
-    guard let url = URL(string: endpoint) else { return }
-    let session = URLSession(configuration: .default)
-    session.dataTask(with: url) { (data, _, error) in
-        if error != nil {
-            print(error!.localizedDescription)
-            return
-        }
-        
         do {
-            let jsonData = try JSONDecoder().decode(Exchange.self, from: data!)
-            completion(jsonData)
+            let exchange = try await WidgetNetworkManager.shared.getDataFromNBP(from: fromDate,
+                                                                                currency: configuration.currency.currency)
+            let data = WidgetEntryConfiguration(date: currentDate,
+                                                chartData: exchange.rates,
+                                                configuration: configuration,
+                                                widgetColor: configuration.accentColor)
+            let nextUpdate = Calendar.current.date(byAdding: .minute, value: 30, to: currentDate)
+            return Timeline(entries: [data], policy: .after(nextUpdate!))
         } catch {
-            print(error.localizedDescription)
+            let errorEntry = WidgetEntryConfiguration(date: currentDate,
+                                                      chartData: [],
+                                                      statusMessage: "Async error loading data: \(error.localizedDescription)",
+                                                      configuration: configuration,
+                                                      widgetColor: WidgetColor.allColors[0])
+            let retryDate = Calendar.current.date(byAdding: .hour, value: 1, to: currentDate)
+            return Timeline(entries: [errorEntry], policy: .after(retryDate!))
         }
     }
-    .resume()
     
 }

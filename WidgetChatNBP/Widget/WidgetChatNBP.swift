@@ -9,31 +9,44 @@ import Commons
 import Charts
 import WidgetKit
 import SwiftUI
+import AppIntents
 
 struct WidgetChatNBP: Widget {
     let kind: String = "WidgetChatNBP"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: WidgetProvider()) { entry in
-            if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, *) {
+            return AppIntentConfiguration(kind: kind,
+                                          intent: ConfigurationAppIntentNBP.self,
+                                          provider: WidgetProvider()) { entry in
                 WidgetChartView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                WidgetChartView(entry: entry)
+                    .padding()
+            }
+                                          .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+                                          .contentMarginsDisabled()
+            
+        } else {
+            return StaticConfiguration(kind: kind,
+                                       provider: WidgetProviderWithTimeline()) { entry in
+                WidgetChartViewTimeLine(entry: entry)
                     .padding()
                     .background()
             }
+            .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
         }
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
-#Preview(as: .systemSmall) {
-    WidgetChatNBP()
-} timeline: {
-    WidgetEntry(date: .now,
-                chartData: mockData)
-}
+
+//#Preview(as: .systemSmall) {
+//    WidgetChatNBP()
+//} timeline: {
+//    WidgetEntry(date: .now,
+//                chartData: mockData)
+//}
+
+
 
 let mockData: [ChartData] = [
     ChartData(no: "060/A/NBP/2024", effectiveDate: "2024-03-25", mid: 4.3091),

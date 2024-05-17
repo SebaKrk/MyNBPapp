@@ -107,6 +107,14 @@
 		93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */; };
 		93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */; };
 		93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */; };
+		93BDCE4B2BDF89A700FAD14A /* WidgetNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE4A2BDF89A700FAD14A /* WidgetNetworkError.swift */; };
+		93BDCE4F2BDF8BA700FAD14A /* WidgetNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE4E2BDF8BA700FAD14A /* WidgetNetworkManager.swift */; };
+		93BDCE542BE0173B00FAD14A /* ConfigurationAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE532BE0173B00FAD14A /* ConfigurationAppIntent.swift */; };
+		93BDCE562BE01B1800FAD14A /* WidgetChartViewTimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE552BE01B1800FAD14A /* WidgetChartViewTimeLine.swift */; };
+		93BDCE592BE01D6400FAD14A /* WidgetProviderWithTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE582BE01D6400FAD14A /* WidgetProviderWithTimeline.swift */; };
+		93BDCE5C2BE15DDE00FAD14A /* ChouseCocurency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE5B2BE15DDE00FAD14A /* ChouseCocurency.swift */; };
+		93BDCE612BEABFE700FAD14A /* ColoredWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE602BEABFE700FAD14A /* ColoredWidget.swift */; };
+		93BDCE632BEAC2C800FAD14A /* SelectColorIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE622BEAC2C800FAD14A /* SelectColorIntent.swift */; };
 		93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */; };
 		93C6D7B82B5BA569006E28F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C6D7B72B5BA569006E28F7 /* ContentView.swift */; };
 		93C6D7BA2B5BA56A006E28F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C6D7B92B5BA56A006E28F7 /* Assets.xcassets */; };
@@ -287,6 +295,14 @@
 		93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
 		93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
 		93BDCE422BDEE70B00FAD14A /* WidgetChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChartView.swift; sourceTree = "<group>"; };
+		93BDCE4A2BDF89A700FAD14A /* WidgetNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNetworkError.swift; sourceTree = "<group>"; };
+		93BDCE4E2BDF8BA700FAD14A /* WidgetNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNetworkManager.swift; sourceTree = "<group>"; };
+		93BDCE532BE0173B00FAD14A /* ConfigurationAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationAppIntent.swift; sourceTree = "<group>"; };
+		93BDCE552BE01B1800FAD14A /* WidgetChartViewTimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChartViewTimeLine.swift; sourceTree = "<group>"; };
+		93BDCE582BE01D6400FAD14A /* WidgetProviderWithTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProviderWithTimeline.swift; sourceTree = "<group>"; };
+		93BDCE5B2BE15DDE00FAD14A /* ChouseCocurency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChouseCocurency.swift; sourceTree = "<group>"; };
+		93BDCE602BEABFE700FAD14A /* ColoredWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredWidget.swift; sourceTree = "<group>"; };
+		93BDCE622BEAC2C800FAD14A /* SelectColorIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorIntent.swift; sourceTree = "<group>"; };
 		93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNBPapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNBPappApp.swift; sourceTree = "<group>"; };
 		93C6D7B72B5BA569006E28F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -557,6 +573,16 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		9336D3E72BF76E5800E24869 /* Piaskownica */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE552BE01B1800FAD14A /* WidgetChartViewTimeLine.swift */,
+				93BDCE582BE01D6400FAD14A /* WidgetProviderWithTimeline.swift */,
+				93BDCE5B2BE15DDE00FAD14A /* ChouseCocurency.swift */,
+			);
+			path = Piaskownica;
+			sourceTree = "<group>";
+		};
 		93373EC62B88F3FC00975A6B /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
@@ -735,8 +761,12 @@
 			isa = PBXGroup;
 			children = (
 				93A5FFAD2BD8076A00D9696B /* WidgetChatNBPBundle.swift */,
+				93BDCE5E2BEABF7500FAD14A /* TEST */,
+				93BDCE492BDF898E00FAD14A /* Enum */,
+				93BDCE4D2BDF8B8600FAD14A /* Services */,
 				93BDCE372BDEE5D300FAD14A /* Model */,
 				93BDCE462BDEE81F00FAD14A /* Provider */,
+				93BDCE512BE0169F00FAD14A /* AppIntents */,
 				93BDCE442BDEE76700FAD14A /* Widget */,
 				93BDCE452BDEE76F00FAD14A /* View */,
 				93A5FFB12BD8076B00D9696B /* Assets.xcassets */,
@@ -777,6 +807,40 @@
 				93BDCE3F2BDEE68D00FAD14A /* WidgetProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		93BDCE492BDF898E00FAD14A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE4A2BDF89A700FAD14A /* WidgetNetworkError.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		93BDCE4D2BDF8B8600FAD14A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE4E2BDF8BA700FAD14A /* WidgetNetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		93BDCE512BE0169F00FAD14A /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCE532BE0173B00FAD14A /* ConfigurationAppIntent.swift */,
+			);
+			path = AppIntents;
+			sourceTree = "<group>";
+		};
+		93BDCE5E2BEABF7500FAD14A /* TEST */ = {
+			isa = PBXGroup;
+			children = (
+				9336D3E72BF76E5800E24869 /* Piaskownica */,
+				93BDCE602BEABFE700FAD14A /* ColoredWidget.swift */,
+				93BDCE622BEAC2C800FAD14A /* SelectColorIntent.swift */,
+			);
+			path = TEST;
 			sourceTree = "<group>";
 		};
 		93C6D7A92B5BA569006E28F7 = {
@@ -1245,12 +1309,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93BDCE612BEABFE700FAD14A /* ColoredWidget.swift in Sources */,
 				93BDCE432BDEE70B00FAD14A /* WidgetChartView.swift in Sources */,
+				93BDCE562BE01B1800FAD14A /* WidgetChartViewTimeLine.swift in Sources */,
+				93BDCE592BE01D6400FAD14A /* WidgetProviderWithTimeline.swift in Sources */,
 				93BDCE402BDEE68D00FAD14A /* WidgetProvider.swift in Sources */,
 				93BDCE3E2BDEE65200FAD14A /* WidgetEntry.swift in Sources */,
+				93BDCE4B2BDF89A700FAD14A /* WidgetNetworkError.swift in Sources */,
+				93BDCE542BE0173B00FAD14A /* ConfigurationAppIntent.swift in Sources */,
 				93A5FFB02BD8076A00D9696B /* WidgetChatNBP.swift in Sources */,
+				93BDCE4F2BDF8BA700FAD14A /* WidgetNetworkManager.swift in Sources */,
 				93A5FFAE2BD8076A00D9696B /* WidgetChatNBPBundle.swift in Sources */,
 				93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */,
+				93BDCE5C2BE15DDE00FAD14A /* ChouseCocurency.swift in Sources */,
+				93BDCE632BEAC2C800FAD14A /* SelectColorIntent.swift in Sources */,
 				93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

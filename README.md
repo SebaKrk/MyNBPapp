@@ -160,3 +160,12 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0021 `WidgetKit`
     A: Stworzenie Widgetu z mok-owymi danymi 
     B: Wstępna implantacja api, przekazanie rzeczywistych danych do widgetu
+        - wydzielenie plików
+    C: Poprawa cześci serwisowej
+    D: `AppIntents` / WidgetConfigurationIntent
+     - Rozdzielenie starej części od nowej związanej z AppIntents
+     - Zapytanie api musi być asynchroniczne
+     - Opcja edycji widgetu , przekazania innych parametrów
+     - ColoredWidget test
+     - dodanie metod odnośnie rysowania chartow (pózniej wydzielić do VM)
+     - rozszerzenie WidgetEntryConfiguration o ` WidgetColor: AppEntity`
