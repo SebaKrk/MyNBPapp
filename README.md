@@ -168,4 +168,7 @@ https://github.com/SebaKrk/MyNBPapp
      - Opcja edycji widgetu , przekazania innych parametrów
      - ColoredWidget test
      - dodanie metod odnośnie rysowania chartow (pózniej wydzielić do VM)
-     - rozszerzenie WidgetEntryConfiguration o ` WidgetColor: AppEntity`
+     - rozszerzenie WidgetEntryConfiguration o `WidgetColor: AppEntity`
+     
+### IOS-0022 iPhone UI
+    A: Dostosowanie UI do iPhona 
