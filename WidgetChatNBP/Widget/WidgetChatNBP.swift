@@ -21,8 +21,10 @@ struct WidgetChatNBP: Widget {
                                           provider: WidgetProvider()) { entry in
                 WidgetChartView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
+                    .padding()
             }
                                           .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+                                          .contentMarginsDisabled()
             
         } else {
             return StaticConfiguration(kind: kind,
