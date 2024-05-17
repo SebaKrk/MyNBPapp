@@ -9,23 +9,24 @@ import AppIntents
 import Commons
 import Foundation
 
-
 struct CurrencyWidget: AppEntity {
     var id: String
     var currency: String
+    var subTitle: String
     
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Widget Currency"
     
     static var defaultQuery = CurrencyWidgetQuery()
-    
+
     var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(title: "\(id)")
     }
     
     static let allCurrency: [CurrencyWidget] = [
-        CurrencyWidget(id: "EURO", currency: "eur"),
-        CurrencyWidget(id: "DOLAR", currency: "usd"),
-        CurrencyWidget(id: "FUNT", currency: "gbp"),
+        CurrencyWidget(id: "euro", currency: "eur", subTitle: "Kurs euro Strefa Euro NBP"),
+        CurrencyWidget(id: "dolar", currency: "usd", subTitle: "Kurs dolara Stany Zjednoczone NBP"),
+        CurrencyWidget(id: "funt", currency: "gbp", subTitle: "Kurs funta Wielka Brytania NBP"),
+        CurrencyWidget(id: "jen", currency: "jpy", subTitle: "Kurs jena Japonia NBP")
     ]
 }
 
@@ -52,59 +53,8 @@ struct ConfigurationAppIntentNBP: WidgetConfigurationIntent {
 
     @Parameter(title: "Waluta")
     var currency: CurrencyWidget
+    
+    @Parameter(title: "Accent Color")
+    var accentColor: WidgetColor
+
 }
-
-
-//enum Currency: String, Equatable, CaseIterable {
-//    case euro
-//    case dolar
-//    case funt
-//    case jen
-//    
-//    var title: String {
-//        switch self {
-//        case .euro: return "eur"
-//        case .dolar: return "usd"
-//        case .funt: return "gbp"
-//        case .jen: return "jpy"
-//        }
-//    }
-//    
-//    var subTitle: String {
-//        switch self {
-//        case .euro:
-//            return "Kurs euro Strefa Euro NBP"
-//        case .dolar:
-//            return "Kurs dolara Stany Zjednoczone NBP"
-//        case .funt:
-//            return "Kurs funta Wielka Brytania NBP"
-//        case .jen:
-//            return "Kurs jena Japonia NBP"
-//        }
-//    }
-//    /// change to GlobalCurrencySymbol
-//    func changeGCSymbol() -> GlobalCurrencySymbols {
-//        switch self {
-//        case .euro:
-//            return .euro
-//        case .dolar:
-//            return .dolar
-//        case .funt:
-//            return .sterling
-//        case .jen:
-//            return .yen
-//        }
-//    }
-//}
-//
-//extension Currency: AppEnum {
-//    static var typeDisplayRepresentation: TypeDisplayRepresentation = "Currency"
-//    
-//    static var caseDisplayRepresentations: [Currency : DisplayRepresentation] =  [
-//        .euro: "Euro",
-//        .dolar: "Dolar Amerykański",
-//        .funt: "Funt",
-//        .jen: "Jen"
-//    ]
-//    
-//}

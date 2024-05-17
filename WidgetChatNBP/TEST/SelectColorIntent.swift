@@ -20,6 +20,8 @@ struct WidgetColor: AppEntity {
     }
     
     static let allColors: [WidgetColor] = [
+        WidgetColor(id: "clear", color: .clear),
+        WidgetColor(id: "white", color: .white),
         WidgetColor(id: "red", color: .red),
         WidgetColor(id: "blue", color: .blue),
         WidgetColor(id: "orange", color: .orange)
