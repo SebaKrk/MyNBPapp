@@ -17,12 +17,14 @@ struct WidgetChatNBP: Widget {
     var body: some WidgetConfiguration {
         if #available(iOS 17.0, *) {
             return AppIntentConfiguration(kind: kind,
-                                          intent: ConfigurationAppIntent.self,
+                                          intent: ConfigurationAppIntentNBP.self,
                                           provider: WidgetProvider()) { entry in
                 WidgetChartView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
+                    .padding()
             }
                                           .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+                                          .contentMarginsDisabled()
             
         } else {
             return StaticConfiguration(kind: kind,

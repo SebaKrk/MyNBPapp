@@ -55,11 +55,14 @@ final class WidgetNetworkManager {
         }.resume()
     }
     
-    func getDataFromNBP(from date: Date) async throws -> Exchange {
+    // *
+    func getDataFromNBP(from date: Date, currency: String) async throws -> Exchange {
         let fromDate = Formatters.Date.createString(from: date, with: .shortDate)
         let today = Formatters.Date.createString(from: Date(), with: .shortDate)
-        
-        let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/eur/\(fromDate)/\(today)/?format=json"
+    
+        let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/\(currency)/\(fromDate)/\(today)/?format=json"
+    
+        print("seba widget: \(endpoint)")
         
         guard let url = URL(string: endpoint) else {
             throw WidgetNetworkError.invalidURL
@@ -86,5 +89,5 @@ final class WidgetNetworkManager {
             throw WidgetNetworkError.decodingError(error)
         }
     }
-    
+
 }

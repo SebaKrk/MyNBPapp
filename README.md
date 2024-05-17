@@ -163,6 +163,9 @@ https://github.com/SebaKrk/MyNBPapp
         - wydzielenie plików
     C: Poprawa cześci serwisowej
     D: `AppIntents` / WidgetConfigurationIntent
-     - Rozdzielenie starej części od nowej związanej z AppInten
+     - Rozdzielenie starej części od nowej związanej z AppIntents
      - Zapytanie api musi być asynchroniczne
      - Opcja edycji widgetu , przekazania innych parametrów
+     - ColoredWidget test
+     - dodanie metod odnośnie rysowania chartow (pózniej wydzielić do VM)
+     - rozszerzenie WidgetEntryConfiguration o ` WidgetColor: AppEntity`
