@@ -38,6 +38,7 @@ struct WidgetChartView: View {
             }
             .background(entry.widgetColor.color)
             .ignoresSafeArea()
+            
         }
             
     }
