@@ -5,7 +5,6 @@
 //  Created by Sebastian Sciuba on 17/03/2024.
 //
 
-//import ComposableArchitecture
 import Charts
 import Commons
 import DataModels
@@ -14,27 +13,39 @@ import Factory
 
 struct CurrencyRateDetailView: View {
     
+    // MARK: - Properties
+    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @ObservedObject var viewModel: CurrencyRateDetailViewModel
     @Injected(\.currencyChartTypeTableViewFactory) private var viewFactory
-   
-
+    
+    // MARK: - View
+    
     var body: some View {
         if viewModel.isExpand {
-            VStack {
-                createExpandTitle(viewModel.exchange)
-                HStack {
-                    GroupBox {
-                        VStack {
-                            createChartView()
-                                .chartXSelection(value: $viewModel.selectedDate)
-                            Spacer()
-                        }
+            if horizontalSizeClass == .compact {
+                VStack {
+                    ScrollView(.vertical) {
+                        createExpandTitle(viewModel.exchange)
+                        chartView
+                        currencyTable
+                            .frame(minWidth: 250)
                     }
-                    currencyTable
+                    option
                 }
-                option
+                .padding()
+            } else {
+                VStack {
+                    createExpandTitle(viewModel.exchange)
+                    HStack {
+                        chartView
+                        currencyTable
+                            .frame(width:250)
+                    }
+                    option
+                }
+                .padding()
             }
-            .padding()
         } else {
             VStack {
                 createTitle(viewModel.exchange)
@@ -42,6 +53,8 @@ struct CurrencyRateDetailView: View {
             }
         }
     }
+    
+    // MARK: - ViewBuilder
     
     @ViewBuilder
     func createTitle(_ exchange: Exchange) -> some View {
@@ -62,40 +75,59 @@ struct CurrencyRateDetailView: View {
     @ViewBuilder
     func createExpandTitle(_ exchange: Exchange) -> some View {
         GroupBox {
-            VStack {
-                HStack {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(exchange.currency)
-                                .textCase(.uppercase)
-                                .font(.title)
-                                .bold()
-                            
-                            Text(viewModel.selectedCurrency.subTitle)
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                        }
-                        HStack {
-                            createCell("Data początkowa:",
-                                       value: Formatters.Date.createString(from: viewModel.selectedPeriod.chartRangeStartDate,
-                                                                           with: .shortDate))
-                            createCell("Data końcowa:",
-                                       value: Formatters.Date.createString(from: Date(),
-                                                                           with: .shortDate))
-                        }
+            if horizontalSizeClass == .compact {
+                VStack(alignment: .leading) {
+                    HStack {
+                        currencyCell(exchange)
+                        selectedCurrencyCell
+                        Spacer()
+                        infoButton
                     }
                     Spacer()
                     HStack {
+                        Group {
+                            createActualCourseText(exchange)
+                            Spacer()
+                            createExchangeRateDifferenceText(exchange)
+                            createCurrencyFluctuationText(exchange)
+                        }
+                        .font(.subheadline)
+                    }
+                }
+                
+            } else {
+                VStack(alignment: .leading) {
+                    HStack {
+                        currencyCell(exchange)
+                        selectedCurrencyCell
+                        Spacer()
                         createActualCourseText(exchange)
-                        createExchangeRateDifferenceText(exchange)
-                            .font(.title2)
-                        createCurrencyFluctuationText(exchange)
+                            .font(.title)
+                    }
+                    HStack {
+                        dateCells
+                        Spacer()
+                        Group {
+                            createExchangeRateDifferenceText(exchange)
+                            createCurrencyFluctuationText(exchange)
+                        }
+                        .font(.title3)
                     }
                 }
             }
         }
     }
     
+    var chartView: some View {
+        GroupBox {
+            VStack {
+                createChartView()
+                    .chartXSelection(value: $viewModel.selectedDate)
+                Spacer()
+            }
+        }
+        .frame(minHeight: 300)
+    }
     
     func createChartView() -> some View {
         viewFactory.createChartView(viewModel)
@@ -109,7 +141,14 @@ struct CurrencyRateDetailView: View {
                 CurrencyTableView(viewModel)
                 Spacer()
             }
-            .frame(width: 250)
+        }
+    }
+    
+    var infoButton: some View {
+        Menu {
+            dateCells
+        } label: {
+            Image(systemName: "info.circle")
         }
     }
     
@@ -168,7 +207,6 @@ struct CurrencyRateDetailView: View {
                     .foregroundStyle(.red)
             }
         }
-        .font(.title)
         .bold()
     }
     
@@ -184,13 +222,12 @@ struct CurrencyRateDetailView: View {
     func createCurrencyFluctuationText(_ exchange: Exchange) -> some View {
         let value = viewModel.yesterdayRateValueChange
         Text("\(value, specifier: "%.4f") zł")
-            .font(.title2)
             .foregroundStyle(value >= 0 ? .green : .red)
             .bold()
     }
     
     @ViewBuilder
-    func createCell(_ title: String, value: String) -> some View {
+    func dateCell(_ title: String, value: String) -> some View {
         HStack {
             Text(title)
                 .foregroundStyle(.secondary)
@@ -199,4 +236,28 @@ struct CurrencyRateDetailView: View {
                 .foregroundStyle(.primary)
         }
     }
+    
+    func currencyCell(_ exchange: Exchange) -> some View {
+        Text(exchange.currency)
+            .textCase(.uppercase)
+            .font(.title)
+            .bold()
+    }
+    var selectedCurrencyCell: some View {
+        Text(viewModel.selectedCurrency.subTitle)
+            .font(.subheadline)
+            .foregroundStyle(.secondary)
+    }
+    
+    var dateCells: some View {
+        HStack {
+            dateCell("Data początkowa:",
+                     value: Formatters.Date.createString(from: viewModel.selectedPeriod.chartRangeStartDate,
+                                                         with: .shortDate))
+            dateCell("Data końcowa:",
+                     value: Formatters.Date.createString(from: Date(),
+                                                         with: .shortDate))
+        }
+    }
+    
 }

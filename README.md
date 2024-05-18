@@ -171,4 +171,4 @@ https://github.com/SebaKrk/MyNBPapp
      - rozszerzenie WidgetEntryConfiguration o `WidgetColor: AppEntity`
      
 ### IOS-0022 iPhone UI
-    A: Dostosowanie UI do iPhona 
+    A: Dostosowanie UI do iPhone 
