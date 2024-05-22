@@ -61,6 +61,9 @@
     "brak danych" : {
 
     },
+    "Button" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "pl" : {
@@ -75,6 +78,9 @@
 
     },
     "Contacts" : {
+
+    },
+    "Container View" : {
 
     },
     "Currency converter" : {
@@ -125,6 +131,12 @@
     "kurs:" : {
 
     },
+    "Label: Test 1 - container" : {
+
+    },
+    "Label: Test 2 - second container" : {
+
+    },
     "Main" : {
       "comment" : "The Main Tab presents the primary view of the application.",
       "localizations" : {
@@ -141,6 +153,12 @@
           }
         }
       }
+    },
+    "MainListView" : {
+
+    },
+    "menu" : {
+
     },
     "mid" : {
 
@@ -222,6 +240,9 @@
     "Save" : {
 
     },
+    "Second Container View" : {
+
+    },
     "select a tab" : {
       "localizations" : {
         "pl" : {
@@ -246,6 +267,15 @@
       }
     },
     "SettingsView" : {
+
+    },
+    "TEST" : {
+
+    },
+    "Test2" : {
+
+    },
+    "Test3" : {
 
     },
     "Ukryj symbol" : {

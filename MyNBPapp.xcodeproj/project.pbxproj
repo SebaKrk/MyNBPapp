@@ -101,6 +101,7 @@
 		93A5FFB02BD8076A00D9696B /* WidgetChatNBP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */; };
 		93A5FFB22BD8076B00D9696B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A5FFB12BD8076B00D9696B /* Assets.xcassets */; };
 		93A5FFB62BD8076B00D9696B /* WidgetChatNBPExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 93A5FFA92BD8076A00D9696B /* WidgetChatNBPExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93BB56802BFE590100CC4DA0 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB567F2BFE590100CC4DA0 /* RootFeature.swift */; };
 		93BDCE2F2BDED2A000FAD14A /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = 93BDCE2E2BDED2A000FAD14A /* Commons */; };
 		93BDCE392BDEE5F800FAD14A /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE382BDEE5F800FAD14A /* Exchange.swift */; };
 		93BDCE3B2BDEE63E00FAD14A /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */; };
@@ -290,6 +291,7 @@
 		93A5FFAF2BD8076A00D9696B /* WidgetChatNBP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetChatNBP.swift; sourceTree = "<group>"; };
 		93A5FFB12BD8076B00D9696B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93A5FFB32BD8076B00D9696B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BB567F2BFE590100CC4DA0 /* RootFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
 		93BDCE382BDEE5F800FAD14A /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		93BDCE3A2BDEE63E00FAD14A /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		93BDCE3D2BDEE65200FAD14A /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 		9357DA122B6065C90097673C /* FavoritesTab */ = {
 			isa = PBXGroup;
 			children = (
+				93BB567A2BFE58AE00CC4DA0 /* StackBasedNavigation */,
 				9357DA0C2B5D9B900097673C /* FavoritesView.swift */,
 			);
 			path = FavoritesTab;
@@ -773,6 +776,14 @@
 				93A5FFB32BD8076B00D9696B /* Info.plist */,
 			);
 			path = WidgetChatNBP;
+			sourceTree = "<group>";
+		};
+		93BB567A2BFE58AE00CC4DA0 /* StackBasedNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				93BB567F2BFE590100CC4DA0 /* RootFeature.swift */,
+			);
+			path = StackBasedNavigation;
 			sourceTree = "<group>";
 		};
 		93BDCE372BDEE5D300FAD14A /* Model */ = {
@@ -1397,6 +1408,7 @@
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */,
 				9312DF052B9B1D9200C3D441 /* MainFeature+Action.swift in Sources */,
+				93BB56802BFE590100CC4DA0 /* RootFeature.swift in Sources */,
 				93335A692BA4560A001F1610 /* ContactDetailView.swift in Sources */,
 				93335A6D2BA45F3D001F1610 /* ContactsView.swift in Sources */,
 				930F629D2BAEA647004CFD5E /* PeriodsCurrencyOption.swift in Sources */,

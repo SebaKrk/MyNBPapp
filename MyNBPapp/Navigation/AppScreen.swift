@@ -47,9 +47,14 @@ extension AppScreen {
         case .rate:
             CurrencyRateView()
         case .favorites:
+            RootView(
+                store: Store(initialState: RootFeature.State()) {
+                    RootFeature()
+                }
+            )
             //FavoritesView()
-            TestView(store: Store(initialState: TestFeature.State(),
-                                  reducer: { TestFeature() }))
+            //TestView(store: Store(initialState: TestFeature.State(),
+            //                      reducer: { TestFeature() }))
         case .account:
             //            AccountView(store: Store(initialState: AccountFeature.State(),
             //                                     reducer: { AccountFeature() }))
