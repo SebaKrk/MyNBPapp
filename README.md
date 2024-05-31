@@ -175,3 +175,4 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0023 TCA `Stack-based navigation`
     A: SandBox - navigation TCA
+    B: SandBox - Favorites flow 
