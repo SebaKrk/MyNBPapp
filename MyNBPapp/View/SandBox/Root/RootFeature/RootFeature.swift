@@ -18,7 +18,9 @@ struct RootFeature {
         case screenA(ScreenA)
         case screenB(ScreenB)
         case screenC(ScreenC)
-        //case contact(ContactsFeature)
+        case contact(ContactsFeature)
+        case screenContact(ScreenContact)
+        
     }
     
     var body: some Reducer<State, Action> {

@@ -27,7 +27,7 @@ struct ScreenC {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            
+                
             case .contactButtonTapped:
                 return .run { send in
                     await send(.contactSheetPresented)
@@ -45,7 +45,7 @@ struct ScreenC {
             ContactsFeature()
         }
     }
-        
+    
 }
 
 struct ScreenCView: View {
@@ -59,10 +59,12 @@ struct ScreenCView: View {
             Text("Open Contact Sheet")
         }
         .navigationTitle("Screen C")
-
+        
         .sheet(item: $store.scope(state: \.contactFeature, action: \.contactFeature)) { store in
             ContactsView(store: store)
         }
     }
     
 }
+
+
