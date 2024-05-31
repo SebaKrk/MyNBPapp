@@ -14,6 +14,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case rate
     case favorites
     case account
+    case sandBox
     
     var id: AppScreen { self }
     
@@ -36,6 +37,9 @@ extension AppScreen {
         case .account:
             Label(String(localized: "Account", comment: "The Account tab provides a personalized space where users can manage their profile and settings."),
                   systemImage: "person")
+        case .sandBox:
+            Label(String(localized: "Sandbox", comment: "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."),
+                       systemImage: "shippingbox")
         }
     }
     
@@ -47,16 +51,21 @@ extension AppScreen {
         case .rate:
             CurrencyRateView()
         case .favorites:
-            //FavoritesView()
-            TestView(store: Store(initialState: TestFeature.State(),
-                                  reducer: { TestFeature() }))
+            FavoritesView()
         case .account:
-            //            AccountView(store: Store(initialState: AccountFeature.State(),
-            //                                     reducer: { AccountFeature() }))
-            
             ContactsView(store: Store(initialState: ContactsFeature.State(),
                                       reducer: { ContactsFeature() }))
+        case .sandBox:
+            RootView(store: Store(initialState: RootFeature.State(),
+                             reducer: { RootFeature() }))
         }
     }
     
 }
+
+//            AccountView(store: Store(initialState: AccountFeature.State(),
+//                                     reducer: { AccountFeature() }))
+
+
+//TestView(store: Store(initialState: TestFeature.State(),
+//                      reducer: { TestFeature() }))

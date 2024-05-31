@@ -29,6 +29,9 @@
         }
       }
     },
+    "%lld" : {
+
+    },
     "1 Euro" : {
 
     },
@@ -120,6 +123,18 @@
       }
     },
     "FavoritesView" : {
+
+    },
+    "Go to A → A → B" : {
+
+    },
+    "Go to screen A" : {
+
+    },
+    "Go to screen B" : {
+
+    },
+    "Go to screen C" : {
 
     },
     "kurs:" : {
@@ -216,10 +231,25 @@
         }
       }
     },
+    "Root" : {
+
+    },
     "Sales Picker" : {
 
     },
+    "Sandbox" : {
+      "comment" : "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."
+    },
     "Save" : {
+
+    },
+    "Screen A" : {
+
+    },
+    "Screen B" : {
+
+    },
+    "Screen C" : {
 
     },
     "select a tab" : {
