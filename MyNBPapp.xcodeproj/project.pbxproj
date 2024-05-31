@@ -497,11 +497,12 @@
 				932FFF012C09B3F6008FC828 /* ScreenA.swift */,
 				932FFF052C09B6E7008FC828 /* ScreenB.swift */,
 				93CF41D52C09D922006263F0 /* ScreenC.swift */,
+				93335A662BA455E3001F1610 /* Contact */,
 			);
 			path = SandBox;
 			sourceTree = "<group>";
 		};
-		93335A662BA455E3001F1610 /* ContactTest */ = {
+		93335A662BA455E3001F1610 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
 				93335A712BA45F59001F1610 /* Model */,
@@ -509,7 +510,7 @@
 				93335A732BA465F1001F1610 /* AddContact */,
 				93335A672BA455EE001F1610 /* ContactDetail */,
 			);
-			path = ContactTest;
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		93335A672BA455EE001F1610 /* ContactDetail */ = {
@@ -581,7 +582,6 @@
 		93335A9F2BA767F9001F1610 /* SandboxTCA */ = {
 			isa = PBXGroup;
 			children = (
-				93335A662BA455E3001F1610 /* ContactTest */,
 				93517C392B88CBAB009252E9 /* TestFeature */,
 				93517C422B88CD99009252E9 /* TestView.swift */,
 				930948762BA8FFA900CF6284 /* TestView2.swift */,

@@ -17,7 +17,8 @@ struct RootFeature {
     enum Path {
         case screenA(ScreenA)
         case screenB(ScreenB)
-         case screenC(ScreenC)
+        case screenC(ScreenC)
+        //case contact(ContactsFeature)
     }
     
     var body: some Reducer<State, Action> {

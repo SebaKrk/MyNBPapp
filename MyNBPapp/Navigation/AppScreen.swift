@@ -53,8 +53,8 @@ extension AppScreen {
         case .favorites:
             FavoritesView()
         case .account:
-            ContactsView(store: Store(initialState: ContactsFeature.State(),
-                                      reducer: { ContactsFeature() }))
+            AccountView(store: Store(initialState: AccountFeature.State(),
+                                     reducer: { AccountFeature() }))
         case .sandBox:
             RootView(store: Store(initialState: RootFeature.State(),
                              reducer: { RootFeature() }))
@@ -63,9 +63,9 @@ extension AppScreen {
     
 }
 
-//            AccountView(store: Store(initialState: AccountFeature.State(),
-//                                     reducer: { AccountFeature() }))
 
+//            ContactsView(store: Store(initialState: ContactsFeature.State(),
+//                                      reducer: { ContactsFeature() }))
 
 //TestView(store: Store(initialState: TestFeature.State(),
 //                      reducer: { TestFeature() }))
