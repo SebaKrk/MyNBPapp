@@ -13,31 +13,58 @@ struct ScreenC {
     
     @ObservableState
     struct State: Equatable {
+        @Presents var contactFeature: ContactsFeature.State?
         
+        var isContactactViewPresented: Bool = false
     }
     
     enum Action {
-        case screenButtonTapped
+        case contactButtonTapped
+        case contactSheetPresented
+        case contactFeature(PresentationAction<ContactsFeature.Action>)
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .screenButtonTapped:
-              return .none
+                
+            case .contactButtonTapped:
+                return .run { send in
+                    await send(.contactSheetPresented)
+                }
+                
+            case .contactSheetPresented:
+                state.contactFeature = .init()
+                return .none
+                
+            default:
+                return .none
             }
         }
+        .ifLet(\.$contactFeature, action: \.contactFeature) {
+            ContactsFeature()
+        }
     }
+    
 }
 
 struct ScreenCView: View {
     
-    let store: StoreOf<ScreenC>
+    @Bindable var store: StoreOf<ScreenC>
     
     var body: some View {
-        Section {
-            
+        Button {
+            store.send(.contactButtonTapped)
+        } label: {
+            Text("Open Contact Sheet")
         }
-            .navigationTitle("Screen C")
+        .navigationTitle("Screen C")
+        
+        .sheet(item: $store.scope(state: \.contactFeature, action: \.contactFeature)) { store in
+            ContactsView(store: store)
+        }
     }
+    
 }
+
+

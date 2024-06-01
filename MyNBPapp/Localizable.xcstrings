@@ -137,6 +137,9 @@
     "Go to screen C" : {
 
     },
+    "Go to ScreenContact" : {
+
+    },
     "kurs:" : {
 
     },
@@ -191,6 +194,9 @@
           }
         }
       }
+    },
+    "Open Contact Sheet" : {
+
     },
     "Pick something form ths tabbar list." : {
       "localizations" : {

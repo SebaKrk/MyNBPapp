@@ -27,7 +27,14 @@ struct RootView: View {
                         "Go to screen C",
                         state: RootFeature.Path.State.screenC(ScreenC.State())
                     )
+//                    NavigationLink("Go to Contact Screen",
+//                                   state: RootFeature.Path.State.contact(ContactsFeature.State())
+//                    )
+                    NavigationLink("Go to ScreenContact",
+                                   state: RootFeature.Path.State.screenContact(ScreenContact.State())
+                    )
                 }
+                
                 Section {
                     Button("Go to A → A → B") {
                       store.send(.goToAAAButtonTapped)
@@ -43,9 +50,12 @@ struct RootView: View {
                 ScreenBView(store: store)
             case let .screenC(store):
                 ScreenCView(store: store)
+            case let .contact(store):
+                ContactsView(store: store)
+            case let .screenContact(store):
+                ScreenContactView(store: store)
             }
         }
     }
     
 }
-

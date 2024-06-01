@@ -20,9 +20,7 @@ struct AccountFeature {
     // MARK: Properties
     
     let service = AccountFeatureServices()
-    
-    // MARK: - Reducer
-    
+
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
