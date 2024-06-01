@@ -63,6 +63,10 @@ struct ScreenContactView: View {
             ForEach(store.contacts) { contact in
                 Text(contact.name)
             }
+            .swipeActions {
+                deletedButton
+                favoriteButton
+            }
         }
         .toolbar {
             toolbarButton
@@ -93,5 +97,24 @@ struct ScreenContactView: View {
         } label: {
             Image(systemName: "plus")
         }
+    }
+    
+    @ViewBuilder
+    var favoriteButton: some View {
+        Button {
+            
+        } label: {
+            Image(systemName: "star")
+        }
+    }
+    
+    @ViewBuilder
+    var deletedButton: some View {
+        Button(role: .destructive) {
+            
+        } label: {
+            Image(systemName: "trash")
+        }
+
     }
 }
