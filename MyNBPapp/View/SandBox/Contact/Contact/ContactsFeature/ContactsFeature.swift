@@ -13,7 +13,9 @@ import SwiftUI
 struct ContactsFeature {
     
     // MARK: - Reducer
+    
     @Dependency(\.uuid) var uuid
+    
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
