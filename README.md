@@ -172,3 +172,10 @@ https://github.com/SebaKrk/MyNBPapp
      
 ### IOS-0022 iPhone UI
     A: Dostosowanie UI do iPhone 
+    
+### IOS-0023 TCA `Stack-based navigation`
+    A: SandBox - navigation TCA
+    B: SandBox - Favorites flow
+    - save data
+    - swipe action
+    - add to favorites
