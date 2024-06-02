@@ -23,6 +23,11 @@ struct RootFeature {
         
     }
     
+    @Reducer(state: .equatable)
+    enum Destination {
+        case openScreenFavorites(ScreenFavorites)
+    }
+    
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
@@ -51,9 +56,16 @@ struct RootFeature {
             case .popToRoot:
                 state.path.removeAll()
                 return .none
+                
+            case .favoritesButtonTapped:
+                state.destination = .openScreenFavorites(ScreenFavorites.State())
+                return .none
+            case .destination(_):
+                return .none
             }
         }
         .forEach(\.path, action: \.path)
+        .ifLet(\.$destination, action: \.destination)
     }
     
 }
