@@ -64,6 +64,9 @@
     "brak danych" : {
 
     },
+    "cancel" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "pl" : {
@@ -256,6 +259,9 @@
 
     },
     "Screen C" : {
+
+    },
+    "ScreenFactories" : {
 
     },
     "select a tab" : {

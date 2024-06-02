@@ -14,6 +14,8 @@ extension RootFeature {
     @ObservableState
     struct State: Equatable {
         var path = StackState<Path.State>()
+        
+        @Presents var destination: Destination.State?
     }
     
 }

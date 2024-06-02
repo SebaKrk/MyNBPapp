@@ -17,6 +17,9 @@ extension RootFeature {
         case goToAAAButtonTapped
         case path(StackActionOf<Path>)
         case popToRoot
+        
+        case favoritesButtonTapped
+        case destination(PresentationAction<Destination.Action>)
     }
     
 }
