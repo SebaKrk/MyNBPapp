@@ -94,6 +94,7 @@
 		939B91602BC042D300C0D4C1 /* CurrencyBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B915F2BC042D300C0D4C1 /* CurrencyBarChartView.swift */; };
 		939BD5CB2C0D06100063D761 /* ScreenFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939BD5CA2C0D06100063D761 /* ScreenFavorites.swift */; };
 		939BD5EF2C10F79E0063D761 /* CoreDataBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939BD5EE2C10F79E0063D761 /* CoreDataBootCamp.swift */; };
+		939BD5F22C10FA400063D761 /* FruitContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 939BD5F02C10FA400063D761 /* FruitContainer.xcdatamodeld */; };
 		93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */ = {isa = PBXBuildFile; productRef = 93A3EB4B2B640291007BFCDC /* MonumentKit */; };
 		93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */; };
 		93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3EB502B658318007BFCDC /* CurrencyView.swift */; };
@@ -296,6 +297,7 @@
 		939B915F2BC042D300C0D4C1 /* CurrencyBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBarChartView.swift; sourceTree = "<group>"; };
 		939BD5CA2C0D06100063D761 /* ScreenFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFavorites.swift; sourceTree = "<group>"; };
 		939BD5EE2C10F79E0063D761 /* CoreDataBootCamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBootCamp.swift; sourceTree = "<group>"; };
+		939BD5F12C10FA400063D761 /* FruitContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FruitContainer.xcdatamodel; sourceTree = "<group>"; };
 		93A3EB4E2B657E6F007BFCDC /* CurrencyBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBalanceView.swift; sourceTree = "<group>"; };
 		93A3EB502B658318007BFCDC /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		93A3EB522B6584BB007BFCDC /* CurrencyCellWithBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellWithBalance.swift; sourceTree = "<group>"; };
@@ -778,6 +780,7 @@
 			isa = PBXGroup;
 			children = (
 				939BD5EE2C10F79E0063D761 /* CoreDataBootCamp.swift */,
+				939BD5F02C10FA400063D761 /* FruitContainer.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -1424,6 +1427,7 @@
 				9357DA092B5D9A7E0097673C /* MainViewOld.swift in Sources */,
 				9338604B2B8BCA4B0062DBC0 /* CurrencyRateCell.swift in Sources */,
 				93F7829E2BB0CB3C00ACB39A /* ChartType.swift in Sources */,
+				939BD5F22C10FA400063D761 /* FruitContainer.xcdatamodeld in Sources */,
 				932FFF062C09B6E7008FC828 /* ScreenB.swift in Sources */,
 				93335A8C2BA7511B001F1610 /* ContactsFeature.swift in Sources */,
 				93335A862BA750F4001F1610 /* ContactsFeature+Action.swift in Sources */,
@@ -2149,6 +2153,20 @@
 			productName = Commons;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		939BD5F02C10FA400063D761 /* FruitContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				939BD5F12C10FA400063D761 /* FruitContainer.xcdatamodel */,
+			);
+			currentVersion = 939BD5F12C10FA400063D761 /* FruitContainer.xcdatamodel */;
+			name = FruitContainer.xcdatamodeld;
+			path = "/Users/sebastiansciuba/Dokumenty/Programowanie /Programing SWIFT/MOJE SwiftUI&TCA/MyNBPapp/MyNBPapp/View/SandBox/CoreData/FruitContainer.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 93C6D7AA2B5BA569006E28F7 /* Project object */;
 }

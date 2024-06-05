@@ -49,6 +49,9 @@
     "Account View" : {
 
     },
+    "Add fruit here ..." : {
+
+    },
     "Are you sure?" : {
 
     },
@@ -82,6 +85,9 @@
     },
     "Contacts" : {
 
+    },
+    "CoreData" : {
+      "comment" : "The `CoreData` tab in the application is my testing area for CoreData "
     },
     "Currency converter" : {
 
