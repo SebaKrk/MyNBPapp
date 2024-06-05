@@ -49,6 +49,9 @@
     "Account View" : {
 
     },
+    "Add fruit here ..." : {
+
+    },
     "Are you sure?" : {
 
     },
@@ -83,6 +86,9 @@
     "Contacts" : {
 
     },
+    "CoreData" : {
+      "comment" : "The `CoreData` tab in the application is my testing area for CoreData "
+    },
     "Currency converter" : {
 
     },
@@ -114,6 +120,12 @@
     "Dostanę" : {
 
     },
+    "Enter favorite name " : {
+
+    },
+    "Favorite" : {
+
+    },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
       "localizations" : {
@@ -124,6 +136,9 @@
           }
         }
       }
+    },
+    "FavoritesScreenView" : {
+
     },
     "FavoritesView" : {
 
@@ -259,9 +274,6 @@
 
     },
     "Screen C" : {
-
-    },
-    "ScreenFactories" : {
 
     },
     "select a tab" : {

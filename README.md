@@ -179,3 +179,4 @@ https://github.com/SebaKrk/MyNBPapp
     - save data
     - swipe action
     - add to favorites
+    C: SandBox CoreData cz.1
