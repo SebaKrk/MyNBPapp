@@ -8,7 +8,7 @@
 import SwiftUI
 import Observation
 
-struct FavoritesView: View {
+struct FavoritesView2: View {
     
     var body: some View {
         NavigationStack {
@@ -28,4 +28,49 @@ struct FavoritesView: View {
         }
     }
     
+}
+
+import SwiftData
+
+@Model
+class Favorite {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+struct FavoritesView: View {
+ 
+    @Environment(\.modelContext) var context
+    @Query var favorites: [Favorite]
+    
+    @State var name: String = ""
+    var body: some View {
+
+        VStack {
+            HStack {
+                TextField("Enter favorite name ", text: $name)
+                Button {
+                    let favorite = Favorite(name: name)
+                    context.insert(favorite)
+                    try! context.save()
+                } label: {
+                    Text("Save")
+                }
+            }
+            Section {
+                List {
+                    ForEach(favorites) { item in
+                        Text(item.name)
+                    }
+                }
+            } header: {
+                Text("Favorite")
+            }
+
+        }
+      
+    }
 }

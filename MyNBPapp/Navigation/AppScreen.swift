@@ -15,6 +15,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case favorites
     case account
     case sandBox
+    case coreData
     
     var id: AppScreen { self }
     
@@ -40,6 +41,8 @@ extension AppScreen {
         case .sandBox:
             Label(String(localized: "Sandbox", comment: "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."),
                        systemImage: "shippingbox")
+        case .coreData:
+            Label(String(localized: "CoreData", comment: "The `CoreData` tab in the application is my testing area for CoreData "), systemImage: "archivebox.fill")
         }
     }
     
@@ -58,6 +61,8 @@ extension AppScreen {
         case .sandBox:
             RootView(store: Store(initialState: RootFeature.State(),
                              reducer: { RootFeature() }))
+        case .coreData:
+            CoreDataBootCamp()
         }
     }
     
