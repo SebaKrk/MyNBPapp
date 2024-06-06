@@ -55,6 +55,13 @@ final class CoreDataViewModel: ObservableObject {
         container.viewContext.delete(entity)
         saveData()
     }
+    
+    func updateFruits(entity: FruitEntity) {
+        let currentName = entity.name ?? ""
+        let newName = currentName + "!"
+        entity.name = newName
+        saveData()
+    }
 }
 
 struct CoreDataBootCamp: View {
@@ -89,6 +96,9 @@ struct CoreDataBootCamp: View {
             List {
                 ForEach(viewModel.saveEntities) { item in
                     Text(item.name ?? "NO NAME")
+                        .onTapGesture {
+                            viewModel.updateFruits(entity: item)
+                        }
                 }
                 .onDelete(perform: viewModel.deletedFruit)
             }
