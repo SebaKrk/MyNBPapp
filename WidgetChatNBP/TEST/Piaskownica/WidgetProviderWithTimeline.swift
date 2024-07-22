@@ -22,7 +22,7 @@ struct WidgetProviderWithTimeline: TimelineProvider {
         completion(entry)
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetEntry>) -> ()) {
         let currentDate = Date()
         
         let calendar = Calendar.current

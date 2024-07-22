@@ -12,6 +12,7 @@ final class CoreDataViewModel: ObservableObject {
     
     let container: NSPersistentContainer
     @Published var saveEntities: [FruitEntity] = []
+    @Published var saveFav: [FavoritesEntity] = []
     
     init() {
         container = NSPersistentContainer(name: "FruitContainer")
@@ -23,6 +24,7 @@ final class CoreDataViewModel: ObservableObject {
             }
         }
         fetchFruit()
+        fetchFav()
     }
     
     func fetchFruit() {
@@ -62,36 +64,49 @@ final class CoreDataViewModel: ObservableObject {
         entity.name = newName
         saveData()
     }
+    
+    func addToFavorites(entity: FruitEntity) {
+        
+        let newFav = FavoritesEntity(context: container.viewContext)
+        newFav.name = entity.name
+        
+        do {
+            try container.viewContext.save()
+            fetchFav()
+        } catch let error {
+            print("error saving data \(error)")
+        }
+    }
+    
+    func fetchFav() {
+        let request = NSFetchRequest<FavoritesEntity>(entityName: "FavoritesEntity")
+        do {
+            saveFav = try container.viewContext.fetch(request)
+        } catch let error {
+            print("error fetch core data \(error)")
+        }
+    }
 }
 
 struct CoreDataBootCamp: View {
     
-    @StateObject var viewModel = CoreDataViewModel()
+    // MARK: - Properties
+    
+    @ObservedObject  var viewModel: CoreDataViewModel
     @State var textFieldText: String = ""
+    
+    // MARK: - Lifecycle
+    
+    init(viewModel: CoreDataViewModel = CoreDataViewModel()) {
+        self.viewModel = viewModel
+    }
+    
+    // MARK: - View
     
     var body: some View {
         VStack(spacing: 20) {
-            TextField("Add fruit here ...", text: $textFieldText)
-                .font(.headline)
-                .padding(.leading)
-                .frame(height: 55)
-                .background(Color.white)
-                .cornerRadius(10)
-                .padding(.horizontal)
-            
-            Button {
-                guard !textFieldText.isEmpty else { return }
-                viewModel.addFruit(text: textFieldText)
-                textFieldText = ""
-            } label: {
-                Text("Save")
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.pink)
-                    .cornerRadius(10)
-            }
+            textField("Add fruit here ...", text: $textFieldText)
+            saveButton("Save")
             
             List {
                 ForEach(viewModel.saveEntities) { item in
@@ -99,12 +114,62 @@ struct CoreDataBootCamp: View {
                         .onTapGesture {
                             viewModel.updateFruits(entity: item)
                         }
+                        .swipeActions(edge: .leading, allowsFullSwipe: false, content: {
+                            favoriteButton(item)
+                        })
                 }
                 .onDelete(perform: viewModel.deletedFruit)
             }
             .listStyle(.plain)
+            
+            List {
+                ForEach(viewModel.saveFav) { item in
+                    Text(item.name ?? "No Fav")
+                }
+            }
         }
         .padding(.horizontal)
+    }
+    
+    // MARK: - SubView
+    
+    @ViewBuilder
+    func textField(_ title: String, text: Binding<String>) -> some View {
+        TextField(title, text: text)
+            .font(.headline)
+            .padding(.leading)
+            .frame(height: 55)
+            .background(Color.white)
+            .cornerRadius(10)
+            .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    func saveButton(_ label: String) -> some View {
+        Button {
+            guard !textFieldText.isEmpty else { return }
+            viewModel.addFruit(text: textFieldText)
+            textFieldText = ""
+        } label: {
+            Text(label)
+                .font(.headline)
+                .foregroundStyle(.white)
+                .frame(height: 55)
+                .frame(maxWidth: .infinity)
+                .background(Color.pink)
+                .cornerRadius(10)
+        }
+    }
+    
+    @ViewBuilder
+    func favoriteButton(_ entity: FruitEntity) -> some View {
+        Button {
+            print(entity)
+            viewModel.addToFavorites(entity: entity)
+            dump(viewModel.saveFav)
+        } label: {
+            Image(systemName: "star")
+        }
     }
     
 }
