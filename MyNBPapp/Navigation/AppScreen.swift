@@ -50,7 +50,7 @@ extension AppScreen {
     var destination: some View {
         switch self {
         case .main:
-            MainView()
+            MainView()  
         case .rate:
             CurrencyRateView()
         case .favorites:
