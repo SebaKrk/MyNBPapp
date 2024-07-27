@@ -183,3 +183,6 @@ https://github.com/SebaKrk/MyNBPapp
     - https://www.youtube.com/watch?v=BPQkpxtgalY
     D: Sandbox CoreData cz.2
     - https://www.youtube.com/watch?v=huRKU-TAD3g
+
+### IOS-0024 ChatGPT 
+    A: SandBox - ChatGPT 

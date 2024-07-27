@@ -16,6 +16,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case account
     case sandBox
     case coreData
+    case chatGPT
     
     var id: AppScreen { self }
     
@@ -43,6 +44,9 @@ extension AppScreen {
                        systemImage: "shippingbox")
         case .coreData:
             Label(String(localized: "CoreData", comment: "The `CoreData` tab in the application is my testing area for CoreData "), systemImage: "archivebox.fill")
+        
+        case .chatGPT:
+            Label(String(localized: "ChatGPT", comment: "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"), systemImage: "message")
         }
     }
     
@@ -63,6 +67,9 @@ extension AppScreen {
                              reducer: { RootFeature() }))
         case .coreData:
             CoreDataBootCamp()
+            
+        case.chatGPT:
+            ChatView()
         }
     }
     

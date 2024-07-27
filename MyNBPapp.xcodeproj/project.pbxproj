@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -351,6 +351,21 @@
 		93FE949B2BB1CD6B0087104D /*  Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Container+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				View/ChatView.swift,
+				ViewModel/ChatViewModel.swift,
+			);
+			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		931561992C54BCFB007DD554 /* ChatGPT */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ChatGPT; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		936774FB2B7007A500816C92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -501,6 +516,7 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
+				931561992C54BCFB007DD554 /* ChatGPT */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,
 			);
