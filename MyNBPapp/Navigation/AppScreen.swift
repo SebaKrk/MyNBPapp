@@ -69,7 +69,8 @@ extension AppScreen {
             CoreDataBootCamp()
             
         case.chatGPT:
-            ChatView()
+            let viewModel = ChatViewModel()
+            ChatView(viewModel: viewModel)
         }
     }
     

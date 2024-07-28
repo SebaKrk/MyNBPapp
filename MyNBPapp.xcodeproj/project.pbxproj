@@ -140,6 +140,7 @@
 		93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */; };
 		93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */; };
 		93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8122B6EE15100B37B26 /* CurrencyRate+Widget.swift */; };
+		93EA7A992C56287B0087A7B4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 93EA7A982C56287B0087A7B4 /* Alamofire */; };
 		93F782942BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782932BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift */; };
 		93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782972BB0835C00ACB39A /* ContainerRateDetailView.swift */; };
 		93F7829E2BB0CB3C00ACB39A /* ChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7829D2BB0CB3C00ACB39A /* ChartType.swift */; };
@@ -400,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */,
+				93EA7A992C56287B0087A7B4 /* Alamofire in Frameworks */,
 				93834AD92B7A004B00A5744C /* ExchangeRateClient.framework in Frameworks */,
 				9357DA6D2B63CF2E0097673C /* Services in Frameworks */,
 				9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */,
@@ -1220,6 +1222,7 @@
 				9357DA6C2B63CF2E0097673C /* Services */,
 				93A3EB4B2B640291007BFCDC /* MonumentKit */,
 				930B2EB22B68506D00BEB7B7 /* Factory */,
+				93EA7A982C56287B0087A7B4 /* Alamofire */,
 			);
 			productName = MyNBPapp;
 			productReference = 93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */;
@@ -2176,6 +2179,11 @@
 		93BDCE2E2BDED2A000FAD14A /* Commons */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Commons;
+		};
+		93EA7A982C56287B0087A7B4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 931561A72C54D170007DD554 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 

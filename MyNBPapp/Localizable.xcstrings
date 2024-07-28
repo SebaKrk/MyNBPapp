@@ -77,9 +77,6 @@
         }
       }
     },
-    "Chat View" : {
-
-    },
     "ChatGPT" : {
       "comment" : "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"
     },
@@ -121,6 +118,9 @@
       }
     },
     "Dostanę" : {
+
+    },
+    "Enter a message..." : {
 
     },
     "Enter favorite name" : {
@@ -293,6 +293,9 @@
       }
     },
     "Selected" : {
+
+    },
+    "send" : {
 
     },
     "Settings" : {
