@@ -356,6 +356,8 @@
 		9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Model/ChatModel.swift,
+				Service/OpenAIServices.swift,
 				View/ChatView.swift,
 				ViewModel/ChatViewModel.swift,
 			);
