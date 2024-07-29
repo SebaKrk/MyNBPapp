@@ -20,7 +20,7 @@ class OpenAIServices {
         }
         
         // Krok 2: Przygotowanie danych body
-        let requestBody = OpenAIRequest(model: "gpt-3.5",
+        let requestBody = OpenAIRequest(model: "gpt-3.5-turbo",
                                         messages: message,
                                         maxTokens: 10)
         
