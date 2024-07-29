@@ -185,4 +185,7 @@ https://github.com/SebaKrk/MyNBPapp
     - https://www.youtube.com/watch?v=huRKU-TAD3g
 
 ### IOS-0024 ChatGPT 
-    A: SandBox - ChatGPT 
+    A: SandBox - ChatGPT
+    B: Testing 
+    - create new network call 
+    - cleanup the code

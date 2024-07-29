@@ -18,20 +18,24 @@ struct ChatView: View {
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(viewModel.messages.filter { $0.role != .system }, id: \.id) { message in
+                ForEach(viewModel.messages, id: \.content) { message in
                     messageView(message)
                 }
             }
         }
         
         HStack {
-            TextField("Enter a message...", text: $viewModel.currentInput)
+            TextField("Enter a message...", text: $viewModel.messageInput)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
             Button {
-                viewModel.sendMessage()
+                Task {
+                    try await viewModel.sendMessage()
+                }
             } label: {
                  Text("send")
             }
         }
+        .padding()
         
     }
     
@@ -43,10 +47,13 @@ struct ChatView: View {
             Text(message.content)
                 .padding()
                 .background(message.role == .user ? Color.blue : Color.gray)
+                .foregroundStyle(.white)
+                .cornerRadius(8)
             if message.role == .assistant {
                 Spacer()
             }
         }
+        .padding()
     }
     
 }
