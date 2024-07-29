@@ -358,6 +358,7 @@
 			membershipExceptions = (
 				Model/ChatModel.swift,
 				Service/OpenAIServices.swift,
+				SubView/LoadingDotsView.swift,
 				View/ChatView.swift,
 				ViewModel/ChatViewModel.swift,
 			);

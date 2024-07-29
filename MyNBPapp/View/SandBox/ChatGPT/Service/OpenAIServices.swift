@@ -10,7 +10,7 @@ import Foundation
 class OpenAIServices {
     
     private let endPointURL = "https://api.openai.com/v1/chat/completions"
-    private let apiKey = "MY_API_KEY"
+    private let apiKey = ""
     
     func sendMessage(message: [Message]) async throws -> OpenAIResponse? {
         

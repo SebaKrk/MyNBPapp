@@ -27,6 +27,9 @@ struct ChatView: View {
                 ForEach(viewModel.messages, id: \.content) { message in
                     messageView(message)
                 }
+                if viewModel.isLoading {
+                    loadingView()
+                }
             }
         }
         HStack {
@@ -46,7 +49,7 @@ struct ChatView: View {
             Text(message.content)
                 .padding()
                 .background(message.role == .user ? Color.blue : Color.gray.opacity(0.8))
-                .foregroundStyle(.white)
+                .foregroundColor(.white)
                 .cornerRadius(14)
             if message.role == .assistant {
                 Spacer()
@@ -72,4 +75,11 @@ struct ChatView: View {
         }
     }
     
+    private func loadingView() -> some View {
+        HStack {
+            LoadingDotsView()
+            Spacer()
+        }
+        .padding()
+    }
 }

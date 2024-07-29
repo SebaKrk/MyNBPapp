@@ -14,6 +14,7 @@ class ChatViewModel: ObservableObject {
 //    = [OpenAIMessage(role: "system", content: "You are coding assistant. You will help me understand how to write only Swift code. You do not have enough information about other languages to give advice so avoid doing so at ALL times") ]
 
     @Published var messageInput: String = ""
+    @Published var isLoading: Bool = false
     
     private let service = OpenAIServices()
 
@@ -22,6 +23,7 @@ class ChatViewModel: ObservableObject {
         let newMessage = Message(role: .user , content: messageInput)
         messages.append(newMessage)
         messageInput = ""
+        isLoading = true
         
         do {
             let response = try await service.sendMessage(message: messages)
@@ -35,5 +37,7 @@ class ChatViewModel: ObservableObject {
         } catch {
             throw OpenAINetworkingError.requestFailed
         }
+        
+        isLoading = false
     }
 }
