@@ -6,24 +6,11 @@
 //
 
 import Foundation
-import Alamofire
-
-enum OpenAINetworkingError: String, Error {
-    case invalidURL
-    case invalidResponse
-    case decodingError
-    case requestFailed
-    case unknownError
-    case noMessage
-}
-
-enum Constant: String {
-    case apiKey = "MY_API_KEY"
-}
 
 class OpenAIServices {
     
     private let endPointURL = "https://api.openai.com/v1/chat/completions"
+    private let apiKey = "MY_API_KEY"
     
     func sendMessage(message: [Message]) async throws -> OpenAIResponse? {
         
@@ -33,7 +20,7 @@ class OpenAIServices {
         }
         
         // Krok 2: Przygotowanie danych body
-        let requestBody = OpenAIRequest(model: "gpt-4",
+        let requestBody = OpenAIRequest(model: "gpt-3.5",
                                         messages: message,
                                         maxTokens: 10)
         
@@ -50,7 +37,7 @@ class OpenAIServices {
         // Krok 4b: Definiowanie nagłówków w słowniku
         let headers: [String: String] = [
             "Content-Type": "application/json",
-            "Authorization": "Bearer \(Constant.apiKey)"
+            "Authorization": "Bearer \(apiKey)"
         ]
         
         // Krok 4c: Ustawianie nagłówków w żądaniu
@@ -64,8 +51,13 @@ class OpenAIServices {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         // Krok 6: Sprawdzenie odpowiedzi
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw OpenAINetworkingError.invalidResponse
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw OpenAINetworkingError.invalidResponse(statusCode: -1)
+        }
+        
+        guard httpResponse.statusCode == 200 else {
+            print("❌ \(OpenAINetworkingError.invalidResponse(statusCode: httpResponse.statusCode))")
+            throw OpenAINetworkingError.invalidResponse(statusCode: httpResponse.statusCode)
         }
         
         // Krok 7: Dekodowanie odpowiedzi
@@ -76,6 +68,32 @@ class OpenAIServices {
             throw OpenAINetworkingError.decodingError
         }
     }
+}
+
+enum OpenAINetworkingError: Error {
+    case invalidURL
+    case invalidResponse(statusCode: Int)
+    case decodingError
+    case requestFailed
+    case unknownError
+    case noMessage
+    
+    var errorMessage: String {
+            switch self {
+            case .invalidURL:
+                return "Invalid URL."
+            case .invalidResponse (let statusCode):
+                return "Invalid response from the server. Status code: \(statusCode)."
+            case .decodingError:
+                return "Failed to decode the response."
+            case .requestFailed:
+                return "Request failed."
+            case .unknownError:
+                return "An unknown error occurred."
+            case .noMessage:
+                return "No message received."
+            }
+        }
 }
 
 //curl https://api.openai.com/v1/chat/completions \

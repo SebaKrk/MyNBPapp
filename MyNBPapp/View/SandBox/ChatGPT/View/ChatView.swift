@@ -9,11 +9,17 @@ import SwiftUI
 
 struct ChatView: View {
     
+    // MARK: - Properties
+    
     @ObservedObject var viewModel: ChatViewModel
+    
+    // MARK: Lifecycle
     
     init(viewModel: ChatViewModel) {
         self.viewModel = viewModel
     }
+    
+    // MARK: - Body
     
     var body: some View {
         VStack {
@@ -23,21 +29,14 @@ struct ChatView: View {
                 }
             }
         }
-        
         HStack {
-            TextField("Enter a message...", text: $viewModel.messageInput)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            Button {
-                Task {
-                    try await viewModel.sendMessage()
-                }
-            } label: {
-                 Text("send")
-            }
+            messageTextField
+            sendButton
         }
         .padding()
-        
     }
+    
+    // MARK: - Subview
     
     private func messageView(_ message: Message) -> some View {
         HStack {
@@ -46,14 +45,31 @@ struct ChatView: View {
             }
             Text(message.content)
                 .padding()
-                .background(message.role == .user ? Color.blue : Color.gray)
+                .background(message.role == .user ? Color.blue : Color.gray.opacity(0.8))
                 .foregroundStyle(.white)
-                .cornerRadius(8)
+                .cornerRadius(14)
             if message.role == .assistant {
                 Spacer()
             }
         }
         .padding()
+    }
+    
+    private var messageTextField: some View {
+        TextField("Enter a message...", text: $viewModel.messageInput)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+    }
+    
+    private var sendButton: some View {
+        Button {
+            Task {
+                try await viewModel.sendMessage()
+            }
+        } label: {
+            Image(systemName: "paperplane.circle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+        }
     }
     
 }
