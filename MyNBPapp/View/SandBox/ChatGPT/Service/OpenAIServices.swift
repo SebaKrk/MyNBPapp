@@ -70,32 +70,6 @@ class OpenAIServices {
     }
 }
 
-enum OpenAINetworkingError: Error {
-    case invalidURL
-    case invalidResponse(statusCode: Int)
-    case decodingError
-    case requestFailed
-    case unknownError
-    case noMessage
-    
-    var errorMessage: String {
-            switch self {
-            case .invalidURL:
-                return "Invalid URL."
-            case .invalidResponse (let statusCode):
-                return "Invalid response from the server. Status code: \(statusCode)."
-            case .decodingError:
-                return "Failed to decode the response."
-            case .requestFailed:
-                return "Request failed."
-            case .unknownError:
-                return "An unknown error occurred."
-            case .noMessage:
-                return "No message received."
-            }
-        }
-}
-
 //curl https://api.openai.com/v1/chat/completions \
 //  -H "Content-Type: application/json" \
 //  -H "Authorization: Bearer $OPENAI_API_KEY" \

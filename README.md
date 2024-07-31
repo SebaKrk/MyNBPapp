@@ -189,3 +189,5 @@ https://github.com/SebaKrk/MyNBPapp
     B: Testing 
     - create new network call 
     - cleanup the code
+    - testing MapKit
+ 

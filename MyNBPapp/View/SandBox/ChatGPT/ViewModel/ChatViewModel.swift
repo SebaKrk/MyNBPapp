@@ -16,6 +16,8 @@ class ChatViewModel: ObservableObject {
     @Published var messageInput: String = ""
     @Published var isLoading: Bool = false
     
+    @Published var openMapView: Bool = false
+    
     private let service = OpenAIServices()
 
     @MainActor

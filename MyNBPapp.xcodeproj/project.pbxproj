@@ -232,6 +232,7 @@
 		9312DF0F2B9B208800C3D441 /* CurrencyConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterView.swift; sourceTree = "<group>"; };
 		9312DF122B9B209700C3D441 /* CurrencyConverterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterFeature.swift; sourceTree = "<group>"; };
 		9312DF152B9B346000C3D441 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		931D595E2C5AD47C00B33C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		932FFF012C09B3F6008FC828 /* ScreenA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenA.swift; sourceTree = "<group>"; };
 		932FFF022C09B3F6008FC828 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		932FFF052C09B6E7008FC828 /* ScreenB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenB.swift; sourceTree = "<group>"; };
@@ -357,9 +358,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Model/ChatModel.swift,
+				Service/OpenAINetworkingError.swift,
 				Service/OpenAIServices.swift,
 				SubView/LoadingDotsView.swift,
 				View/ChatView.swift,
+				View/MapView.swift,
 				ViewModel/ChatViewModel.swift,
 			);
 			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
@@ -954,6 +957,7 @@
 		93C6D7B42B5BA569006E28F7 /* MyNBPapp */ = {
 			isa = PBXGroup;
 			children = (
+				931D595E2C5AD47C00B33C95 /* Info.plist */,
 				93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */,
 				93C6D7B72B5BA569006E28F7 /* ContentView.swift */,
 				93FE949A2BB1CD4D0087104D /* Dependencies */,
@@ -1890,6 +1894,8 @@
 				DEVELOPMENT_TEAM = 8RH4482R36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyNBPapp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Potrzebujemy dostępu do Twojej lokalizacji, aby pokazać Twoje położenie na mapie.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1922,6 +1928,8 @@
 				DEVELOPMENT_TEAM = 8RH4482R36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyNBPapp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Potrzebujemy dostępu do Twojej lokalizacji, aby pokazać Twoje położenie na mapie.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

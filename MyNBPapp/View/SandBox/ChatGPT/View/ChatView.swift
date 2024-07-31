@@ -22,21 +22,32 @@ struct ChatView: View {
     // MARK: - Body
     
     var body: some View {
-        VStack {
-            ScrollView {
-                ForEach(viewModel.messages, id: \.content) { message in
-                    messageView(message)
-                }
-                if viewModel.isLoading {
-                    loadingView()
+        NavigationStack {
+            VStack {
+                ScrollView {
+                    ForEach(viewModel.messages, id: \.content) { message in
+                        messageView(message)
+                    }
+                    if viewModel.isLoading {
+                        loadingView()
+                    }
                 }
             }
+            HStack {
+                messageTextField
+                sendButton
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("ChatGPT")
+            .padding()
+            .toolbar {
+                mapButton
+            }
+            .sheet(isPresented: $viewModel.openMapView) {
+                MapView()
+            }
         }
-        HStack {
-            messageTextField
-            sendButton
-        }
-        .padding()
+
     }
     
     // MARK: - Subview
@@ -82,4 +93,17 @@ struct ChatView: View {
         }
         .padding()
     }
+    
+    private var mapButton: some View {
+        Button {
+            viewModel.openMapView.toggle()
+        } label: {
+            Image(systemName: "map")
+        }
+        
+    }
 }
+
+
+//<key>NSLocationWhenInUseUsageDescription</key>
+//<string>We need your location for mapping purposes</string>
