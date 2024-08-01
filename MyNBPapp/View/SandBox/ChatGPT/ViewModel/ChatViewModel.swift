@@ -6,30 +6,40 @@
 //
 
 import SwiftUI
-import Alamofire
+
 
 class ChatViewModel: ObservableObject {
     
-    @Published var messages: [Message] = [Message(id: UUID(), role: .system, content: "You are coding assistant. You will help me understand how to write only Swift code. You do not have enough information about other languages to give advice so avoid doing so at ALL times", creatAt: Date())]
-    @Published var currentInput: String = ""
+    @Published var messages: [Message] = []
+//    = [OpenAIMessage(role: "system", content: "You are coding assistant. You will help me understand how to write only Swift code. You do not have enough information about other languages to give advice so avoid doing so at ALL times") ]
+
+    @Published var messageInput: String = ""
+    @Published var isLoading: Bool = false
     
-    private let openAIServices = OpenAIServices()
+    @Published var openMapView: Bool = false
     
-    func sendMessage() {
-        let newMessage = Message(id: UUID(), role: .user, content: currentInput, creatAt: Date())
+    private let service = OpenAIServices()
+
+    @MainActor
+    func sendMessage() async throws {
+        let newMessage = Message(role: .user , content: messageInput)
         messages.append(newMessage)
-        currentInput = ""
+        messageInput = ""
+        isLoading = true
         
-        Task {
-            let response = await openAIServices.sendMessage(messages: messages)
-            guard let receivedOpenAIMessage = response?.choice.first?.message else {
-                print("No received message")
-                return
+        do {
+            let response = try await service.sendMessage(message: messages)
+            guard let receivedOpenAIMessage = response?.choices.first?.message else {
+                throw OpenAINetworkingError.noMessage
             }
-            let receivedMessage = Message(id: UUID(), role: receivedOpenAIMessage.role, content: receivedOpenAIMessage.content, creatAt: Date())
-            await MainActor.run {
-                messages.append(receivedMessage)
-            }
+            
+            let receivedMessage = Message(role: receivedOpenAIMessage.role,
+                                                content: receivedOpenAIMessage.content)
+            messages.append(receivedMessage)
+        } catch {
+            throw OpenAINetworkingError.requestFailed
         }
+        
+        isLoading = false
     }
 }
