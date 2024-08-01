@@ -41,7 +41,17 @@ struct RootView: View {
                     }
                 }
             }
+            .sheet(
+                item: $store.scope(state: \.destination?.openScreenFavorites, action: \.destination.openScreenFavorites)
+            ) { store in
+                NavigationStack {
+                    FavoritesScreenView(store: store)
+                }
+            }
             .navigationTitle("Root")
+            .toolbar {
+                factoriesRootButton
+            }
         } destination: { store in
             switch store.case {
             case let .screenA(store):
@@ -55,6 +65,16 @@ struct RootView: View {
             case let .screenContact(store):
                 ScreenContactView(store: store)
             }
+        }
+        
+    }
+    
+    @ViewBuilder
+    var factoriesRootButton: some View {
+        Button {
+            store.send(.favoritesButtonTapped)
+        } label: {
+            Image(systemName: "star")
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MyNBPappApp: App {
@@ -13,5 +14,6 @@ struct MyNBPappApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Favorite.self)
     }
 }

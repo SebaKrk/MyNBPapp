@@ -15,6 +15,8 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case favorites
     case account
     case sandBox
+    case coreData
+    case chatGPT
     
     var id: AppScreen { self }
     
@@ -40,6 +42,11 @@ extension AppScreen {
         case .sandBox:
             Label(String(localized: "Sandbox", comment: "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."),
                        systemImage: "shippingbox")
+        case .coreData:
+            Label(String(localized: "CoreData", comment: "The `CoreData` tab in the application is my testing area for CoreData "), systemImage: "archivebox.fill")
+        
+        case .chatGPT:
+            Label(String(localized: "ChatGPT", comment: "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"), systemImage: "message")
         }
     }
     
@@ -47,7 +54,7 @@ extension AppScreen {
     var destination: some View {
         switch self {
         case .main:
-            MainView()
+            MainView()  
         case .rate:
             CurrencyRateView()
         case .favorites:
@@ -58,6 +65,14 @@ extension AppScreen {
         case .sandBox:
             RootView(store: Store(initialState: RootFeature.State(),
                              reducer: { RootFeature() }))
+        case .coreData:
+            CoreDataBootCamp()
+            
+        case.chatGPT:
+//            let viewModel = ChatViewModel()
+//            ChatView(viewModel: viewModel)
+            
+            MapView()
         }
     }
     

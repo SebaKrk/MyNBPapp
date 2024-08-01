@@ -64,6 +64,9 @@
     "brak danych" : {
 
     },
+    "cancel" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "pl" : {
@@ -74,11 +77,17 @@
         }
       }
     },
+    "ChatGPT" : {
+      "comment" : "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"
+    },
     "Chcę" : {
 
     },
     "Contacts" : {
 
+    },
+    "CoreData" : {
+      "comment" : "The `CoreData` tab in the application is my testing area for CoreData "
     },
     "Currency converter" : {
 
@@ -111,6 +120,12 @@
     "Dostanę" : {
 
     },
+    "Enter a message..." : {
+
+    },
+    "Enter favorite name" : {
+
+    },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
       "localizations" : {
@@ -121,6 +136,9 @@
           }
         }
       }
+    },
+    "FavoritesScreenView" : {
+
     },
     "FavoritesView" : {
 
@@ -138,6 +156,9 @@
 
     },
     "Go to ScreenContact" : {
+
+    },
+    "Jeszcze tu nic nie ma" : {
 
     },
     "kurs:" : {
@@ -164,6 +185,12 @@
 
     },
     "Mid" : {
+
+    },
+    "monument" : {
+
+    },
+    "Nacisnij przycisk zeby cos doddac" : {
 
     },
     "name" : {
