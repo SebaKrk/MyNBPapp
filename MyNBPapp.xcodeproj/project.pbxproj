@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -140,6 +140,7 @@
 		93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */; };
 		93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */; };
 		93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8122B6EE15100B37B26 /* CurrencyRate+Widget.swift */; };
+		93EA7A992C56287B0087A7B4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 93EA7A982C56287B0087A7B4 /* Alamofire */; };
 		93F782942BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782932BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift */; };
 		93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F782972BB0835C00ACB39A /* ContainerRateDetailView.swift */; };
 		93F7829E2BB0CB3C00ACB39A /* ChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F7829D2BB0CB3C00ACB39A /* ChartType.swift */; };
@@ -351,6 +352,23 @@
 		93FE949B2BB1CD6B0087104D /*  Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Container+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Model/ChatModel.swift,
+				Service/OpenAIServices.swift,
+				View/ChatView.swift,
+				ViewModel/ChatViewModel.swift,
+			);
+			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		931561992C54BCFB007DD554 /* ChatGPT */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ChatGPT; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		936774FB2B7007A500816C92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -385,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A3EB4C2B640291007BFCDC /* MonumentKit in Frameworks */,
+				93EA7A992C56287B0087A7B4 /* Alamofire in Frameworks */,
 				93834AD92B7A004B00A5744C /* ExchangeRateClient.framework in Frameworks */,
 				9357DA6D2B63CF2E0097673C /* Services in Frameworks */,
 				9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */,
@@ -501,6 +520,7 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
+				931561992C54BCFB007DD554 /* ChatGPT */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,
 			);
@@ -1204,6 +1224,7 @@
 				9357DA6C2B63CF2E0097673C /* Services */,
 				93A3EB4B2B640291007BFCDC /* MonumentKit */,
 				930B2EB22B68506D00BEB7B7 /* Factory */,
+				93EA7A982C56287B0087A7B4 /* Alamofire */,
 			);
 			productName = MyNBPapp;
 			productReference = 93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */;
@@ -1294,6 +1315,7 @@
 				93834ADF2B7A006C00A5744C /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
 				93834AE02B7A00EC00A5744C /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
 				93834AE72B7A044900A5744C /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
+				931561A72C54D170007DD554 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 93C6D7B32B5BA569006E28F7 /* Products */;
 			projectDirPath = "";
@@ -2072,6 +2094,14 @@
 				version = 2.3.1;
 			};
 		};
+		931561A72C54D170007DD554 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -2151,6 +2181,11 @@
 		93BDCE2E2BDED2A000FAD14A /* Commons */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Commons;
+		};
+		93EA7A982C56287B0087A7B4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 931561A72C54D170007DD554 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 
