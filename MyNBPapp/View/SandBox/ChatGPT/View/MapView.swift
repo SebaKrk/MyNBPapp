@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import Contacts
 
 struct Monument: Identifiable, Hashable {
     var id: String { name }
@@ -26,21 +27,32 @@ struct Location: Hashable{
 struct MapView: View {
     
     @ObservedObject var viewModel: MapViewModel = MapViewModel()
-    let manager = CLLocationManager()
-
+    
     var body: some View {
         Map(position: $viewModel.position, selection: $viewModel.selectTag) {
-            ForEach(viewModel.monuments) { item in
-                Marker(item.name, coordinate: item.location.coordinate)
-                    .tag(item.id)
-            //Marker(item: viewModel.mapToMKMapItem(monument: item))
-            }
-             //$viewModel.selectResult
+//            ForEach(viewModel.monuments) { item in
+//                Marker(item.name, coordinate: item.location.coordinate)
+//                    .tag(item.id)
+//            Marker(item: viewModel.mapToMKMapItem(monument: item))
+//            }
+//             $viewModel.selectResult
             ForEach(viewModel.searchResults, id: \.self) { result in
                 Marker(item: result)
-//                    .tag(result.name)
+                    .tag(result.name)
             }
+            
+            ForEach(Place.samplePlaces, id: \.id) { place in
+                Marker(item: viewModel.mapPlaceToMKMapItem(place: place))
+                    .tag(place.name)
+            }
+            
+            if let wawel = viewModel.wawel {
+                Marker(item: wawel)
+                    .tag(wawel.name)
+            }
+            
             UserAnnotation()
+                
         }
 
         .padding()
@@ -50,6 +62,8 @@ struct MapView: View {
             HStack {
                 Spacer()
                 monumentButtonSearch
+                findMe
+                findWawel
                     .padding()
                 Spacer()
             }
@@ -58,21 +72,41 @@ struct MapView: View {
         .onChange(of: viewModel.searchResults) {
             viewModel.position = .automatic
         }
-        .onAppear {
-            manager.requestWhenInUseAuthorization()
-            
+        .onChange(of: viewModel.wawel) {
+            viewModel.position = .automatic
         }
     }
     
     private var monumentButtonSearch: some View {
         Button {
-            viewModel.search(for: "monument")
+            Task {
+              await viewModel.search(for: "monument")
+            }
         } label: {
             Label("monument", systemImage: "house")
         }
         .labelStyle(.iconOnly)
     }
 
+    private var findMe: some View {
+        Button {
+            viewModel.manager.requestWhenInUseAuthorization()
+        } label: {
+            Label("Me", systemImage: "figure.wave")
+        }
+        .labelStyle(.iconOnly)
+    }
+    
+    private var findWawel: some View {
+        Button {
+            Task {
+                await viewModel.findWawel()
+            }
+        } label: {
+            Label("Wawel", systemImage: "figure.archery")
+        }
+        .labelStyle(.iconOnly)
+    }
 }
 
 #Preview {
@@ -81,10 +115,16 @@ struct MapView: View {
 
 class MapViewModel: ObservableObject {
 
+    let service = LocalSearchServices()
+    let manager = CLLocationManager()
+    
+    @Published var places: [Place] = []
     @Published var searchResults: [MKMapItem] = []
     @Published var position: MapCameraPosition = .automatic
     @Published var selectResult: MKMapItem?
+//    @Published var selectTag: Int?
     @Published var selectTag: String?
+    @Published var wawel: MKMapItem?
     
     @Published var monuments: [Monument] = [
         Monument(name: "Wawel", location: Location(latitude: 50.0547, longitude: 19.9352)),
@@ -101,33 +141,58 @@ class MapViewModel: ObservableObject {
          return mapItem
      }
     
+    func mapPlaceToMKMapItem(place: Place) -> MKMapItem {
+        let addressDict: [String: Any] = [
+            "Street": place.placemark.address,
+            "City": place.placemark.name,
+            "Country": "Polska" // lub inny sposób na uzyskanie kraju
+        ]
+        
+        let placemark = MKPlacemark(coordinate: place.placemark.coordinates, addressDictionary: addressDict)
+        
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = String(place.name)
+        mapItem.phoneNumber = place.phoneNumber
+        mapItem.url = place.url
+        mapItem.timeZone = TimeZone(identifier: place.timeZone)
+        
+        return mapItem
+    }
+    
     @MainActor
-    func search(for query: String) {
+    func search(for query: String) async {
          let request = MKLocalSearch.Request()
-         request.naturalLanguageQuery = query
-         request.resultTypes = .pointOfInterest
-         request.region = MKCoordinateRegion(
-             center: CLLocationCoordinate2D(latitude: 50.0614, longitude: 19.9370),
-             span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125)
-         )
-         
-         Task {
-             let search = MKLocalSearch(request: request)
-             if let response = try? await search.start() {
-                 searchResults = response.mapItems
-                 print(searchResults)
-             } else {
-                 searchResults = []
-             }
-         }
+        request.naturalLanguageQuery = query
+        request.resultTypes = .pointOfInterest
+        request.region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 50.0614, longitude: 19.9370),
+            span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125)
+        )
+        let search = MKLocalSearch(request: request)
+        if let response = try? await search.start() {
+            searchResults = response.mapItems
+            print(searchResults)
+        } else {
+            searchResults = []
+        }
      }
+    
+    @MainActor
+    func findWawel() async {
+        let wawelCastle = CLLocationCoordinate2D(latitude: 50.054, longitude: 19.935)
+        
+        do {
+            wawel = try await service.searchPlace(center: wawelCastle)
+        } catch {
+            print("Error searching for monument: \(error)")
+        }
+    }
+    
 }
 
 #Preview {
     MapView()
 }
-
-
 
 extension CLLocationCoordinate2D {
     static let wawelCastle = CLLocationCoordinate2D(latitude: 50.0547, longitude: 19.9352)
