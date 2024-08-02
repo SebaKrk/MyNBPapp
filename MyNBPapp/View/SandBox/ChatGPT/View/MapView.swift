@@ -29,42 +29,50 @@ struct MapView: View {
     @ObservedObject var viewModel: MapViewModel = MapViewModel()
     
     var body: some View {
-        Map(position: $viewModel.position, selection: $viewModel.selectTag) {
-//            ForEach(viewModel.monuments) { item in
-//                Marker(item.name, coordinate: item.location.coordinate)
-//                    .tag(item.id)
-//            Marker(item: viewModel.mapToMKMapItem(monument: item))
-//            }
-//             $viewModel.selectResult
+        Map(position: $viewModel.position, selection: $viewModel.selectResult) {
+            //            ForEach(viewModel.monuments) { item in
+            //                Marker(item.name, coordinate: item.location.coordinate)
+            //                    .tag(item.id)
+            //            Marker(item: viewModel.mapToMKMapItem(monument: item))
+            //            }
+            //             $viewModel.selectResult
             ForEach(viewModel.searchResults, id: \.self) { result in
                 Marker(item: result)
-                    .tag(1)
+                    .tag(result.name)
             }
             
             ForEach(Place.samplePlaces, id: \.id) { place in
                 Marker(item: viewModel.mapPlaceToMKMapItem(place: place))
-                    .tag(2)
+                    //.tag(2)
             }
             
             if let wawel = viewModel.wawel {
                 Marker(item: wawel)
-                    .tag(3)
+                    //.tag(3)
             }
-            
             UserAnnotation()
-                
         }
-
         .padding()
-        ///.mapStyle(.imagery(elevation: .realistic))
         .mapStyle(.standard(elevation: .realistic))
         .safeAreaInset(edge: .bottom) {
             HStack {
                 Spacer()
-                monumentButtonSearch
-                findMe
-                findWawel
+                VStack(spacing: 0) {
+                    if let selectedResult = viewModel.selectResult {
+                        creatLook(selectedResult: selectedResult)
+                            .frame(height: 128)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding([.top, .horizontal])
+                    }
+                    HStack {
+                        Spacer()
+                        monumentButtonSearch
+                        findMe
+                        findWawel
+                        Spacer()
+                    }
                     .padding()
+                }
                 Spacer()
             }
             .background(.thinMaterial)
@@ -75,6 +83,10 @@ struct MapView: View {
         .onChange(of: viewModel.wawel) {
             viewModel.position = .automatic
         }
+        .onChange(of: viewModel.selectResult) {
+            viewModel.getLookAroundScene()
+        }
+        
     }
     
     private var monumentButtonSearch: some View {
@@ -107,6 +119,21 @@ struct MapView: View {
         }
         .labelStyle(.iconOnly)
     }
+    
+    func creatLook(selectedResult: MKMapItem) -> some View {
+        ZStack {
+            lookAround
+            VStack {
+                Spacer()
+                Text(selectedResult.name ?? "")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+    
+    private var lookAround: some View {
+        LookAroundPreview(initialScene: viewModel.lookAroundScene)
+    }
 }
 
 #Preview {
@@ -125,6 +152,8 @@ class MapViewModel: ObservableObject {
     @Published var selectTag: Int?
 //    @Published var selectTag: String?
     @Published var wawel: MKMapItem?
+    
+    @Published var lookAroundScene: MKLookAroundScene?
     
     @Published var monuments: [Monument] = [
         Monument(name: "Wawel", location: Location(latitude: 50.0547, longitude: 19.9352)),
@@ -188,7 +217,15 @@ class MapViewModel: ObservableObject {
             throw NSError(domain: "error", code: 1)
         }
     }
-    
+    @MainActor
+    func getLookAroundScene() {
+        lookAroundScene = nil
+        Task {
+            guard let selectResult = selectResult else { return }
+            let request = MKLookAroundSceneRequest(mapItem: selectResult)
+            lookAroundScene = try? await request.scene
+        }
+    }
 }
 
 #Preview {
