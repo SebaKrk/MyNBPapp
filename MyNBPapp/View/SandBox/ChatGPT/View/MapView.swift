@@ -38,17 +38,17 @@ struct MapView: View {
 //             $viewModel.selectResult
             ForEach(viewModel.searchResults, id: \.self) { result in
                 Marker(item: result)
-                    .tag(result.name)
+                    .tag(1)
             }
             
             ForEach(Place.samplePlaces, id: \.id) { place in
                 Marker(item: viewModel.mapPlaceToMKMapItem(place: place))
-                    .tag(place.name)
+                    .tag(2)
             }
             
             if let wawel = viewModel.wawel {
                 Marker(item: wawel)
-                    .tag(wawel.name)
+                    .tag(3)
             }
             
             UserAnnotation()
@@ -122,8 +122,8 @@ class MapViewModel: ObservableObject {
     @Published var searchResults: [MKMapItem] = []
     @Published var position: MapCameraPosition = .automatic
     @Published var selectResult: MKMapItem?
-//    @Published var selectTag: Int?
-    @Published var selectTag: String?
+    @Published var selectTag: Int?
+//    @Published var selectTag: String?
     @Published var wawel: MKMapItem?
     
     @Published var monuments: [Monument] = [
