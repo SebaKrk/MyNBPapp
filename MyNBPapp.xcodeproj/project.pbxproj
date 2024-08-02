@@ -358,6 +358,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Model/ChatModel.swift,
+				Model/Place.swift,
+				Service/LocalSearchServices.swift,
 				Service/OpenAINetworkingError.swift,
 				Service/OpenAIServices.swift,
 				SubView/LoadingDotsView.swift,
