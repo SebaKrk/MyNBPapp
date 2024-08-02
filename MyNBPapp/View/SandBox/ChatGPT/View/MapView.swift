@@ -100,7 +100,7 @@ struct MapView: View {
     private var findWawel: some View {
         Button {
             Task {
-                await viewModel.findWawel()
+                try await viewModel.findWawel()
             }
         } label: {
             Label("Wawel", systemImage: "figure.archery")
@@ -178,13 +178,14 @@ class MapViewModel: ObservableObject {
      }
     
     @MainActor
-    func findWawel() async {
+    func findWawel() async throws {
         let wawelCastle = CLLocationCoordinate2D(latitude: 50.054, longitude: 19.935)
         
         do {
             wawel = try await service.searchPlace(center: wawelCastle)
         } catch {
             print("Error searching for monument: \(error)")
+            throw NSError(domain: "error", code: 1)
         }
     }
     
