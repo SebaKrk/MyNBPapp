@@ -358,6 +358,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Model/ChatModel.swift,
+				Model/Monument.swift,
 				Model/Place.swift,
 				Service/LocalSearchServices.swift,
 				Service/OpenAINetworkingError.swift,
@@ -365,7 +366,10 @@
 				SubView/LoadingDotsView.swift,
 				View/ChatView.swift,
 				View/MapView.swift,
+				View/MapViewNewFuture.swift,
+				View/SandBoxMapView.swift,
 				ViewModel/ChatViewModel.swift,
+				ViewModel/MapViewModel.swift,
 			);
 			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
 		};
