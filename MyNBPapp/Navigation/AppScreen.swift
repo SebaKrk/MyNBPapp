@@ -72,7 +72,7 @@ extension AppScreen {
 //            let viewModel = ChatViewModel()
 //            ChatView(viewModel: viewModel)
             
-            MapView()
+            SandBoxMapView()
         }
     }
     
