@@ -8,33 +8,39 @@
 import SwiftUI
 import MapKit
 
-struct MapViewNewFuture: View {
-    var placeID: String // "I63802885C8189B2B"
+struct SheetView: View {
     
-    @State private var item: MKMapItem?
-    @State private var selection: MKMapItem?
+    @State private var search: String = ""
     
     var body: some View {
-        Map(selection: $selection) {
-            if let item {
-                Marker(item: item)
-                    .mapItemDetailSelectionAccessory()
+        VStack {
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search for a restaurant", text: $search)
+                    .autocorrectionDisabled()
             }
+            .modifier(TextFieldGrayBackgroundColor())
+            Spacer()
         }
-        .task {
-            guard let identifier = MKMapItem.Identifier(rawValue: placeID) else { return }
-            let request = MKMapItemRequest(mapItemIdentifier: identifier)
-            item = try? await request.mapItem
-        }
+        .padding()
+        .interactiveDismissDisabled()
+        .presentationDetents([.height(150), .medium])
+        .presentationBackground(.regularMaterial)
+        .presentationBackgroundInteraction(.enabled(upThrough: .large))
+        
     }
     
 }
 
-//            ForEach(visitedStores, id: \.self) { store in
-//                Marker(item: store)
-//                    .tag(MapSelection(store))
-//            }
-//            .mapItemDetailSelectionAccessory(.callout)
+struct TextFieldGrayBackgroundColor: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(12)
+            .background(.gray.opacity(0.1))
+            .cornerRadius(8)
+            .foregroundColor(.primary)
+    }
+}
 
 struct VisitedStoresView: View {
     
@@ -47,10 +53,45 @@ struct VisitedStoresView: View {
     @State private var item: MKMapItem?
     @State private var museums: [MKMapItem]? = []
 
+    
+    @State var isSheetPresented: Bool = false
+    
     var body: some View {
+        VStack {
+            ZStack {
+                map
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        searchButton
+                            .opacity(isSheetPresented ? 0 : 1)
+                            .padding()
+                    }
+                }
+            }
+            Spacer()
+        }
+        .sheet(isPresented: $isSheetPresented) {
+            SheetView()
+        }
+    }
+    
+    private var searchButton: some View {
+        Button {
+            isSheetPresented.toggle()
+        } label: {
+            Image(systemName: "magnifyingglass")
+        }
+        .foregroundStyle(.white)
+        .padding()
+        .background(.blue.opacity(0.9))
+        .clipShape(Circle())
+    }
+    
+    private var map: some View {
         Map(position: $position, selection: $selection) {
             UserAnnotation()
-            
             if let item = item {
                 Marker(item: item)
             }
@@ -61,22 +102,21 @@ struct VisitedStoresView: View {
                 }
             }
         }
-        .mapFeatureSelectionAccessory(.callout)
-        .mapControls {
-            MapUserLocationButton()
-            MapCompass()
-            MapScaleView()
-        }
-        .onAppear {
-            manager.requestWhenInUseAuthorization()
-        }
-        .task {
-            await findWwa()
-        }
-        .task {
-            await findMuseumsInKrk()
-        }
-        
+//        .mapFeatureSelectionAccessory(.callout)
+//        .mapControls {
+//            MapUserLocationButton()
+//            MapCompass()
+//            MapScaleView()
+//        }
+//        .onAppear {
+//            manager.requestWhenInUseAuthorization()
+//        }
+//        .task {
+//            await findWwa()
+//        }
+//        .task {
+//            await findMuseumsInKrk()
+//        }
     }
     
     private func findMuseumsInKrk() async {
@@ -140,3 +180,27 @@ struct VisitedStoresView: View {
 //        .mapItemDetailSheet(item: $selectedStore)
 //    }
 //}
+
+
+
+struct MapViewNewFuture: View {
+    var placeID: String // "I63802885C8189B2B"
+    
+    @State private var item: MKMapItem?
+    @State private var selection: MKMapItem?
+    
+    var body: some View {
+        Map(selection: $selection) {
+            if let item {
+                Marker(item: item)
+                    .mapItemDetailSelectionAccessory()
+            }
+        }
+        .task {
+            guard let identifier = MKMapItem.Identifier(rawValue: placeID) else { return }
+            let request = MKMapItemRequest(mapItemIdentifier: identifier)
+            item = try? await request.mapItem
+        }
+    }
+    
+}

@@ -24,3 +24,5 @@ struct SandBoxMapView: View {
     }
     
 }
+//    .toolbarBackground(.red, for: .tabBar)
+//    .toolbarBackground(.visible, for: .tabBar)
