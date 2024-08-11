@@ -1,3 +1,4 @@
+
 //
 //  MapViewNewFuture.swift
 //  MyNBPapp
@@ -11,25 +12,69 @@ import MapKit
 struct SheetView: View {
     
     @State private var search: String = ""
+    @Binding var items: [MKMapItem]
     
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("Search for a restaurant", text: $search)
-                    .autocorrectionDisabled()
-            }
-            .modifier(TextFieldGrayBackgroundColor())
+            searchTextField
             Spacer()
+            resultList
         }
         .padding()
         .interactiveDismissDisabled()
         .presentationDetents([.height(150), .medium])
         .presentationBackground(.regularMaterial)
-        .presentationBackgroundInteraction(.enabled(upThrough: .large))
-        
+        .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+        .onChange(of: search) { oldValue, newValue in
+            Task {
+                await findPlace(place: newValue)
+            }
+        }
     }
     
+    private var searchTextField: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+            TextField("Search for a restaurant", text: $search)
+                .autocorrectionDisabled()
+        }
+        .modifier(TextFieldGrayBackgroundColor())
+    }
+    
+    private var resultList: some View {
+        List(items, id: \.self) { item in
+            VStack {
+                HStack {
+                    Text(item.name ?? "")
+                        .font(.headline)
+                    Text(item.phoneNumber ?? "brak")
+                }
+                if let postalAddress = item.placemark.postalAddress {
+                    Text(postalAddress.street)
+                }
+                if let url = item.url {
+                    Link(url.absoluteString, destination: url)
+                        .lineLimit(1)
+                        .foregroundStyle(.blue)
+                }
+            }
+            .listRowBackground(Color.clear)
+        }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+    }
+    
+    func findPlace(place: String) async ->  [MKMapItem] {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = place
+        
+        // request.region =  @State private var position = MapCameraPosition.automatic
+        let search = MKLocalSearch(request: request)
+        let response = try? await search.start()
+        items = response?.mapItems ?? []
+        //dump(items)
+        return items
+    }
 }
 
 struct TextFieldGrayBackgroundColor: ViewModifier {
@@ -42,6 +87,7 @@ struct TextFieldGrayBackgroundColor: ViewModifier {
     }
 }
 
+@available(iOS 18.0, *)
 struct VisitedStoresView: View {
     
     @State private var selection: MapSelection<MKMapItem>?
@@ -53,11 +99,12 @@ struct VisitedStoresView: View {
     @State private var item: MKMapItem?
     @State private var museums: [MKMapItem]? = []
 
-    
     @State var isSheetPresented: Bool = false
+    @State var searchResults: [MKMapItem] = []
     
     var body: some View {
         VStack {
+            Spacer()
             ZStack {
                 map
                 VStack {
@@ -73,7 +120,7 @@ struct VisitedStoresView: View {
             Spacer()
         }
         .sheet(isPresented: $isSheetPresented) {
-            SheetView()
+            SheetView(items: $searchResults)
         }
     }
     
@@ -92,25 +139,33 @@ struct VisitedStoresView: View {
     private var map: some View {
         Map(position: $position, selection: $selection) {
             UserAnnotation()
-            if let item = item {
-                Marker(item: item)
-            }
-            
-            if let museums = museums {
-                ForEach(museums, id: \.identifier) { museum in
-                    Marker(item: museum)
+            if !searchResults.isEmpty {
+                ForEach(searchResults, id: \.identifier) { item in
+                    Marker(item: item)
                 }
             }
+//            if let item = item {
+//                Marker(item: item)
+//            }
+//
+//            if let museums = museums {
+//                ForEach(museums, id: \.identifier) { museum in
+//                    Marker(item: museum)
+//                }
+//            }
         }
-//        .mapFeatureSelectionAccessory(.callout)
-//        .mapControls {
-//            MapUserLocationButton()
-//            MapCompass()
-//            MapScaleView()
-//        }
-//        .onAppear {
-//            manager.requestWhenInUseAuthorization()
-//        }
+        .mapFeatureSelectionAccessory(.callout)
+        .mapControls {
+            MapUserLocationButton()
+            MapCompass()
+            MapScaleView()
+        }
+        .onAppear {
+            manager.requestWhenInUseAuthorization()
+        }
+        .onChange(of: searchResults) { oldValue, newValue in
+            print(newValue ?? "dupa")
+        }
 //        .task {
 //            await findWwa()
 //        }
@@ -168,7 +223,7 @@ struct VisitedStoresView: View {
 //struct StoreList: View {
 //    var stores: [MKMapItem]
 //    @State private var selectedStore: MKMapItem?
-//    
+//
 //    var body: some View {
 //        List(
 //            stores,
@@ -182,7 +237,7 @@ struct VisitedStoresView: View {
 //}
 
 
-
+@available(iOS 18.0, *)
 struct MapViewNewFuture: View {
     var placeID: String // "I63802885C8189B2B"
     
