@@ -15,4 +15,11 @@ class FindPlaceViewModel: ObservableObject {
     @Published var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @Published var isSheetPresented: Bool = false
     @Published var searchResults: [MKMapItem] = []
+    
+    
+    // MARK: - Methods
+    func centerMapOnItem(_ item: MKMapItem) {
+           guard let coordinate = item.placemark.location?.coordinate else { return }
+           position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
+       }
 }

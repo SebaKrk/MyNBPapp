@@ -58,6 +58,12 @@ struct FindPlaceView: View {
         .onAppear {
             manager.requestWhenInUseAuthorization()
         }
+        .onChange(of: viewModel.searchResults) { oldValue, newValue in
+            if let item = newValue.first {
+                viewModel.centerMapOnItem(item)
+            }
+        }
+        
     }
     
     private var searchButton: some View {
