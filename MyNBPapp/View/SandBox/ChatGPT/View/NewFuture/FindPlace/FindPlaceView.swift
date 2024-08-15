@@ -37,14 +37,15 @@ struct FindPlaceView: View {
     // MARK: - ViewBuilders
 
     private var map: some View {
-       
         Map(position: $viewModel.position,
             selection: $viewModel.selection) {
             UserAnnotation()
             if !viewModel.searchResults.isEmpty {
                 ForEach(viewModel.searchResults, id: \.self) { item in
                     Marker(item: item)
+                        .tag(MapSelection(item))
                 }
+                .mapItemDetailSelectionAccessory(.callout)
                 //.mapItemDetailSelectionAccessory()
             }
 
@@ -61,6 +62,12 @@ struct FindPlaceView: View {
         .onChange(of: viewModel.searchResults) { oldValue, newValue in
             if let item = newValue.first {
                 viewModel.centerMapOnItem(item)
+            }
+        }
+        .onChange(of: viewModel.searchResults) { oldValue, newValue in
+            if let firstItem = newValue.first {
+                viewModel.selection = MapSelection(firstItem)
+                viewModel.centerMapOnItem(firstItem)
             }
         }
         

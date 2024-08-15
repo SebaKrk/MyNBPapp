@@ -18,8 +18,10 @@ class FindPlaceViewModel: ObservableObject {
     
     
     // MARK: - Methods
+    
     func centerMapOnItem(_ item: MKMapItem) {
-           guard let coordinate = item.placemark.location?.coordinate else { return }
-           position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
-       }
+        guard let coordinate = item.placemark.location?.coordinate else { return }
+        position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
+    }
+    
 }
