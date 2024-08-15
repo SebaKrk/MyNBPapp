@@ -45,7 +45,6 @@ struct FindPlaceView: View {
                     Marker(item: item)
                         .tag(MapSelection(item))
                 }
-                .mapItemDetailSelectionAccessory(.callout)
                 //.mapItemDetailSelectionAccessory()
             }
 
@@ -64,10 +63,22 @@ struct FindPlaceView: View {
                 viewModel.centerMapOnItem(item)
             }
         }
-        .onChange(of: viewModel.searchResults) { oldValue, newValue in
-            if let firstItem = newValue.first {
-                viewModel.selection = MapSelection(firstItem)
-                viewModel.centerMapOnItem(firstItem)
+        .onChange(of: viewModel.selection) { oldValue, newValue in
+            if let selectedLocation = newValue {
+                if let item = selectedLocation.value {
+                    Task {
+                        viewModel.scene = try? await viewModel.fetchLookAroundScene(for: item)
+                    }
+                }
+            }
+        }
+        .overlay(alignment: .bottom) {
+            if viewModel.selection != nil {
+                LookAroundPreview(scene: $viewModel.scene, allowsNavigation: false, badgePosition: .bottomTrailing)
+                    .frame(height: 150)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .safeAreaPadding(.bottom, 40)
+                    .padding(.horizontal, 20)
             }
         }
         
