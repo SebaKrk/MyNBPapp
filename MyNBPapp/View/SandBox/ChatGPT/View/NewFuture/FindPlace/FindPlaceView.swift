@@ -23,15 +23,15 @@ struct FindPlaceView: View {
         VStack {
             //Spacer()
             ZStack(alignment: .bottomTrailing) {
-                map
-                searchButton
-                    .padding()
+                map2
+                //                searchButton
+                //                    .padding()
             }
             //Spacer()
         }
-        .sheet(isPresented: $viewModel.isSheetPresented) {
-            SearchPlaceSheetView(items: $viewModel.searchResults)
-        }
+        //        .sheet(isPresented: $viewModel.isSheetPresented) {
+        //            SearchPlaceSheetView(items: $viewModel.searchResults)
+        //        }
         /// albo sheet overlay TF (sandBox)
         .overlay(alignment: .top) {
             searchTextFieldTop
@@ -46,6 +46,58 @@ struct FindPlaceView: View {
     
     // MARK: - ViewBuilders
     
+    private var map2: some View {
+        Map(position: $viewModel.position, selection: $viewModel.selection) {
+            if !viewModel.searchResults.isEmpty {
+                ForEach(viewModel.searchResults, id: \.self) { item in
+                    Marker(item: item)
+                }
+            }
+        }
+        /// wypośrodkuj na pierwszym znalezionym elemencie
+        .onChange(of: viewModel.searchResults) { oldValue, newValue in
+            if let item = newValue.first {
+                viewModel.centerMapOnItem(item)
+            }
+        }
+        /// pokaz detale jesli przyjdzie jakas nowa wartosc
+        .onChange(of: viewModel.selection) { oldValue, newValue in
+            dump(newValue)
+            viewModel.showDetails = newValue != nil
+        }
+        .overlay(alignment: .bottom) {
+            if viewModel.showDetails {
+                if viewModel.scene != nil {
+                    lookAroundView(scene: viewModel.scene)
+                        .onAppear {
+                            Task { try await viewModel.fetchScene() }
+                        }
+                        .onChange(of: viewModel.selection) { oldValue, newValue in
+                            Task { try await viewModel.fetchScene() }
+                        }
+                }
+                else {
+                    ContentUnavailableView("Brak podglądu", systemImage: "eye.slash")
+                        .background(.white)
+                        .frame(height: 150)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .safeAreaPadding(.bottom, 40)
+                        .padding(.horizontal, 20)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func lookAroundView(scene: MKLookAroundScene?) -> some View {
+        LookAroundPreview(scene: $viewModel.scene, badgePosition: .bottomTrailing)
+            .frame(height: 150)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .safeAreaPadding(.bottom, 40)
+            .padding(.horizontal, 20)
+    }
+    
+    
     private var map: some View {
         Map(position: $viewModel.position,
             //interactionModes: viewModel.mapSelection == nil ? [.all] : [.zoom, .rotate],
@@ -54,13 +106,13 @@ struct FindPlaceView: View {
             if !viewModel.searchResults.isEmpty {
                 ForEach(viewModel.searchResults, id: \.self) { item in
                     Marker(item: item)
-                        .tag(MapSelection(item))
+                    //.tag(MapSelection(item))
                 }
-                .mapItemDetailSelectionAccessory(.callout)
+                //.mapItemDetailSelectionAccessory(.callout)
             }
             
         }
-            .mapFeatureSelectionAccessory(.callout)
+        //.mapFeatureSelectionAccessory(.callout)
             .mapControls {
                 MapUserLocationButton()
                 MapCompass()
@@ -83,38 +135,29 @@ struct FindPlaceView: View {
             .overlay(alignment: .bottom) {
                 lookAroundView(scene: viewModel.scene)
             }
-//            .onChange(of: viewModel.mapSelection) { oldValue, newValue in
-//                if newValue != nil {
-//                    dump(newValue)
-//                    if let selectedLocation = newValue {
-//                        if let item = selectedLocation.value {
-//                            Task {
-//                                viewModel.scene = try? await viewModel.fetchLookAroundScene(for: item)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-
-//            .overlay(alignment: .bottom) {
-//                //if viewModel.mapSelection != nil, viewModel.scene != nil {
-//                if viewModel.mapSelection != nil {
-//                    LookAroundPreview(scene: $viewModel.scene, badgePosition: .bottomTrailing)
-//                        .frame(height: 150)
-//                        .clipShape(RoundedRectangle(cornerRadius: 12))
-//                        .safeAreaPadding(.bottom, 40)
-//                        .padding(.horizontal, 20)
-//                }
-//            }
-    }
-    
-    @ViewBuilder
-    private func lookAroundView(scene: MKLookAroundScene?) -> some View {
-        LookAroundPreview(scene: $viewModel.scene, badgePosition: .bottomTrailing)
-            .frame(height: 150)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .safeAreaPadding(.bottom, 40)
-            .padding(.horizontal, 20)
+        //            .onChange(of: viewModel.mapSelection) { oldValue, newValue in
+        //                if newValue != nil {
+        //                    dump(newValue)
+        //                    if let selectedLocation = newValue {
+        //                        if let item = selectedLocation.value {
+        //                            Task {
+        //                                viewModel.scene = try? await viewModel.fetchLookAroundScene(for: item)
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        
+        //            .overlay(alignment: .bottom) {
+        //                //if viewModel.mapSelection != nil, viewModel.scene != nil {
+        //                if viewModel.mapSelection != nil {
+        //                    LookAroundPreview(scene: $viewModel.scene, badgePosition: .bottomTrailing)
+        //                        .frame(height: 150)
+        //                        .clipShape(RoundedRectangle(cornerRadius: 12))
+        //                        .safeAreaPadding(.bottom, 40)
+        //                        .padding(.horizontal, 20)
+        //                }
+        //            }
     }
     
     @ViewBuilder
@@ -224,3 +267,20 @@ struct Test: View {
 #Preview {
     Test()
 }
+
+
+
+//guard let selection = viewModel.selection else { return }
+//viewModel.scene = try await viewModel.fetchScene(for: selection.placemark.coordinate)
+//Task {
+//    ///await viewModel.fetchScene(for: selection.placemark.coordinate)
+//    viewModel.fetchLookAroundPreview()
+//}
+//    }
+//                    .onChange(of: viewModel.mapSelection) { oldValue, newValue in
+//                        guard let selection = newValue else { return }
+//                        Task {
+//                            viewModel.fetchScene(for: selection.placemark.coordinate)
+//                            ///viewModel.fetchLookAroundPreview()
+//                        }
+//                    }
