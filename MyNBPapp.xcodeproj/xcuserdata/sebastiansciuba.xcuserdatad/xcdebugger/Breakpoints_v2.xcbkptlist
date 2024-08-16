@@ -103,32 +103,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "57BFB96E-67F4-4A98-9702-FE454BE5B762"
+            uuid = "C348F1AA-8111-41CA-95E3-C405E12BEDF9"
             shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyNBPapp/View/SandBox/ChatGPT/View/NewFuture/FindPlace/FindPlaceView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "map"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EAB06D52-89F2-41FD-9201-A9E900AD9466"
-            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyNBPapp/View/SandBox/ChatGPT/View/NewFuture/FindPlace/ViewModel/FindPlaceViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "findPlace(place:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "fetchLookAroundPreview()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

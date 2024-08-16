@@ -16,7 +16,7 @@ struct FindPlaceView: View {
     
     @ObservedObject var viewModel = FindPlaceViewModel()
     let manager = CLLocationManager()
-
+    
     // MARK: - Body
     
     var body: some View {
@@ -32,6 +32,7 @@ struct FindPlaceView: View {
         .sheet(isPresented: $viewModel.isSheetPresented) {
             SearchPlaceSheetView(items: $viewModel.searchResults)
         }
+        /// albo sheet overlay TF (sandBox)
         .overlay(alignment: .top) {
             searchTextFieldTop
         }
@@ -42,11 +43,12 @@ struct FindPlaceView: View {
             }
         }
     }
-
+    
     // MARK: - ViewBuilders
-
+    
     private var map: some View {
         Map(position: $viewModel.position,
+            //interactionModes: viewModel.mapSelection == nil ? [.all] : [.zoom, .rotate],
             selection: $viewModel.selection) {
             UserAnnotation()
             if !viewModel.searchResults.isEmpty {
@@ -54,43 +56,65 @@ struct FindPlaceView: View {
                     Marker(item: item)
                         .tag(MapSelection(item))
                 }
-                //.mapItemDetailSelectionAccessory()
+                .mapItemDetailSelectionAccessory(.callout)
             }
-
+            
         }
-        .mapFeatureSelectionAccessory(.callout)
-        .mapControls {
-            MapUserLocationButton()
-            MapCompass()
-            MapScaleView()
-        }
-        .onAppear {
-            manager.requestWhenInUseAuthorization()
-        }
-        .onChange(of: viewModel.searchResults) { oldValue, newValue in
-            if let item = newValue.first {
-                viewModel.centerMapOnItem(item)
+            .mapFeatureSelectionAccessory(.callout)
+            .mapControls {
+                MapUserLocationButton()
+                MapCompass()
+                MapScaleView()
             }
-        }
-        .onChange(of: viewModel.selection) { oldValue, newValue in
-            if let selectedLocation = newValue {
-                if let item = selectedLocation.value {
-                    Task {
-                        viewModel.scene = try? await viewModel.fetchLookAroundScene(for: item)
-                    }
+            .onAppear {
+                manager.requestWhenInUseAuthorization()
+            }
+            .onChange(of: viewModel.searchResults) { oldValue, newValue in
+                if let item = newValue.first {
+                    viewModel.centerMapOnItem(item)
                 }
             }
-        }
-        .overlay(alignment: .bottom) {
-            if viewModel.selection != nil {
-                LookAroundPreview(scene: $viewModel.scene, allowsNavigation: false, badgePosition: .bottomTrailing)
-                    .frame(height: 150)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .safeAreaPadding(.bottom, 40)
-                    .padding(.horizontal, 20)
+            .onChange(of: viewModel.selection) { oldValue, newValue in
+                viewModel.fetchLookAroundPreview()
             }
-        }
-        
+            .onAppear {
+                viewModel.fetchLookAroundPreview()
+            }
+            .overlay(alignment: .bottom) {
+                lookAroundView(scene: viewModel.scene)
+            }
+//            .onChange(of: viewModel.mapSelection) { oldValue, newValue in
+//                if newValue != nil {
+//                    dump(newValue)
+//                    if let selectedLocation = newValue {
+//                        if let item = selectedLocation.value {
+//                            Task {
+//                                viewModel.scene = try? await viewModel.fetchLookAroundScene(for: item)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+
+//            .overlay(alignment: .bottom) {
+//                //if viewModel.mapSelection != nil, viewModel.scene != nil {
+//                if viewModel.mapSelection != nil {
+//                    LookAroundPreview(scene: $viewModel.scene, badgePosition: .bottomTrailing)
+//                        .frame(height: 150)
+//                        .clipShape(RoundedRectangle(cornerRadius: 12))
+//                        .safeAreaPadding(.bottom, 40)
+//                        .padding(.horizontal, 20)
+//                }
+//            }
+    }
+    
+    @ViewBuilder
+    private func lookAroundView(scene: MKLookAroundScene?) -> some View {
+        LookAroundPreview(scene: $viewModel.scene, badgePosition: .bottomTrailing)
+            .frame(height: 150)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .safeAreaPadding(.bottom, 40)
+            .padding(.horizontal, 20)
     }
     
     @ViewBuilder
@@ -122,6 +146,7 @@ struct FindPlaceView: View {
     }
 }
 
+
 @available(iOS 18.0, *)
 struct FindPlaceSecondView: View {
     
@@ -139,7 +164,7 @@ struct FindPlaceSecondView: View {
                     .padding()
             }
             Spacer()
-        } 
+        }
         .toolbar {
             Button {
                 isFavoritedPresented.toggle()
@@ -170,10 +195,10 @@ struct FindPlaceSecondView: View {
     // MARK: - API
     
     private func addWawelToVisitedStores() {
-         let wawel = createWawelMKMapItem()
+        let wawel = createWawelMKMapItem()
         wawel.name = "Wawel Sciuba"
-         visitedStores.append(wawel)
-     }
+        visitedStores.append(wawel)
+    }
     
     func createWawelMKMapItem() -> MKMapItem {
         let coordinates = CLLocationCoordinate2D(latitude: 50.05431, longitude: 19.93635)

@@ -11,7 +11,8 @@ import MapKit
 @available(iOS 18.0, *)
 class FindPlaceViewModel: ObservableObject {
     
-    @Published var selection: MapSelection<MKMapItem>?
+    @Published var selection: MKMapItem?
+    @Published var mapSelection: MapSelection<MKMapItem>?
     @Published var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @Published var isSheetPresented: Bool = false
     @Published var searchResults: [MKMapItem] = []
@@ -24,7 +25,7 @@ class FindPlaceViewModel: ObservableObject {
     
     func centerMapOnItem(_ item: MKMapItem) {
         guard let coordinate = item.placemark.location?.coordinate else { return }
-        position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
+        position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
     }
     
     func fetchScene(for coordinate: CLLocationCoordinate2D) async throws -> MKLookAroundScene? {
@@ -34,7 +35,31 @@ class FindPlaceViewModel: ObservableObject {
     
     func fetchLookAroundScene(for item: MKMapItem) async throws -> MKLookAroundScene? {
         let lookAroundScene = MKLookAroundSceneRequest(mapItem: item)
+        
         return try await lookAroundScene.scene
+    }
+    
+    @MainActor
+    func fetchLookAroundPreview() {
+        /*
+        //if let mapSelection {
+        if let selection {
+            scene = nil
+            //if let item = mapSelection.value {
+                Task {
+                    //let request =  MKLookAroundSceneRequest(mapItem: item)
+                    let request =  MKLookAroundSceneRequest(mapItem: selection)
+                    scene = try? await request.scene
+                }
+            //}
+        }
+         */
+        scene = nil
+        Task {
+            guard let selectResult = selection else { return }
+            let request = MKLookAroundSceneRequest(mapItem: selectResult)
+            scene = try? await request.scene
+        }
     }
     
     @MainActor
