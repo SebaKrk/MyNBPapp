@@ -110,40 +110,10 @@
             filePath = "MyNBPapp/View/SandBox/ChatGPT/View/NewFuture/FindPlace/FindPlaceView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "map"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "57BFB96E-67F4-4A98-9702-FE454BE5B762 - 57985f38ce1b6b45"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (Swift.Optional&lt;_MapKit_SwiftUI.MapSelection&lt;__C.MKMapItem&gt;&gt;, Swift.Optional&lt;_MapKit_SwiftUI.MapSelection&lt;__C.MKMapItem&gt;&gt;) -&gt; () in MyNBPapp.FindPlaceView.map.getter : some"
-                  moduleName = "MyNBPapp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sebastiansciuba/Dokumenty/Programowanie%20/Programing%20SWIFT/MOJE%20SwiftUI&amp;TCA/MyNBPapp/MyNBPapp/View/SandBox/ChatGPT/View/NewFuture/FindPlace/FindPlaceView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68">
-               </Location>
-               <Location
-                  uuid = "57BFB96E-67F4-4A98-9702-FE454BE5B762 - 57985f38ce1b6b45"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #5 (Swift.Optional&lt;_MapKit_SwiftUI.MapSelection&lt;__C.MKMapItem&gt;&gt;, Swift.Optional&lt;_MapKit_SwiftUI.MapSelection&lt;__C.MKMapItem&gt;&gt;) -&gt; () in MyNBPapp.FindPlaceView.map.getter : some"
-                  moduleName = "MyNBPapp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sebastiansciuba/Dokumenty/Programowanie%20/Programing%20SWIFT/MOJE%20SwiftUI&amp;TCA/MyNBPapp/MyNBPapp/View/SandBox/ChatGPT/View/NewFuture/FindPlace/FindPlaceView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

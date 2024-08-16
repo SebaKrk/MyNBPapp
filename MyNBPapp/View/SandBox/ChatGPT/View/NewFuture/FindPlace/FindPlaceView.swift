@@ -9,10 +9,28 @@
 import SwiftUI
 import MapKit
 
+struct FindPlaceViewWithSearchable: View {
+    
+    @State var search: String = ""
+    
+    var body: some View {
+        NavigationStack {
+            Map()
+        }
+        .searchable(text: $search, placement: .navigationBarDrawer, prompt: "Cos") {
+            
+        }
+
+    }
+}
+
+
 @available(iOS 18.0, *)
 struct FindPlaceView: View {
     
     // MARK: - Properties
+    
+    @State var search = ""
     
     @ObservedObject var viewModel = FindPlaceViewModel()
     let manager = CLLocationManager()
@@ -21,16 +39,25 @@ struct FindPlaceView: View {
     
     var body: some View {
         VStack {
-            Spacer()
+            //Spacer()
             ZStack(alignment: .bottomTrailing) {
                 map
                 searchButton
                     .padding()
             }
-            Spacer()
+            //Spacer()
         }
         .sheet(isPresented: $viewModel.isSheetPresented) {
             SearchPlaceSheetView(items: $viewModel.searchResults)
+        }
+        .overlay(alignment: .top) {
+            searchTextFieldTop
+        }
+        .onSubmit(of: .text) {
+            print("search tekst \(viewModel.search)")
+            Task {
+                await viewModel.findPlace(place: viewModel.search)
+            }
         }
     }
 
@@ -82,6 +109,21 @@ struct FindPlaceView: View {
             }
         }
         
+    }
+    
+    @ViewBuilder
+    private var searchTextFieldTop: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+            TextField("Search for ...", text: $viewModel.search)
+                .autocorrectionDisabled()
+        }
+        .padding(12)
+        .background(.white)
+        .cornerRadius(8)
+        .foregroundColor(.primary)
+        .padding()
+        .shadow(radius: 20)
     }
     
     private var searchButton: some View {
@@ -158,4 +200,20 @@ struct FindPlaceSecondView: View {
         mapItem.name = "Wawel"
         return mapItem
     }
+}
+
+struct Test: View {
+    
+    @State var batteryLevel: Double = 20
+    
+    var body: some View {
+        Gauge(value: batteryLevel, in: 0...100) {
+            Text("Battery Level")
+        }
+        .gaugeStyle(.automatic)
+    }
+}
+
+#Preview {
+    Test()
 }

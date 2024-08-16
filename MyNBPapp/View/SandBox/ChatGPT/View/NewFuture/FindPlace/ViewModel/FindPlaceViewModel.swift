@@ -17,6 +17,8 @@ class FindPlaceViewModel: ObservableObject {
     @Published var searchResults: [MKMapItem] = []
     @Published var scene: MKLookAroundScene?
     
+    @Published var search: String = ""
+    
     
     // MARK: - Methods
     
@@ -33,6 +35,18 @@ class FindPlaceViewModel: ObservableObject {
     func fetchLookAroundScene(for item: MKMapItem) async throws -> MKLookAroundScene? {
         let lookAroundScene = MKLookAroundSceneRequest(mapItem: item)
         return try await lookAroundScene.scene
+    }
+    
+    @MainActor
+    func findPlace(place: String) async ->  [MKMapItem] {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = place
+        
+        let search = MKLocalSearch(request: request)
+        let response = try? await search.start()
+        searchResults = response?.mapItems ?? []
+        dump(searchResults)
+        return searchResults
     }
     
 }

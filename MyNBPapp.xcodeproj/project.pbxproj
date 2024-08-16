@@ -60,6 +60,7 @@
 		93517C462B88D77C009252E9 /* SettingsFeatureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C452B88D77C009252E9 /* SettingsFeatureServices.swift */; };
 		93517C492B88D863009252E9 /* AccountFeatureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C482B88D863009252E9 /* AccountFeatureServices.swift */; };
 		935180E52BADC73700F04301 /* MainFeatureServicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935180E42BADC73700F04301 /* MainFeatureServicesCoordinator.swift */; };
+		935639FA2C6F304900933EAA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 935639F92C6F304900933EAA /* ComposableArchitecture */; };
 		9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FD2B5D2EFC0097673C /* AppScreen.swift */; };
 		9357DA002B5D31770097673C /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FF2B5D31770097673C /* AppTabView.swift */; };
 		9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA012B5D78BD0097673C /* AppSidebarList.swift */; };
@@ -69,7 +70,6 @@
 		9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA0C2B5D9B900097673C /* FavoritesView.swift */; };
 		9357DA102B6065120097673C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA0F2B6065120097673C /* AccountView.swift */; };
 		9357DA162B6066F80097673C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357DA152B6066F80097673C /* SettingsView.swift */; };
-		9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA652B63CEB30097673C /* ComposableArchitecture */; };
 		9357DA692B63CF240097673C /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA682B63CF240097673C /* Commons */; };
 		9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6A2B63CF2A0097673C /* DataModels */; };
 		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
@@ -420,9 +420,9 @@
 				93EA7A992C56287B0087A7B4 /* Alamofire in Frameworks */,
 				93834AD92B7A004B00A5744C /* ExchangeRateClient.framework in Frameworks */,
 				9357DA6D2B63CF2E0097673C /* Services in Frameworks */,
-				9357DA662B63CEB30097673C /* ComposableArchitecture in Frameworks */,
 				930B2EB32B68506D00BEB7B7 /* Factory in Frameworks */,
 				9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */,
+				935639FA2C6F304900933EAA /* ComposableArchitecture in Frameworks */,
 				9357DA692B63CF240097673C /* Commons in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1233,13 +1233,13 @@
 			);
 			name = MyNBPapp;
 			packageProductDependencies = (
-				9357DA652B63CEB30097673C /* ComposableArchitecture */,
 				9357DA682B63CF240097673C /* Commons */,
 				9357DA6A2B63CF2A0097673C /* DataModels */,
 				9357DA6C2B63CF2E0097673C /* Services */,
 				93A3EB4B2B640291007BFCDC /* MonumentKit */,
 				930B2EB22B68506D00BEB7B7 /* Factory */,
 				93EA7A982C56287B0087A7B4 /* Alamofire */,
+				935639F92C6F304900933EAA /* ComposableArchitecture */,
 			);
 			productName = MyNBPapp;
 			productReference = 93C6D7B22B5BA569006E28F7 /* MyNBPapp.app */;
@@ -1289,7 +1289,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					936774FD2B7007A500816C92 = {
 						CreatedOnToolsVersion = 15.2;
@@ -1325,12 +1325,12 @@
 			);
 			mainGroup = 93C6D7A92B5BA569006E28F7;
 			packageReferences = (
-				9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */,
 				93834ADF2B7A006C00A5744C /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
 				93834AE02B7A00EC00A5744C /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
 				93834AE72B7A044900A5744C /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
 				931561A72C54D170007DD554 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9348471C2C6F2F3F00ED02CC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 93C6D7B32B5BA569006E28F7 /* Products */;
 			projectDirPath = "";
@@ -1650,6 +1650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1686,6 +1687,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1778,6 +1780,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1841,6 +1844,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1895,7 +1899,6 @@
 		93C6D7D72B5BA56A006E28F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1929,7 +1932,6 @@
 		93C6D7D82B5BA56A006E28F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1963,7 +1965,6 @@
 		93C6D7DA2B5BA56A006E28F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1983,7 +1984,6 @@
 		93C6D7DB2B5BA56A006E28F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2003,7 +2003,6 @@
 		93C6D7DD2B5BA56A006E28F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8RH4482R36;
@@ -2021,7 +2020,6 @@
 		93C6D7DE2B5BA56A006E28F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8RH4482R36;
@@ -2121,12 +2119,12 @@
 				minimumVersion = 5.9.1;
 			};
 		};
-		9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		9348471C2C6F2F3F00ED02CC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
 			requirement = {
-				kind = exactVersion;
-				version = 1.8.2;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.13.0;
 			};
 		};
 		93834ADF2B7A006C00A5744C /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
@@ -2161,9 +2159,9 @@
 			package = 930B2EB12B68506D00BEB7B7 /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = Factory;
 		};
-		9357DA652B63CEB30097673C /* ComposableArchitecture */ = {
+		935639F92C6F304900933EAA /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9357DA642B63CEB30097673C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 9348471C2C6F2F3F00ED02CC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 		9357DA682B63CF240097673C /* Commons */ = {

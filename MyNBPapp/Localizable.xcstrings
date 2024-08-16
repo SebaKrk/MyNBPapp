@@ -61,6 +61,9 @@
     "Average rate" : {
 
     },
+    "Battery Level" : {
+
+    },
     "brak danych" : {
 
     },
@@ -88,6 +91,9 @@
     },
     "CoreData" : {
       "comment" : "The `CoreData` tab in the application is my testing area for CoreData "
+    },
+    "Cos" : {
+
     },
     "Currency converter" : {
 
@@ -286,6 +292,9 @@
 
     },
     "Screen C" : {
+
+    },
+    "Search for ..." : {
 
     },
     "Search for a restaurant" : {
