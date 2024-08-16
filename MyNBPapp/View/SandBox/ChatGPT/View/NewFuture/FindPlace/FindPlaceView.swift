@@ -42,6 +42,13 @@ struct FindPlaceView: View {
                 await viewModel.findPlace(place: viewModel.search)
             }
         }
+        /// zaprezentuj sheet z podglądem detali
+        .sheet(isPresented: $viewModel.showDetails) {
+            LocationDetailsView(mapSelection: $viewModel.selection,
+                                show: $viewModel.showDetails)
+            .presentationDetents([.height(340)])
+            .presentationBackgroundInteraction(.enabled(upThrough: .height(340)))
+        }
     }
     
     // MARK: - ViewBuilders
@@ -65,32 +72,36 @@ struct FindPlaceView: View {
             dump(newValue)
             viewModel.showDetails = newValue != nil
         }
-        .overlay(alignment: .bottom) {
-            if viewModel.showDetails {
-                if viewModel.scene != nil {
-                    lookAroundView(scene: viewModel.scene)
-                        .onAppear {
-                            Task { try await viewModel.fetchScene() }
-                        }
-                        .onChange(of: viewModel.selection) { oldValue, newValue in
-                            Task { try await viewModel.fetchScene() }
-                        }
-                }
-                else {
-                    ContentUnavailableView("Brak podglądu", systemImage: "eye.slash")
-                        .background(.white)
-                        .frame(height: 150)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                        .safeAreaPadding(.bottom, 40)
-                        .padding(.horizontal, 20)
-                }
-            }
-        }
+//        .overlay(alignment: .bottom) {
+//            if viewModel.showDetails {
+//                if viewModel.scene != nil  {
+//                    lookAroundView(scene: viewModel.scene)
+//                        .onAppear {
+//                            Task { try await viewModel.fetchScene() }
+//                        }
+//                        .onChange(of: viewModel.selection) { oldValue, newValue in
+//                            Task { try await viewModel.fetchScene() }
+//                        }
+//                }
+//                else {
+//                    UnavailableView
+//                        .background(.white)
+//                }
+//            }
+//        }
     }
     
     @ViewBuilder
     private func lookAroundView(scene: MKLookAroundScene?) -> some View {
         LookAroundPreview(scene: $viewModel.scene, badgePosition: .bottomTrailing)
+            .frame(height: 150)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .safeAreaPadding(.bottom, 40)
+            .padding(.horizontal, 20)
+    }
+    
+    private var UnavailableView: some View {
+        ContentUnavailableView("Brak podglądu", systemImage: "eye.slash")
             .frame(height: 150)
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .safeAreaPadding(.bottom, 40)
@@ -284,3 +295,68 @@ struct Test: View {
 //                            ///viewModel.fetchLookAroundPreview()
 //                        }
 //                    }
+
+struct LocationDetailsView: View {
+    @Binding var mapSelection: MKMapItem?
+    @Binding var show: Bool
+    @State private var lookAroundScene: MKLookAroundScene?
+    
+    var body: some View {
+        VStack {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(mapSelection?.placemark.name ?? "")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    Text(mapSelection?.placemark.title ?? "")
+                        .font(.footnote)
+                        .foregroundStyle(.gray)
+                        .lineLimit(2)
+                        .padding(.trailing)
+                }
+                
+                Spacer()
+                
+                Button {
+                    show.toggle()
+                    mapSelection = nil
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .foregroundStyle(.gray, Color(.systemGray6))
+                }
+            }
+            
+            if let scene = lookAroundScene {
+                LookAroundPreview(initialScene: scene)
+                    .frame(height: 200)
+                    .cornerRadius(12)
+                    .padding()
+            } else {
+                ContentUnavailableView("No preview available", systemImage: "eye.slash")
+                    .frame(height: 200)
+            }
+            Spacer()
+        }
+        .onAppear {
+            print("View appeared")
+            fetchLookAroundPreview()
+        }
+        .onChange(of: mapSelection) { oldValue, newValue in
+            fetchLookAroundPreview()
+        }
+        .padding()
+    }
+    
+    private func fetchLookAroundPreview() {
+        if let mapSelection {
+            lookAroundScene = nil
+            Task {
+                let request = MKLookAroundSceneRequest(mapItem: mapSelection)
+                lookAroundScene = try? await request.scene
+            }
+        }
+    }
+}
