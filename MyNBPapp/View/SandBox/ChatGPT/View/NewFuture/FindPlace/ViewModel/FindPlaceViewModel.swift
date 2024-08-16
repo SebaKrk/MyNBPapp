@@ -18,7 +18,7 @@ class FindPlaceViewModel: ObservableObject {
     @Published var scene: MKLookAroundScene?
     
     @Published var search: String = ""
-    
+    @Published var filteredResults: [MKMapItem] = []
     
     // MARK: - Methods
     

@@ -9,28 +9,10 @@
 import SwiftUI
 import MapKit
 
-struct FindPlaceViewWithSearchable: View {
-    
-    @State var search: String = ""
-    
-    var body: some View {
-        NavigationStack {
-            Map()
-        }
-        .searchable(text: $search, placement: .navigationBarDrawer, prompt: "Cos") {
-            
-        }
-
-    }
-}
-
-
 @available(iOS 18.0, *)
 struct FindPlaceView: View {
     
     // MARK: - Properties
-    
-    @State var search = ""
     
     @ObservedObject var viewModel = FindPlaceViewModel()
     let manager = CLLocationManager()

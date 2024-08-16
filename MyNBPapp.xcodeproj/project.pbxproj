@@ -368,6 +368,7 @@
 				View/MapView.swift,
 				View/NewFuture/FavoriteList.swift,
 				View/NewFuture/FindPlace/FindPlaceView.swift,
+				View/NewFuture/FindPlace/FindPlaceViewWithSearchable.swift,
 				View/NewFuture/FindPlace/SearchPlaceSheetView.swift,
 				View/NewFuture/FindPlace/ViewModel/FindPlaceViewModel.swift,
 				View/NewFuture/SandBox.swift,

@@ -92,9 +92,6 @@
     "CoreData" : {
       "comment" : "The `CoreData` tab in the application is my testing area for CoreData "
     },
-    "Cos" : {
-
-    },
     "Currency converter" : {
 
     },
@@ -336,6 +333,9 @@
 
     },
     "Wpisz liczbę do przekonwertowania" : {
+
+    },
+    "Znajdź miejsce..." : {
 
     }
   },
