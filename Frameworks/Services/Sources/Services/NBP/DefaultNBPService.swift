@@ -21,7 +21,7 @@ public final class DefaultNBPService: NBPService {
         let fromDate = Formatters.Date.createString(from: from, with: .shortDate)
         let toDate = Formatters.Date.createString(from: to, with: .shortDate)
         let endpoint = "https://api.nbp.pl/api/exchangerates/rates/\(table)/\(symbol.title)/\(fromDate)/\(toDate)/?format=json"
-        print(endpoint)
+        //print(endpoint)
         
         guard let url = URL(string: endpoint) else {
             throw NetworkingError.invalidURL

@@ -190,4 +190,8 @@ https://github.com/SebaKrk/MyNBPapp
     - create new network call 
     - cleanup the code
     - testing MapKit
+    C: SandBox&Upgrade
+    - Upgrade Xcode Beta 16.1
+    - Upgrade TCA 1.13
+    - SandBox MapKit
  

@@ -71,7 +71,6 @@ extension AppScreen {
         case.chatGPT:
 //            let viewModel = ChatViewModel()
 //            ChatView(viewModel: viewModel)
-            
             SandBoxMapView()
         }
     }
@@ -84,3 +83,4 @@ extension AppScreen {
 
 //TestView(store: Store(initialState: TestFeature.State(),
 //                      reducer: { TestFeature() }))
+

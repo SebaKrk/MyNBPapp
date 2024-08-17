@@ -10,23 +10,38 @@ import MapKit
 
 struct SearchPlaceSheetView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var search: String = ""
     @Binding var items: [MKMapItem]
     
     var body: some View {
         VStack {
+            cancelButton
             searchTextField
             Spacer()
             resultList
         }
         .padding()
         .interactiveDismissDisabled()
-        .presentationDetents([.height(150), .medium])
+        .presentationDetents([.height(250), .medium])
         .presentationBackground(.regularMaterial)
         .presentationBackgroundInteraction(.enabled(upThrough: .medium))
         .onChange(of: search) { oldValue, newValue in
             Task {
                 await findPlace(place: newValue)
+            }
+        }
+    }
+    
+    private var cancelButton: some View {
+        HStack {
+            Spacer()
+            Button {
+                dismiss()
+                items = []
+            } label: {
+                Image(systemName: "x.circle")
             }
         }
     }

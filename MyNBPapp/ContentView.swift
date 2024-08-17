@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @State private var selection: AppScreen? = .main
+    @State private var selection: AppScreen? = .chatGPT
     
     var body: some View {
          

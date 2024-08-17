@@ -64,6 +64,9 @@
     "brak danych" : {
 
     },
+    "Brak podglądu" : {
+
+    },
     "cancel" : {
 
     },
@@ -107,6 +110,9 @@
     "Delete" : {
 
     },
+    "Details for: %@" : {
+
+    },
     "Done" : {
       "localizations" : {
         "pl" : {
@@ -143,6 +149,9 @@
     "FavoritesView" : {
 
     },
+    "Fruits" : {
+
+    },
     "Go to A → A → B" : {
 
     },
@@ -156,6 +165,9 @@
 
     },
     "Go to ScreenContact" : {
+
+    },
+    "Go to View C" : {
 
     },
     "Jeszcze tu nic nie ma" : {
@@ -225,6 +237,9 @@
         }
       }
     },
+    "No preview available" : {
+
+    },
     "Open Contact Sheet" : {
 
     },
@@ -288,6 +303,9 @@
     "Screen C" : {
 
     },
+    "Search for ..." : {
+
+    },
     "Search for a restaurant" : {
 
     },
@@ -302,6 +320,9 @@
       }
     },
     "Selected" : {
+
+    },
+    "Selected Item: %@" : {
 
     },
     "Settings" : {
@@ -323,10 +344,22 @@
     "value" : {
 
     },
+    "View A - List" : {
+
+    },
+    "View B" : {
+
+    },
+    "View C" : {
+
+    },
     "Wawel" : {
 
     },
     "Wpisz liczbę do przekonwertowania" : {
+
+    },
+    "Znajdź miejsce..." : {
 
     }
   },
