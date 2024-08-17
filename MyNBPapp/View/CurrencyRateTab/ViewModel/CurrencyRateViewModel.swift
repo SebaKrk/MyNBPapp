@@ -20,7 +20,7 @@ final class CurrencyRateViewModel: ObservableObject {
     func fetchData(_ from: Date, to: Date) async throws {
         do {
             exchange = try await nbpService.getDataFromNBP(table: .a, symbol: .euro, from: from, to: to)
-            dump(exchange)
+            //dump(exchange)
         } catch {
             print(error.localizedDescription)
         }

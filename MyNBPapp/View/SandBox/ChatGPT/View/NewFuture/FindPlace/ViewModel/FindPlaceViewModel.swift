@@ -20,6 +20,7 @@ class FindPlaceViewModel: ObservableObject {
     @Published var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @Published var isSheetPresented: Bool = false
     @Published var searchResults: [MKMapItem] = []
+    @Published var showSearchResults: Bool = false
 
     // MARK: - Methods
     
@@ -85,6 +86,10 @@ class FindPlaceViewModel: ObservableObject {
         searchResults = response?.mapItems ?? []
         dump(searchResults)
         return searchResults
+    }
+    
+    var searchResultsCount: Int {
+        searchResults.count
     }
     
 }

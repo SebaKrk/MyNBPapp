@@ -61,9 +61,6 @@
     "Average rate" : {
 
     },
-    "Battery Level" : {
-
-    },
     "brak danych" : {
 
     },
@@ -111,6 +108,9 @@
 
     },
     "Delete" : {
+
+    },
+    "Details for: %@" : {
 
     },
     "Done" : {
@@ -165,6 +165,9 @@
 
     },
     "Go to ScreenContact" : {
+
+    },
+    "Go to View C" : {
 
     },
     "Jeszcze tu nic nie ma" : {
@@ -319,6 +322,9 @@
     "Selected" : {
 
     },
+    "Selected Item: %@" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "pl" : {
@@ -336,6 +342,15 @@
 
     },
     "value" : {
+
+    },
+    "View A - List" : {
+
+    },
+    "View B" : {
+
+    },
+    "View C" : {
 
     },
     "Wawel" : {
