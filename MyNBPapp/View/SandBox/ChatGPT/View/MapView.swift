@@ -14,7 +14,8 @@ struct MapView: View {
     @ObservedObject var viewModel: MapViewModel = MapViewModel()
     
     var body: some View {
-        Map(position: $viewModel.position, selection: $viewModel.selectResult) {
+        Map(position: $viewModel.position,
+            selection: $viewModel.selectResult) {
             ForEach(viewModel.searchResults, id: \.self) { result in
                 Marker(item: result)
                     .tag(1)
