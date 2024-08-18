@@ -58,7 +58,11 @@ struct FindPlaceView: View {
         }
         /// zaprezentuj listę wyszukanych miejsc
         .sheet(isPresented: $viewModel.showSearchResults) {
-            SearchResultsListView(items: $viewModel.searchResults)
+            SearchResultsListView(items: $viewModel.searchResults,
+                                  title: viewModel.search,
+                                  numberOfItem: viewModel.searchResultsCount)
+                .presentationDetents([.height(150), .medium, .large])
+                .presentationBackgroundInteraction(.enabled)
         }
     }
     
