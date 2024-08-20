@@ -52,6 +52,9 @@
     "Account View" : {
 
     },
+    "Anuluj" : {
+
+    },
     "Are you sure?" : {
 
     },
@@ -147,6 +150,12 @@
 
     },
     "FavoritesView" : {
+
+    },
+    "filtersContainer" : {
+
+    },
+    "Filtry" : {
 
     },
     "Fruits" : {
@@ -351,6 +360,9 @@
 
     },
     "Wszystkie rodzaje" : {
+
+    },
+    "Zastosuj" : {
 
     },
     "Znajdź miejsce..." : {

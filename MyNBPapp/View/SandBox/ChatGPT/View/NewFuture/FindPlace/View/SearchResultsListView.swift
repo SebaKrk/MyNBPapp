@@ -17,9 +17,11 @@ struct SearchResultsListView: View {
     
     @State var singleSelection: MKMapItem?
     @State var showDetails: Bool = false
+    @State var showFilters: Bool = false
+    
     @State var title: String
     @State var numberOfItem: Int
-
+    
     // MARK: - Body
     
     var body: some View {
@@ -30,7 +32,11 @@ struct SearchResultsListView: View {
             list
                 .sheet(isPresented: $showDetails) {
                     DetailsView(detailsItem: $singleSelection)
-                        .presentationDetents([.height(150), .medium, .large])
+                        .presentationDetents([.medium, .large])
+                }
+                .sheet(isPresented: $showFilters) {
+                    FiltersPlaceView()
+                        .presentationDetents([.height(200)])
                 }
         }
     }
@@ -112,7 +118,7 @@ struct SearchResultsListView: View {
     /// to cos będzie musiało przyjąć z api żeby sprawdzić jakie są rodzaje
     private var buttonTypes: some View {
         Button {
-            
+            showFilters.toggle()
         } label: {
             Group {
                 HStack {
@@ -120,8 +126,9 @@ struct SearchResultsListView: View {
                     Image(systemName: "chevron.down")
                 }
             }
-            .foregroundStyle(.black)
+            .foregroundColor(Color.primary)
             .padding(4)
+            .padding([.leading, .trailing], 6)
         }
         .background(Color.clear)
         .overlay(
@@ -139,9 +146,10 @@ struct SearchResultsListView: View {
                     Text("Sortuj")
                     Image(systemName: "chevron.down")
                 }
-                .foregroundStyle(.black)
             }
+            .foregroundColor(.primary)
             .padding(4)
+            .padding([.leading, .trailing], 6)
         }
         .background(Color.clear)
         .overlay(
