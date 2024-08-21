@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FiltersPlaceView: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack {
             headerNavigation
@@ -36,7 +38,7 @@ struct FiltersPlaceView: View {
     
     private var cancelButton: some View {
         Button {
-            
+            dismiss()
         } label: {
             Text("Anuluj")
         }
@@ -44,7 +46,7 @@ struct FiltersPlaceView: View {
     
     private var applyButton: some View {
         Button {
-            
+            print("Zastosuj")
         } label: {
             Text("Zastosuj")
         }

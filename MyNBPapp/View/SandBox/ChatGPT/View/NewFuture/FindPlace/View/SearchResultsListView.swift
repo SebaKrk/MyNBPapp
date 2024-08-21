@@ -32,7 +32,7 @@ struct SearchResultsListView: View {
             list
                 .sheet(isPresented: $showDetails) {
                     DetailsView(detailsItem: $singleSelection)
-                        .presentationDetents([.medium, .large])
+                        .presentationDetents([.height(300), .medium, .large])
                 }
                 .sheet(isPresented: $showFilters) {
                     FiltersPlaceView()
@@ -42,18 +42,13 @@ struct SearchResultsListView: View {
     }
     
     // MARK: - SubView
-    
+        
     private var headerView: some View {
         VStack(alignment: .leading) {
             HStack {
-                VStack {
-                    imageView
-                }
-                VStack {
-                    HStack {
-                        headerTitle(title)
-                        Spacer()
-                    }
+                imageView
+                VStack(alignment: .leading) {
+                    headerTitle(title)
                     HStack {
                         numberOfItemSearch(numberOfItem)
                         editButton
@@ -61,6 +56,7 @@ struct SearchResultsListView: View {
                     }
                 }
                 Spacer()
+                cancelButton
             }
             HStack {
                 buttonTypes
@@ -115,6 +111,17 @@ struct SearchResultsListView: View {
             .font(.subheadline)
     }
     
+    private var cancelButton: some View {
+        Button {
+            dismiss()
+        } label: {
+            Image(systemName: "xmark.circle.fill")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(.gray)
+        }
+    }
+    
     /// to cos będzie musiało przyjąć z api żeby sprawdzić jakie są rodzaje
     private var buttonTypes: some View {
         Button {
@@ -158,7 +165,6 @@ struct SearchResultsListView: View {
         )
     }
     
-    
     private func cell(_ item: String) -> some View {
         Text(item)
     }
@@ -187,20 +193,6 @@ struct SearchResultsListView: View {
                           title: "Muzea",
                           numberOfItem: 2)
 }
-
-struct DetailsView: View {
-    
-    @Binding var detailsItem: MKMapItem?
-    
-    var body: some View {
-        if let item = detailsItem {
-            Text(item.name ?? "Brak nazwy") //.name ?? "")
-        }
-    }
-    
-}
-
-
 
 
 //            HStack {
