@@ -16,13 +16,22 @@ struct FindPlaceView: View {
     
     @ObservedObject var viewModel = FindPlaceViewModel()
     let manager = CLLocationManager()
+//    
+//    @State private var region = MKCoordinateRegion(
+//           center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+//           span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+//       )
+//    
+//    let xxx: PointOfInterestCategories = [.airport]
     
     // MARK: - Body
     
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {
-                map
+                //map
+                MapViewRepresentable(pointOfInterestCategories: [.museum, .store])
+                    .edgesIgnoringSafeArea(.all)
                 HStack {
                     if !viewModel.searchResults.isEmpty {
                         showsSearchResultsButton
@@ -58,7 +67,11 @@ struct FindPlaceView: View {
         }
         /// zaprezentuj listę wyszukanych miejsc
         .sheet(isPresented: $viewModel.showSearchResults) {
-            SearchResultsListView(items: $viewModel.searchResults)
+            SearchResultsListView(items: $viewModel.searchResults,
+                                  title: viewModel.search,
+                                  numberOfItem: viewModel.searchResultsCount)
+                .presentationDetents([.height(150), .medium, .large])
+                .presentationBackgroundInteraction(.enabled)
         }
     }
     

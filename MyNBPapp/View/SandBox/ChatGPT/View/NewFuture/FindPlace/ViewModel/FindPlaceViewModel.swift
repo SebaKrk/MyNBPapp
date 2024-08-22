@@ -26,7 +26,7 @@ class FindPlaceViewModel: ObservableObject {
     
     func centerMapOnItem(_ item: MKMapItem) {
         guard let coordinate = item.placemark.location?.coordinate else { return }
-        position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
+        position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)))
     }
     
     func fetchScene(for coordinate: CLLocationCoordinate2D) async throws -> MKLookAroundScene? {

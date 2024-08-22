@@ -32,6 +32,9 @@
     "%lld" : {
 
     },
+    "%lld znaleziono" : {
+
+    },
     "1 Euro" : {
 
     },
@@ -47,6 +50,9 @@
       }
     },
     "Account View" : {
+
+    },
+    "Anuluj" : {
 
     },
     "Are you sure?" : {
@@ -110,9 +116,6 @@
     "Delete" : {
 
     },
-    "Details for: %@" : {
-
-    },
     "Done" : {
       "localizations" : {
         "pl" : {
@@ -149,6 +152,12 @@
     "FavoritesView" : {
 
     },
+    "filtersContainer" : {
+
+    },
+    "Filtry" : {
+
+    },
     "Fruits" : {
 
     },
@@ -165,9 +174,6 @@
 
     },
     "Go to ScreenContact" : {
-
-    },
-    "Go to View C" : {
 
     },
     "Jeszcze tu nic nie ma" : {
@@ -271,6 +277,9 @@
     "Pokaż średni kurs" : {
 
     },
+    "przykład" : {
+
+    },
     "Rates" : {
       "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts.",
       "localizations" : {
@@ -322,9 +331,6 @@
     "Selected" : {
 
     },
-    "Selected Item: %@" : {
-
-    },
     "Settings" : {
       "localizations" : {
         "pl" : {
@@ -338,25 +344,25 @@
     "SettingsView" : {
 
     },
+    "Sortuj" : {
+
+    },
     "Ukryj symbol" : {
 
     },
     "value" : {
 
     },
-    "View A - List" : {
-
-    },
-    "View B" : {
-
-    },
-    "View C" : {
-
-    },
     "Wawel" : {
 
     },
     "Wpisz liczbę do przekonwertowania" : {
+
+    },
+    "Wszystkie rodzaje" : {
+
+    },
+    "Zastosuj" : {
 
     },
     "Znajdź miejsce..." : {
