@@ -47,5 +47,5 @@ struct DetailsView: View {
                 .foregroundColor(.gray)
         }
     }
-    //Text(item.name ?? "Brak nazwy") //.name ?? "")
+    
 }

@@ -375,6 +375,7 @@
 				View/NewFuture/FindPlace/View/LocationDetailsView.swift,
 				View/NewFuture/FindPlace/View/SearchResultsListView.swift,
 				View/NewFuture/FindPlace/ViewModel/FindPlaceViewModel.swift,
+				View/NewFuture/PointOfInterest.swift,
 				View/NewFuture/SandBox.swift,
 				View/SandBoxMapView.swift,
 				ViewModel/ChatViewModel.swift,
