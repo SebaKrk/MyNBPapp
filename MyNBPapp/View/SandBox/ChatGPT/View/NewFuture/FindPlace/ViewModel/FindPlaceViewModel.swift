@@ -21,8 +21,14 @@ class FindPlaceViewModel: ObservableObject {
     @Published var isSheetPresented: Bool = false
     @Published var searchResults: [MKMapItem] = []
     @Published var showSearchResults: Bool = false
+    
+    @Published var isShowingSwiftUiMap: Bool = true
 
     // MARK: - Methods
+    
+    var placemarks: [MKPlacemark] {
+        return searchResults.map { $0.placemark }
+    }
     
     func centerMapOnItem(_ item: MKMapItem) {
         guard let coordinate = item.placemark.location?.coordinate else { return }

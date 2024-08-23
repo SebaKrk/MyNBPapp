@@ -196,3 +196,5 @@ https://github.com/SebaKrk/MyNBPapp
     - SandBox MapKit
     D: PointOfInterest
     - UIViewRepresentable MKMapView - Map(SwiftUI)
+    - Map MKMapItem to MKPlacemark and show on MapView
+    - Add a button to toggle between maps
