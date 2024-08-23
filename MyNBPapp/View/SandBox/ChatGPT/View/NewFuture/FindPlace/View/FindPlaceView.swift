@@ -22,17 +22,16 @@ struct FindPlaceView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {
-                map
+                mapType
                 HStack {
                     if !viewModel.searchResults.isEmpty {
                         showsSearchResultsButton
                     }
                     Spacer()
-                    searchButton
+                    mapTypeButton
+                    //searchButton
                 }
                 .padding()
-                
-                
             }
             Spacer()
         }
@@ -58,11 +57,29 @@ struct FindPlaceView: View {
         }
         /// zaprezentuj listę wyszukanych miejsc
         .sheet(isPresented: $viewModel.showSearchResults) {
-            SearchResultsListView(items: $viewModel.searchResults)
+            SearchResultsListView(items: $viewModel.searchResults,
+                                  title: viewModel.search,
+                                  numberOfItem: viewModel.searchResultsCount)
+                .presentationDetents([.height(150), .medium, .large])
+                .presentationBackgroundInteraction(.enabled)
         }
     }
     
     // MARK: - ViewBuilders
+    
+    private var mapType: some View {
+        if viewModel.isShowingSwiftUiMap {
+            AnyView(map)
+        } else {
+            AnyView(mapView)
+        }
+    }
+    
+    private var mapView: some View {
+        MapViewRepresentable(pointOfInterestCategories: [.museum, .store],
+                             searchResults: viewModel.placemarks)
+        .edgesIgnoringSafeArea(.all)
+    }
     
     private var map: some View {
         Map(position: $viewModel.position, selection: $viewModel.selection) {
@@ -162,6 +179,19 @@ struct FindPlaceView: View {
         .background(.blue.opacity(0.9))
         .clipShape(Circle())
     }
+    
+    private var mapTypeButton: some View {
+        Button {
+            viewModel.isShowingSwiftUiMap.toggle()
+        } label: {
+            Image(systemName: "swift")
+        }
+        .foregroundStyle(viewModel.isShowingSwiftUiMap ? .black : .white)
+        .padding()
+        .background(viewModel.isShowingSwiftUiMap ? .blue : .orange).opacity(0.7)
+        .clipShape(Circle())
+    }
+    
 }
 
 

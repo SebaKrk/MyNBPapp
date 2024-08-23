@@ -194,4 +194,7 @@ https://github.com/SebaKrk/MyNBPapp
     - Upgrade Xcode Beta 16.1
     - Upgrade TCA 1.13
     - SandBox MapKit
- 
+    D: PointOfInterest
+    - UIViewRepresentable MKMapView - Map(SwiftUI)
+    - Map MKMapItem to MKPlacemark and show on MapView
+    - Add a button to toggle between maps
