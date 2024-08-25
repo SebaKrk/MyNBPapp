@@ -198,3 +198,6 @@ https://github.com/SebaKrk/MyNBPapp
     - UIViewRepresentable MKMapView - Map(SwiftUI)
     - Map MKMapItem to MKPlacemark and show on MapView
     - Add a button to toggle between maps
+    
+### IOS-0025 GitIgnore
+    - add git ignore file
