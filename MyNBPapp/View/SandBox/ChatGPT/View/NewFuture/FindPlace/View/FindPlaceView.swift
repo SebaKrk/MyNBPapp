@@ -50,7 +50,7 @@ struct FindPlaceView: View {
         }
         /// zaprezentuj sheet z podglądem detali
         .sheet(isPresented: $viewModel.showDetails) {
-            LocationDetailsView(mapSelection: $viewModel.selection,
+            LocationDetailsView(mapSelection: $viewModel.mapSelection,
                                 show: $viewModel.showDetails)
             .presentationDetents([.height(340)])
             .presentationBackgroundInteraction(.enabled(upThrough: .height(340)))
@@ -82,13 +82,18 @@ struct FindPlaceView: View {
     }
     
     private var map: some View {
-        Map(position: $viewModel.position, selection: $viewModel.selection) {
+        Map(position: $viewModel.position, selection: $viewModel.mapSelection) {
             if !viewModel.searchResults.isEmpty {
                 ForEach(viewModel.searchResults, id: \.self) { item in
                     Marker(item: item)
+                        .tag(MapSelection(item))
                 }
+                /// pokazuje maly widok detali po zaznaczeniu
+                ///.mapItemDetailSelectionAccessory(.callout)
             }
         }
+        /// to nie dzila jesli w selecion nie damy MapSelection<MKMapItem>? samo MKMapItem nie dzila
+        .mapFeatureSelectionAccessory(.callout)
         /// wypośrodkuj na pierwszym znalezionym elemencie
         .onChange(of: viewModel.searchResults) { oldValue, newValue in
             if let item = newValue.first {
@@ -96,8 +101,15 @@ struct FindPlaceView: View {
             }
         }
         /// pokaz detale jeśli przyjdzie jakaś nowa wartość
-        .onChange(of: viewModel.selection) { oldValue, newValue in
-            viewModel.showDetails = newValue != nil
+        .onChange(of: viewModel.mapSelection) { oldValue, newValue in
+            if let item = newValue?.value {
+                if viewModel.searchResults.contains(item) {
+                    viewModel.showDetails = true
+                } else {
+                    viewModel.showDetails = false
+                }
+                
+            }
         }
         /// zadanie autoryzacji dostępu do lokalizacji
         .onAppear {
