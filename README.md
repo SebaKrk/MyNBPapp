@@ -203,3 +203,6 @@ https://github.com/SebaKrk/MyNBPapp
     - add git ignore file
 
 ### IOS-0026 MapView SwiftUI
+    A: Create a list displaying places
+    - implement MapSelection<MKMapItem>?
+    - SearchResultsListView - create new cell

@@ -30,6 +30,8 @@ struct SearchResultsListView: View {
             Divider()
             Spacer()
             list
+                /// dostepne w iOS 18.0 prezentuje podglad miejsca
+                //.mapItemDetailSheet(item: $singleSelection)
                 .sheet(isPresented: $showDetails) {
                     DetailsView(detailsItem: $singleSelection)
                         .presentationDetents([.height(300), .medium, .large])
@@ -75,7 +77,7 @@ struct SearchResultsListView: View {
                     singleSelection = item
                     showDetails = true
                 } label: {
-                    cell(item.name ?? "brak")
+                    listCell(item)
                 }
             }
             .onDelete(perform: deleteItems)
@@ -165,14 +167,73 @@ struct SearchResultsListView: View {
         )
     }
     
-    private func cell(_ item: String) -> some View {
-        Text(item)
+    private func listCell(_ item: MKMapItem) -> some View {
+        VStack(alignment: .leading) {
+            Text(item.name ?? "Unknown Place")
+                .font(.body)
+                .foregroundStyle(.primary)
+            HStack {
+                /// dystans
+                Text("200 m")
+                    .foregroundStyle(.secondary)
+                    .font(.subheadline)
+                /// kategoria
+                /// MKPointOfInterestCategory
+                if let category = item.pointOfInterestCategory {
+                    Text(categoryName(for: category))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            HStack {
+                /// info zamkniete otwarte
+                Text("zamkniete")
+                    .font(.subheadline)
+                    .foregroundStyle(.red)
+                /// godziny otwarcia
+                
+                Text("10:00-20:00")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            /// adres
+            Text(item.placemark.title ?? "No Address Available")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            //            let street = item.placemark.thoroughfare ?? ""
+            //            let city = item.placemark.locality ?? ""
+            //            let fullAddress = "\(street), \(city)"
+        }
     }
+    
+    //    if let phone = item.phoneNumber {
+    //        Text("\(phone)")
+    //    }
+
+    //            if let userLocation = mapView.userLocation.location {
+    //                let distance = item.placemark.location?.distance(from: userLocation)
+    //                let distanceString = String(format: "%.2f km", (distance ?? 0) / 1000)
+    //            }
     
     private func deleteItems(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
     }
     
+    private func categoryName(for category: MKPointOfInterestCategory) -> String {
+        switch category {
+        case .museum:
+            return "Muzeum"
+        case .aquarium:
+            return "Akwarium"
+        case .amusementPark:
+            return "Park rozrywki"
+        case .zoo:
+            return "Zoo"
+        case .library:
+            return "Biblioteka"
+        default:
+            return "Inne"
+        }
+    }
 }
 
 #Preview {

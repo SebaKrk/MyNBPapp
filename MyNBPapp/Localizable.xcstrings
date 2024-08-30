@@ -38,6 +38,12 @@
     "1 Euro" : {
 
     },
+    "10:00-20:00" : {
+
+    },
+    "200 m" : {
+
+    },
     "Account" : {
       "comment" : "The Account tab provides a personalized space where users can manage their profile and settings.",
       "localizations" : {
@@ -360,6 +366,9 @@
 
     },
     "Wszystkie rodzaje" : {
+
+    },
+    "zamkniete" : {
 
     },
     "Zastosuj" : {

@@ -10,7 +10,7 @@ import MapKit
 
 struct LocationDetailsView: View {
     
-    @Binding var mapSelection: MKMapItem?
+    @Binding var mapSelection: MapSelection<MKMapItem>? //MKMapItem?
     @Binding var show: Bool
     @State private var lookAroundScene: MKLookAroundScene?
     
@@ -18,15 +18,16 @@ struct LocationDetailsView: View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(mapSelection?.placemark.name ?? "")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    
-                    Text(mapSelection?.placemark.title ?? "")
-                        .font(.footnote)
-                        .foregroundStyle(.gray)
-                        .lineLimit(2)
-                        .padding(.trailing)
+                    if let selection = mapSelection {
+                        Text(selection.value?.placemark.name ?? "")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                        Text(selection.value?.placemark.title ?? "")
+                            .font(.footnote)
+                            .foregroundStyle(.gray)
+                            .lineLimit(2)
+                            .padding(.trailing)
+                    }
                 }
                 
                 Spacer()
@@ -67,8 +68,10 @@ struct LocationDetailsView: View {
         if let mapSelection {
             lookAroundScene = nil
             Task {
-                let request = MKLookAroundSceneRequest(mapItem: mapSelection)
-                lookAroundScene = try? await request.scene
+                if let selectionItem = mapSelection.value {
+                    let request = MKLookAroundSceneRequest(mapItem: selectionItem)
+                    lookAroundScene = try? await request.scene
+                }
             }
         }
     }
