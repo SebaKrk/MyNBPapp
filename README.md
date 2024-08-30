@@ -201,3 +201,5 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0025 GitIgnore
     - add git ignore file
+
+### IOS-0026 MapView SwiftUI
