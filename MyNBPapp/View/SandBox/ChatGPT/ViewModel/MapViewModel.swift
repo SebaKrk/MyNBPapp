@@ -90,6 +90,7 @@ class MapViewModel: ObservableObject {
         }
     }
     
+    
     @MainActor
     func getLookAroundScene() {
         lookAroundScene = nil
