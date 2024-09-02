@@ -23,6 +23,16 @@ struct SearchResultsListView: View {
     @State var numberOfItem: Int
     
     @State var mapItemWithRoute: [MapItemWithRoute] = []
+    @State var isSorted: Bool = false
+    
+    
+    var sortedMapByDistance: [MapItemWithRoute] {
+        if isSorted {
+            return mapItemWithRoute.sorted { ($0.route?.distance ?? 0) < ($1.route?.distance ?? 0)}
+        } else {
+            return mapItemWithRoute
+        }
+    }
     
     
     // MARK: - Body
@@ -33,8 +43,8 @@ struct SearchResultsListView: View {
             Divider()
             Spacer()
             list
-                /// dostepne w iOS 18.0 prezentuje podglad miejsca
-                //.mapItemDetailSheet(item: $singleSelection)
+            /// dostepne w iOS 18.0 prezentuje podglad miejsca
+            //.mapItemDetailSheet(item: $singleSelection)
                 .sheet(isPresented: $showDetails) {
                     DetailsView(detailsItem: $singleSelection)
                         .presentationDetents([.height(300), .medium, .large])
@@ -47,7 +57,7 @@ struct SearchResultsListView: View {
     }
     
     // MARK: - SubView
-        
+    
     private var headerView: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -64,7 +74,7 @@ struct SearchResultsListView: View {
                 cancelButton
             }
             HStack {
-                buttonTypes
+                buttonFiltersType
                 buttonSortMenu
                 Spacer()
             }
@@ -75,7 +85,7 @@ struct SearchResultsListView: View {
     
     private var list: some View {
         List {
-            ForEach(mapItemWithRoute, id: \.mapItem) { item in
+            ForEach(sortedMapByDistance, id: \.mapItem) { item in
                 Button {
                     singleSelection = item.mapItem
                     showDetails = true
@@ -134,19 +144,11 @@ struct SearchResultsListView: View {
     }
     
     /// to cos będzie musiało przyjąć z api żeby sprawdzić jakie są rodzaje
-    private var buttonTypes: some View {
+    private var buttonFiltersType: some View {
         Button {
             showFilters.toggle()
         } label: {
-            Group {
-                HStack {
-                    Text("Wszystkie rodzaje")
-                    Image(systemName: "chevron.down")
-                }
-            }
-            .foregroundColor(Color.primary)
-            .padding(4)
-            .padding([.leading, .trailing], 6)
+            filtersTypeLabel
         }
         .background(Color.clear)
         .overlay(
@@ -155,25 +157,61 @@ struct SearchResultsListView: View {
         )
     }
     
+    private var filtersTypeLabel: some View {
+        Group {
+            HStack {
+                Text("Wszystkie rodzaje")
+                Image(systemName: "chevron.down")
+            }
+        }
+        .foregroundColor(Color.primary)
+        .padding(4)
+        .padding([.leading, .trailing], 6)
+    }
+    
     private var buttonSortMenu: some View {
         Menu {
-            Text("przykład")
+            resetSortButton
+            distanceSortButton
         } label: {
-            Group {
-                HStack {
-                    Text("Sortuj")
-                    Image(systemName: "chevron.down")
-                }
-            }
-            .foregroundColor(.primary)
-            .padding(4)
-            .padding([.leading, .trailing], 6)
+            sortLabel
         }
-        .background(Color.clear)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(Color.gray, lineWidth: 1)
         )
+    }
+    
+    private var sortLabel: some View {
+        Group {
+            HStack {
+                Text(isSorted ? "Odległość" : "Sortuj")
+                Image(systemName: "chevron.down")
+            }
+        }
+        .foregroundColor(.primary)
+        .padding(4)
+        .padding([.leading, .trailing], 6)
+        .background(
+            Capsule()
+                .fill(isSorted ? Color.blue : Color.clear)
+        )
+    }
+    
+    private var resetSortButton : some View {
+        Button {
+            isSorted = false
+        } label: {
+            Text("Najlepsze dopasowanie")
+        }
+    }
+    
+    private var distanceSortButton: some View {
+        Button {
+            isSorted.toggle()
+        } label: {
+            Text("Odległość")
+        }
     }
     
     private func listCell(_ item: MapItemWithRoute) -> some View {
@@ -257,11 +295,8 @@ struct SearchResultsListView: View {
     
     /// adres
     private func address(_ mapItem: MKMapItem) -> some View {
-        var street = mapItem.placemark.thoroughfare ?? "No Address Available"
-        var number = mapItem.placemark.subThoroughfare ?? ""
-        
         return Group {
-            Text("\(street) \(number)")
+            Text("\(mapItem.placemark.thoroughfare ?? "No Address Available") \(mapItem.placemark.subThoroughfare ?? "")")
         }
         .font(.subheadline)
         .foregroundStyle(.secondary)
@@ -293,7 +328,7 @@ struct SearchResultsListView: View {
     
     func getDirectionsWithRoutes(from userLocation: CLLocationCoordinate2D, items: [MKMapItem]) async -> [MapItemWithRoute] {
         var results: [MapItemWithRoute] = []
-
+        
         for item in items {
             if let route = await getRoute(from: userLocation, to: item) {
                 results.append(MapItemWithRoute(mapItem: item, route: route))
@@ -301,16 +336,16 @@ struct SearchResultsListView: View {
                 results.append(MapItemWithRoute(mapItem: item, route: nil))
             }
         }
-
+        
         return results
     }
-
+    
     private func getRoute(from userLocation: CLLocationCoordinate2D, to item: MKMapItem) async -> MKRoute? {
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: userLocation))
         request.destination = item
         request.transportType = .walking
-
+        
         let directions = MKDirections(request: request)
         do {
             let response = try await directions.calculate()

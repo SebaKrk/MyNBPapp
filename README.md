@@ -207,3 +207,4 @@ https://github.com/SebaKrk/MyNBPapp
     - implement MapSelection<MKMapItem>?
     - SearchResultsListView - create new cell
     B: Add filters options
+    - sort by distance
