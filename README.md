@@ -206,3 +206,4 @@ https://github.com/SebaKrk/MyNBPapp
     A: Create a list displaying places
     - implement MapSelection<MKMapItem>?
     - SearchResultsListView - create new cell
+    B: Add filters options
