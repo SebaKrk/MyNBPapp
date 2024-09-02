@@ -177,52 +177,97 @@ struct SearchResultsListView: View {
     }
     
     private func listCell(_ item: MapItemWithRoute) -> some View {
-        VStack(alignment: .leading) {
-            Text(item.mapItem.name ?? "Unknown Place")
-                .bold()
-                .font(.body)
-                .foregroundStyle(.primary)
-                
-            HStack {
-                /// dystans
-                Text(getTravelTime(item.route) ?? "brak")
-                    .foregroundStyle(.secondary)
-                    .font(.subheadline)
-                /// kategoria
-                /// MKPointOfInterestCategory
-                if let category = item.mapItem.pointOfInterestCategory {
-                    Text(categoryName(for: category))
-                        .foregroundStyle(.secondary)
+        HStack {
+            VStack(alignment: .leading) {
+                name(item.mapItem)
+                HStack {
+                    travelTime(item.route)
+                    if let category = item.mapItem.pointOfInterestCategory {
+                        categoryTitle(category)
+                    }
+                    if let city = item.mapItem.placemark.locality {
+                        cityName(city)
+                    }
                 }
-                
-                if let city = item.mapItem.placemark.locality {
-                    Text(city)
-                        .foregroundStyle(.secondary)
-                }
+                openingHours()
+                address(item.mapItem)
+                Spacer()
             }
-            HStack {
-                /// info zamkniete otwarte
-                Text("zamkniete")
-                    .font(.subheadline)
-                    .foregroundStyle(.red)
-                /// godziny otwarcia
-                
-                Text("10:00-20:00")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+            Spacer()
+            VStack {
+                placeImage()
+                Spacer()
             }
-            /// adres
-            var street = item.mapItem.placemark.thoroughfare ?? "No Address Available"
-            var number = item.mapItem.placemark.subThoroughfare ?? ""
-            Text("\(street) \(number)")
+        }
+    }
+    
+    /// nazwa
+    private func name(_ mapItem: MKMapItem) -> some View {
+        Text(mapItem.name ?? "Unknown Place")
+            .bold()
+            .font(.body)
+            .foregroundStyle(.primary)
+    }
+    
+    /// obraz miejsca / zdjęcie
+    private func placeImage() -> some View {
+        Image(systemName: "photo")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 100, height: 60)
+            .clipped()
+            .foregroundStyle(.secondary)
+    }
+    
+    
+    /// dystans
+    private func travelTime(_ route: MKRoute?) -> some View {
+        Text(getTravelTime(route) ?? "brak")
+            .foregroundStyle(.secondary)
+            .font(.subheadline)
+    }
+    
+    /// kategoria -  MKPointOfInterestCategory
+    private func categoryTitle(_ category: MKPointOfInterestCategory) -> some View {
+        Text(categoryName(for: category))
+            .foregroundStyle(.secondary)
+    }
+    
+    /// miasto
+    private func cityName(_ city: String) -> some View {
+        Text(city)
+            .foregroundStyle(.secondary)
+    }
+    
+    /// godziny otwarcia
+    private func openingHours() -> some View {
+        // TODO: inne api do zaimplemetowania
+        HStack {
+            /// info
+            Text("zamkniete")
+                .font(.subheadline)
+                .foregroundStyle(.red)
+            
+            /// godziny otwarcia
+            Text("10:00-20:00")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
     }
-    private func deleteItems(at offsets: IndexSet) {
-        items.remove(atOffsets: offsets)
+    
+    /// adres
+    private func address(_ mapItem: MKMapItem) -> some View {
+        var street = mapItem.placemark.thoroughfare ?? "No Address Available"
+        var number = mapItem.placemark.subThoroughfare ?? ""
+        
+        return Group {
+            Text("\(street) \(number)")
+        }
+        .font(.subheadline)
+        .foregroundStyle(.secondary)
     }
     
+    /// dostępne kategorie
     private func categoryName(for category: MKPointOfInterestCategory) -> String {
         switch category {
         case .museum:
@@ -240,6 +285,10 @@ struct SearchResultsListView: View {
         default:
             return "Inne"
         }
+    }
+    
+    private func deleteItems(at offsets: IndexSet) {
+        items.remove(atOffsets: offsets)
     }
     
     func getDirectionsWithRoutes(from userLocation: CLLocationCoordinate2D, items: [MKMapItem]) async -> [MapItemWithRoute] {
