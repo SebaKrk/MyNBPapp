@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct FiltersPlaceView: View {
+    
+    @Binding var category: [MKPointOfInterestCategory]
     
     @Environment(\.dismiss) var dismiss
     
@@ -54,7 +57,11 @@ struct FiltersPlaceView: View {
     
     private var filtersContainer: some View {
         GroupBox {
-            Text("filtersContainer")
+            ForEach(category , id: \.self) { item in
+                HStack {
+                    Text(item.displayName())
+                }
+            }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .padding([.leading, .trailing])
@@ -63,6 +70,6 @@ struct FiltersPlaceView: View {
     
 }
 
-#Preview {
-    FiltersPlaceView()
-}
+//#Preview {
+//    FiltersPlaceView()
+//}

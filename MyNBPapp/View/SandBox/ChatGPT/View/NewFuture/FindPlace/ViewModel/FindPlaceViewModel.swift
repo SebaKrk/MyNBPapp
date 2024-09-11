@@ -85,7 +85,7 @@ class FindPlaceViewModel: ObservableObject {
         let search = MKLocalSearch(request: request)
         let response = try? await search.start()
         searchResults = response?.mapItems ?? []
-        dump(searchResults)
+        //dump(searchResults)
         return searchResults
     }
     
