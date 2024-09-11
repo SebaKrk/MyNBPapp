@@ -8,8 +8,17 @@
 import SwiftUI
 import MapKit
 
+struct MapItemWithRoute {
+    var mapItem: MKMapItem
+    var route: MKRoute?
+}
+
 @available(iOS 18.0, *)
 class FindPlaceViewModel: ObservableObject {
+    
+    let manager = CLLocationManager()
+    @Published var userLocation: CLLocation?
+    @Published var route : MKRoute?
     
     @Published var scene: MKLookAroundScene?
     @Published var selection: MKMapItem?
@@ -23,6 +32,7 @@ class FindPlaceViewModel: ObservableObject {
     @Published var showSearchResults: Bool = false
     
     @Published var isShowingSwiftUiMap: Bool = true
+
 
     // MARK: - Methods
     
@@ -59,29 +69,14 @@ class FindPlaceViewModel: ObservableObject {
     
     @MainActor
     func fetchLookAroundPreview() {
-     
         scene = nil
         Task {
             guard let selectResult = selection else { return }
             let request = MKLookAroundSceneRequest(mapItem: selectResult)
             scene = try? await request.scene
         }
-        
-        /*
-        //if let mapSelection {
-        if let selection {
-            scene = nil
-            //if let item = mapSelection.value {
-                Task {
-                    //let request =  MKLookAroundSceneRequest(mapItem: item)
-                    let request =  MKLookAroundSceneRequest(mapItem: selection)
-                    scene = try? await request.scene
-                }
-            //}
-        }
-         */
     }
-        
+       
     @MainActor
     func findPlace(place: String) async ->  [MKMapItem] {
         let request = MKLocalSearch.Request()
@@ -90,7 +85,7 @@ class FindPlaceViewModel: ObservableObject {
         let search = MKLocalSearch(request: request)
         let response = try? await search.start()
         searchResults = response?.mapItems ?? []
-        dump(searchResults)
+        //dump(searchResults)
         return searchResults
     }
     

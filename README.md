@@ -201,3 +201,12 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0025 GitIgnore
     - add git ignore file
+
+### IOS-0026 MapView SwiftUI
+    A: Create a list displaying places
+    - implement MapSelection<MKMapItem>?
+    - SearchResultsListView - create new cell
+    B: Add filters options
+    - sort by distance
+    C: Add filters by category
+    - pass category data to FiltersPlaceView
