@@ -25,6 +25,7 @@ struct SearchResultsListView: View {
     @State var mapItemWithRoute: [MapItemWithRoute] = []
     @State var isSorted: Bool = false
     
+    @State var category: [MKPointOfInterestCategory] = []
     
     var sortedMapByDistance: [MapItemWithRoute] {
         if isSorted {
@@ -50,7 +51,7 @@ struct SearchResultsListView: View {
                         .presentationDetents([.height(300), .medium, .large])
                 }
                 .sheet(isPresented: $showFilters) {
-                    FiltersPlaceView()
+                    FiltersPlaceView(category: $category)
                         .presentationDetents([.height(200)])
                 }
         }
@@ -67,6 +68,7 @@ struct SearchResultsListView: View {
                     HStack {
                         numberOfItemSearch(numberOfItem)
                         editButton
+                        //printButton
                         Spacer()
                     }
                 }
@@ -100,6 +102,7 @@ struct SearchResultsListView: View {
             Task {
                 let krakowCenter = CLLocationCoordinate2D(latitude: 50.0614, longitude: 19.9366)
                 await mapItemWithRoute = getDirectionsWithRoutes(from: krakowCenter, items: items)
+                //dump(mapItemWithRoute)
             }
         }
     }
@@ -132,6 +135,17 @@ struct SearchResultsListView: View {
             .font(.subheadline)
     }
     
+    private var printButton: some View {
+        Button {
+            printAllProperties(for: mapItemWithRoute)
+        } label: {
+            Image(systemName: "printer")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 15, height: 15)
+        }
+    }
+    
     private var cancelButton: some View {
         Button {
             dismiss()
@@ -146,6 +160,8 @@ struct SearchResultsListView: View {
     /// to cos będzie musiało przyjąć z api żeby sprawdzić jakie są rodzaje
     private var buttonFiltersType: some View {
         Button {
+            category = gatherAllCategories(from: mapItemWithRoute)
+            dump(category)
             showFilters.toggle()
         } label: {
             filtersTypeLabel
@@ -220,8 +236,14 @@ struct SearchResultsListView: View {
                 name(item.mapItem)
                 HStack {
                     travelTime(item.route)
+
                     if let category = item.mapItem.pointOfInterestCategory {
                         categoryTitle(category)
+                    } else {
+                        Text("xxx")
+                            .onAppear {
+                                debugPrint("Brak informacji o kategorii POI dla \(item.mapItem)")
+                            }
                     }
                     if let city = item.mapItem.placemark.locality {
                         cityName(city)
@@ -267,7 +289,7 @@ struct SearchResultsListView: View {
     
     /// kategoria -  MKPointOfInterestCategory
     private func categoryTitle(_ category: MKPointOfInterestCategory) -> some View {
-        Text(categoryName(for: category))
+        Text(category.displayName())
             .foregroundStyle(.secondary)
     }
     
@@ -303,24 +325,34 @@ struct SearchResultsListView: View {
     }
     
     /// dostępne kategorie
-    private func categoryName(for category: MKPointOfInterestCategory) -> String {
-        switch category {
-        case .museum:
-            return "Muzeum"
-        case .castle:
-            return "Zamek"
-        case .fortress:
-            return "Forteca"
-        case .landmark:
-            return "Miejsce historyczne"
-        case .library:
-            return "Biblioteka"
-        case .nationalMonument:
-            return "Pomnik"
-        default:
-            return "Inne"
-        }
-    }
+//    private func categoryName(for category: MKPointOfInterestCategory) -> String {
+//        switch category {
+//        case .castle:
+//            return "Zamek"
+//        case .museum:
+//            return "Muzeum"
+//        case .fortress:
+//            return "Forteca"
+//        case .landmark:
+//            return "Miejsce historyczne"
+//        case .library:
+//            return "Biblioteka"
+//        case .nationalMonument:
+//            return "Pomnik"
+//        case .amusementPark:
+//            return "Park rozrywki"
+//        case .aquarium:
+//            return "Akwarium"
+//        case .planetarium:
+//            return "Planetarium"
+//        case .school:
+//            return "Szkoła"
+//        case .university:
+//            return "Uniwersytet"
+//        default:
+//            return "Inne"
+//        }
+//    }
     
     private func deleteItems(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
@@ -364,6 +396,44 @@ struct SearchResultsListView: View {
         return formatter.string(from: route.expectedTravelTime)
     }
     
+    
+    // MARK: Helpers methods
+    
+    func gatherAllCategories(from items: [MapItemWithRoute]) -> [MKPointOfInterestCategory] {
+        let categories = items.compactMap { $0.mapItem.pointOfInterestCategory }
+        let uniqueCategory = Array(Set(categories))
+        return uniqueCategory
+    }
+    
+    func printAllProperties(for items: [MapItemWithRoute]) {
+        for (index, item) in items.enumerated() {
+            print("----- Element \(index + 1) -----")
+            printAllProperties(of: item)
+            
+            if let poiCategory = item.mapItem.pointOfInterestCategory {
+                print("Category: \(poiCategory.rawValue)")
+            } else {
+                print("No point of interest category")
+            }
+            print("\n")
+        }
+    }
+
+    func printAllProperties(of object: Any) {
+        let mirror = Mirror(reflecting: object)
+
+        for (label, value) in mirror.children {
+            if let label = label {
+                print("\(label): \(value)")
+
+                let valueMirror = Mirror(reflecting: value)
+                if !valueMirror.children.isEmpty {
+                    printAllProperties(of: value)
+                }
+            }
+        }
+    }
+    
 }
 
 #Preview {
@@ -386,3 +456,36 @@ struct SearchResultsListView: View {
 }
 
 
+import MapKit
+
+// Rozszerzenie dla MKPointOfInterestCategory
+extension MKPointOfInterestCategory {
+    func displayName() -> String {
+        switch self {
+        case .amusementPark:
+            return "Park Rozrywki"
+        case .aquarium:
+            return "Akwarium"
+        case .museum:
+            return "Muzeum"
+        case .castle:
+            return "Zamek"
+        case .fortress:
+            return "Forteca"
+        case .landmark:
+            return "Miejsce Historyczne"
+        case .library:
+            return "Biblioteka"
+        case .nationalMonument:
+            return "Pomnik Narodowy"
+        case .planetarium:
+            return "Planetarium"
+        case .school:
+            return "Szkoła"
+        case .university:
+            return "Uniwersytet"
+        default:
+            return "Inna Kategoria"
+        }
+    }
+}

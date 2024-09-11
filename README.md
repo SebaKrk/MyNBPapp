@@ -208,3 +208,5 @@ https://github.com/SebaKrk/MyNBPapp
     - SearchResultsListView - create new cell
     B: Add filters options
     - sort by distance
+    C: Add filters by category
+    - pass category data to FiltersPlaceView
