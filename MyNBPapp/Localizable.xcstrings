@@ -16,6 +16,16 @@
     "%@" : {
 
     },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "%@ %%" : {
 
     },
@@ -36,6 +46,9 @@
 
     },
     "1 Euro" : {
+
+    },
+    "10:00-20:00" : {
 
     },
     "Account" : {
@@ -152,9 +165,6 @@
     "FavoritesView" : {
 
     },
-    "filtersContainer" : {
-
-    },
     "Filtry" : {
 
     },
@@ -214,6 +224,9 @@
     "Nacisnij przycisk zeby cos doddac" : {
 
     },
+    "Najlepsze dopasowanie" : {
+
+    },
     "name" : {
 
     },
@@ -246,6 +259,9 @@
     "No preview available" : {
 
     },
+    "Odległość" : {
+
+    },
     "Open Contact Sheet" : {
 
     },
@@ -275,9 +291,6 @@
 
     },
     "Pokaż średni kurs" : {
-
-    },
-    "przykład" : {
 
     },
     "Rates" : {
@@ -360,6 +373,12 @@
 
     },
     "Wszystkie rodzaje" : {
+
+    },
+    "xxx" : {
+
+    },
+    "zamkniete" : {
 
     },
     "Zastosuj" : {
