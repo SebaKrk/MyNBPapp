@@ -210,3 +210,4 @@ https://github.com/SebaKrk/MyNBPapp
     - sort by distance
     C: Add filters by category
     - pass category data to FiltersPlaceView
+    - handle selected category

@@ -26,9 +26,12 @@ struct SearchResultsListView: View {
     @State var isSorted: Bool = false
     
     @State var category: [MKPointOfInterestCategory] = []
+    @State private var selectedCategory: MKPointOfInterestCategory? = nil
     
-    var sortedMapByDistance: [MapItemWithRoute] {
-        if isSorted {
+    var sortedMap: [MapItemWithRoute] {
+        if selectedCategory != nil {
+            return mapItemWithRoute.filter { $0.mapItem.pointOfInterestCategory == selectedCategory }
+        } else if isSorted {
             return mapItemWithRoute.sorted { ($0.route?.distance ?? 0) < ($1.route?.distance ?? 0)}
         } else {
             return mapItemWithRoute
@@ -51,7 +54,9 @@ struct SearchResultsListView: View {
                         .presentationDetents([.height(300), .medium, .large])
                 }
                 .sheet(isPresented: $showFilters) {
-                    FiltersPlaceView(category: $category)
+                    FiltersPlaceView(category: $category,
+                                     selectedCategory: $selectedCategory,
+                                     showFilters: $showFilters)
                         .presentationDetents([.height(200)])
                 }
         }
@@ -87,7 +92,7 @@ struct SearchResultsListView: View {
     
     private var list: some View {
         List {
-            ForEach(sortedMapByDistance, id: \.mapItem) { item in
+            ForEach(sortedMap, id: \.mapItem) { item in
                 Button {
                     singleSelection = item.mapItem
                     showDetails = true
@@ -102,7 +107,6 @@ struct SearchResultsListView: View {
             Task {
                 let krakowCenter = CLLocationCoordinate2D(latitude: 50.0614, longitude: 19.9366)
                 await mapItemWithRoute = getDirectionsWithRoutes(from: krakowCenter, items: items)
-                //dump(mapItemWithRoute)
             }
         }
     }
@@ -161,26 +165,31 @@ struct SearchResultsListView: View {
     private var buttonFiltersType: some View {
         Button {
             category = gatherAllCategories(from: mapItemWithRoute)
-            dump(category)
+            //dump(selectedCategory)
             showFilters.toggle()
         } label: {
             filtersTypeLabel
         }
-        .background(Color.clear)
         .overlay(
-            RoundedRectangle(cornerRadius: 15)
-                .stroke(Color.gray, lineWidth: 1)
+            Capsule()
+                .fill(selectedCategory != nil ? Color.blue.opacity(0.1) : Color.clear)
+                .stroke(selectedCategory != nil ? Color.blue : Color.primary,
+                        lineWidth: 1)
         )
     }
     
     private var filtersTypeLabel: some View {
         Group {
             HStack {
-                Text("Wszystkie rodzaje")
+                if let selectedCategory = selectedCategory {
+                    Text(selectedCategory.displayName())
+                } else {
+                    Text("Wszystkie rodzaje")
+                }
                 Image(systemName: "chevron.down")
             }
         }
-        .foregroundColor(Color.primary)
+        .foregroundColor(selectedCategory != nil ? Color.blue : Color.primary)
         .padding(4)
         .padding([.leading, .trailing], 6)
     }
@@ -324,36 +333,6 @@ struct SearchResultsListView: View {
         .foregroundStyle(.secondary)
     }
     
-    /// dostępne kategorie
-//    private func categoryName(for category: MKPointOfInterestCategory) -> String {
-//        switch category {
-//        case .castle:
-//            return "Zamek"
-//        case .museum:
-//            return "Muzeum"
-//        case .fortress:
-//            return "Forteca"
-//        case .landmark:
-//            return "Miejsce historyczne"
-//        case .library:
-//            return "Biblioteka"
-//        case .nationalMonument:
-//            return "Pomnik"
-//        case .amusementPark:
-//            return "Park rozrywki"
-//        case .aquarium:
-//            return "Akwarium"
-//        case .planetarium:
-//            return "Planetarium"
-//        case .school:
-//            return "Szkoła"
-//        case .university:
-//            return "Uniwersytet"
-//        default:
-//            return "Inne"
-//        }
-//    }
-    
     private func deleteItems(at offsets: IndexSet) {
         items.remove(atOffsets: offsets)
     }
@@ -485,7 +464,7 @@ extension MKPointOfInterestCategory {
         case .university:
             return "Uniwersytet"
         default:
-            return "Inna Kategoria"
+            return "Inne"
         }
     }
 }
