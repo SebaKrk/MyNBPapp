@@ -1,6 +1,6 @@
 
 //
-//  MapViewNewFuture.swift
+//  FindPlaceView.swift
 //  MyNBPapp
 //
 //  Created by Sebastian Sciuba on 03/08/2024.
@@ -34,10 +34,7 @@ struct FindPlaceView: View {
             }
             Spacer()
         }
-        /// zaprezentuj sheet z wyszukiwarka
-        //        .sheet(isPresented: $viewModel.isSheetPresented) {
-        //            SearchPlaceSheetView(items: $viewModel.searchResults)
-        //        }
+   
         /// albo sheet overlay TF (sandBox)
         .overlay(alignment: .top) {
             searchTextFieldTop

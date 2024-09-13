@@ -360,34 +360,35 @@
 				Model/ChatModel.swift,
 				Model/Monument.swift,
 				Model/Place.swift,
+				NewFuture/ChatGPT/ChatView/ChatView.swift,
+				NewFuture/ChatGPT/ViewModel/ChatViewModel.swift,
+				NewFuture/FindPlace/View/DetailsView.swift,
+				NewFuture/FindPlace/View/FiltersPlaceView.swift,
+				NewFuture/FindPlace/View/FindPlaceView.swift,
+				NewFuture/FindPlace/View/LocationDetailsView.swift,
+				NewFuture/FindPlace/View/SearchResultsListView.swift,
+				NewFuture/FindPlace/ViewModel/FindPlaceViewModel.swift,
+				NewFuture/PointOfInterest/PointOfInterest.swift,
+				NewFuture/SandBox/FindPlaceViewWithSearchable.swift,
+				NewFuture/SandBox/SandBox.swift,
+				NewFuture/SandBox/SandBoxMapView.swift,
+				NewFuture/SandBox/SearchPlaceSheetView.swift,
+				NewFuture/SandBox/WWDC/FavoriteList.swift,
+				NewFuture/SandBox/WWDC/MapView.swift,
+				NewFuture/SandBox/WWDC/Test.swift,
+				NewFuture/SandBox/WWDC/ViewModel/MapViewModel.swift,
 				Service/LocalSearchServices.swift,
 				Service/OpenAINetworkingError.swift,
 				Service/OpenAIServices.swift,
+				SubView/Layouts/FlowLayout.swift,
 				SubView/LoadingDotsView.swift,
-				View/ChatView.swift,
-				View/MapView.swift,
-				View/NewFuture/FavoriteList.swift,
-				View/NewFuture/FindPlace/FindPlaceViewWithSearchable.swift,
-				View/NewFuture/FindPlace/SearchPlaceSheetView.swift,
-				View/NewFuture/FindPlace/View/DetailsView.swift,
-				View/NewFuture/FindPlace/View/FiltersPlaceView.swift,
-				View/NewFuture/FindPlace/View/FindPlaceView.swift,
-				View/NewFuture/FindPlace/View/LocationDetailsView.swift,
-				View/NewFuture/FindPlace/View/SearchResultsListView.swift,
-				View/NewFuture/FindPlace/View/Test.swift,
-				View/NewFuture/FindPlace/ViewModel/FindPlaceViewModel.swift,
-				View/NewFuture/PointOfInterest.swift,
-				View/NewFuture/SandBox.swift,
-				View/SandBoxMapView.swift,
-				ViewModel/ChatViewModel.swift,
-				ViewModel/MapViewModel.swift,
 			);
 			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		931561992C54BCFB007DD554 /* ChatGPT */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ChatGPT; sourceTree = "<group>"; };
+		931561992C54BCFB007DD554 /* TourBuddyAI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TourBuddyAI; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,7 +542,7 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
-				931561992C54BCFB007DD554 /* ChatGPT */,
+				931561992C54BCFB007DD554 /* TourBuddyAI */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,
 			);

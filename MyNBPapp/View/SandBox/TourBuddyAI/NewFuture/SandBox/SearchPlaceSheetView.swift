@@ -104,3 +104,11 @@ struct TextFieldGrayBackgroundColor: ViewModifier {
             .foregroundColor(.primary)
     }
 }
+
+
+//to bylo w
+//SearchResultsListView
+/// zaprezentuj sheet z wyszukiwarka
+//        .sheet(isPresented: $viewModel.isSheetPresented) {
+//            SearchPlaceSheetView(items: $viewModel.searchResults)
+//        }
