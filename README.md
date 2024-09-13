@@ -211,4 +211,5 @@ https://github.com/SebaKrk/MyNBPapp
     C: Add filters by category
     - pass category data to FiltersPlaceView
     - handle selected category
-    D: Cleanup project folders
+    D: Cleanup project folders / Refactor
+    - create Factories for different MapView

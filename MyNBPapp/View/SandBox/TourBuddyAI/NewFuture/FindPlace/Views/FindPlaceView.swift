@@ -64,79 +64,10 @@ struct FindPlaceView: View {
     // MARK: - ViewBuilders
     
     private var mapType: some View {
-        if viewModel.isShowingSwiftUiMap {
-            AnyView(map)
-        } else {
-            AnyView(mapView)
-        }
-    }
-    
-    private var mapView: some View {
-        MapViewRepresentable(pointOfInterestCategories: [.museum, .store],
-                             searchResults: viewModel.placemarks)
-        .edgesIgnoringSafeArea(.all)
-    }
-    
-    private var map: some View {
-        Map(position: $viewModel.position, selection: $viewModel.mapSelection) {
-            if !viewModel.searchResults.isEmpty {
-                ForEach(viewModel.searchResults, id: \.self) { item in
-                    Marker(item: item)
-                        .tag(MapSelection(item))
-                }
-                /// pokazuje maly widok detali po zaznaczeniu
-                ///.mapItemDetailSelectionAccessory(.callout)
-            }
-        }
-        /// to nie dzila jesli w selecion nie damy MapSelection<MKMapItem>? samo MKMapItem nie dzila
-        .mapFeatureSelectionAccessory(.callout)
-        /// wypośrodkuj na pierwszym znalezionym elemencie
-        .onChange(of: viewModel.searchResults) { oldValue, newValue in
-            if let item = newValue.first {
-                viewModel.centerMapOnItem(item)
-            }
-        }
-        /// pokaz detale jeśli przyjdzie jakaś nowa wartość
-        .onChange(of: viewModel.mapSelection) { oldValue, newValue in
-            if let item = newValue?.value {
-                if viewModel.searchResults.contains(item) {
-                    viewModel.showDetails = true
-                } else {
-                    viewModel.showDetails = false
-                }
-                
-            }
-        }
-        /// zadanie autoryzacji dostępu do lokalizacji
-        .onAppear {
-            viewModel.manager.requestWhenInUseAuthorization()
-            viewModel.manager.startUpdatingLocation()
-            
-        }
-        .mapControls {
-            MapUserLocationButton()
-            MapCompass()
-            MapScaleView()
-        }
-        
-        //        .overlay(alignment: .bottom) {
-        //            if viewModel.showDetails {
-        //                if viewModel.scene != nil  {
-        //                    lookAroundView(scene: viewModel.scene)
-        //                        .onAppear {
-        //                            Task { try await viewModel.fetchScene() }
-        //                        }
-        //                        .onChange(of: viewModel.selection) { oldValue, newValue in
-        //                            Task { try await viewModel.fetchScene() }
-        //                        }
-        //                }
-        //                else {
-        //                    UnavailableView
-        //                        .background(.white)
-        //                }
-        //            }
-        //        }
-    }
+         let factory = DefaultMapViewsFactory()
+         return factory.createMap(for: viewModel.isShowingSwiftUiMap ? .swiftUIMap : .uiKitMap)
+        // .edgesIgnoringSafeArea(.all)
+     }
     
     @ViewBuilder
     private func lookAroundView(scene: MKLookAroundScene?) -> some View {
