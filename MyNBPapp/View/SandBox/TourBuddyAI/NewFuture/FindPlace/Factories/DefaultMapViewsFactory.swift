@@ -10,18 +10,13 @@ import SwiftUI
 
 final class DefaultMapViewsFactory {
     
-    func createMap(for type: MapType) -> some View {
+    @ViewBuilder
+    func createMap(for type: MapType, viewModel: any MapViewModelProtocol) -> some View {
         switch type {
         case .swiftUIMap:
-            let viewModel = SwiftUIMapViewModel()
-            let map = SwiftUIMapView(viewModel: viewModel)
-            return AnyView(map.createMap())
-            
+            SwiftUIMapView(viewModel: viewModel as! SwiftUIMapViewModel)
         case .uiKitMap:
-            let viewModel = UIKitMapViewModel()
-            let map = UIKitMapView(viewModel: viewModel)
-            return AnyView(map.createMap())
+            UIKitMapView(viewModel: viewModel as! UIKitMapViewModel)
         }
     }
-    
 }

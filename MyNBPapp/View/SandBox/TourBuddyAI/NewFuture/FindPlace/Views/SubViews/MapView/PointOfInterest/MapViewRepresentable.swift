@@ -24,22 +24,19 @@ struct MapViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: MKMapView, context: Context) {
         uiView.pointOfInterestFilter = MKPointOfInterestFilter(including: viewModel.pointOfInterestCategories)
         
-        // Usuwamy poprzednie adnotacje
         uiView.removeAnnotations(uiView.annotations)
         
-        // Dodajemy nowe adnotacje na podstawie wyników wyszukiwania
         let annotations = viewModel.searchResults.map { placemark -> MKPointAnnotation in
             let annotation = MKPointAnnotation()
-            annotation.coordinate = placemark.coordinate
+            annotation.coordinate = placemark.placemark.coordinate
             annotation.title = placemark.name
             return annotation
         }
         
         uiView.addAnnotations(annotations)
         
-        // Opcjonalnie możesz dopasować region mapy do wszystkich wyników wyszukiwania
         if let firstResult = viewModel.searchResults.first {
-            let region = MKCoordinateRegion(center: firstResult.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            let region = MKCoordinateRegion(center: firstResult.placemark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             uiView.setRegion(region, animated: true)
         }
     }
