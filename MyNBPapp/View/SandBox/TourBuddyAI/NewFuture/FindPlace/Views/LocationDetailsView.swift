@@ -29,9 +29,7 @@ struct LocationDetailsView: View {
                             .padding(.trailing)
                     }
                 }
-                
                 Spacer()
-                
                 Button {
                     show.toggle()
                     mapSelection = nil
@@ -42,7 +40,6 @@ struct LocationDetailsView: View {
                         .foregroundStyle(.gray, Color(.systemGray6))
                 }
             }
-            
             if let scene = lookAroundScene {
                 LookAroundPreview(initialScene: scene)
                     .frame(height: 200)
@@ -55,7 +52,6 @@ struct LocationDetailsView: View {
             Spacer()
         }
         .onAppear {
-            print("View appeared")
             fetchLookAroundPreview()
         }
         .onChange(of: mapSelection) { oldValue, newValue in

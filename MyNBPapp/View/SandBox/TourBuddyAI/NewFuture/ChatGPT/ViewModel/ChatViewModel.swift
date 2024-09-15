@@ -19,7 +19,7 @@ class ChatViewModel: ObservableObject {
     @Published var openMapView: Bool = false
     
     private let service = OpenAIServices()
-
+    
     @MainActor
     func sendMessage() async throws {
         let newMessage = Message(role: .user , content: messageInput)
