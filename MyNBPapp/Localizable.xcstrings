@@ -65,6 +65,17 @@
     "Account View" : {
 
     },
+    "An unknown error occurred. Please try again." : {
+      "comment" : "Unknown Error",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wystąpił nieznany błąd. Spróbuj ponownie."
+          }
+        }
+      }
+    },
     "Anuluj" : {
 
     },
@@ -144,6 +155,16 @@
     },
     "Enter favorite name" : {
 
+    },
+    "Error search" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Błąd wyszukiwania"
+          }
+        }
+      }
     },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
@@ -256,7 +277,21 @@
     "No preview available" : {
 
     },
+    "No results were found for your query." : {
+      "comment" : "No Results",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie znaleziono wyników dla Twojego zapytania."
+          }
+        }
+      }
+    },
     "Odległość" : {
+
+    },
+    "OK" : {
 
     },
     "Open Contact Sheet" : {
@@ -356,6 +391,28 @@
     },
     "Sortuj" : {
 
+    },
+    "The request failed due to: %@." : {
+      "comment" : "Request Failed",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Żądanie nie powiodło się z powodu: %@"
+          }
+        }
+      }
+    },
+    "The search query is empty. Please provide a query." : {
+      "comment" : "Empty Query",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapytanie wyszukiwania jest puste. Wpisz tekst."
+          }
+        }
+      }
     },
     "Ukryj symbol" : {
 

@@ -18,6 +18,7 @@ class MainMapViewModel: ObservableObject {
     
     @Published var isShowingSwiftUiMap = true
     @Published var showSearchResults: Bool = false
+    @Published var currentError: SearchError?
     
     var activeViewModel: any MapViewModelProtocol {
         isShowingSwiftUiMap ? swiftUIMapViewModel : uiKitMapViewModel
@@ -34,8 +35,9 @@ class MainMapViewModel: ObservableObject {
                 self.searchResults = viewModel.searchResults
             }
         } catch let error as SearchError {
-            print("Search error: \(error.errorMessage)")
+            self.currentError = error
         } catch {
+            self.currentError = .unknownError
             print("Unexpected error: \(error.localizedDescription)")
         }
     }

@@ -11,23 +11,36 @@ import Foundation
 /// Custom error type to handle different errors during the search operation.
 /// > Important: This enum helps provide clear and meaningful error messages,
 /// following the principle of **Single Responsibility**. Each case handles a specific type of error.
-enum SearchError: Error {
+enum SearchError: Error, Identifiable {
     case emptyQuery
     case noResults
     case requestFailed(Error)
     case unknownError
 
+    var id: String {
+        switch self {
+        case .emptyQuery:
+            return "emptyQuery"
+        case .noResults:
+            return "noResults"
+        case .requestFailed(let error):
+            return "requestFailed:\(error.localizedDescription)"
+        case .unknownError:
+            return "unknownError"
+        }
+    }
+
     /// Returns a user-friendly error message for each case
     var errorMessage: String {
         switch self {
         case .emptyQuery:
-            return "The search query is empty. Please provide a query."
+            return String(localized: "The search query is empty. Please provide a query.", comment: "Empty Query")
         case .noResults:
-            return "No results were found for your query."
+            return String(localized: "No results were found for your query.", comment: "No Results")
         case .requestFailed(let error):
-            return "The request failed due to: \(error.localizedDescription)."
+            return String(localized: "The request failed due to: \(error.localizedDescription).", comment: "Request Failed")
         case .unknownError:
-            return "An unknown error occurred. Please try again."
+            return String(localized: "An unknown error occurred. Please try again.",comment: "Unknown Error")
         }
     }
 }

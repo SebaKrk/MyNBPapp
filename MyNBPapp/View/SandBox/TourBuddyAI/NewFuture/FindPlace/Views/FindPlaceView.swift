@@ -40,6 +40,14 @@ struct FindPlaceView: View {
         .sheet(isPresented: $viewModel.showSearchResults) {
             searchResultSheet
         }
+        .alert(item: $viewModel.currentError) { error in
+            Alert(
+                title: Text("Error search"),
+                message: Text(error.errorMessage),
+                dismissButton: .default(Text("OK"))
+            )
+        }
+
     }
     
     // MARK: - SubView
