@@ -1,5 +1,5 @@
 //
-//  PointOfInterest.swift
+//  MapViewRepresentable.swift
 //  MyNBPapp
 //
 //  Created by Sebastian Sciuba on 22/08/2024.
@@ -11,8 +11,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     typealias UIViewType = MKMapView
     
-    var pointOfInterestCategories: [MKPointOfInterestCategory]
-    var searchResults: [MKPlacemark]// Wyniki wyszukiwania
+    @ObservedObject var viewModel: UIKitMapViewModel
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -23,24 +22,21 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.pointOfInterestFilter = MKPointOfInterestFilter(including: pointOfInterestCategories)
+        uiView.pointOfInterestFilter = MKPointOfInterestFilter(including: viewModel.pointOfInterestCategories)
         
-        // Usuwamy poprzednie adnotacje
         uiView.removeAnnotations(uiView.annotations)
         
-        // Dodajemy nowe adnotacje na podstawie wyników wyszukiwania
-        let annotations = searchResults.map { placemark -> MKPointAnnotation in
+        let annotations = viewModel.searchResults.map { placemark -> MKPointAnnotation in
             let annotation = MKPointAnnotation()
-            annotation.coordinate = placemark.coordinate
+            annotation.coordinate = placemark.placemark.coordinate
             annotation.title = placemark.name
             return annotation
         }
         
         uiView.addAnnotations(annotations)
         
-        // Opcjonalnie możesz dopasować region mapy do wszystkich wyników wyszukiwania
-        if let firstResult = searchResults.first {
-            let region = MKCoordinateRegion(center: firstResult.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        if let firstResult = viewModel.searchResults.first {
+            let region = MKCoordinateRegion(center: firstResult.placemark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             uiView.setRegion(region, animated: true)
         }
     }
@@ -51,15 +47,13 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     class Coordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
         var parent: MapViewRepresentable
-        var locationManager: CLLocationManager
+        var locationManager = LocationManager.shared
         
         init(_ parent: MapViewRepresentable) {
             self.parent = parent
-            self.locationManager = CLLocationManager()
             super.init()
-            self.locationManager.delegate = self
-            self.locationManager.requestWhenInUseAuthorization()
-            self.locationManager.startUpdatingLocation()
+            locationManager.requestAuthorization()
+            locationManager.startUpdatingLocation()
         }
         
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

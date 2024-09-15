@@ -69,6 +69,7 @@ extension AppScreen {
             CoreDataBootCamp()
             
         case.chatGPT:
+//            MapView()
 //            let viewModel = ChatViewModel()
 //            ChatView(viewModel: viewModel)
             SandBoxMapView()
