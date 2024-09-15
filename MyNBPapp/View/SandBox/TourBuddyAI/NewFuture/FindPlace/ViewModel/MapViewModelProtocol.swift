@@ -14,7 +14,7 @@ protocol MapViewModelProtocol: ObservableObject {
     
     var searchResults: [MKMapItem] { get set }
     
-    func findPlace(for searchText: String) async
+    func findPlace(for searchText: String) async throws
     
 }
 

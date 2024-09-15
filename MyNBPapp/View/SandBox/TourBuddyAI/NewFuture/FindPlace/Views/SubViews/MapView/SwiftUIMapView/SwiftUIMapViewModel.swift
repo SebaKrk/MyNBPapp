@@ -14,6 +14,7 @@ class SwiftUIMapViewModel: ObservableObject, MapViewModelProtocol {
     // MARK: - Properties
     
     let manager = LocationManager.shared
+    private let searchService = SearchService.shared
     
     @Published var position: MapCameraPosition
     @Published var mapSelection: MapSelection<MKMapItem>?
@@ -44,15 +45,8 @@ class SwiftUIMapViewModel: ObservableObject, MapViewModelProtocol {
     }
     
     @MainActor
-    func findPlace(for searchText: String) async {
-        guard !searchText.isEmpty else { return }
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = searchText
-        
-        let search = MKLocalSearch(request: request)
-        if let response = try? await search.start() {
-            self.searchResults = response.mapItems
-        }
+    func findPlace(for searchText: String) async throws {
+        self.searchResults = try await searchService.searchPlace(for: searchText)
     }
-    
+
 }

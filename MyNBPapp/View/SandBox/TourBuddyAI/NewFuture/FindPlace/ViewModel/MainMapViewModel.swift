@@ -25,12 +25,18 @@ class MainMapViewModel: ObservableObject {
     
     @MainActor
     func performSearch() async {
-        if let viewModel = activeViewModel as? SwiftUIMapViewModel {
-            await viewModel.findPlace(for: searchText)
-            self.searchResults = viewModel.searchResults
-        } else if let viewModel = activeViewModel as? UIKitMapViewModel {
-            await viewModel.findPlace(for: searchText)
-            self.searchResults = viewModel.searchResults
+        do {
+            if let viewModel = activeViewModel as? SwiftUIMapViewModel {
+                try await viewModel.findPlace(for: searchText)
+                self.searchResults = viewModel.searchResults
+            } else if let viewModel = activeViewModel as? UIKitMapViewModel {
+                try await viewModel.findPlace(for: searchText)
+                self.searchResults = viewModel.searchResults
+            }
+        } catch let error as SearchError {
+            print("Search error: \(error.errorMessage)")
+        } catch {
+            print("Unexpected error: \(error.localizedDescription)")
         }
     }
     
