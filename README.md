@@ -210,3 +210,9 @@ https://github.com/SebaKrk/MyNBPapp
     - sort by distance
     C: Add filters by category
     - pass category data to FiltersPlaceView
+    - handle selected category
+    D: Cleanup project folders / Refactor
+    - create Factories for different MapView
+    - Create a MainViewModel to manage search results, handle user interactions, and coordinate data flow
+    - Create Singleton to manage CLLocationManager
+    - Refactored SearchService 
