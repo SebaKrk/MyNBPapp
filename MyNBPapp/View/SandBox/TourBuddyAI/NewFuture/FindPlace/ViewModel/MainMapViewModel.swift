@@ -10,12 +10,14 @@ import MapKit
 
 class MainMapViewModel: ObservableObject {
     
-    @Published var isShowingSwiftUiMap = true
     @Published var searchText: String = ""
     @Published var searchResults: [MKMapItem] = []
-
+    
     @Published var swiftUIMapViewModel = SwiftUIMapViewModel()
     @Published var uiKitMapViewModel = UIKitMapViewModel()
+    
+    @Published var isShowingSwiftUiMap = true
+    @Published var showSearchResults: Bool = false
     
     var activeViewModel: any MapViewModelProtocol {
         isShowingSwiftUiMap ? swiftUIMapViewModel : uiKitMapViewModel
@@ -33,12 +35,12 @@ class MainMapViewModel: ObservableObject {
     }
     
     func clearSearchResults() {
-         self.searchResults = []
-         if isShowingSwiftUiMap {
-             swiftUIMapViewModel.searchResults = []
-         } else {
-             uiKitMapViewModel.searchResults = []
-         }
-     }
+        self.searchResults = []
+        if isShowingSwiftUiMap {
+            swiftUIMapViewModel.searchResults = []
+        } else {
+            uiKitMapViewModel.searchResults = []
+        }
+    }
     
 }

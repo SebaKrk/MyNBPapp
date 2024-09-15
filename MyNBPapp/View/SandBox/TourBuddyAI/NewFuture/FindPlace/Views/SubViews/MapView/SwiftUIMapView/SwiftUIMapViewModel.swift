@@ -22,7 +22,6 @@ class SwiftUIMapViewModel: ObservableObject, MapViewModelProtocol {
     @Published var search: String = ""
     @Published var searchResults: [MKMapItem] = []
     
-    
     init(position: MapCameraPosition = .userLocation(fallback: .automatic),
          mapSelection: MapSelection<MKMapItem>? = nil,
          searchResults: [MKMapItem] = [],
@@ -56,13 +55,4 @@ class SwiftUIMapViewModel: ObservableObject, MapViewModelProtocol {
         }
     }
     
-    var searchResultsCount: Int {
-        searchResults.count
-    }
-    
 }
-
-//@Published var position: MapCameraPosition = .userLocation(fallback: .automatic)
-//@Published var mapSelection: MapSelection<MKMapItem>?
-//@Published var searchResults: [MKMapItem] = []
-//@Published var showDetails: Bool = false
