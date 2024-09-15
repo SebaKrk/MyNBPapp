@@ -29,9 +29,7 @@ struct LocationDetailsView: View {
                             .padding(.trailing)
                     }
                 }
-                
                 Spacer()
-                
                 Button {
                     show.toggle()
                     mapSelection = nil

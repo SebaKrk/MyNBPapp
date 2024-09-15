@@ -97,8 +97,6 @@ struct FiltersPlaceView: View {
     }
 }
 
-
-
 #Preview {
     @Previewable @State var mockCategory: [MKPointOfInterestCategory] = [.museum, .restaurant, .cafe]
     @Previewable @State var category: MKPointOfInterestCategory? = .airport

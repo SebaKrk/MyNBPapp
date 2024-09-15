@@ -38,7 +38,6 @@ struct SearchResultsListView: View {
         }
     }
     
-    
     // MARK: - Body
     
     var body: some View {
@@ -434,37 +433,3 @@ struct SearchResultsListView: View {
                           numberOfItem: 2)
 }
 
-
-import MapKit
-
-// Rozszerzenie dla MKPointOfInterestCategory
-extension MKPointOfInterestCategory {
-    func displayName() -> String {
-        switch self {
-        case .amusementPark:
-            return "Park Rozrywki"
-        case .aquarium:
-            return "Akwarium"
-        case .museum:
-            return "Muzeum"
-        case .castle:
-            return "Zamek"
-        case .fortress:
-            return "Forteca"
-        case .landmark:
-            return "Miejsce Historyczne"
-        case .library:
-            return "Biblioteka"
-        case .nationalMonument:
-            return "Pomnik Narodowy"
-        case .planetarium:
-            return "Planetarium"
-        case .school:
-            return "Szkoła"
-        case .university:
-            return "Uniwersytet"
-        default:
-            return "Inne"
-        }
-    }
-}

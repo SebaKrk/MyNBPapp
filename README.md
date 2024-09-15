@@ -214,3 +214,4 @@ https://github.com/SebaKrk/MyNBPapp
     D: Cleanup project folders / Refactor
     - create Factories for different MapView
     - Create a MainViewModel to manage search results, handle user interactions, and coordinate data flow
+    - Create Singleton to manage CLLocationManager

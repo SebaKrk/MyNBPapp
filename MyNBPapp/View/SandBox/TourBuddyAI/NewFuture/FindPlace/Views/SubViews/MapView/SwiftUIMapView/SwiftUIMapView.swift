@@ -42,7 +42,7 @@ struct SwiftUIMapView: MapViewFactory, View {
         }
  
         .onAppear {
-            self.viewModel.manager.requestWhenInUseAuthorization()
+            self.viewModel.manager.requestAuthorization()
             self.viewModel.manager.startUpdatingLocation()
         }
         .mapControls {

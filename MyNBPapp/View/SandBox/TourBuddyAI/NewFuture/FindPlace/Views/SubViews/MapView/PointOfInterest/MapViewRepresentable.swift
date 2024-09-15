@@ -47,15 +47,13 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     class Coordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
         var parent: MapViewRepresentable
-        var locationManager: CLLocationManager
+        var locationManager = LocationManager.shared
         
         init(_ parent: MapViewRepresentable) {
             self.parent = parent
-            self.locationManager = CLLocationManager()
             super.init()
-            self.locationManager.delegate = self
-            self.locationManager.requestWhenInUseAuthorization()
-            self.locationManager.startUpdatingLocation()
+            locationManager.requestAuthorization()
+            locationManager.startUpdatingLocation()
         }
         
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

@@ -13,7 +13,7 @@ class SwiftUIMapViewModel: ObservableObject, MapViewModelProtocol {
     
     // MARK: - Properties
     
-    let manager = CLLocationManager()
+    let manager = LocationManager.shared
     
     @Published var position: MapCameraPosition
     @Published var mapSelection: MapSelection<MKMapItem>?

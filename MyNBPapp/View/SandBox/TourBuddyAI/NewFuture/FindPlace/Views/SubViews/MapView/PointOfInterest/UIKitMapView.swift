@@ -25,16 +25,3 @@ struct UIKitMapView: MapViewFactory, View {
     }
  
 }
-
-//class UIKitMapView: MapViewFactory {
-//    
-//    @ObservedObject var viewModel: UIKitMapViewModel
-//    
-//    init(viewModel: UIKitMapViewModel) {
-//        self.viewModel = viewModel
-//    }
-//    
-//    func createMap() -> some View {
-//        return MapViewRepresentable(viewModel: viewModel)
-//    }
-//}
