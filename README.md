@@ -215,4 +215,4 @@ https://github.com/SebaKrk/MyNBPapp
     - create Factories for different MapView
     - Create a MainViewModel to manage search results, handle user interactions, and coordinate data flow
     - Create Singleton to manage CLLocationManager
-    - Refactored SearchService 
+    - Refactored SearchService and add DocC documentation (testing)

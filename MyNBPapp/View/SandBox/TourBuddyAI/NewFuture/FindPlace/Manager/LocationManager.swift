@@ -30,7 +30,6 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) { }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-// MARK: - SearchServiceProtocol
+/// SearchServiceProtocol
 /// Protocol that defines the contract for any search service implementation.
 /// > Important:
 ///  **Program to an Interface, Not an Implementation** 
