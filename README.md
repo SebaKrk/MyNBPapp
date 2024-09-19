@@ -216,3 +216,5 @@ https://github.com/SebaKrk/MyNBPapp
     - Create a MainViewModel to manage search results, handle user interactions, and coordinate data flow
     - Create Singleton to manage CLLocationManager
     - Refactored SearchService and add DocC documentation (testing)
+    E: Create POI Buttons
+    
