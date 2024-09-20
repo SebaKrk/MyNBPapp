@@ -189,6 +189,9 @@
     "Fruits" : {
 
     },
+    "Generate Receipt" : {
+
+    },
     "Go to A → A → B" : {
 
     },
@@ -297,6 +300,9 @@
     "Open Contact Sheet" : {
 
     },
+    "Payment" : {
+      "comment" : "Payment Abstract Factory implementation"
+    },
     "Pick something form ths tabbar list." : {
       "localizations" : {
         "pl" : {
@@ -323,6 +329,12 @@
 
     },
     "Pokaż średni kurs" : {
+
+    },
+    "Process Payment" : {
+
+    },
+    "Proszę wybrać metodę płatności" : {
 
     },
     "Rates" : {
