@@ -8,27 +8,40 @@
 import SwiftUI
 
 struct PaymentView: View {
-        
-    let paymentFactory: PaymentFactory
-    let amount: Double
-                
+    
+    // MARK: - Properties
+    @ObservedObject var viewModel: PaymentViewModel
+ 
+    // MARK: - Lifecycle
+    
+    init(viewModel: PaymentViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    // MARK: - View
+    
     var body: some View {
         VStack {
-            Button {
-                let payment = paymentFactory.createPaymentProcessor()
-                payment.processPayment(amount: amount)
-            } label: {
-                Text("Process Payment")
-            }
-            
-            Button {
-                let receiptGenerator = paymentFactory.createReceiptGenerator()
-                let receipt = receiptGenerator.generateReceipt(transactionId: "123456789")
-                print(receipt)
-            } label: {
-                Text("Generate Receipt")
-            }
+            paymentButton
+            receiptButton
         }
     }
     
+    // MARK: - SubView
+    
+    private var paymentButton: some View {
+        Button {
+            viewModel.processPayment()
+        } label: {
+            Text("Process Payment")
+        }
+    }
+    
+    private var receiptButton: some View {
+        Button {
+            viewModel.generateReceipt(transactionId: "123456789")
+        } label: {
+            Text("Generate Receipt")
+        }
+    }
 }

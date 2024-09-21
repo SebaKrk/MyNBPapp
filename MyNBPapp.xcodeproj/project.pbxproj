@@ -415,6 +415,7 @@
 				PaymentSystem/PayPall/PayPalPaymentProcessor.swift,
 				PaymentSystem/PayPall/PayPalReceiptGenerator.swift,
 				View/PaymentView.swift,
+				ViewModel/PaymentViewModel.swift,
 			);
 			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
 		};

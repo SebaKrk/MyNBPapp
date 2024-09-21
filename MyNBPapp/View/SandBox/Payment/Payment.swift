@@ -9,12 +9,19 @@ import SwiftUI
 
 struct Payment: View {
     
+    // MARK: - Properties
+    
     @State private var selectedPaymentMethod: PaymentMethod?
+    
+    // MARK: - View
     
     var body: some View {
         VStack {
             if let method = selectedPaymentMethod {
-                PaymentView(paymentFactory: selectedFactory(for: method), amount: 234)
+                let paymentFactory = selectedFactory(for: method)
+                let viewModel = PaymentViewModel(paymentFactory,
+                                                 amount: 100)
+                PaymentView(viewModel: viewModel)
             } else {
                 Text("Proszę wybrać metodę płatności")
                     .foregroundColor(.red)
@@ -26,14 +33,7 @@ struct Payment: View {
         }
     }
     
-    private func selectedFactory(for method: PaymentMethod) -> PaymentFactory {
-        switch method {
-        case .paypal:
-            return PayPalFactory()
-        case .applePay:
-            return ApplePayFactory()
-        }
-    }
+    // MARK: - SubViews
     
     @ToolbarContentBuilder
     private var toolBarButton: some ToolbarContent {
@@ -61,5 +61,17 @@ struct Payment: View {
             }
         }
     }
+    
+    // MARK: - Methods
+    
+    private func selectedFactory(for method: PaymentMethod) -> PaymentFactory {
+        switch method {
+        case .paypal:
+            return PayPalFactory()
+        case .applePay:
+            return ApplePayFactory()
+        }
+    }
+    
     
 }
