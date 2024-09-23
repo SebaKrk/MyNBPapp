@@ -33,18 +33,6 @@ struct PaymentView: View {
                     .cornerRadius(8)
             }
             .padding()
-
-//            if let receipt = viewModel.receipt {
-//                VStack(alignment: .leading) {
-//                    Text("Rachunek:")
-//                        .font(.headline)
-//                    Text("Kwota: \(receipt.amount, specifier: "%.2f") zł")
-//                    Text("Data: \(receipt.date, formatter: dateFormatter)")
-//                    Text("ID transakcji: \(receipt.transactionId)")
-//                }
-//                .padding()
-//                .foregroundColor(.green)
-//            }
             
             if let error = viewModel.paymentError {
                 Text("Błąd płatności: \(error.localizedDescription)")
