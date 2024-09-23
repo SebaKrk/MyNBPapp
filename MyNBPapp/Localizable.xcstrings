@@ -91,6 +91,9 @@
     "Average rate" : {
 
     },
+    "Błąd płatności: %@" : {
+
+    },
     "brak danych" : {
 
     },
@@ -126,6 +129,9 @@
 
     },
     "currency rate picker" : {
+
+    },
+    "Data: %@" : {
 
     },
     "date" : {
@@ -204,10 +210,22 @@
     "Go to ScreenContact" : {
 
     },
+    "ID transakcji: %@" : {
+
+    },
     "Jeszcze tu nic nie ma" : {
 
     },
     "kurs:" : {
+
+    },
+    "Kwota" : {
+
+    },
+    "Kwota do zapłaty: %.2f zł" : {
+
+    },
+    "Kwota: %.2f zł" : {
 
     },
     "Main" : {
@@ -297,6 +315,9 @@
     "Open Contact Sheet" : {
 
     },
+    "Payment" : {
+      "comment" : "Payment Abstract Factory implementation"
+    },
     "Pick something form ths tabbar list." : {
       "localizations" : {
         "pl" : {
@@ -323,6 +344,12 @@
 
     },
     "Pokaż średni kurs" : {
+
+    },
+    "Proszę wybrać metodę płatności" : {
+
+    },
+    "Rachunek:" : {
 
     },
     "Rates" : {
@@ -439,6 +466,9 @@
 
     },
     "Znajdź miejsce..." : {
+
+    },
+    "Zrealizuj płatność" : {
 
     }
   },

@@ -218,3 +218,7 @@ https://github.com/SebaKrk/MyNBPapp
     - Refactored SearchService and add DocC documentation (testing)
     E: Create POI Buttons
     
+### IOS-0027 Paymnet, #CreationalPatterns
+    A: Create paymnet service
+    - Used Abstract Factory
+
