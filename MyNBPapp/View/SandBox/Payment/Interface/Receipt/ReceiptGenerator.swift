@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ReceiptGenerator {
-    func generateReceipt(transactionId: String) -> String
+    func generateReceipt(transactionId: String, amount: Double, date: Date) -> Receipt
 }
 

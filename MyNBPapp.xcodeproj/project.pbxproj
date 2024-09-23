@@ -407,6 +407,7 @@
 				Interface/Payment/PaymentProcessor.swift,
 				Interface/Receipt/ReceiptGenerator.swift,
 				Model/PaymentMethod.swift,
+				Model/Receipt.swift,
 				Payment.swift,
 				PaymentSystem/ApplePay/ApplePayPaymentProcessor.swift,
 				PaymentSystem/ApplePay/ApplePayReceiptGenerator.swift,
@@ -414,6 +415,9 @@
 				PaymentSystem/PayPall/Factorie/PayPalFactory.swift,
 				PaymentSystem/PayPall/PayPalPaymentProcessor.swift,
 				PaymentSystem/PayPall/PayPalReceiptGenerator.swift,
+				Service/PaymentError.swift,
+				Service/PaymentService.swift,
+				Service/PaymentServiceProtocol.swift,
 				View/PaymentView.swift,
 				ViewModel/PaymentViewModel.swift,
 			);

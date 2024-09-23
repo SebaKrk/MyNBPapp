@@ -9,39 +9,75 @@ import SwiftUI
 
 struct PaymentView: View {
     
-    // MARK: - Properties
     @ObservedObject var viewModel: PaymentViewModel
- 
-    // MARK: - Lifecycle
-    
-    init(viewModel: PaymentViewModel) {
-        self.viewModel = viewModel
-    }
-    
-    // MARK: - View
     
     var body: some View {
         VStack {
-            paymentButton
-            receiptButton
+            Text("Kwota do zapłaty: \(viewModel.receipt?.amount ?? 0, specifier: "%.2f") zł")
+                .font(.footnote)
+                .padding()
+            TextField("Kwota", text: $viewModel.inputAmount)
+                        .keyboardType(.decimalPad)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+            Button {
+                if let amount = Double(viewModel.inputAmount) {
+                    processPayment(amount)
+                }
+            } label: {
+                Text("Zrealizuj płatność")
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+            .padding()
+
+//            if let receipt = viewModel.receipt {
+//                VStack(alignment: .leading) {
+//                    Text("Rachunek:")
+//                        .font(.headline)
+//                    Text("Kwota: \(receipt.amount, specifier: "%.2f") zł")
+//                    Text("Data: \(receipt.date, formatter: dateFormatter)")
+//                    Text("ID transakcji: \(receipt.transactionId)")
+//                }
+//                .padding()
+//                .foregroundColor(.green)
+//            }
+            
+            if let error = viewModel.paymentError {
+                Text("Błąd płatności: \(error.localizedDescription)")
+                    .foregroundColor(.red)
+                    .padding()
+            }
+        }
+        .sheet(isPresented: $viewModel.showReceipt) {
+              if let receipt = viewModel.receipt {
+                  VStack(alignment: .leading) {
+                      Text("Rachunek:")
+                          .font(.headline)
+                      Text("Kwota: \(receipt.amount, specifier: "%.2f") zł")
+                      Text("Data: \(receipt.date, formatter: dateFormatter)")
+                      Text("ID transakcji: \(receipt.transactionId)")
+                  }
+                  .padding()
+                  .foregroundColor(.green)
+              }
+          }
+        .padding()
+    }
+    
+    private func processPayment(_ amount: Double) {
+        Task {
+            await viewModel.processPayment(amount: amount)
         }
     }
     
-    // MARK: - SubView
-    
-    private var paymentButton: some View {
-        Button {
-            viewModel.processPayment()
-        } label: {
-            Text("Process Payment")
-        }
-    }
-    
-    private var receiptButton: some View {
-        Button {
-            viewModel.generateReceipt(transactionId: "123456789")
-        } label: {
-            Text("Generate Receipt")
-        }
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
     }
 }

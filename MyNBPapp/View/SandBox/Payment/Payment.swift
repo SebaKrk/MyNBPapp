@@ -19,8 +19,8 @@ struct Payment: View {
         VStack {
             if let method = selectedPaymentMethod {
                 let paymentFactory = selectedFactory(for: method)
-                let viewModel = PaymentViewModel(paymentFactory,
-                                                 amount: 100)
+                let paymentService = PaymentService(factory: paymentFactory)
+                let viewModel = PaymentViewModel(paymentService: paymentService)
                 PaymentView(viewModel: viewModel)
             } else {
                 Text("Proszę wybrać metodę płatności")
@@ -72,6 +72,4 @@ struct Payment: View {
             return ApplePayFactory()
         }
     }
-    
-    
 }

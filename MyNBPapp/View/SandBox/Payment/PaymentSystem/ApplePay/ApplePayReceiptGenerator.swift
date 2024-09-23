@@ -9,8 +9,11 @@ import Foundation
 
 struct ApplePayReceiptGenerator: ReceiptGenerator {
     
-    func generateReceipt(transactionId: String) -> String {
-        "ApplePay receipt for transaction: \(transactionId)"
+    func generateReceipt(transactionId: String, amount: Double, date: Date) -> Receipt {
+        return Receipt(amount: amount,
+                       date: date,
+                       transactionId: transactionId,
+                       note:  "ApplePay receipt for transaction: \(transactionId)")
     }
     
 }

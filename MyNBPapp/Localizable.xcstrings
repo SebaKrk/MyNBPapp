@@ -91,6 +91,9 @@
     "Average rate" : {
 
     },
+    "Błąd płatności: %@" : {
+
+    },
     "brak danych" : {
 
     },
@@ -126,6 +129,9 @@
 
     },
     "currency rate picker" : {
+
+    },
+    "Data: %@" : {
 
     },
     "date" : {
@@ -189,9 +195,6 @@
     "Fruits" : {
 
     },
-    "Generate Receipt" : {
-
-    },
     "Go to A → A → B" : {
 
     },
@@ -207,10 +210,22 @@
     "Go to ScreenContact" : {
 
     },
+    "ID transakcji: %@" : {
+
+    },
     "Jeszcze tu nic nie ma" : {
 
     },
     "kurs:" : {
+
+    },
+    "Kwota" : {
+
+    },
+    "Kwota do zapłaty: %.2f zł" : {
+
+    },
+    "Kwota: %.2f zł" : {
 
     },
     "Main" : {
@@ -331,10 +346,10 @@
     "Pokaż średni kurs" : {
 
     },
-    "Process Payment" : {
+    "Proszę wybrać metodę płatności" : {
 
     },
-    "Proszę wybrać metodę płatności" : {
+    "Rachunek:" : {
 
     },
     "Rates" : {
@@ -451,6 +466,9 @@
 
     },
     "Znajdź miejsce..." : {
+
+    },
+    "Zrealizuj płatność" : {
 
     }
   },

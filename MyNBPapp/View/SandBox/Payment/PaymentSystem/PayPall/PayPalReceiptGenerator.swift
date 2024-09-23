@@ -9,8 +9,13 @@ import Foundation
 
 struct PayPalReceiptGenerator: ReceiptGenerator {
     
-    func generateReceipt(transactionId: String) -> String {
-        "PayPal receipt for transaction: \(transactionId)"
+    func generateReceipt(transactionId: String, amount: Double, date: Date) -> Receipt {
+        return Receipt(amount: amount,
+                       date: date,
+                       transactionId: transactionId,
+                       note:   "PayPal receipt for transaction: \(transactionId)")
+                       
     }
     
 }
+

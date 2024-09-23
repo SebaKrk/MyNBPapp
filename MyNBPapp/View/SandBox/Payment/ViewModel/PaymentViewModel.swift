@@ -9,29 +9,28 @@ import SwiftUI
 
 class PaymentViewModel: ObservableObject {
     
-    // MARK: - Properties
+    let paymentService: PaymentServiceProtocol
     
-    let paymentFactory: PaymentFactory
-    @State var amount: Double = 0
+    @Published var inputAmount: String = ""
+    @Published var receipt: Receipt?
+    @Published var paymentError: Error?
     
-    // MARK: - Lifecycle
+    @Published var showReceipt: Bool = false
     
-    init(_ paymentFactory: PaymentFactory, amount: Double) {
-        self.paymentFactory = paymentFactory
-        self.amount = amount
+    init(paymentService: PaymentServiceProtocol) {
+        self.paymentService = paymentService
     }
     
-    // MARK: - Methods
-    
-    func processPayment() {
-        let payment = paymentFactory.createPaymentProcessor()
-        payment.processPayment(amount: amount)
+    @MainActor
+    func processPayment(amount: Double) async {
+        do {
+            let receipt = try await paymentService.processPayment(amount: amount)
+            self.receipt = receipt
+            self.showReceipt = true
+        } catch {
+            self.paymentError = error
+            self.showReceipt = false
+        }
     }
     
-    func generateReceipt(transactionId: String) {
-        let receiptGenerator = paymentFactory.createReceiptGenerator()
-        let receipt = receiptGenerator.generateReceipt(transactionId: transactionId)
-        print(receipt)
-    }
-        
 }

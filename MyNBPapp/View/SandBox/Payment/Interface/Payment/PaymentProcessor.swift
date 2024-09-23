@@ -10,3 +10,4 @@ import Foundation
 protocol PaymentProcessor {
     func processPayment(amount: Double)
 }
+
