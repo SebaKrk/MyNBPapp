@@ -9,7 +9,7 @@ import MapKit
 
 struct MapViewRepresentable: UIViewRepresentable {
     
-    typealias UIViewType = MKMapView
+//    typealias UIViewType = MKMapView
     
     @ObservedObject var viewModel: UIKitMapViewModel
     
@@ -70,4 +70,5 @@ struct MapViewRepresentable: UIViewRepresentable {
             mapView.setRegion(region, animated: animated)
         }
     }
+    
 }

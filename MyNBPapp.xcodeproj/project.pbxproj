@@ -400,10 +400,35 @@
 			);
 			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
 		};
+		9383B5E02C9DD04500B88527 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Interface/Factories/PaymentFactory.swift,
+				Interface/Payment/PaymentProcessor.swift,
+				Interface/Receipt/ReceiptGenerator.swift,
+				Model/PaymentMethod.swift,
+				Model/Receipt.swift,
+				Payment.swift,
+				PaymentSystem/ApplePay/ApplePayPaymentProcessor.swift,
+				PaymentSystem/ApplePay/ApplePayReceiptGenerator.swift,
+				PaymentSystem/ApplePay/Factories/ApplePayFactory.swift,
+				PaymentSystem/PayPall/Factorie/PayPalFactory.swift,
+				PaymentSystem/PayPall/PayPalPaymentProcessor.swift,
+				PaymentSystem/PayPall/PayPalReceiptGenerator.swift,
+				Service/PaymentError.swift,
+				Service/PaymentService.swift,
+				Service/PaymentServiceProtocol.swift,
+				View/PaymentView.swift,
+				ViewModel/PaymentViewModel.swift,
+			);
+			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		931561992C54BCFB007DD554 /* TourBuddyAI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TourBuddyAI; sourceTree = "<group>"; };
+		937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SandBoxTCA; sourceTree = "<group>"; };
+		9383B5DD2C9DCFE100B88527 /* Payment */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9383B5E02C9DD04500B88527 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Payment; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -557,6 +582,7 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
+				9383B5DD2C9DCFE100B88527 /* Payment */,
 				931561992C54BCFB007DD554 /* TourBuddyAI */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,
@@ -845,6 +871,7 @@
 		939BD5ED2C10F7780063D761 /* TCA */ = {
 			isa = PBXGroup;
 			children = (
+				937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */,
 				93CF41CB2C09D58A006263F0 /* Root */,
 				932FFF012C09B3F6008FC828 /* ScreenA.swift */,
 				932FFF052C09B6E7008FC828 /* ScreenB.swift */,
@@ -1253,6 +1280,9 @@
 				936775102B7007A600816C92 /* PBXTargetDependency */,
 				93834AD82B7A004B00A5744C /* PBXTargetDependency */,
 				93A5FFB52BD8076B00D9696B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */,
 			);
 			name = MyNBPapp;
 			packageProductDependencies = (
@@ -1937,7 +1967,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1970,7 +2000,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
