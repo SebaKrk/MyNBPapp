@@ -16,6 +16,8 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case account
     case sandBox
     case coreData
+    case chatGPT
+    case payment
     
     var id: AppScreen { self }
     
@@ -43,6 +45,11 @@ extension AppScreen {
                        systemImage: "shippingbox")
         case .coreData:
             Label(String(localized: "CoreData", comment: "The `CoreData` tab in the application is my testing area for CoreData "), systemImage: "archivebox.fill")
+        
+        case .chatGPT:
+            Label(String(localized: "ChatGPT", comment: "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"), systemImage: "message")
+        case .payment:
+            Label(String(localized: "Payment", comment: "Payment Abstract Factory implementation"), systemImage: "creditcard")
         }
     }
     
@@ -50,9 +57,14 @@ extension AppScreen {
     var destination: some View {
         switch self {
         case .main:
-            MainView()  
+            MainView()
         case .rate:
-            CurrencyRateView()
+            // CurrencyRateView()
+            // RootView(store: Store(initialState: RootFeature.State(),
+            //                 reducer: { RootFeature() }))
+            
+            RootViewTCA(store: Store(initialState: RootFeatureTCA.State(),
+                             reducer: { RootFeatureTCA() }))
         case .favorites:
             FavoritesView()
         case .account:
@@ -63,6 +75,14 @@ extension AppScreen {
                              reducer: { RootFeature() }))
         case .coreData:
             CoreDataBootCamp()
+            
+        case .chatGPT:
+//            MapView()
+//            let viewModel = ChatViewModel()
+//            ChatView(viewModel: viewModel)
+            SandBoxMapView()
+        case .payment:
+            Payment()
         }
     }
     
@@ -74,3 +94,4 @@ extension AppScreen {
 
 //TestView(store: Store(initialState: TestFeature.State(),
 //                      reducer: { TestFeature() }))
+

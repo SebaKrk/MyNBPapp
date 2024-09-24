@@ -16,6 +16,16 @@
     "%@" : {
 
     },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "%@ %%" : {
 
     },
@@ -32,7 +42,13 @@
     "%lld" : {
 
     },
+    "%lld znaleziono" : {
+
+    },
     "1 Euro" : {
+
+    },
+    "10:00-20:00" : {
 
     },
     "Account" : {
@@ -49,6 +65,20 @@
     "Account View" : {
 
     },
+    "An unknown error occurred. Please try again." : {
+      "comment" : "Unknown Error",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wystąpił nieznany błąd. Spróbuj ponownie."
+          }
+        }
+      }
+    },
+    "Anuluj" : {
+
+    },
     "Are you sure?" : {
 
     },
@@ -59,6 +89,9 @@
 
     },
     "Average rate" : {
+
+    },
+    "Błąd płatności: %@" : {
 
     },
     "brak danych" : {
@@ -77,6 +110,9 @@
         }
       }
     },
+    "ChatGPT" : {
+      "comment" : "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"
+    },
     "Chcę" : {
 
     },
@@ -93,6 +129,9 @@
 
     },
     "currency rate picker" : {
+
+    },
+    "Data: %@" : {
 
     },
     "date" : {
@@ -117,8 +156,21 @@
     "Dostanę" : {
 
     },
+    "Enter a message..." : {
+
+    },
     "Enter favorite name" : {
 
+    },
+    "Error search" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Błąd wyszukiwania"
+          }
+        }
+      }
     },
     "Favorites" : {
       "comment" : "The Favorites Tab - rates that have been added to favorites",
@@ -137,6 +189,15 @@
     "FavoritesView" : {
 
     },
+    "Filtry" : {
+
+    },
+    "Fruits" : {
+
+    },
+    "Go to A → A → A" : {
+
+    },
     "Go to A → A → B" : {
 
     },
@@ -152,10 +213,22 @@
     "Go to ScreenContact" : {
 
     },
+    "ID transakcji: %@" : {
+
+    },
     "Jeszcze tu nic nie ma" : {
 
     },
     "kurs:" : {
+
+    },
+    "Kwota" : {
+
+    },
+    "Kwota do zapłaty: %.2f zł" : {
+
+    },
+    "Kwota: %.2f zł" : {
 
     },
     "Main" : {
@@ -175,13 +248,22 @@
         }
       }
     },
+    "Me" : {
+
+    },
     "mid" : {
 
     },
     "Mid" : {
 
     },
+    "monument" : {
+
+    },
     "Nacisnij przycisk zeby cos doddac" : {
+
+    },
+    "Najlepsze dopasowanie" : {
 
     },
     "name" : {
@@ -213,8 +295,31 @@
         }
       }
     },
+    "No preview available" : {
+
+    },
+    "No results were found for your query." : {
+      "comment" : "No Results",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie znaleziono wyników dla Twojego zapytania."
+          }
+        }
+      }
+    },
+    "Odległość" : {
+
+    },
+    "OK" : {
+
+    },
     "Open Contact Sheet" : {
 
+    },
+    "Payment" : {
+      "comment" : "Payment Abstract Factory implementation"
     },
     "Pick something form ths tabbar list." : {
       "localizations" : {
@@ -244,6 +349,15 @@
     "Pokaż średni kurs" : {
 
     },
+    "pop to root" : {
+
+    },
+    "Proszę wybrać metodę płatności" : {
+
+    },
+    "Rachunek:" : {
+
+    },
     "Rates" : {
       "comment" : "The Exchange Rate Tab displays selected currency exchange rate charts.",
       "localizations" : {
@@ -264,6 +378,9 @@
     "Sandbox" : {
       "comment" : "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."
     },
+    "SandBox screen A" : {
+
+    },
     "Save" : {
 
     },
@@ -274,6 +391,12 @@
 
     },
     "Screen C" : {
+
+    },
+    "Search for ..." : {
+
+    },
+    "Search for a restaurant" : {
 
     },
     "select a tab" : {
@@ -302,13 +425,59 @@
     "SettingsView" : {
 
     },
+    "Sortuj" : {
+
+    },
+    "The request failed due to: %@." : {
+      "comment" : "Request Failed",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Żądanie nie powiodło się z powodu: %@"
+          }
+        }
+      }
+    },
+    "The search query is empty. Please provide a query." : {
+      "comment" : "Empty Query",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapytanie wyszukiwania jest puste. Wpisz tekst."
+          }
+        }
+      }
+    },
     "Ukryj symbol" : {
 
     },
     "value" : {
 
     },
+    "Wawel" : {
+
+    },
     "Wpisz liczbę do przekonwertowania" : {
+
+    },
+    "Wszystkie rodzaje" : {
+
+    },
+    "xxx" : {
+
+    },
+    "zamkniete" : {
+
+    },
+    "Zastosuj" : {
+
+    },
+    "Znajdź miejsce..." : {
+
+    },
+    "Zrealizuj płatność" : {
 
     }
   },

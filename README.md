@@ -183,3 +183,43 @@ https://github.com/SebaKrk/MyNBPapp
     - https://www.youtube.com/watch?v=BPQkpxtgalY
     D: Sandbox CoreData cz.2
     - https://www.youtube.com/watch?v=huRKU-TAD3g
+    E: Testing Navigation TCA
+
+### IOS-0024 ChatGPT 
+    A: SandBox - ChatGPT
+    B: Testing 
+    - create new network call 
+    - cleanup the code
+    - testing MapKit
+    C: SandBox&Upgrade
+    - Upgrade Xcode Beta 16.1
+    - Upgrade TCA 1.13
+    - SandBox MapKit
+    D: PointOfInterest
+    - UIViewRepresentable MKMapView - Map(SwiftUI)
+    - Map MKMapItem to MKPlacemark and show on MapView
+    - Add a button to toggle between maps
+    
+### IOS-0025 GitIgnore
+    - add git ignore file
+
+### IOS-0026 MapView SwiftUI
+    A: Create a list displaying places
+    - implement MapSelection<MKMapItem>?
+    - SearchResultsListView - create new cell
+    B: Add filters options
+    - sort by distance
+    C: Add filters by category
+    - pass category data to FiltersPlaceView
+    - handle selected category
+    D: Cleanup project folders / Refactor
+    - create Factories for different MapView
+    - Create a MainViewModel to manage search results, handle user interactions, and coordinate data flow
+    - Create Singleton to manage CLLocationManager
+    - Refactored SearchService and add DocC documentation (testing)
+    E: Create POI Buttons
+    
+### IOS-0027 Paymnet, #CreationalPatterns
+    A: Create paymnet service
+    - Used Abstract Factory
+
