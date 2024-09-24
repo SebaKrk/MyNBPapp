@@ -12,7 +12,7 @@ class UIKitMapViewModel: ObservableObject, MapViewModelProtocol {
     
     // MARK: - Properties
     
-    @Published var pointOfInterestCategories: [MKPointOfInterestCategory] = [.museum, .castle]
+    @Published var pointOfInterestCategories: [MKPointOfInterestCategory] = [.amusementPark, .aquarium, .castle, .museum]
     @Published var search: String = ""
     @Published var searchResults: [MKMapItem] = []
     

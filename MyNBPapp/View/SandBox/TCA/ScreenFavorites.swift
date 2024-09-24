@@ -41,10 +41,12 @@ struct FavoritesScreenView: View {
     let store: StoreOf<ScreenFavorites>
     
     var body: some View {
-        Text("FavoritesScreenView")
-            .toolbar {
-                toolbarButton
-            }
+        NavigationStack {
+            Text("FavoritesScreenView")
+                .toolbar {
+                    toolbarButton
+                }
+        }
     }
     
     @ToolbarContentBuilder

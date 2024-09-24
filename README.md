@@ -183,6 +183,7 @@ https://github.com/SebaKrk/MyNBPapp
     - https://www.youtube.com/watch?v=BPQkpxtgalY
     D: Sandbox CoreData cz.2
     - https://www.youtube.com/watch?v=huRKU-TAD3g
+    E: Testing Navigation TCA
 
 ### IOS-0024 ChatGPT 
     A: SandBox - ChatGPT
@@ -215,4 +216,10 @@ https://github.com/SebaKrk/MyNBPapp
     - create Factories for different MapView
     - Create a MainViewModel to manage search results, handle user interactions, and coordinate data flow
     - Create Singleton to manage CLLocationManager
-    - Refactored SearchService 
+    - Refactored SearchService and add DocC documentation (testing)
+    E: Create POI Buttons
+    
+### IOS-0027 Paymnet, #CreationalPatterns
+    A: Create paymnet service
+    - Used Abstract Factory
+
