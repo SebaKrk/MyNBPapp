@@ -427,6 +427,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		931561992C54BCFB007DD554 /* TourBuddyAI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TourBuddyAI; sourceTree = "<group>"; };
+		937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SandBoxTCA; sourceTree = "<group>"; };
 		9383B5DD2C9DCFE100B88527 /* Payment */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9383B5E02C9DD04500B88527 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Payment; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -870,6 +871,7 @@
 		939BD5ED2C10F7780063D761 /* TCA */ = {
 			isa = PBXGroup;
 			children = (
+				937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */,
 				93CF41CB2C09D58A006263F0 /* Root */,
 				932FFF012C09B3F6008FC828 /* ScreenA.swift */,
 				932FFF052C09B6E7008FC828 /* ScreenB.swift */,
@@ -1278,6 +1280,9 @@
 				936775102B7007A600816C92 /* PBXTargetDependency */,
 				93834AD82B7A004B00A5744C /* PBXTargetDependency */,
 				93A5FFB52BD8076B00D9696B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */,
 			);
 			name = MyNBPapp;
 			packageProductDependencies = (

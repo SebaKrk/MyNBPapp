@@ -57,9 +57,14 @@ extension AppScreen {
     var destination: some View {
         switch self {
         case .main:
-            MainView()  
+            MainView()
         case .rate:
-            CurrencyRateView()
+            // CurrencyRateView()
+            // RootView(store: Store(initialState: RootFeature.State(),
+            //                 reducer: { RootFeature() }))
+            
+            RootViewTCA(store: Store(initialState: RootFeatureTCA.State(),
+                             reducer: { RootFeatureTCA() }))
         case .favorites:
             FavoritesView()
         case .account:
