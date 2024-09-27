@@ -400,7 +400,7 @@
 			);
 			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
 		};
-		9383B5E02C9DD04500B88527 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		932B21CF2CA68E960053B87E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Interface/Factories/PaymentFactory.swift,
@@ -418,6 +418,9 @@
 				Service/PaymentError.swift,
 				Service/PaymentService.swift,
 				Service/PaymentServiceProtocol.swift,
+				SubView/Brige/Colors.swift,
+				SubView/Brige/PaymentActionButton.swift,
+				SubView/Brige/ShapeColor.swift,
 				View/PaymentView.swift,
 				ViewModel/PaymentViewModel.swift,
 			);
@@ -582,7 +585,7 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
-				9383B5DD2C9DCFE100B88527 /* Payment */,
+				932B21BD2CA68E960053B87E /* Payment */,
 				931561992C54BCFB007DD554 /* TourBuddyAI */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,

@@ -9,35 +9,23 @@ import SwiftUI
 
 struct PaymentView: View {
     
+    // MARK: - Properties
+    
     @ObservedObject var viewModel: PaymentViewModel
+    
+    // MARK: - View
     
     var body: some View {
         VStack {
-            Text("Kwota do zapłaty: \(viewModel.receipt?.amount ?? 0, specifier: "%.2f") zł")
-                .font(.footnote)
-                .padding()
-            TextField("Kwota", text: $viewModel.inputAmount)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-            Button {
-                if let amount = Double(viewModel.inputAmount) {
-                    processPayment(amount)
-                }
-            } label: {
-                Text("Zrealizuj płatność")
-                    .font(.headline)
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-            }
-            .padding()
-            
-            if let error = viewModel.paymentError {
-                Text("Błąd płatności: \(error.localizedDescription)")
-                    .foregroundColor(.red)
-                    .padding()
+            switch viewModel.paymentState {
+            case .selection:
+                selectionView
+            case .processing:
+                processingView
+            case .success:
+                successView
+            case .failed:
+                failedView
             }
         }
         .sheet(isPresented: $viewModel.showReceipt) {
@@ -46,7 +34,7 @@ struct PaymentView: View {
                       Text("Rachunek:")
                           .font(.headline)
                       Text("Kwota: \(receipt.amount, specifier: "%.2f") zł")
-                      Text("Data: \(receipt.date, formatter: dateFormatter)")
+                      Text("Data: \(receipt.date, formatter: viewModel.dateFormatter)")
                       Text("ID transakcji: \(receipt.transactionId)")
                   }
                   .padding()
@@ -56,16 +44,66 @@ struct PaymentView: View {
         .padding()
     }
     
+    // MARK: - SubView
+    
+    private var selectionView: some View {
+        VStack {
+            Text("Kwota do zapłaty: \(viewModel.receipt?.amount ?? 0, specifier: "%.2f") zł")
+                .font(.footnote)
+                .padding()
+            
+            TextField("Kwota", text: $viewModel.inputAmount)
+                .keyboardType(.decimalPad)
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            PaymentActionButton(title: "Zrealizuj płatność",
+                                color: BlueColor()) {
+                if let amount = Double(viewModel.inputAmount) {
+                    processPayment(amount)
+                }
+            }
+            .padding()
+        }
+    }
+    
+    private var processingView: some View {
+        ProgressView("Przetwarzanie płatności...")
+    }
+    
+    private var successView: some View {
+        VStack {
+            Text("Płatność zakończona sukcesem!")
+                .font(.headline)
+                .foregroundColor(.green)
+                .padding()
+            PaymentActionButton(title: "Pokaż Rachunek",
+                                color: GreenColor()) {
+                viewModel.showReceipt = true
+            }
+            .padding()
+        }
+    }
+    
+    private var failedView: some View {
+        VStack {
+            if let error = viewModel.paymentError {
+                Text("Błąd płatności: \(error.localizedDescription)")
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            PaymentActionButton(title: "Spróbuj onownie",
+                                color: RedColor()) {
+                viewModel.retryPayment()
+            }
+            .padding()
+        }
+    }
+    // MARK: - Methods
+    
     private func processPayment(_ amount: Double) {
         Task {
             await viewModel.processPayment(amount: amount)
         }
     }
     
-    private var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter
-    }
 }
