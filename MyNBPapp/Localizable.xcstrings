@@ -195,6 +195,9 @@
     "Fruits" : {
 
     },
+    "Go to A → A → A" : {
+
+    },
     "Go to A → A → B" : {
 
     },
@@ -352,6 +355,9 @@
     "Pokaż średni kurs" : {
 
     },
+    "pop to root" : {
+
+    },
     "Proszę wybrać metodę płatności" : {
 
     },
@@ -380,6 +386,9 @@
     },
     "Sandbox" : {
       "comment" : "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."
+    },
+    "SandBox screen A" : {
+
     },
     "Save" : {
 

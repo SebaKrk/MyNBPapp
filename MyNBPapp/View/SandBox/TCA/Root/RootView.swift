@@ -42,11 +42,9 @@ struct RootView: View {
                 }
             }
             .sheet(
-                item: $store.scope(state: \.destination?.openScreenFavorites, action: \.destination.openScreenFavorites)
+                item: $store.scope(state: \.destination?.openScreenFavorites, action:  \.destination.openScreenFavorites)
             ) { store in
-                NavigationStack {
                     FavoritesScreenView(store: store)
-                }
             }
             .navigationTitle("Root")
             .toolbar {
