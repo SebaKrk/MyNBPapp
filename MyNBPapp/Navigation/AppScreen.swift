@@ -18,6 +18,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case coreData
     case chatGPT
     case payment
+    case map
     
     var id: AppScreen { self }
     
@@ -50,6 +51,8 @@ extension AppScreen {
             Label(String(localized: "ChatGPT", comment: "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"), systemImage: "message")
         case .payment:
             Label(String(localized: "Payment", comment: "Payment Abstract Factory implementation"), systemImage: "creditcard")
+        case .map:
+            Label(String(localized: "Map", comment: "map"), systemImage: "map")
         }
     }
     
@@ -77,17 +80,19 @@ extension AppScreen {
             CoreDataBootCamp()
             
         case .chatGPT:
-//            MapView()
-//            let viewModel = ChatViewModel()
-//            ChatView(viewModel: viewModel)
-            SandBoxMapView()
+            let viewModel = ChatViewModel()
+            ChatView(viewModel: viewModel)
         case .payment:
             Payment()
+        case .map:
+            SandBoxMapView()
         }
     }
     
 }
 
+//SandBoxMapView()
+//MapView()
 
 //            ContactsView(store: Store(initialState: ContactsFeature.State(),
 //                                      reducer: { ContactsFeature() }))

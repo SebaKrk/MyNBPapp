@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -91,6 +91,68 @@
 		93834AEF2B7A04DF00A5744C /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */; };
 		93834AF22B7A056A00A5744C /* ExchangeRateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */; };
 		938C18A12B9A641000D92D50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938C18A02B9A641000D92D50 /* MainView.swift */; };
+		939B08362CA711BD00B78F82 /* RootViewTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08342CA711BD00B78F82 /* RootViewTCA.swift */; };
+		939B08372CA711BD00B78F82 /* SandBoxA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08352CA711BD00B78F82 /* SandBoxA.swift */; };
+		939B08A82CA712C800B78F82 /* PaymentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08A72CA712C800B78F82 /* PaymentFactory.swift */; };
+		939B08AB2CA712EE00B78F82 /* PaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08AA2CA712EE00B78F82 /* PaymentProcessor.swift */; };
+		939B08AD2CA7130500B78F82 /* ReceiptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08AC2CA7130500B78F82 /* ReceiptGenerator.swift */; };
+		939B08B22CA7133800B78F82 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08B02CA7133800B78F82 /* Receipt.swift */; };
+		939B08B32CA7133800B78F82 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08AF2CA7133800B78F82 /* PaymentMethod.swift */; };
+		939B08B52CA7134800B78F82 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08B42CA7134800B78F82 /* Payment.swift */; };
+		939B08C12CA7134F00B78F82 /* PayPalReceiptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08BE2CA7134F00B78F82 /* PayPalReceiptGenerator.swift */; };
+		939B08C22CA7134F00B78F82 /* PayPalPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08BD2CA7134F00B78F82 /* PayPalPaymentProcessor.swift */; };
+		939B08C32CA7134F00B78F82 /* ApplePayPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08B82CA7134F00B78F82 /* ApplePayPaymentProcessor.swift */; };
+		939B08C42CA7134F00B78F82 /* ApplePayReceiptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08B92CA7134F00B78F82 /* ApplePayReceiptGenerator.swift */; };
+		939B08C52CA7134F00B78F82 /* ApplePayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08B62CA7134F00B78F82 /* ApplePayFactory.swift */; };
+		939B08C62CA7134F00B78F82 /* PayPalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08BB2CA7134F00B78F82 /* PayPalFactory.swift */; };
+		939B08CB2CA7135500B78F82 /* PaymentServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08C92CA7135500B78F82 /* PaymentServiceProtocol.swift */; };
+		939B08CC2CA7135500B78F82 /* PaymentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08C72CA7135500B78F82 /* PaymentError.swift */; };
+		939B08CD2CA7135500B78F82 /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08C82CA7135500B78F82 /* PaymentService.swift */; };
+		939B08D32CA7135B00B78F82 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08CE2CA7135B00B78F82 /* Colors.swift */; };
+		939B08D42CA7135B00B78F82 /* ShapeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08D02CA7135B00B78F82 /* ShapeColor.swift */; };
+		939B08D52CA7135B00B78F82 /* PaymentActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08CF2CA7135B00B78F82 /* PaymentActionButton.swift */; };
+		939B08DA2CA7138100B78F82 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08D82CA7138100B78F82 /* PaymentView.swift */; };
+		939B08DD2CA7138800B78F82 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08DB2CA7138800B78F82 /* PaymentViewModel.swift */; };
+		939B09202CA7161E00B78F82 /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B090D2CA7161E00B78F82 /* FavoriteList.swift */; };
+		939B09212CA7161E00B78F82 /* SandBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09132CA7161E00B78F82 /* SandBoxMapView.swift */; };
+		939B09222CA7161E00B78F82 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08E52CA7161E00B78F82 /* ChatViewModel.swift */; };
+		939B09232CA7161E00B78F82 /* Monument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08E02CA7161E00B78F82 /* Monument.swift */; };
+		939B09242CA7161E00B78F82 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08EE2CA7161E00B78F82 /* SearchService.swift */; };
+		939B09252CA7161E00B78F82 /* MapSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08F92CA7161E00B78F82 /* MapSearchTextField.swift */; };
+		939B09262CA7161E00B78F82 /* OpenAINetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09182CA7161E00B78F82 /* OpenAINetworkingError.swift */; };
+		939B09272CA7161E00B78F82 /* FindPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08F52CA7161E00B78F82 /* FindPlaceViewModel.swift */; };
+		939B09282CA7161E00B78F82 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08E32CA7161E00B78F82 /* ChatView.swift */; };
+		939B09292CA7161E00B78F82 /* SwiftUIMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08FF2CA7161E00B78F82 /* SwiftUIMapView.swift */; };
+		939B092A2CA7161E00B78F82 /* MapType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08F32CA7161E00B78F82 /* MapType.swift */; };
+		939B092B2CA7161E00B78F82 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08F12CA7161E00B78F82 /* LocationManager.swift */; };
+		939B092C2CA7161E00B78F82 /* DefaultMapViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08EA2CA7161E00B78F82 /* DefaultMapViewsFactory.swift */; };
+		939B092D2CA7161E00B78F82 /* MapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08EB2CA7161E00B78F82 /* MapFactory.swift */; };
+		939B092E2CA7161E00B78F82 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08E12CA7161E00B78F82 /* Place.swift */; };
+		939B092F2CA7161E00B78F82 /* UIKitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08FC2CA7161E00B78F82 /* UIKitMapView.swift */; };
+		939B09302CA7161E00B78F82 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09072CA7161E00B78F82 /* LocationDetailsView.swift */; };
+		939B09312CA7161E00B78F82 /* LocalSearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09172CA7161E00B78F82 /* LocalSearchServices.swift */; };
+		939B09322CA7161E00B78F82 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B090F2CA7161E00B78F82 /* Test.swift */; };
+		939B09332CA7161E00B78F82 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08FB2CA7161E00B78F82 /* MapViewRepresentable.swift */; };
+		939B09342CA7161E00B78F82 /* FindPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09062CA7161E00B78F82 /* FindPlaceView.swift */; };
+		939B09352CA7161E00B78F82 /* SwiftUIMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09002CA7161E00B78F82 /* SwiftUIMapViewModel.swift */; };
+		939B09362CA7161E00B78F82 /* FindPlaceViewWithSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09112CA7161E00B78F82 /* FindPlaceViewWithSearchable.swift */; };
+		939B09372CA7161E00B78F82 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09042CA7161E00B78F82 /* DetailsView.swift */; };
+		939B09382CA7161E00B78F82 /* MapViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08F72CA7161E00B78F82 /* MapViewModelProtocol.swift */; };
+		939B09392CA7161E00B78F82 /* SearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08ED2CA7161E00B78F82 /* SearchError.swift */; };
+		939B093A2CA7161E00B78F82 /* OpenAIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09192CA7161E00B78F82 /* OpenAIServices.swift */; };
+		939B093B2CA7161E00B78F82 /* UIKitMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08FD2CA7161E00B78F82 /* UIKitMapViewModel.swift */; };
+		939B093C2CA7161E00B78F82 /* MainMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08F62CA7161E00B78F82 /* MainMapViewModel.swift */; };
+		939B093D2CA7161E00B78F82 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B091B2CA7161E00B78F82 /* FlowLayout.swift */; };
+		939B093E2CA7161E00B78F82 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08DF2CA7161E00B78F82 /* ChatModel.swift */; };
+		939B093F2CA7161E00B78F82 /* SandBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09122CA7161E00B78F82 /* SandBox.swift */; };
+		939B09402CA7161E00B78F82 /* FiltersPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09052CA7161E00B78F82 /* FiltersPlaceView.swift */; };
+		939B09412CA7161E00B78F82 /* SearchPlaceSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09142CA7161E00B78F82 /* SearchPlaceSheetView.swift */; };
+		939B09422CA7161E00B78F82 /* SearchResultsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B09082CA7161E00B78F82 /* SearchResultsListView.swift */; };
+		939B09432CA7161E00B78F82 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B090B2CA7161E00B78F82 /* MapViewModel.swift */; };
+		939B09442CA7161E00B78F82 /* SearchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08EF2CA7161E00B78F82 /* SearchServiceProtocol.swift */; };
+		939B09452CA7161E00B78F82 /* LoadingDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B091D2CA7161E00B78F82 /* LoadingDotsView.swift */; };
+		939B09462CA7161E00B78F82 /* MKPointOfInterestCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08E82CA7161E00B78F82 /* MKPointOfInterestCategory+Extension.swift */; };
+		939B09472CA7161E00B78F82 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B090E2CA7161E00B78F82 /* MapView.swift */; };
 		939B91602BC042D300C0D4C1 /* CurrencyBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B915F2BC042D300C0D4C1 /* CurrencyBarChartView.swift */; };
 		939BD5CB2C0D06100063D761 /* ScreenFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939BD5CA2C0D06100063D761 /* ScreenFavorites.swift */; };
 		939BD5EF2C10F79E0063D761 /* CoreDataBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939BD5EE2C10F79E0063D761 /* CoreDataBootCamp.swift */; };
@@ -296,6 +358,68 @@
 		93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 		93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateClient.swift; sourceTree = "<group>"; };
 		938C18A02B9A641000D92D50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		939B08342CA711BD00B78F82 /* RootViewTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTCA.swift; sourceTree = "<group>"; };
+		939B08352CA711BD00B78F82 /* SandBoxA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxA.swift; sourceTree = "<group>"; };
+		939B08A72CA712C800B78F82 /* PaymentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFactory.swift; sourceTree = "<group>"; };
+		939B08AA2CA712EE00B78F82 /* PaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProcessor.swift; sourceTree = "<group>"; };
+		939B08AC2CA7130500B78F82 /* ReceiptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptGenerator.swift; sourceTree = "<group>"; };
+		939B08AF2CA7133800B78F82 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		939B08B02CA7133800B78F82 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		939B08B42CA7134800B78F82 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		939B08B62CA7134F00B78F82 /* ApplePayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayFactory.swift; sourceTree = "<group>"; };
+		939B08B82CA7134F00B78F82 /* ApplePayPaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayPaymentProcessor.swift; sourceTree = "<group>"; };
+		939B08B92CA7134F00B78F82 /* ApplePayReceiptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayReceiptGenerator.swift; sourceTree = "<group>"; };
+		939B08BB2CA7134F00B78F82 /* PayPalFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalFactory.swift; sourceTree = "<group>"; };
+		939B08BD2CA7134F00B78F82 /* PayPalPaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalPaymentProcessor.swift; sourceTree = "<group>"; };
+		939B08BE2CA7134F00B78F82 /* PayPalReceiptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalReceiptGenerator.swift; sourceTree = "<group>"; };
+		939B08C72CA7135500B78F82 /* PaymentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentError.swift; sourceTree = "<group>"; };
+		939B08C82CA7135500B78F82 /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		939B08C92CA7135500B78F82 /* PaymentServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentServiceProtocol.swift; sourceTree = "<group>"; };
+		939B08CE2CA7135B00B78F82 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		939B08CF2CA7135B00B78F82 /* PaymentActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentActionButton.swift; sourceTree = "<group>"; };
+		939B08D02CA7135B00B78F82 /* ShapeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeColor.swift; sourceTree = "<group>"; };
+		939B08D82CA7138100B78F82 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		939B08DB2CA7138800B78F82 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		939B08DF2CA7161E00B78F82 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		939B08E02CA7161E00B78F82 /* Monument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monument.swift; sourceTree = "<group>"; };
+		939B08E12CA7161E00B78F82 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		939B08E32CA7161E00B78F82 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		939B08E52CA7161E00B78F82 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		939B08E82CA7161E00B78F82 /* MKPointOfInterestCategory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointOfInterestCategory+Extension.swift"; sourceTree = "<group>"; };
+		939B08EA2CA7161E00B78F82 /* DefaultMapViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMapViewsFactory.swift; sourceTree = "<group>"; };
+		939B08EB2CA7161E00B78F82 /* MapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFactory.swift; sourceTree = "<group>"; };
+		939B08ED2CA7161E00B78F82 /* SearchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchError.swift; sourceTree = "<group>"; };
+		939B08EE2CA7161E00B78F82 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		939B08EF2CA7161E00B78F82 /* SearchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceProtocol.swift; sourceTree = "<group>"; };
+		939B08F12CA7161E00B78F82 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		939B08F32CA7161E00B78F82 /* MapType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapType.swift; sourceTree = "<group>"; };
+		939B08F52CA7161E00B78F82 /* FindPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewModel.swift; sourceTree = "<group>"; };
+		939B08F62CA7161E00B78F82 /* MainMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewModel.swift; sourceTree = "<group>"; };
+		939B08F72CA7161E00B78F82 /* MapViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelProtocol.swift; sourceTree = "<group>"; };
+		939B08F92CA7161E00B78F82 /* MapSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTextField.swift; sourceTree = "<group>"; };
+		939B08FB2CA7161E00B78F82 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		939B08FC2CA7161E00B78F82 /* UIKitMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapView.swift; sourceTree = "<group>"; };
+		939B08FD2CA7161E00B78F82 /* UIKitMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapViewModel.swift; sourceTree = "<group>"; };
+		939B08FF2CA7161E00B78F82 /* SwiftUIMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMapView.swift; sourceTree = "<group>"; };
+		939B09002CA7161E00B78F82 /* SwiftUIMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMapViewModel.swift; sourceTree = "<group>"; };
+		939B09042CA7161E00B78F82 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		939B09052CA7161E00B78F82 /* FiltersPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersPlaceView.swift; sourceTree = "<group>"; };
+		939B09062CA7161E00B78F82 /* FindPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceView.swift; sourceTree = "<group>"; };
+		939B09072CA7161E00B78F82 /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
+		939B09082CA7161E00B78F82 /* SearchResultsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListView.swift; sourceTree = "<group>"; };
+		939B090B2CA7161E00B78F82 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		939B090D2CA7161E00B78F82 /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
+		939B090E2CA7161E00B78F82 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		939B090F2CA7161E00B78F82 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		939B09112CA7161E00B78F82 /* FindPlaceViewWithSearchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewWithSearchable.swift; sourceTree = "<group>"; };
+		939B09122CA7161E00B78F82 /* SandBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBox.swift; sourceTree = "<group>"; };
+		939B09132CA7161E00B78F82 /* SandBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxMapView.swift; sourceTree = "<group>"; };
+		939B09142CA7161E00B78F82 /* SearchPlaceSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceSheetView.swift; sourceTree = "<group>"; };
+		939B09172CA7161E00B78F82 /* LocalSearchServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchServices.swift; sourceTree = "<group>"; };
+		939B09182CA7161E00B78F82 /* OpenAINetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAINetworkingError.swift; sourceTree = "<group>"; };
+		939B09192CA7161E00B78F82 /* OpenAIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIServices.swift; sourceTree = "<group>"; };
+		939B091B2CA7161E00B78F82 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		939B091D2CA7161E00B78F82 /* LoadingDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDotsView.swift; sourceTree = "<group>"; };
 		939B915F2BC042D300C0D4C1 /* CurrencyBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBarChartView.swift; sourceTree = "<group>"; };
 		939BD5CA2C0D06100063D761 /* ScreenFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFavorites.swift; sourceTree = "<group>"; };
 		939BD5EE2C10F79E0063D761 /* CoreDataBootCamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataBootCamp.swift; sourceTree = "<group>"; };
@@ -352,84 +476,6 @@
 		93F782A32BB0CC1300ACB39A /* ChartViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewFactory.swift; sourceTree = "<group>"; };
 		93FE949B2BB1CD6B0087104D /*  Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Container+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Model/ChatModel.swift,
-				Model/Monument.swift,
-				Model/Place.swift,
-				NewFuture/ChatGPT/ChatView/ChatView.swift,
-				NewFuture/ChatGPT/ViewModel/ChatViewModel.swift,
-				"NewFuture/FindPlace/Extensions/MKPointOfInterestCategory+Extension.swift",
-				NewFuture/FindPlace/Factories/DefaultMapViewsFactory.swift,
-				NewFuture/FindPlace/Factories/MapFactory.swift,
-				NewFuture/FindPlace/Manager/LocationManager.swift,
-				NewFuture/FindPlace/Manager/SearchService/SearchError.swift,
-				NewFuture/FindPlace/Manager/SearchService/SearchService.swift,
-				NewFuture/FindPlace/Manager/SearchService/SearchServiceProtocol.swift,
-				NewFuture/FindPlace/Model/MapType.swift,
-				NewFuture/FindPlace/ViewModel/FindPlaceViewModel.swift,
-				NewFuture/FindPlace/ViewModel/MainMapViewModel.swift,
-				NewFuture/FindPlace/ViewModel/MapViewModelProtocol.swift,
-				NewFuture/FindPlace/Views/DetailsView.swift,
-				NewFuture/FindPlace/Views/FiltersPlaceView.swift,
-				NewFuture/FindPlace/Views/FindPlaceView.swift,
-				NewFuture/FindPlace/Views/LocationDetailsView.swift,
-				NewFuture/FindPlace/Views/SearchResultsListView.swift,
-				NewFuture/FindPlace/Views/SubViews/MapSearch/MapSearchTextField.swift,
-				NewFuture/FindPlace/Views/SubViews/MapView/PointOfInterest/MapViewRepresentable.swift,
-				NewFuture/FindPlace/Views/SubViews/MapView/PointOfInterest/UIKitMapView.swift,
-				NewFuture/FindPlace/Views/SubViews/MapView/PointOfInterest/UIKitMapViewModel.swift,
-				NewFuture/FindPlace/Views/SubViews/MapView/SwiftUIMapView/SwiftUIMapView.swift,
-				NewFuture/FindPlace/Views/SubViews/MapView/SwiftUIMapView/SwiftUIMapViewModel.swift,
-				NewFuture/SandBox/FindPlaceViewWithSearchable.swift,
-				NewFuture/SandBox/SandBox.swift,
-				NewFuture/SandBox/SandBoxMapView.swift,
-				NewFuture/SandBox/SearchPlaceSheetView.swift,
-				NewFuture/SandBox/WWDC/FavoriteList.swift,
-				NewFuture/SandBox/WWDC/MapView.swift,
-				NewFuture/SandBox/WWDC/Test.swift,
-				NewFuture/SandBox/WWDC/ViewModel/MapViewModel.swift,
-				Service/LocalSearchServices.swift,
-				Service/OpenAINetworkingError.swift,
-				Service/OpenAIServices.swift,
-				SubView/Layouts/FlowLayout.swift,
-				SubView/LoadingDotsView.swift,
-			);
-			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
-		};
-		9383B5E02C9DD04500B88527 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Interface/Factories/PaymentFactory.swift,
-				Interface/Payment/PaymentProcessor.swift,
-				Interface/Receipt/ReceiptGenerator.swift,
-				Model/PaymentMethod.swift,
-				Model/Receipt.swift,
-				Payment.swift,
-				PaymentSystem/ApplePay/ApplePayPaymentProcessor.swift,
-				PaymentSystem/ApplePay/ApplePayReceiptGenerator.swift,
-				PaymentSystem/ApplePay/Factories/ApplePayFactory.swift,
-				PaymentSystem/PayPall/Factorie/PayPalFactory.swift,
-				PaymentSystem/PayPall/PayPalPaymentProcessor.swift,
-				PaymentSystem/PayPall/PayPalReceiptGenerator.swift,
-				Service/PaymentError.swift,
-				Service/PaymentService.swift,
-				Service/PaymentServiceProtocol.swift,
-				View/PaymentView.swift,
-				ViewModel/PaymentViewModel.swift,
-			);
-			target = 93C6D7B12B5BA569006E28F7 /* MyNBPapp */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		931561992C54BCFB007DD554 /* TourBuddyAI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9315619F2C54BF14007DD554 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TourBuddyAI; sourceTree = "<group>"; };
-		937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SandBoxTCA; sourceTree = "<group>"; };
-		9383B5DD2C9DCFE100B88527 /* Payment */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (9383B5E02C9DD04500B88527 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Payment; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		936774FB2B7007A500816C92 /* Frameworks */ = {
@@ -582,10 +628,10 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
-				9383B5DD2C9DCFE100B88527 /* Payment */,
-				931561992C54BCFB007DD554 /* TourBuddyAI */,
+				939B083B2CA7124300B78F82 /* Payment */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,
+				939B091F2CA7161E00B78F82 /* TourBuddyAI */,
 			);
 			path = SandBox;
 			sourceTree = "<group>";
@@ -859,6 +905,401 @@
 			path = ExchangeRateClient;
 			sourceTree = "<group>";
 		};
+		939B083A2CA711DC00B78F82 /* SandBoxTCA */ = {
+			isa = PBXGroup;
+			children = (
+				939B08342CA711BD00B78F82 /* RootViewTCA.swift */,
+				939B08352CA711BD00B78F82 /* SandBoxA.swift */,
+			);
+			path = SandBoxTCA;
+			sourceTree = "<group>";
+		};
+		939B083B2CA7124300B78F82 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				939B08A52CA712A400B78F82 /* Interface */,
+				939B08B12CA7133800B78F82 /* Model */,
+				939B08B42CA7134800B78F82 /* Payment.swift */,
+				939B08C02CA7134F00B78F82 /* PaymentSystem */,
+				939B08CA2CA7135500B78F82 /* Service */,
+				939B08D22CA7135B00B78F82 /* SubView */,
+				939B08D92CA7138100B78F82 /* View */,
+				939B08DC2CA7138800B78F82 /* ViewModel */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		939B08A52CA712A400B78F82 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				939B08AE2CA7131500B78F82 /* Receipt */,
+				939B08A92CA712E300B78F82 /* Payment */,
+				939B08A62CA712BE00B78F82 /* Factories */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		939B08A62CA712BE00B78F82 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				939B08A72CA712C800B78F82 /* PaymentFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		939B08A92CA712E300B78F82 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				939B08AA2CA712EE00B78F82 /* PaymentProcessor.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		939B08AE2CA7131500B78F82 /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				939B08AC2CA7130500B78F82 /* ReceiptGenerator.swift */,
+			);
+			path = Receipt;
+			sourceTree = "<group>";
+		};
+		939B08B12CA7133800B78F82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				939B08AF2CA7133800B78F82 /* PaymentMethod.swift */,
+				939B08B02CA7133800B78F82 /* Receipt.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		939B08B72CA7134F00B78F82 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				939B08B62CA7134F00B78F82 /* ApplePayFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		939B08BA2CA7134F00B78F82 /* ApplePay */ = {
+			isa = PBXGroup;
+			children = (
+				939B08B72CA7134F00B78F82 /* Factories */,
+				939B08B82CA7134F00B78F82 /* ApplePayPaymentProcessor.swift */,
+				939B08B92CA7134F00B78F82 /* ApplePayReceiptGenerator.swift */,
+			);
+			path = ApplePay;
+			sourceTree = "<group>";
+		};
+		939B08BC2CA7134F00B78F82 /* Factorie */ = {
+			isa = PBXGroup;
+			children = (
+				939B08BB2CA7134F00B78F82 /* PayPalFactory.swift */,
+			);
+			path = Factorie;
+			sourceTree = "<group>";
+		};
+		939B08BF2CA7134F00B78F82 /* PayPall */ = {
+			isa = PBXGroup;
+			children = (
+				939B08BC2CA7134F00B78F82 /* Factorie */,
+				939B08BD2CA7134F00B78F82 /* PayPalPaymentProcessor.swift */,
+				939B08BE2CA7134F00B78F82 /* PayPalReceiptGenerator.swift */,
+			);
+			path = PayPall;
+			sourceTree = "<group>";
+		};
+		939B08C02CA7134F00B78F82 /* PaymentSystem */ = {
+			isa = PBXGroup;
+			children = (
+				939B08BA2CA7134F00B78F82 /* ApplePay */,
+				939B08BF2CA7134F00B78F82 /* PayPall */,
+			);
+			path = PaymentSystem;
+			sourceTree = "<group>";
+		};
+		939B08CA2CA7135500B78F82 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				939B08C72CA7135500B78F82 /* PaymentError.swift */,
+				939B08C82CA7135500B78F82 /* PaymentService.swift */,
+				939B08C92CA7135500B78F82 /* PaymentServiceProtocol.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		939B08D12CA7135B00B78F82 /* Brige */ = {
+			isa = PBXGroup;
+			children = (
+				939B08CE2CA7135B00B78F82 /* Colors.swift */,
+				939B08CF2CA7135B00B78F82 /* PaymentActionButton.swift */,
+				939B08D02CA7135B00B78F82 /* ShapeColor.swift */,
+			);
+			path = Brige;
+			sourceTree = "<group>";
+		};
+		939B08D22CA7135B00B78F82 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				939B08D12CA7135B00B78F82 /* Brige */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		939B08D92CA7138100B78F82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				939B08D82CA7138100B78F82 /* PaymentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		939B08DC2CA7138800B78F82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				939B08DB2CA7138800B78F82 /* PaymentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		939B08E22CA7161E00B78F82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				939B08DF2CA7161E00B78F82 /* ChatModel.swift */,
+				939B08E02CA7161E00B78F82 /* Monument.swift */,
+				939B08E12CA7161E00B78F82 /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		939B08E42CA7161E00B78F82 /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				939B08E32CA7161E00B78F82 /* ChatView.swift */,
+			);
+			path = ChatView;
+			sourceTree = "<group>";
+		};
+		939B08E62CA7161E00B78F82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				939B08E52CA7161E00B78F82 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		939B08E72CA7161E00B78F82 /* ChatGPT */ = {
+			isa = PBXGroup;
+			children = (
+				939B08E42CA7161E00B78F82 /* ChatView */,
+				939B08E62CA7161E00B78F82 /* ViewModel */,
+			);
+			path = ChatGPT;
+			sourceTree = "<group>";
+		};
+		939B08E92CA7161E00B78F82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				939B08E82CA7161E00B78F82 /* MKPointOfInterestCategory+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		939B08EC2CA7161E00B78F82 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				939B08EA2CA7161E00B78F82 /* DefaultMapViewsFactory.swift */,
+				939B08EB2CA7161E00B78F82 /* MapFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		939B08F02CA7161E00B78F82 /* SearchService */ = {
+			isa = PBXGroup;
+			children = (
+				939B08ED2CA7161E00B78F82 /* SearchError.swift */,
+				939B08EE2CA7161E00B78F82 /* SearchService.swift */,
+				939B08EF2CA7161E00B78F82 /* SearchServiceProtocol.swift */,
+			);
+			path = SearchService;
+			sourceTree = "<group>";
+		};
+		939B08F22CA7161E00B78F82 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				939B08F02CA7161E00B78F82 /* SearchService */,
+				939B08F12CA7161E00B78F82 /* LocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		939B08F42CA7161E00B78F82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				939B08F32CA7161E00B78F82 /* MapType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		939B08F82CA7161E00B78F82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				939B08F52CA7161E00B78F82 /* FindPlaceViewModel.swift */,
+				939B08F62CA7161E00B78F82 /* MainMapViewModel.swift */,
+				939B08F72CA7161E00B78F82 /* MapViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		939B08FA2CA7161E00B78F82 /* MapSearch */ = {
+			isa = PBXGroup;
+			children = (
+				939B08F92CA7161E00B78F82 /* MapSearchTextField.swift */,
+			);
+			path = MapSearch;
+			sourceTree = "<group>";
+		};
+		939B08FE2CA7161E00B78F82 /* PointOfInterest */ = {
+			isa = PBXGroup;
+			children = (
+				939B08FB2CA7161E00B78F82 /* MapViewRepresentable.swift */,
+				939B08FC2CA7161E00B78F82 /* UIKitMapView.swift */,
+				939B08FD2CA7161E00B78F82 /* UIKitMapViewModel.swift */,
+			);
+			path = PointOfInterest;
+			sourceTree = "<group>";
+		};
+		939B09012CA7161E00B78F82 /* SwiftUIMapView */ = {
+			isa = PBXGroup;
+			children = (
+				939B08FF2CA7161E00B78F82 /* SwiftUIMapView.swift */,
+				939B09002CA7161E00B78F82 /* SwiftUIMapViewModel.swift */,
+			);
+			path = SwiftUIMapView;
+			sourceTree = "<group>";
+		};
+		939B09022CA7161E00B78F82 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				939B08FE2CA7161E00B78F82 /* PointOfInterest */,
+				939B09012CA7161E00B78F82 /* SwiftUIMapView */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		939B09032CA7161E00B78F82 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				939B08FA2CA7161E00B78F82 /* MapSearch */,
+				939B09022CA7161E00B78F82 /* MapView */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		939B09092CA7161E00B78F82 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				939B09032CA7161E00B78F82 /* SubViews */,
+				939B09042CA7161E00B78F82 /* DetailsView.swift */,
+				939B09052CA7161E00B78F82 /* FiltersPlaceView.swift */,
+				939B09062CA7161E00B78F82 /* FindPlaceView.swift */,
+				939B09072CA7161E00B78F82 /* LocationDetailsView.swift */,
+				939B09082CA7161E00B78F82 /* SearchResultsListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		939B090A2CA7161E00B78F82 /* FindPlace */ = {
+			isa = PBXGroup;
+			children = (
+				939B08E92CA7161E00B78F82 /* Extensions */,
+				939B08EC2CA7161E00B78F82 /* Factories */,
+				939B08F22CA7161E00B78F82 /* Manager */,
+				939B08F42CA7161E00B78F82 /* Model */,
+				939B08F82CA7161E00B78F82 /* ViewModel */,
+				939B09092CA7161E00B78F82 /* Views */,
+			);
+			path = FindPlace;
+			sourceTree = "<group>";
+		};
+		939B090C2CA7161E00B78F82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				939B090B2CA7161E00B78F82 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		939B09102CA7161E00B78F82 /* WWDC */ = {
+			isa = PBXGroup;
+			children = (
+				939B090C2CA7161E00B78F82 /* ViewModel */,
+				939B090D2CA7161E00B78F82 /* FavoriteList.swift */,
+				939B090E2CA7161E00B78F82 /* MapView.swift */,
+				939B090F2CA7161E00B78F82 /* Test.swift */,
+			);
+			path = WWDC;
+			sourceTree = "<group>";
+		};
+		939B09152CA7161E00B78F82 /* SandBox */ = {
+			isa = PBXGroup;
+			children = (
+				939B09102CA7161E00B78F82 /* WWDC */,
+				939B09112CA7161E00B78F82 /* FindPlaceViewWithSearchable.swift */,
+				939B09122CA7161E00B78F82 /* SandBox.swift */,
+				939B09132CA7161E00B78F82 /* SandBoxMapView.swift */,
+				939B09142CA7161E00B78F82 /* SearchPlaceSheetView.swift */,
+			);
+			path = SandBox;
+			sourceTree = "<group>";
+		};
+		939B09162CA7161E00B78F82 /* NewFuture */ = {
+			isa = PBXGroup;
+			children = (
+				939B08E72CA7161E00B78F82 /* ChatGPT */,
+				939B090A2CA7161E00B78F82 /* FindPlace */,
+				939B09152CA7161E00B78F82 /* SandBox */,
+			);
+			path = NewFuture;
+			sourceTree = "<group>";
+		};
+		939B091A2CA7161E00B78F82 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				939B09172CA7161E00B78F82 /* LocalSearchServices.swift */,
+				939B09182CA7161E00B78F82 /* OpenAINetworkingError.swift */,
+				939B09192CA7161E00B78F82 /* OpenAIServices.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		939B091C2CA7161E00B78F82 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				939B091B2CA7161E00B78F82 /* FlowLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		939B091E2CA7161E00B78F82 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				939B091C2CA7161E00B78F82 /* Layouts */,
+				939B091D2CA7161E00B78F82 /* LoadingDotsView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		939B091F2CA7161E00B78F82 /* TourBuddyAI */ = {
+			isa = PBXGroup;
+			children = (
+				939B08E22CA7161E00B78F82 /* Model */,
+				939B09162CA7161E00B78F82 /* NewFuture */,
+				939B091A2CA7161E00B78F82 /* Service */,
+				939B091E2CA7161E00B78F82 /* SubView */,
+			);
+			path = TourBuddyAI;
+			sourceTree = "<group>";
+		};
 		939BD5EC2C10F75D0063D761 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,7 +1312,7 @@
 		939BD5ED2C10F7780063D761 /* TCA */ = {
 			isa = PBXGroup;
 			children = (
-				937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */,
+				939B083A2CA711DC00B78F82 /* SandBoxTCA */,
 				93CF41CB2C09D58A006263F0 /* Root */,
 				932FFF012C09B3F6008FC828 /* ScreenA.swift */,
 				932FFF052C09B6E7008FC828 /* ScreenB.swift */,
@@ -1281,9 +1722,6 @@
 				93834AD82B7A004B00A5744C /* PBXTargetDependency */,
 				93A5FFB52BD8076B00D9696B /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				937E0DBC2CA2DBCD00847FB4 /* SandBoxTCA */,
-			);
 			name = MyNBPapp;
 			packageProductDependencies = (
 				9357DA682B63CF240097673C /* Commons */,
@@ -1497,6 +1935,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939B08362CA711BD00B78F82 /* RootViewTCA.swift in Sources */,
+				939B08372CA711BD00B78F82 /* SandBoxA.swift in Sources */,
 				93500A3B2BC5AE13000E93FB /* CurrencyExchangeChartType.swift in Sources */,
 				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
 				93F782A42BB0CC1300ACB39A /* ChartViewFactory.swift in Sources */,
@@ -1526,7 +1966,12 @@
 				9312DF162B9B346000C3D441 /* TransactionType.swift in Sources */,
 				939B91602BC042D300C0D4C1 /* CurrencyBarChartView.swift in Sources */,
 				93517C432B88CD99009252E9 /* TestView.swift in Sources */,
+				939B08A82CA712C800B78F82 /* PaymentFactory.swift in Sources */,
 				93517C3F2B88CC3E009252E9 /* TestFeature+Action.swift in Sources */,
+				939B08AB2CA712EE00B78F82 /* PaymentProcessor.swift in Sources */,
+				939B08CB2CA7135500B78F82 /* PaymentServiceProtocol.swift in Sources */,
+				939B08CC2CA7135500B78F82 /* PaymentError.swift in Sources */,
+				939B08CD2CA7135500B78F82 /* PaymentService.swift in Sources */,
 				93335A9D2BA75331001F1610 /* ContactDetailFeature+State.swift in Sources */,
 				93FE949C2BB1CD6B0087104D /*  Container+Extension.swift in Sources */,
 				930B2EAA2B6694F400BEB7B7 /* SettingsFeature.swift in Sources */,
@@ -1535,9 +1980,18 @@
 				93373EC82B88F40800975A6B /* TestFeatureServices.swift in Sources */,
 				93F782942BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift in Sources */,
 				93335A822BA6DE99001F1610 /* CurrencyConverterFeature+State.swift in Sources */,
+				939B08D32CA7135B00B78F82 /* Colors.swift in Sources */,
+				939B08D42CA7135B00B78F82 /* ShapeColor.swift in Sources */,
+				939B08D52CA7135B00B78F82 /* PaymentActionButton.swift in Sources */,
 				930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */,
 				93335A892BA750FA001F1610 /* ContactsFeature+State.swift in Sources */,
 				930B2E9E2B667B3D00BEB7B7 /* AccountFeature.swift in Sources */,
+				939B08C12CA7134F00B78F82 /* PayPalReceiptGenerator.swift in Sources */,
+				939B08C22CA7134F00B78F82 /* PayPalPaymentProcessor.swift in Sources */,
+				939B08C32CA7134F00B78F82 /* ApplePayPaymentProcessor.swift in Sources */,
+				939B08C42CA7134F00B78F82 /* ApplePayReceiptGenerator.swift in Sources */,
+				939B08C52CA7134F00B78F82 /* ApplePayFactory.swift in Sources */,
+				939B08C62CA7134F00B78F82 /* PayPalFactory.swift in Sources */,
 				93CF41D62C09D922006263F0 /* ScreenC.swift in Sources */,
 				930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */,
 				93A3EB532B6584BB007BFCDC /* CurrencyCellWithBalance.swift in Sources */,
@@ -1554,6 +2008,8 @@
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
 				939BD5CB2C0D06100063D761 /* ScreenFavorites.swift in Sources */,
 				93335A792BA490FA001F1610 /* ContactsFeature+Destination.swift in Sources */,
+				939B08B22CA7133800B78F82 /* Receipt.swift in Sources */,
+				939B08B32CA7133800B78F82 /* PaymentMethod.swift in Sources */,
 				93335A772BA465FD001F1610 /* AddContactView.swift in Sources */,
 				93335A702BA45F56001F1610 /* Contact.swift in Sources */,
 				930B2EAE2B66957800BEB7B7 /* SettingsFeature+State.swift in Sources */,
@@ -1562,11 +2018,54 @@
 				93335A9B2BA7532A001F1610 /* ContactDetailFeature+Action.swift in Sources */,
 				93335A8E2BA751BC001F1610 /* AddContactFeature.swift in Sources */,
 				93A3EB512B658318007BFCDC /* CurrencyView.swift in Sources */,
+				939B08B52CA7134800B78F82 /* Payment.swift in Sources */,
+				939B09202CA7161E00B78F82 /* FavoriteList.swift in Sources */,
+				939B09212CA7161E00B78F82 /* SandBoxMapView.swift in Sources */,
+				939B09222CA7161E00B78F82 /* ChatViewModel.swift in Sources */,
+				939B09232CA7161E00B78F82 /* Monument.swift in Sources */,
+				939B09242CA7161E00B78F82 /* SearchService.swift in Sources */,
+				939B09252CA7161E00B78F82 /* MapSearchTextField.swift in Sources */,
+				939B09262CA7161E00B78F82 /* OpenAINetworkingError.swift in Sources */,
+				939B09272CA7161E00B78F82 /* FindPlaceViewModel.swift in Sources */,
+				939B09282CA7161E00B78F82 /* ChatView.swift in Sources */,
+				939B09292CA7161E00B78F82 /* SwiftUIMapView.swift in Sources */,
+				939B092A2CA7161E00B78F82 /* MapType.swift in Sources */,
+				939B092B2CA7161E00B78F82 /* LocationManager.swift in Sources */,
+				939B092C2CA7161E00B78F82 /* DefaultMapViewsFactory.swift in Sources */,
+				939B092D2CA7161E00B78F82 /* MapFactory.swift in Sources */,
+				939B092E2CA7161E00B78F82 /* Place.swift in Sources */,
+				939B092F2CA7161E00B78F82 /* UIKitMapView.swift in Sources */,
+				939B09302CA7161E00B78F82 /* LocationDetailsView.swift in Sources */,
+				939B09312CA7161E00B78F82 /* LocalSearchServices.swift in Sources */,
+				939B09322CA7161E00B78F82 /* Test.swift in Sources */,
+				939B09332CA7161E00B78F82 /* MapViewRepresentable.swift in Sources */,
+				939B09342CA7161E00B78F82 /* FindPlaceView.swift in Sources */,
+				939B09352CA7161E00B78F82 /* SwiftUIMapViewModel.swift in Sources */,
+				939B09362CA7161E00B78F82 /* FindPlaceViewWithSearchable.swift in Sources */,
+				939B09372CA7161E00B78F82 /* DetailsView.swift in Sources */,
+				939B09382CA7161E00B78F82 /* MapViewModelProtocol.swift in Sources */,
+				939B09392CA7161E00B78F82 /* SearchError.swift in Sources */,
+				939B093A2CA7161E00B78F82 /* OpenAIServices.swift in Sources */,
+				939B093B2CA7161E00B78F82 /* UIKitMapViewModel.swift in Sources */,
+				939B093C2CA7161E00B78F82 /* MainMapViewModel.swift in Sources */,
+				939B093D2CA7161E00B78F82 /* FlowLayout.swift in Sources */,
+				939B093E2CA7161E00B78F82 /* ChatModel.swift in Sources */,
+				939B093F2CA7161E00B78F82 /* SandBox.swift in Sources */,
+				939B09402CA7161E00B78F82 /* FiltersPlaceView.swift in Sources */,
+				939B09412CA7161E00B78F82 /* SearchPlaceSheetView.swift in Sources */,
+				939B09422CA7161E00B78F82 /* SearchResultsListView.swift in Sources */,
+				939B09432CA7161E00B78F82 /* MapViewModel.swift in Sources */,
+				939B09442CA7161E00B78F82 /* SearchServiceProtocol.swift in Sources */,
+				939B09452CA7161E00B78F82 /* LoadingDotsView.swift in Sources */,
+				939B09462CA7161E00B78F82 /* MKPointOfInterestCategory+Extension.swift in Sources */,
+				939B09472CA7161E00B78F82 /* MapView.swift in Sources */,
 				93F782A22BB0CBC700ACB39A /* CurrencyChartViewFactory.swift in Sources */,
+				939B08DA2CA7138100B78F82 /* PaymentView.swift in Sources */,
 				93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */,
 				93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */,
 				93D430762BBC9CCB00FBBDBD /* CurrencyTableView.swift in Sources */,
 				930948732BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift in Sources */,
+				939B08DD2CA7138800B78F82 /* PaymentViewModel.swift in Sources */,
 				93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */,
 				934255212BA7A12F00D787D6 /* ContainerRateDetailFeature.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
@@ -1585,6 +2084,7 @@
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
 				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,
 				93500A412BC5B9E5000E93FB /* ChartTypeFactory.swift in Sources */,
+				939B08AD2CA7130500B78F82 /* ReceiptGenerator.swift in Sources */,
 				93517C412B88CCA2009252E9 /* TestFeature+State.swift in Sources */,
 				93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */,
 				9312DF022B9B1D5E00C3D441 /* MainFeature+State.swift in Sources */,
