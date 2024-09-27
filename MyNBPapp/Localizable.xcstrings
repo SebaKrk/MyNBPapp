@@ -131,9 +131,6 @@
     "currency rate picker" : {
 
     },
-    "Current state: %@" : {
-
-    },
     "Data: %@" : {
 
     },
@@ -352,9 +349,6 @@
     "Pokaż numer tygodnia" : {
 
     },
-    "Pokaż Rachunek" : {
-
-    },
     "Pokaż średni kurs" : {
 
     },
@@ -434,9 +428,6 @@
     "Sortuj" : {
 
     },
-    "Spróbuj ponownie" : {
-
-    },
     "The request failed due to: %@." : {
       "comment" : "Request Failed",
       "localizations" : {
@@ -484,9 +475,6 @@
 
     },
     "Znajdź miejsce..." : {
-
-    },
-    "Zrealizuj płatność" : {
 
     }
   },

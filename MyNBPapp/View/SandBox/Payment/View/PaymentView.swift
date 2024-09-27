@@ -56,18 +56,11 @@ struct PaymentView: View {
                 .keyboardType(.decimalPad)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            Button {
+            PaymentActionButton(title: "Zrealizuj płatność",
+                                color: BlueColor()) {
                 if let amount = Double(viewModel.inputAmount) {
                     processPayment(amount)
                 }
-            } label: {
-                Text("Zrealizuj płatność")
-                    .font(.headline)
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(8)
             }
             .padding()
         }
@@ -83,8 +76,8 @@ struct PaymentView: View {
                 .font(.headline)
                 .foregroundColor(.green)
                 .padding()
-            
-            Button("Pokaż Rachunek") {
+            PaymentActionButton(title: "Pokaż Rachunek",
+                                color: GreenColor()) {
                 viewModel.showReceipt = true
             }
             .padding()
@@ -98,10 +91,9 @@ struct PaymentView: View {
                     .foregroundColor(.red)
                     .padding()
             }
-            Button {
+            PaymentActionButton(title: "Spróbuj onownie",
+                                color: RedColor()) {
                 viewModel.retryPayment()
-            } label: {
-                Text("Spróbuj ponownie")
             }
             .padding()
         }

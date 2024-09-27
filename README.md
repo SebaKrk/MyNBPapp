@@ -218,7 +218,10 @@ https://github.com/SebaKrk/MyNBPapp
     - Refactored SearchService and add DocC documentation (testing)
     E: Create POI Buttons
     
-### IOS-0027 Paymnet, #CreationalPatterns
+### IOS-0027 Paymnet, #CodingPatterns
     A: Create paymnet service
     - Used Abstract Factory
     B: Refactor state management in PaymentViewModel
+    C: Implemented Bridge pattern for color abstraction in PaymentActionButton #StructuralPatterns
+    -  Applied Bridge pattern to decouple color handling from button logic
+    - Enhanced flexibility by allowing different color strategies without modifying button structure

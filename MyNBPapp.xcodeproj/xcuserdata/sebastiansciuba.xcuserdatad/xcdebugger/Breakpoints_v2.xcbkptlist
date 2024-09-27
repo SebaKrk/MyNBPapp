@@ -286,9 +286,9 @@
             filePath = "MyNBPapp/View/SandBox/Payment/View/PaymentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "failedView"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "successView"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
