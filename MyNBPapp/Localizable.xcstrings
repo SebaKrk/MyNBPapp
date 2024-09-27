@@ -131,6 +131,9 @@
     "currency rate picker" : {
 
     },
+    "Current state: %@" : {
+
+    },
     "Data: %@" : {
 
     },
@@ -244,6 +247,9 @@
           }
         }
       }
+    },
+    "Map" : {
+      "comment" : "map"
     },
     "Me" : {
 

@@ -36,9 +36,9 @@ class PaymentViewModel: ObservableObject {
             self.receipt = receipt
             paymentState = .success
         } catch {
-            paymentState = .failed
             self.paymentError = error
-            self.showReceipt = false
+            paymentState = .failed
+            print("Payment failed, state: \(paymentState)")
         }
     }
     
