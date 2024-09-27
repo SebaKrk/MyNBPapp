@@ -584,7 +584,7 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
-				932B21BD2CA68E960053B87E /* Payment */,
+				93B3A6AC2CA70AFD003EE9DF /* PaymentTest */,
 				931561992C54BCFB007DD554 /* TourBuddyAI */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,
@@ -914,6 +914,14 @@
 				93A5FFB32BD8076B00D9696B /* Info.plist */,
 			);
 			path = WidgetChatNBP;
+			sourceTree = "<group>";
+		};
+		93B3A6AC2CA70AFD003EE9DF /* PaymentTest */ = {
+			isa = PBXGroup;
+			children = (
+				932B21BD2CA68E960053B87E /* Payment */,
+			);
+			path = PaymentTest;
 			sourceTree = "<group>";
 		};
 		93BDCE372BDEE5D300FAD14A /* Model */ = {

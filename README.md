@@ -225,3 +225,4 @@ https://github.com/SebaKrk/MyNBPapp
     C: Implemented Bridge pattern for color abstraction in PaymentActionButton #StructuralPatterns
     -  Applied Bridge pattern to decouple color handling from button logic
     - Enhanced flexibility by allowing different color strategies without modifying button structure
+    D: Test
