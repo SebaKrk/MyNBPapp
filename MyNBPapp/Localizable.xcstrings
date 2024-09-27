@@ -131,6 +131,9 @@
     "currency rate picker" : {
 
     },
+    "Current state: %@" : {
+
+    },
     "Data: %@" : {
 
     },
@@ -245,6 +248,9 @@
         }
       }
     },
+    "Map" : {
+      "comment" : "map"
+    },
     "Me" : {
 
     },
@@ -331,6 +337,9 @@
     "Płacę" : {
 
     },
+    "Płatność zakończona sukcesem!" : {
+
+    },
     "PLN" : {
 
     },
@@ -343,10 +352,16 @@
     "Pokaż numer tygodnia" : {
 
     },
+    "Pokaż Rachunek" : {
+
+    },
     "Pokaż średni kurs" : {
 
     },
     "Proszę wybrać metodę płatności" : {
+
+    },
+    "Przetwarzanie płatności..." : {
 
     },
     "Rachunek:" : {
@@ -417,6 +432,9 @@
 
     },
     "Sortuj" : {
+
+    },
+    "Spróbuj ponownie" : {
 
     },
     "The request failed due to: %@." : {

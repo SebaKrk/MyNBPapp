@@ -221,4 +221,4 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0027 Paymnet, #CreationalPatterns
     A: Create paymnet service
     - Used Abstract Factory
-
+    B: Refactor state management in PaymentViewModel
