@@ -16,8 +16,10 @@ struct RootViewTCA: View {
         NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             VStack {
                 sectionOne
+                    
                 sectionTwo
                 ///sectionThree
+                sectionFour
             }
             .navigationTitle("Root")
             .toolbar { starRootButton }
@@ -25,11 +27,13 @@ struct RootViewTCA: View {
             switch store.case {
             case let .sandBoxA(store):
                 SandBoxViewA(store: store)
+            case let .sandBoxB(store):
+                SandBoxBView(store: store)
             }
         }
         .sheet(item: $store.scope(state: \.destination?.openNewScreen,
                                   action:  \.destination.openNewScreen)) { store in
-                FavoritesScreenView(store: store)
+            SandBoxStarView(store: store)
         }
     }
     
@@ -40,6 +44,7 @@ struct RootViewTCA: View {
                 Image(systemName: "arrow.right")
             }
         }
+        .padding()
     }
     
     @ViewBuilder
@@ -51,6 +56,7 @@ struct RootViewTCA: View {
                 Text("Go to A → A → A")
             }
         }
+        .padding()
     }
     
     @ViewBuilder
@@ -62,6 +68,17 @@ struct RootViewTCA: View {
                 Text("pop to root")
             }
         }
+        .padding()
+    }
+    
+    @ViewBuilder
+    var sectionFour: some View {
+        Section {
+            NavigationLink(state: RootFeatureTCA.Path.State.sandBoxB(SandBoxB.State())) {
+                Text("Go to → B")
+            }
+        }
+        .padding()
     }
     
     @ViewBuilder
@@ -88,10 +105,14 @@ struct RootFeatureTCA {
                 case .element(id: _, action: .sandBoxA(.screenButtonTapped)):
                     state.path.append(.sandBoxA(SandBoxA.State()))
                     return .none
+                case .element(id: _, action: .sandBoxB(.screenButtonTapped)):
+                    state.path.append(.sandBoxB(SandBoxB.State()))
+                    return .none
                 
                 default:
                     return .none
                 }
+            
                 
             case .goToViewAAA:
                 state.path.append(.sandBoxA(SandBoxA.State()))
@@ -100,7 +121,7 @@ struct RootFeatureTCA {
                 return .none
             
             case .starButtonTapped:
-                state.destination = .openNewScreen(ScreenFavorites.State())
+                state.destination = .openNewScreen(SandBoxStarFeature.State())
                 return .none
                 
 //            case .popToRoot:
@@ -108,7 +129,6 @@ struct RootFeatureTCA {
 //                return .none
             case .destination(_):
                 return .none
-
             }
         }
         .forEach(\.path, action: \.path)
@@ -126,6 +146,8 @@ extension RootFeatureTCA {
         case path(StackActionOf<Path>)
         
         case goToViewAAA
+        
+        //case gotoViewB
         
         case destination(PresentationAction<Destination.Action>)
         
@@ -153,12 +175,13 @@ extension RootFeatureTCA {
     @Reducer(state: .equatable)
     enum Path {
         case sandBoxA(SandBoxA)
+        case sandBoxB(SandBoxB)
     }
 }
 
 extension RootFeatureTCA {
     @Reducer(state: .equatable)
     enum Destination {
-        case openNewScreen(ScreenFavorites)
+        case openNewScreen(SandBoxStarFeature)
     }
 }

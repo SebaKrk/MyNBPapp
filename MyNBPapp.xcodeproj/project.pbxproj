@@ -91,6 +91,8 @@
 		93834AEF2B7A04DF00A5744C /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */; };
 		93834AF22B7A056A00A5744C /* ExchangeRateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */; };
 		938C18A12B9A641000D92D50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938C18A02B9A641000D92D50 /* MainView.swift */; };
+		93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */; };
+		93928A102CA7D98300CD026A /* SandBoxB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0F2CA7D98300CD026A /* SandBoxB.swift */; };
 		939B08362CA711BD00B78F82 /* RootViewTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08342CA711BD00B78F82 /* RootViewTCA.swift */; };
 		939B08372CA711BD00B78F82 /* SandBoxA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08352CA711BD00B78F82 /* SandBoxA.swift */; };
 		939B08A82CA712C800B78F82 /* PaymentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08A72CA712C800B78F82 /* PaymentFactory.swift */; };
@@ -358,6 +360,8 @@
 		93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 		93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateClient.swift; sourceTree = "<group>"; };
 		938C18A02B9A641000D92D50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxStar.swift; sourceTree = "<group>"; };
+		93928A0F2CA7D98300CD026A /* SandBoxB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxB.swift; sourceTree = "<group>"; };
 		939B08342CA711BD00B78F82 /* RootViewTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTCA.swift; sourceTree = "<group>"; };
 		939B08352CA711BD00B78F82 /* SandBoxA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxA.swift; sourceTree = "<group>"; };
 		939B08A72CA712C800B78F82 /* PaymentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFactory.swift; sourceTree = "<group>"; };
@@ -910,6 +914,8 @@
 			children = (
 				939B08342CA711BD00B78F82 /* RootViewTCA.swift */,
 				939B08352CA711BD00B78F82 /* SandBoxA.swift */,
+				93928A0F2CA7D98300CD026A /* SandBoxB.swift */,
+				93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */,
 			);
 			path = SandBoxTCA;
 			sourceTree = "<group>";
@@ -2066,6 +2072,7 @@
 				93D430762BBC9CCB00FBBDBD /* CurrencyTableView.swift in Sources */,
 				930948732BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift in Sources */,
 				939B08DD2CA7138800B78F82 /* PaymentViewModel.swift in Sources */,
+				93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */,
 				93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */,
 				934255212BA7A12F00D787D6 /* ContainerRateDetailFeature.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
@@ -2079,6 +2086,7 @@
 				9342551F2BA7A12400D787D6 /* CurrencyRateDetailView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				930948712BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift in Sources */,
+				93928A102CA7D98300CD026A /* SandBoxB.swift in Sources */,
 				93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */,
 				932FFF092C09C226008FC828 /* Demo.swift in Sources */,
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
