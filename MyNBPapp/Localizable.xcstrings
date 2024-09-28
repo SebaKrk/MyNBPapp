@@ -91,6 +91,9 @@
     "Average rate" : {
 
     },
+    "Bład" : {
+
+    },
     "Błąd płatności: %@" : {
 
     },
@@ -115,6 +118,9 @@
     },
     "Chcę" : {
 
+    },
+    "Contact" : {
+      "comment" : "contact"
     },
     "Contacts" : {
 

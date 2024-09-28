@@ -16,6 +16,7 @@ struct SandBoxB {
             case .screenButtonTapped:
                 return .none
             case .view(.viewDidAppear):
+                state.data.append(ElementData(title: "Title 1", color: .red))
                 state.data = IdentifiedArrayOf(uniqueElements: [
                      ElementData(title: "Title 1", color: .red),
                      ElementData(title: "Title 2", color: .green),
@@ -104,32 +105,3 @@ struct ElementData: Equatable, Identifiable {
     let color: Color
 }
 
-//                ForEach(1...5, id: \.self) { index in
-//                    container(title: "Title index: \(index)",
-//                              index: index)
-//                }
-
-//var elements: [ElementData] = [
-//     ElementData(title: "Title 1", color: .red),
-//     ElementData(title: "Title 2", color: .green),
-//     ElementData(title: "Title 3", color: .blue),
-//     ElementData(title: "Title 4", color: .yellow),
-//     ElementData(title: "Title 5", color: .orange)
-// ]
-
-struct ContainerBoxStyle: GroupBoxStyle {
-    
-    let color: Color
-    
-    func makeBody(configuration: Configuration) -> some View {
-        VStack {
-            configuration.label
-                .frame(height: 50)
-            configuration.content
-        }
-        .padding()
-        .background(color)
-        .cornerRadius(8)
-    }
-    
-}

@@ -93,7 +93,14 @@
 		938C18A12B9A641000D92D50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938C18A02B9A641000D92D50 /* MainView.swift */; };
 		93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */; };
 		93928A102CA7D98300CD026A /* SandBoxB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0F2CA7D98300CD026A /* SandBoxB.swift */; };
-		939B08362CA711BD00B78F82 /* RootViewTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08342CA711BD00B78F82 /* RootViewTCA.swift */; };
+		93928A132CA8035F00CD026A /* SandBoxC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A122CA8035F00CD026A /* SandBoxC.swift */; };
+		93928A162CA8481C00CD026A /* ContainerBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A152CA8481C00CD026A /* ContainerBoxStyle.swift */; };
+		93928A1B2CA858C700CD026A /* RootViewTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A1A2CA858C700CD026A /* RootViewTCA.swift */; };
+		93928A1E2CA8594B00CD026A /* RootFeatureTCA+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A1D2CA8594B00CD026A /* RootFeatureTCA+Action.swift */; };
+		93928A202CA8597100CD026A /* RootFeatureTCA+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A1F2CA8597100CD026A /* RootFeatureTCA+State.swift */; };
+		93928A222CA8598E00CD026A /* RootFeatureTCA+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A212CA8598E00CD026A /* RootFeatureTCA+Path.swift */; };
+		93928A242CA859BB00CD026A /* RootFeatureTCA+Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A232CA859BB00CD026A /* RootFeatureTCA+Destination.swift */; };
+		939B08362CA711BD00B78F82 /* RootFeatureTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08342CA711BD00B78F82 /* RootFeatureTCA.swift */; };
 		939B08372CA711BD00B78F82 /* SandBoxA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08352CA711BD00B78F82 /* SandBoxA.swift */; };
 		939B08A82CA712C800B78F82 /* PaymentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08A72CA712C800B78F82 /* PaymentFactory.swift */; };
 		939B08AB2CA712EE00B78F82 /* PaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B08AA2CA712EE00B78F82 /* PaymentProcessor.swift */; };
@@ -362,7 +369,14 @@
 		938C18A02B9A641000D92D50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxStar.swift; sourceTree = "<group>"; };
 		93928A0F2CA7D98300CD026A /* SandBoxB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxB.swift; sourceTree = "<group>"; };
-		939B08342CA711BD00B78F82 /* RootViewTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTCA.swift; sourceTree = "<group>"; };
+		93928A122CA8035F00CD026A /* SandBoxC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxC.swift; sourceTree = "<group>"; };
+		93928A152CA8481C00CD026A /* ContainerBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerBoxStyle.swift; sourceTree = "<group>"; };
+		93928A1A2CA858C700CD026A /* RootViewTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTCA.swift; sourceTree = "<group>"; };
+		93928A1D2CA8594B00CD026A /* RootFeatureTCA+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootFeatureTCA+Action.swift"; sourceTree = "<group>"; };
+		93928A1F2CA8597100CD026A /* RootFeatureTCA+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootFeatureTCA+State.swift"; sourceTree = "<group>"; };
+		93928A212CA8598E00CD026A /* RootFeatureTCA+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootFeatureTCA+Path.swift"; sourceTree = "<group>"; };
+		93928A232CA859BB00CD026A /* RootFeatureTCA+Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootFeatureTCA+Destination.swift"; sourceTree = "<group>"; };
+		939B08342CA711BD00B78F82 /* RootFeatureTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeatureTCA.swift; sourceTree = "<group>"; };
 		939B08352CA711BD00B78F82 /* SandBoxA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxA.swift; sourceTree = "<group>"; };
 		939B08A72CA712C800B78F82 /* PaymentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFactory.swift; sourceTree = "<group>"; };
 		939B08AA2CA712EE00B78F82 /* PaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProcessor.swift; sourceTree = "<group>"; };
@@ -909,13 +923,36 @@
 			path = ExchangeRateClient;
 			sourceTree = "<group>";
 		};
+		93928A182CA858A100CD026A /* RootViewTCA */ = {
+			isa = PBXGroup;
+			children = (
+				93928A1C2CA8590500CD026A /* RootFeature */,
+				93928A1A2CA858C700CD026A /* RootViewTCA.swift */,
+			);
+			path = RootViewTCA;
+			sourceTree = "<group>";
+		};
+		93928A1C2CA8590500CD026A /* RootFeature */ = {
+			isa = PBXGroup;
+			children = (
+				939B08342CA711BD00B78F82 /* RootFeatureTCA.swift */,
+				93928A1D2CA8594B00CD026A /* RootFeatureTCA+Action.swift */,
+				93928A232CA859BB00CD026A /* RootFeatureTCA+Destination.swift */,
+				93928A212CA8598E00CD026A /* RootFeatureTCA+Path.swift */,
+				93928A1F2CA8597100CD026A /* RootFeatureTCA+State.swift */,
+			);
+			path = RootFeature;
+			sourceTree = "<group>";
+		};
 		939B083A2CA711DC00B78F82 /* SandBoxTCA */ = {
 			isa = PBXGroup;
 			children = (
-				939B08342CA711BD00B78F82 /* RootViewTCA.swift */,
+				93928A182CA858A100CD026A /* RootViewTCA */,
 				939B08352CA711BD00B78F82 /* SandBoxA.swift */,
 				93928A0F2CA7D98300CD026A /* SandBoxB.swift */,
+				93928A122CA8035F00CD026A /* SandBoxC.swift */,
 				93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */,
+				93928A152CA8481C00CD026A /* ContainerBoxStyle.swift */,
 			);
 			path = SandBoxTCA;
 			sourceTree = "<group>";
@@ -1941,8 +1978,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939B08362CA711BD00B78F82 /* RootViewTCA.swift in Sources */,
+				939B08362CA711BD00B78F82 /* RootFeatureTCA.swift in Sources */,
 				939B08372CA711BD00B78F82 /* SandBoxA.swift in Sources */,
+				93928A1E2CA8594B00CD026A /* RootFeatureTCA+Action.swift in Sources */,
 				93500A3B2BC5AE13000E93FB /* CurrencyExchangeChartType.swift in Sources */,
 				93A3EB592B65894A007BFCDC /* FlagView.swift in Sources */,
 				93F782A42BB0CC1300ACB39A /* ChartViewFactory.swift in Sources */,
@@ -1969,6 +2007,7 @@
 				93335A862BA750F4001F1610 /* ContactsFeature+Action.swift in Sources */,
 				93335A922BA751F2001F1610 /* AddContactFeature+Action.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,
+				93928A162CA8481C00CD026A /* ContainerBoxStyle.swift in Sources */,
 				9312DF162B9B346000C3D441 /* TransactionType.swift in Sources */,
 				939B91602BC042D300C0D4C1 /* CurrencyBarChartView.swift in Sources */,
 				93517C432B88CD99009252E9 /* TestView.swift in Sources */,
@@ -1977,6 +2016,7 @@
 				939B08AB2CA712EE00B78F82 /* PaymentProcessor.swift in Sources */,
 				939B08CB2CA7135500B78F82 /* PaymentServiceProtocol.swift in Sources */,
 				939B08CC2CA7135500B78F82 /* PaymentError.swift in Sources */,
+				93928A1B2CA858C700CD026A /* RootViewTCA.swift in Sources */,
 				939B08CD2CA7135500B78F82 /* PaymentService.swift in Sources */,
 				93335A9D2BA75331001F1610 /* ContactDetailFeature+State.swift in Sources */,
 				93FE949C2BB1CD6B0087104D /*  Container+Extension.swift in Sources */,
@@ -2036,6 +2076,7 @@
 				939B09282CA7161E00B78F82 /* ChatView.swift in Sources */,
 				939B09292CA7161E00B78F82 /* SwiftUIMapView.swift in Sources */,
 				939B092A2CA7161E00B78F82 /* MapType.swift in Sources */,
+				93928A132CA8035F00CD026A /* SandBoxC.swift in Sources */,
 				939B092B2CA7161E00B78F82 /* LocationManager.swift in Sources */,
 				939B092C2CA7161E00B78F82 /* DefaultMapViewsFactory.swift in Sources */,
 				939B092D2CA7161E00B78F82 /* MapFactory.swift in Sources */,
@@ -2064,6 +2105,7 @@
 				939B09442CA7161E00B78F82 /* SearchServiceProtocol.swift in Sources */,
 				939B09452CA7161E00B78F82 /* LoadingDotsView.swift in Sources */,
 				939B09462CA7161E00B78F82 /* MKPointOfInterestCategory+Extension.swift in Sources */,
+				93928A222CA8598E00CD026A /* RootFeatureTCA+Path.swift in Sources */,
 				939B09472CA7161E00B78F82 /* MapView.swift in Sources */,
 				93F782A22BB0CBC700ACB39A /* CurrencyChartViewFactory.swift in Sources */,
 				939B08DA2CA7138100B78F82 /* PaymentView.swift in Sources */,
@@ -2074,6 +2116,8 @@
 				939B08DD2CA7138800B78F82 /* PaymentViewModel.swift in Sources */,
 				93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */,
 				93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */,
+				93928A242CA859BB00CD026A /* RootFeatureTCA+Destination.swift in Sources */,
+				93928A202CA8597100CD026A /* RootFeatureTCA+State.swift in Sources */,
 				934255212BA7A12F00D787D6 /* ContainerRateDetailFeature.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
