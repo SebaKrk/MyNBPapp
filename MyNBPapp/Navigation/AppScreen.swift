@@ -19,6 +19,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case chatGPT
     case payment
     case map
+    case contact
     
     var id: AppScreen { self }
     
@@ -43,16 +44,18 @@ extension AppScreen {
                   systemImage: "person")
         case .sandBox:
             Label(String(localized: "Sandbox", comment: "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."),
-                       systemImage: "shippingbox")
+                  systemImage: "shippingbox")
         case .coreData:
             Label(String(localized: "CoreData", comment: "The `CoreData` tab in the application is my testing area for CoreData "), systemImage: "archivebox.fill")
-        
+            
         case .chatGPT:
             Label(String(localized: "ChatGPT", comment: "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"), systemImage: "message")
         case .payment:
             Label(String(localized: "Payment", comment: "Payment Abstract Factory implementation"), systemImage: "creditcard")
         case .map:
             Label(String(localized: "Map", comment: "map"), systemImage: "map")
+        case .contact:
+            Label(String(localized: "Contact", comment: "contact"), systemImage: "person")
         }
     }
     
@@ -67,7 +70,7 @@ extension AppScreen {
             //                 reducer: { RootFeature() }))
             
             RootViewTCA(store: Store(initialState: RootFeatureTCA.State(),
-                             reducer: { RootFeatureTCA() }))
+                                     reducer: { RootFeatureTCA() }))
         case .favorites:
             FavoritesView()
         case .account:
@@ -75,7 +78,7 @@ extension AppScreen {
                                      reducer: { AccountFeature() }))
         case .sandBox:
             RootView(store: Store(initialState: RootFeature.State(),
-                             reducer: { RootFeature() }))
+                                  reducer: { RootFeature() }))
         case .coreData:
             CoreDataBootCamp()
             
@@ -86,6 +89,9 @@ extension AppScreen {
             Payment()
         case .map:
             SandBoxMapView()
+        case .contact:
+            ContactsView(store: Store(initialState: ContactsFeature.State(),
+                                      reducer: { ContactsFeature() }))
         }
     }
     

@@ -91,6 +91,9 @@
     "Average rate" : {
 
     },
+    "Bład" : {
+
+    },
     "Błąd płatności: %@" : {
 
     },
@@ -115,6 +118,9 @@
     },
     "Chcę" : {
 
+    },
+    "Contact" : {
+      "comment" : "contact"
     },
     "Contacts" : {
 
@@ -193,6 +199,9 @@
 
     },
     "Fruits" : {
+
+    },
+    "Go to → B" : {
 
     },
     "Go to A → A → A" : {
@@ -388,6 +397,12 @@
       "comment" : "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."
     },
     "SandBox screen A" : {
+
+    },
+    "SandBox screen B" : {
+
+    },
+    "SandBoxStarView" : {
 
     },
     "Save" : {
