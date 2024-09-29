@@ -219,7 +219,7 @@ https://github.com/SebaKrk/MyNBPapp
     - Refactored SearchService and add DocC documentation (testing)
     E: Create POI Buttons
     
-### IOS-0027 Paymnet, #CodingPatterns
+### IOS-0027 Paymnet, #DesignPatterns
     A: Create paymnet service
     - Used Abstract Factory
     B: Refactor state management in PaymentViewModel
@@ -230,5 +230,5 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0028 TCA `Stack-based navigation`
     A: SandBox - navigation TCA
 
-### IOS-0029 Store
-    A: Create store service 
+### IOS-0029 Store #DesignPatterns - Composite "Kompozyt"
+    A: Create store service #Singelton
