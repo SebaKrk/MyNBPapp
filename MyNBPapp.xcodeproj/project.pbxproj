@@ -944,15 +944,60 @@
 			path = RootFeature;
 			sourceTree = "<group>";
 		};
+		93928A252CA85B3200CD026A /* SandBoxFeatureA */ = {
+			isa = PBXGroup;
+			children = (
+				939B08352CA711BD00B78F82 /* SandBoxA.swift */,
+			);
+			path = SandBoxFeatureA;
+			sourceTree = "<group>";
+		};
+		93928A272CA85B4300CD026A /* SandBoxFeatureB */ = {
+			isa = PBXGroup;
+			children = (
+				93928A0F2CA7D98300CD026A /* SandBoxB.swift */,
+			);
+			path = SandBoxFeatureB;
+			sourceTree = "<group>";
+		};
+		93928A282CA85B4D00CD026A /* SandBoxFeatureC */ = {
+			isa = PBXGroup;
+			children = (
+				93928A122CA8035F00CD026A /* SandBoxC.swift */,
+			);
+			path = SandBoxFeatureC;
+			sourceTree = "<group>";
+		};
+		93928A292CA85B5C00CD026A /* SandBoxFeatureStar */ = {
+			isa = PBXGroup;
+			children = (
+				93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */,
+			);
+			path = SandBoxFeatureStar;
+			sourceTree = "<group>";
+		};
+		93928A2A2CA8648500CD026A /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				93CF41CB2C09D58A006263F0 /* Root */,
+				932FFF012C09B3F6008FC828 /* ScreenA.swift */,
+				932FFF052C09B6E7008FC828 /* ScreenB.swift */,
+				93CF41D52C09D922006263F0 /* ScreenC.swift */,
+				93CF41D82C09F640006263F0 /* ScreenContact.swift */,
+				939BD5CA2C0D06100063D761 /* ScreenFavorites.swift */,
+				93335A662BA455E3001F1610 /* Contact */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
 		939B083A2CA711DC00B78F82 /* SandBoxTCA */ = {
 			isa = PBXGroup;
 			children = (
 				93928A182CA858A100CD026A /* RootViewTCA */,
-				939B08352CA711BD00B78F82 /* SandBoxA.swift */,
-				93928A0F2CA7D98300CD026A /* SandBoxB.swift */,
-				93928A122CA8035F00CD026A /* SandBoxC.swift */,
-				93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */,
-				93928A152CA8481C00CD026A /* ContainerBoxStyle.swift */,
+				93928A252CA85B3200CD026A /* SandBoxFeatureA */,
+				93928A272CA85B4300CD026A /* SandBoxFeatureB */,
+				93928A282CA85B4D00CD026A /* SandBoxFeatureC */,
+				93928A292CA85B5C00CD026A /* SandBoxFeatureStar */,
 			);
 			path = SandBoxTCA;
 			sourceTree = "<group>";
@@ -1356,13 +1401,7 @@
 			isa = PBXGroup;
 			children = (
 				939B083A2CA711DC00B78F82 /* SandBoxTCA */,
-				93CF41CB2C09D58A006263F0 /* Root */,
-				932FFF012C09B3F6008FC828 /* ScreenA.swift */,
-				932FFF052C09B6E7008FC828 /* ScreenB.swift */,
-				93CF41D52C09D922006263F0 /* ScreenC.swift */,
-				93CF41D82C09F640006263F0 /* ScreenContact.swift */,
-				939BD5CA2C0D06100063D761 /* ScreenFavorites.swift */,
-				93335A662BA455E3001F1610 /* Contact */,
+				93928A2A2CA8648500CD026A /* Old */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -1377,6 +1416,7 @@
 				93A3EB542B6585F4007BFCDC /* CurrencyRatePrimaryView.swift */,
 				93A3EB582B65894A007BFCDC /* FlagView.swift */,
 				93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */,
+				93928A152CA8481C00CD026A /* ContainerBoxStyle.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
