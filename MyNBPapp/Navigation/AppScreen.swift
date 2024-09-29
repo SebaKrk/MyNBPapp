@@ -20,6 +20,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case payment
     case map
     case contact
+    case store
     
     var id: AppScreen { self }
     
@@ -56,6 +57,8 @@ extension AppScreen {
             Label(String(localized: "Map", comment: "map"), systemImage: "map")
         case .contact:
             Label(String(localized: "Contact", comment: "contact"), systemImage: "person")
+        case .store:
+            Label(String(localized: "Store", comment: "store"), systemImage: "bag")
         }
     }
     
@@ -92,6 +95,8 @@ extension AppScreen {
         case .contact:
             ContactsView(store: Store(initialState: ContactsFeature.State(),
                                       reducer: { ContactsFeature() }))
+        case .store:
+            StoreView()
         }
     }
     
@@ -99,10 +104,8 @@ extension AppScreen {
 
 //SandBoxMapView()
 //MapView()
-
 //            ContactsView(store: Store(initialState: ContactsFeature.State(),
 //                                      reducer: { ContactsFeature() }))
-
 //TestView(store: Store(initialState: TestFeature.State(),
 //                      reducer: { TestFeature() }))
 

@@ -452,6 +452,12 @@
     "Sortuj" : {
 
     },
+    "Store" : {
+      "comment" : "store"
+    },
+    "Store View" : {
+
+    },
     "The request failed due to: %@." : {
       "comment" : "Request Failed",
       "localizations" : {

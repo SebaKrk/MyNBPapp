@@ -230,3 +230,5 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0028 TCA `Stack-based navigation`
     A: SandBox - navigation TCA
 
+### IOS-0029 Store
+    A: Create store service 
