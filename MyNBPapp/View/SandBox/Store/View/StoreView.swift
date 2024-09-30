@@ -9,21 +9,45 @@ import SwiftUI
 
 struct StoreView: View {
     
-    private let service = AppleProductsService.shared
+    // MARK: -  Properties
     
-    @State var products: [Product] = []
+    @ObservedObject private var viewModel: StoreViewModel = StoreViewModel()
+    
+    // test
+    @State var items: [PurchasableItem] = []
+    
+    // MARK: - Lifecycle
     
     var body: some View {
-        Text("Store View")
-            .onAppear {
-                Task {
-                    do {
-                        self.products = try await service.fetchProducts(from: jsonAppleProducts)
-                        dump(products)
-                    } catch {
-                        print("Błąd podczas ładowania produktów: \(error)")
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                ForEach(viewModel.products, id: \.name) { product in
+                    HStack {
+                        Text(product.name)
+                        Spacer()
+                        addButton(product)
                     }
                 }
             }
+        }
+        .task {
+            await viewModel.fetchStoreData()
+        }
+        
+    }
+    
+    // MARK: - Subview
+    
+    private func addButton(_ item: PurchasableItem) -> some View {
+        Button {
+            items.append(item)
+        } label: {
+            Text("add")
+        }
+        
+    }
+        
+    private var columns: [GridItem] {
+        [ GridItem(.flexible()) ]
     }
 }

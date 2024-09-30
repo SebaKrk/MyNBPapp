@@ -213,8 +213,13 @@
 		93D4CF9C2CA9DF6B00164D92 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF9B2CA9DF6B00164D92 /* Package.swift */; };
 		93D4CF9E2CA9E01900164D92 /* AppleStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF9D2CA9E01900164D92 /* AppleStoreData.swift */; };
 		93D4CFA02CA9E3AD00164D92 /* AppleProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF9F2CA9E3AD00164D92 /* AppleProductsService.swift */; };
-		93D4CFA32CA9E54A00164D92 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFA22CA9E54A00164D92 /* ProductsService.swift */; };
+		93D4CFA32CA9E54A00164D92 /* StoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFA22CA9E54A00164D92 /* StoreDataService.swift */; };
 		93D4CFA62CA9EB1F00164D92 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFA52CA9EB1F00164D92 /* StoreView.swift */; };
+		93D4CFA92CA9F83600164D92 /* PackageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFA82CA9F83600164D92 /* PackageItem.swift */; };
+		93D4CFAD2CAA6D2900164D92 /* PurchasableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFAC2CAA6D2900164D92 /* PurchasableItem.swift */; };
+		93D4CFB12CAA77FA00164D92 /* ProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFB02CAA77FA00164D92 /* ProductPresenter.swift */; };
+		93D4CFB32CAA7AFA00164D92 /* PackagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFB22CAA7AFA00164D92 /* PackagePresenter.swift */; };
+		93D4CFBB2CAB444300164D92 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFBA2CAB444300164D92 /* StoreViewModel.swift */; };
 		93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */; };
 		93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */; };
 		93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */; };
@@ -497,8 +502,13 @@
 		93D4CF9B2CA9DF6B00164D92 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		93D4CF9D2CA9E01900164D92 /* AppleStoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStoreData.swift; sourceTree = "<group>"; };
 		93D4CF9F2CA9E3AD00164D92 /* AppleProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProductsService.swift; sourceTree = "<group>"; };
-		93D4CFA22CA9E54A00164D92 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		93D4CFA22CA9E54A00164D92 /* StoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataService.swift; sourceTree = "<group>"; };
 		93D4CFA52CA9EB1F00164D92 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		93D4CFA82CA9F83600164D92 /* PackageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageItem.swift; sourceTree = "<group>"; };
+		93D4CFAC2CAA6D2900164D92 /* PurchasableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasableItem.swift; sourceTree = "<group>"; };
+		93D4CFB02CAA77FA00164D92 /* ProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPresenter.swift; sourceTree = "<group>"; };
+		93D4CFB22CAA7AFA00164D92 /* PackagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePresenter.swift; sourceTree = "<group>"; };
+		93D4CFBA2CAB444300164D92 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewModel.swift; sourceTree = "<group>"; };
 		93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+EuroChart.swift"; sourceTree = "<group>"; };
 		93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
@@ -1631,9 +1641,12 @@
 		93D4CF912CA9B3A200164D92 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				93D4CF982CA9DEBA00164D92 /* Manager */,
+				93D4CFAE2CAA77E800164D92 /* Manager */,
+				93D4CFAA2CAA6D0900164D92 /* Resources */,
+				93D4CF982CA9DEBA00164D92 /* Services */,
 				93D4CF972CA9DEB200164D92 /* Model */,
 				93D4CFA42CA9EAF200164D92 /* View */,
+				93D4CFB92CAB443900164D92 /* ViewModel */,
 				93D4CF932CA9B40700164D92 /* StoreNote.swift */,
 			);
 			path = Store;
@@ -1645,18 +1658,19 @@
 				93D4CF992CA9DEDF00164D92 /* Product.swift */,
 				93D4CF9D2CA9E01900164D92 /* AppleStoreData.swift */,
 				93D4CF9B2CA9DF6B00164D92 /* Package.swift */,
+				93D4CFA82CA9F83600164D92 /* PackageItem.swift */,
+				93D4CFAC2CAA6D2900164D92 /* PurchasableItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		93D4CF982CA9DEBA00164D92 /* Manager */ = {
+		93D4CF982CA9DEBA00164D92 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				93D4CFA22CA9E54A00164D92 /* ProductsService.swift */,
+				93D4CFA22CA9E54A00164D92 /* StoreDataService.swift */,
 				93D4CF9F2CA9E3AD00164D92 /* AppleProductsService.swift */,
-				93D4CF952CA9CF9400164D92 /* AppleProductsJSON.swift */,
 			);
-			path = Manager;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		93D4CFA42CA9EAF200164D92 /* View */ = {
@@ -1665,6 +1679,31 @@
 				93D4CFA52CA9EB1F00164D92 /* StoreView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		93D4CFAA2CAA6D0900164D92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CF952CA9CF9400164D92 /* AppleProductsJSON.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		93D4CFAE2CAA77E800164D92 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFB02CAA77FA00164D92 /* ProductPresenter.swift */,
+				93D4CFB22CAA7AFA00164D92 /* PackagePresenter.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		93D4CFB92CAB443900164D92 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFBA2CAB444300164D92 /* StoreViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		93E9A80A2B6E628600B37B26 /* ViewModel */ = {
@@ -2114,6 +2153,7 @@
 				939B08CB2CA7135500B78F82 /* PaymentServiceProtocol.swift in Sources */,
 				93D4CFA02CA9E3AD00164D92 /* AppleProductsService.swift in Sources */,
 				939B08CC2CA7135500B78F82 /* PaymentError.swift in Sources */,
+				93D4CFB32CAA7AFA00164D92 /* PackagePresenter.swift in Sources */,
 				93928A1B2CA858C700CD026A /* RootViewTCA.swift in Sources */,
 				939B08CD2CA7135500B78F82 /* PaymentService.swift in Sources */,
 				93335A9D2BA75331001F1610 /* ContactDetailFeature+State.swift in Sources */,
@@ -2211,11 +2251,12 @@
 				939B08DA2CA7138100B78F82 /* PaymentView.swift in Sources */,
 				93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */,
 				93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */,
+				93D4CFAD2CAA6D2900164D92 /* PurchasableItem.swift in Sources */,
 				93D4CF962CA9CF9400164D92 /* AppleProductsJSON.swift in Sources */,
 				93D430762BBC9CCB00FBBDBD /* CurrencyTableView.swift in Sources */,
 				930948732BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift in Sources */,
 				939B08DD2CA7138800B78F82 /* PaymentViewModel.swift in Sources */,
-				93D4CFA32CA9E54A00164D92 /* ProductsService.swift in Sources */,
+				93D4CFA32CA9E54A00164D92 /* StoreDataService.swift in Sources */,
 				93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */,
 				93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */,
 				93928A242CA859BB00CD026A /* RootFeatureTCA+Destination.swift in Sources */,
@@ -2223,6 +2264,7 @@
 				93D4CF942CA9B40700164D92 /* StoreNote.swift in Sources */,
 				934255212BA7A12F00D787D6 /* ContainerRateDetailFeature.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
+				93D4CFBB2CAB444300164D92 /* StoreViewModel.swift in Sources */,
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */,
 				9312DF052B9B1D9200C3D441 /* MainFeature+Action.swift in Sources */,
@@ -2240,9 +2282,11 @@
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
 				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,
 				93500A412BC5B9E5000E93FB /* ChartTypeFactory.swift in Sources */,
+				93D4CFB12CAA77FA00164D92 /* ProductPresenter.swift in Sources */,
 				939B08AD2CA7130500B78F82 /* ReceiptGenerator.swift in Sources */,
 				93517C412B88CCA2009252E9 /* TestFeature+State.swift in Sources */,
 				93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */,
+				93D4CFA92CA9F83600164D92 /* PackageItem.swift in Sources */,
 				9312DF022B9B1D5E00C3D441 /* MainFeature+State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@
 import Foundation
 
 struct AppleStoreData: Codable {
+    
     let products: [Product]
-    //let packages: [Package]
+    let packages: [Package]
+    
 }

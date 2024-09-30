@@ -96,6 +96,7 @@ extension AppScreen {
             ContactsView(store: Store(initialState: ContactsFeature.State(),
                                       reducer: { ContactsFeature() }))
         case .store:
+//            PurchasableItemView()
             StoreView()
         }
     }

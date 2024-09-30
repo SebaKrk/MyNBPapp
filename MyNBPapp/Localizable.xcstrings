@@ -65,6 +65,9 @@
     "Account View" : {
 
     },
+    "add" : {
+
+    },
     "An unknown error occurred. Please try again." : {
       "comment" : "Unknown Error",
       "localizations" : {
@@ -147,6 +150,9 @@
 
     },
     "Delete" : {
+
+    },
+    "Dodaj do koszyka" : {
 
     },
     "Done" : {
@@ -330,6 +336,9 @@
     "Open Contact Sheet" : {
 
     },
+    "Pakiety" : {
+
+    },
     "Payment" : {
       "comment" : "Payment Abstract Factory implementation"
     },
@@ -365,6 +374,12 @@
 
     },
     "pop to root" : {
+
+    },
+    "Produkty" : {
+
+    },
+    "Produkty w koszyku:" : {
 
     },
     "Proszę wybrać metodę płatności" : {
@@ -449,13 +464,16 @@
     "SettingsView" : {
 
     },
+    "Sklep" : {
+
+    },
     "Sortuj" : {
 
     },
     "Store" : {
       "comment" : "store"
     },
-    "Store View" : {
+    "Suma w koszyku: %lld" : {
 
     },
     "The request failed due to: %@." : {

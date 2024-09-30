@@ -7,17 +7,17 @@
 
 import Foundation
 
-final class AppleProductsService: ProductsService {
+final class AppleProductsService: StoreDataService {
 
     static let shared = AppleProductsService()
     
     private init() {}
     
-    func fetchProducts(from json: String) async throws -> [Product] {
-        return try await downloadProducts(from: json)
+    func fetchStoreData(from json: String) async throws -> AppleStoreData {
+        return try await downloadStoreData(from: json)
     }
     
-    private func downloadProducts(from json: String) async throws -> [Product] {
+    private func downloadStoreData(from json: String) async throws -> AppleStoreData {
         guard let jsonData = json.data(using: .utf8) else {
             throw NSError(domain: "AppleProductsService", code: 1, userInfo: [NSLocalizedDescriptionKey: "Błąd konwersji ciągu znaków na dane"])
         }
@@ -25,7 +25,7 @@ final class AppleProductsService: ProductsService {
         do {
             let decoder = JSONDecoder()
             let storeData = try decoder.decode(AppleStoreData.self, from: jsonData)
-            return storeData.products
+            return storeData
         } catch {
             throw NSError(domain: "AppleProductsService", code: 2, userInfo: [NSLocalizedDescriptionKey: "Błąd dekodowania JSON: \(error.localizedDescription)"])
         }

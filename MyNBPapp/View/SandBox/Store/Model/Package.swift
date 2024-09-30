@@ -8,12 +8,9 @@
 import Foundation
 
 struct Package: Codable, Identifiable {
+    
     let id: String
     let name: String
-    let products: [Product]
-}
-
-struct PackageItem: Codable {
-    let productId: String?
-    let packageId: String?  
+    var products: [Product]
+    
 }
