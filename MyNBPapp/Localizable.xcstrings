@@ -149,9 +149,6 @@
     "Delete" : {
 
     },
-    "Dodaj do koszyka" : {
-
-    },
     "Done" : {
       "localizations" : {
         "pl" : {
@@ -339,9 +336,6 @@
     "Open Contact Sheet" : {
 
     },
-    "Pakiety" : {
-
-    },
     "Payment" : {
       "comment" : "Payment Abstract Factory implementation"
     },
@@ -377,12 +371,6 @@
 
     },
     "pop to root" : {
-
-    },
-    "Produkty" : {
-
-    },
-    "Produkty w koszyku:" : {
 
     },
     "Proszę wybrać metodę płatności" : {
@@ -467,17 +455,11 @@
     "SettingsView" : {
 
     },
-    "Sklep" : {
-
-    },
     "Sortuj" : {
 
     },
     "Store" : {
       "comment" : "store"
-    },
-    "Suma w koszyku: %lld" : {
-
     },
     "The request failed due to: %@." : {
       "comment" : "Request Failed",

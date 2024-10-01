@@ -64,7 +64,7 @@ struct StoreView: View {
     
     private func groupBoxBottom (_ item: PurchasableItem) -> some View {
         HStack {
-            priceLabel(100)
+            priceLabel(item.getPrice())
             Spacer()
             addButton(item)
         }
