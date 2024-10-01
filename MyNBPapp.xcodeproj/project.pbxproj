@@ -90,6 +90,7 @@
 		93834AED2B7A04CE00A5744C /* openapi.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 93834AEC2B7A04CE00A5744C /* openapi.yaml */; };
 		93834AEF2B7A04DF00A5744C /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */; };
 		93834AF22B7A056A00A5744C /* ExchangeRateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */; };
+		938604622CAC956900CAF30E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938604612CAC956900CAF30E /* Note.swift */; };
 		938C18A12B9A641000D92D50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938C18A02B9A641000D92D50 /* MainView.swift */; };
 		93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */; };
 		93928A102CA7D98300CD026A /* SandBoxB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0F2CA7D98300CD026A /* SandBoxB.swift */; };
@@ -379,6 +380,7 @@
 		93834AEC2B7A04CE00A5744C /* openapi.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
 		93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 		93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateClient.swift; sourceTree = "<group>"; };
+		938604612CAC956900CAF30E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		938C18A02B9A641000D92D50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxStar.swift; sourceTree = "<group>"; };
 		93928A0F2CA7D98300CD026A /* SandBoxB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxB.swift; sourceTree = "<group>"; };
@@ -1677,6 +1679,7 @@
 			isa = PBXGroup;
 			children = (
 				93D4CFA52CA9EB1F00164D92 /* StoreView.swift */,
+				938604612CAC956900CAF30E /* Note.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2252,6 +2255,7 @@
 				93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */,
 				93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */,
 				93D4CFAD2CAA6D2900164D92 /* PurchasableItem.swift in Sources */,
+				938604622CAC956900CAF30E /* Note.swift in Sources */,
 				93D4CF962CA9CF9400164D92 /* AppleProductsJSON.swift in Sources */,
 				93D430762BBC9CCB00FBBDBD /* CurrencyTableView.swift in Sources */,
 				930948732BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift in Sources */,

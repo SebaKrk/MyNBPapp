@@ -13,6 +13,10 @@ final class StoreViewModel: ObservableObject {
     
     @Published var products: [ProductPresenter] = []
     @Published var packages: [PackagePresenter] = []
+    @Published var items: [PurchasableItem] = []
+    
+    @Published var showProductCardDetails: Bool = false
+    @Published var selectedProduct: PurchasableItem?
     
     private let service: AppleProductsService
     
@@ -34,5 +38,10 @@ final class StoreViewModel: ObservableObject {
         } catch {
             print("Błąd pobierania danych: \(error.localizedDescription)")
         }
+    }
+    
+    func selectProduct(_ product: PurchasableItem) {
+        selectedProduct = product
+        showProductCardDetails.toggle()
     }
 }

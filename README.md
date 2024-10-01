@@ -232,3 +232,5 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-0029 Store #DesignPatterns - Composite "Kompozyt"
     A: Create store service #Singelton
+    B: Build UI, #ProgramingPrinciple
+    - "program to an interface, not an implementation”

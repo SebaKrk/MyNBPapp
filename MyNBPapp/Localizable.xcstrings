@@ -65,9 +65,6 @@
     "Account View" : {
 
     },
-    "add" : {
-
-    },
     "An unknown error occurred. Please try again." : {
       "comment" : "Unknown Error",
       "localizations" : {
@@ -232,6 +229,12 @@
 
     },
     "Jeszcze tu nic nie ma" : {
+
+    },
+    "Już od %lld zł" : {
+
+    },
+    "Kup" : {
 
     },
     "kurs:" : {
