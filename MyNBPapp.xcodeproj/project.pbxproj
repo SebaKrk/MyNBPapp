@@ -90,6 +90,10 @@
 		93834AED2B7A04CE00A5744C /* openapi.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 93834AEC2B7A04CE00A5744C /* openapi.yaml */; };
 		93834AEF2B7A04DF00A5744C /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */; };
 		93834AF22B7A056A00A5744C /* ExchangeRateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */; };
+		938604622CAC956900CAF30E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938604612CAC956900CAF30E /* Note.swift */; };
+		938604652CAD766B00CAF30E /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938604642CAD766B00CAF30E /* ProductDetailView.swift */; };
+		938604682CAD7EA900CAF30E /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938604672CAD7EA900CAF30E /* CartView.swift */; };
+		9386046B2CAD7EB800CAF30E /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386046A2CAD7EB800CAF30E /* CartViewModel.swift */; };
 		938C18A12B9A641000D92D50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938C18A02B9A641000D92D50 /* MainView.swift */; };
 		93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */; };
 		93928A102CA7D98300CD026A /* SandBoxB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93928A0F2CA7D98300CD026A /* SandBoxB.swift */; };
@@ -207,6 +211,19 @@
 		93CF41D92C09F640006263F0 /* ScreenContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF41D82C09F640006263F0 /* ScreenContact.swift */; };
 		93D430762BBC9CCB00FBBDBD /* CurrencyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D430752BBC9CCB00FBBDBD /* CurrencyTableView.swift */; };
 		93D430782BBFCE5300FBBDBD /* CurrencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D430772BBFCE5300FBBDBD /* CurrencyChartView.swift */; };
+		93D4CF942CA9B40700164D92 /* StoreNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF932CA9B40700164D92 /* StoreNote.swift */; };
+		93D4CF962CA9CF9400164D92 /* AppleProductsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF952CA9CF9400164D92 /* AppleProductsJSON.swift */; };
+		93D4CF9A2CA9DEDF00164D92 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF992CA9DEDF00164D92 /* Product.swift */; };
+		93D4CF9C2CA9DF6B00164D92 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF9B2CA9DF6B00164D92 /* Package.swift */; };
+		93D4CF9E2CA9E01900164D92 /* AppleStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF9D2CA9E01900164D92 /* AppleStoreData.swift */; };
+		93D4CFA02CA9E3AD00164D92 /* AppleProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CF9F2CA9E3AD00164D92 /* AppleProductsService.swift */; };
+		93D4CFA32CA9E54A00164D92 /* StoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFA22CA9E54A00164D92 /* StoreDataService.swift */; };
+		93D4CFA62CA9EB1F00164D92 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFA52CA9EB1F00164D92 /* StoreView.swift */; };
+		93D4CFA92CA9F83600164D92 /* PackageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFA82CA9F83600164D92 /* PackageItem.swift */; };
+		93D4CFAD2CAA6D2900164D92 /* PurchasableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFAC2CAA6D2900164D92 /* PurchasableItem.swift */; };
+		93D4CFB12CAA77FA00164D92 /* ProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFB02CAA77FA00164D92 /* ProductPresenter.swift */; };
+		93D4CFB32CAA7AFA00164D92 /* PackagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFB22CAA7AFA00164D92 /* PackagePresenter.swift */; };
+		93D4CFBB2CAB444300164D92 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4CFBA2CAB444300164D92 /* StoreViewModel.swift */; };
 		93E9A8092B6E626000B37B26 /* CurrencyRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */; };
 		93E9A80D2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */; };
 		93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */; };
@@ -366,6 +383,10 @@
 		93834AEC2B7A04CE00A5744C /* openapi.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
 		93834AEE2B7A04DF00A5744C /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 		93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateClient.swift; sourceTree = "<group>"; };
+		938604612CAC956900CAF30E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		938604642CAD766B00CAF30E /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		938604672CAD7EA900CAF30E /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		9386046A2CAD7EB800CAF30E /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		938C18A02B9A641000D92D50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		93928A0D2CA7D81F00CD026A /* SandBoxStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxStar.swift; sourceTree = "<group>"; };
 		93928A0F2CA7D98300CD026A /* SandBoxB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxB.swift; sourceTree = "<group>"; };
@@ -483,6 +504,19 @@
 		93CF41D82C09F640006263F0 /* ScreenContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenContact.swift; sourceTree = "<group>"; };
 		93D430752BBC9CCB00FBBDBD /* CurrencyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableView.swift; sourceTree = "<group>"; };
 		93D430772BBFCE5300FBBDBD /* CurrencyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartView.swift; sourceTree = "<group>"; };
+		93D4CF932CA9B40700164D92 /* StoreNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreNote.swift; sourceTree = "<group>"; };
+		93D4CF952CA9CF9400164D92 /* AppleProductsJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProductsJSON.swift; sourceTree = "<group>"; };
+		93D4CF992CA9DEDF00164D92 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		93D4CF9B2CA9DF6B00164D92 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		93D4CF9D2CA9E01900164D92 /* AppleStoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStoreData.swift; sourceTree = "<group>"; };
+		93D4CF9F2CA9E3AD00164D92 /* AppleProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProductsService.swift; sourceTree = "<group>"; };
+		93D4CFA22CA9E54A00164D92 /* StoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataService.swift; sourceTree = "<group>"; };
+		93D4CFA52CA9EB1F00164D92 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		93D4CFA82CA9F83600164D92 /* PackageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageItem.swift; sourceTree = "<group>"; };
+		93D4CFAC2CAA6D2900164D92 /* PurchasableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasableItem.swift; sourceTree = "<group>"; };
+		93D4CFB02CAA77FA00164D92 /* ProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPresenter.swift; sourceTree = "<group>"; };
+		93D4CFB22CAA7AFA00164D92 /* PackagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePresenter.swift; sourceTree = "<group>"; };
+		93D4CFBA2CAB444300164D92 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		93E9A8082B6E626000B37B26 /* CurrencyRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewModel.swift; sourceTree = "<group>"; };
 		93E9A80C2B6EB5D000B37B26 /* CurrencyRate+EuroChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyRate+EuroChart.swift"; sourceTree = "<group>"; };
 		93E9A80F2B6EDBDF00B37B26 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
@@ -646,6 +680,7 @@
 		932FFEFC2C09B34B008FC828 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
+				93D4CF912CA9B3A200164D92 /* Store */,
 				939B083B2CA7124300B78F82 /* Payment */,
 				939BD5ED2C10F7780063D761 /* TCA */,
 				939BD5EC2C10F75D0063D761 /* CoreData */,
@@ -921,6 +956,66 @@
 				93834AF12B7A056A00A5744C /* ExchangeRateClient.swift */,
 			);
 			path = ExchangeRateClient;
+			sourceTree = "<group>";
+		};
+		9386046C2CAD7F6C00CAF30E /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				9386046D2CAD7F7B00CAF30E /* Store */,
+				938604722CAD7FB300CAF30E /* Product */,
+				938604702CAD7F9900CAF30E /* Cart */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		9386046D2CAD7F7B00CAF30E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				9386046F2CAD7F8D00CAF30E /* ViewModel */,
+				9386046E2CAD7F8100CAF30E /* View */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		9386046E2CAD7F8100CAF30E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFA52CA9EB1F00164D92 /* StoreView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9386046F2CAD7F8D00CAF30E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFBA2CAB444300164D92 /* StoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		938604702CAD7F9900CAF30E /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				938604712CAD7FA700CAF30E /* View */,
+				93D4CFB92CAB443900164D92 /* ViewModel */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		938604712CAD7FA700CAF30E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				938604672CAD7EA900CAF30E /* CartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		938604722CAD7FB300CAF30E /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFA42CA9EAF200164D92 /* View */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		93928A182CA858A100CD026A /* RootViewTCA */ = {
@@ -1611,6 +1706,74 @@
 			path = SubView;
 			sourceTree = "<group>";
 		};
+		93D4CF912CA9B3A200164D92 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFAE2CAA77E800164D92 /* Manager */,
+				93D4CFAA2CAA6D0900164D92 /* Resources */,
+				93D4CF982CA9DEBA00164D92 /* Services */,
+				93D4CF972CA9DEB200164D92 /* Model */,
+				9386046C2CAD7F6C00CAF30E /* Sections */,
+				938604612CAC956900CAF30E /* Note.swift */,
+				93D4CF932CA9B40700164D92 /* StoreNote.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		93D4CF972CA9DEB200164D92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CF992CA9DEDF00164D92 /* Product.swift */,
+				93D4CF9D2CA9E01900164D92 /* AppleStoreData.swift */,
+				93D4CF9B2CA9DF6B00164D92 /* Package.swift */,
+				93D4CFA82CA9F83600164D92 /* PackageItem.swift */,
+				93D4CFAC2CAA6D2900164D92 /* PurchasableItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93D4CF982CA9DEBA00164D92 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFA22CA9E54A00164D92 /* StoreDataService.swift */,
+				93D4CF9F2CA9E3AD00164D92 /* AppleProductsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		93D4CFA42CA9EAF200164D92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				938604642CAD766B00CAF30E /* ProductDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93D4CFAA2CAA6D0900164D92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CF952CA9CF9400164D92 /* AppleProductsJSON.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		93D4CFAE2CAA77E800164D92 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				93D4CFB02CAA77FA00164D92 /* ProductPresenter.swift */,
+				93D4CFB22CAA7AFA00164D92 /* PackagePresenter.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		93D4CFB92CAB443900164D92 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9386046A2CAD7EB800CAF30E /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		93E9A80A2B6E628600B37B26 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2046,6 +2209,7 @@
 				93335A8C2BA7511B001F1610 /* ContactsFeature.swift in Sources */,
 				93335A862BA750F4001F1610 /* ContactsFeature+Action.swift in Sources */,
 				93335A922BA751F2001F1610 /* AddContactFeature+Action.swift in Sources */,
+				93D4CFA62CA9EB1F00164D92 /* StoreView.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,
 				93928A162CA8481C00CD026A /* ContainerBoxStyle.swift in Sources */,
 				9312DF162B9B346000C3D441 /* TransactionType.swift in Sources */,
@@ -2055,7 +2219,9 @@
 				93517C3F2B88CC3E009252E9 /* TestFeature+Action.swift in Sources */,
 				939B08AB2CA712EE00B78F82 /* PaymentProcessor.swift in Sources */,
 				939B08CB2CA7135500B78F82 /* PaymentServiceProtocol.swift in Sources */,
+				93D4CFA02CA9E3AD00164D92 /* AppleProductsService.swift in Sources */,
 				939B08CC2CA7135500B78F82 /* PaymentError.swift in Sources */,
+				93D4CFB32CAA7AFA00164D92 /* PackagePresenter.swift in Sources */,
 				93928A1B2CA858C700CD026A /* RootViewTCA.swift in Sources */,
 				939B08CD2CA7135500B78F82 /* PaymentService.swift in Sources */,
 				93335A9D2BA75331001F1610 /* ContactDetailFeature+State.swift in Sources */,
@@ -2078,16 +2244,19 @@
 				939B08C42CA7134F00B78F82 /* ApplePayReceiptGenerator.swift in Sources */,
 				939B08C52CA7134F00B78F82 /* ApplePayFactory.swift in Sources */,
 				939B08C62CA7134F00B78F82 /* PayPalFactory.swift in Sources */,
+				9386046B2CAD7EB800CAF30E /* CartViewModel.swift in Sources */,
 				93CF41D62C09D922006263F0 /* ScreenC.swift in Sources */,
 				930B2EAC2B66952800BEB7B7 /* SettingsFeature+Action.swift in Sources */,
 				93A3EB532B6584BB007BFCDC /* CurrencyCellWithBalance.swift in Sources */,
 				938C18A12B9A641000D92D50 /* MainView.swift in Sources */,
 				93CF41CF2C09D5BE006263F0 /* RootFeature.swift in Sources */,
 				930948772BA8FFA900CF6284 /* TestView2.swift in Sources */,
+				93D4CF9C2CA9DF6B00164D92 /* Package.swift in Sources */,
 				9312DF132B9B209700C3D441 /* CurrencyConverterFeature.swift in Sources */,
 				9312DEFD2B9AF8F400C3D441 /* MainFeature.swift in Sources */,
 				932FFF032C09B3F6008FC828 /* ScreenA.swift in Sources */,
 				9357DA102B6065120097673C /* AccountView.swift in Sources */,
+				938604652CAD766B00CAF30E /* ProductDetailView.swift in Sources */,
 				93517C492B88D863009252E9 /* AccountFeatureServices.swift in Sources */,
 				9312DF102B9B208800C3D441 /* CurrencyConverterView.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
@@ -2121,6 +2290,7 @@
 				939B092C2CA7161E00B78F82 /* DefaultMapViewsFactory.swift in Sources */,
 				939B092D2CA7161E00B78F82 /* MapFactory.swift in Sources */,
 				939B092E2CA7161E00B78F82 /* Place.swift in Sources */,
+				938604682CAD7EA900CAF30E /* CartView.swift in Sources */,
 				939B092F2CA7161E00B78F82 /* UIKitMapView.swift in Sources */,
 				939B09302CA7161E00B78F82 /* LocationDetailsView.swift in Sources */,
 				939B09312CA7161E00B78F82 /* LocalSearchServices.swift in Sources */,
@@ -2148,18 +2318,25 @@
 				93928A222CA8598E00CD026A /* RootFeatureTCA+Path.swift in Sources */,
 				939B09472CA7161E00B78F82 /* MapView.swift in Sources */,
 				93F782A22BB0CBC700ACB39A /* CurrencyChartViewFactory.swift in Sources */,
+				93D4CF9A2CA9DEDF00164D92 /* Product.swift in Sources */,
 				939B08DA2CA7138100B78F82 /* PaymentView.swift in Sources */,
 				93E9A8102B6EDBDF00B37B26 /* StatisticView.swift in Sources */,
 				93F782982BB0835C00ACB39A /* ContainerRateDetailView.swift in Sources */,
+				93D4CFAD2CAA6D2900164D92 /* PurchasableItem.swift in Sources */,
+				938604622CAC956900CAF30E /* Note.swift in Sources */,
+				93D4CF962CA9CF9400164D92 /* AppleProductsJSON.swift in Sources */,
 				93D430762BBC9CCB00FBBDBD /* CurrencyTableView.swift in Sources */,
 				930948732BA7AEAD00CF6284 /* CurrencyRateDetailFeature+State.swift in Sources */,
 				939B08DD2CA7138800B78F82 /* PaymentViewModel.swift in Sources */,
+				93D4CFA32CA9E54A00164D92 /* StoreDataService.swift in Sources */,
 				93928A0E2CA7D81F00CD026A /* SandBoxStar.swift in Sources */,
 				93335A942BA751FB001F1610 /* AddContactFeature+State.swift in Sources */,
 				93928A242CA859BB00CD026A /* RootFeatureTCA+Destination.swift in Sources */,
 				93928A202CA8597100CD026A /* RootFeatureTCA+State.swift in Sources */,
+				93D4CF942CA9B40700164D92 /* StoreNote.swift in Sources */,
 				934255212BA7A12F00D787D6 /* ContainerRateDetailFeature.swift in Sources */,
 				930B2EA02B667B5900BEB7B7 /* AccountFeature+Action.swift in Sources */,
+				93D4CFBB2CAB444300164D92 /* StoreViewModel.swift in Sources */,
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */,
 				9312DF052B9B1D9200C3D441 /* MainFeature+Action.swift in Sources */,
@@ -2167,6 +2344,7 @@
 				93CF41D92C09F640006263F0 /* ScreenContact.swift in Sources */,
 				93335A6D2BA45F3D001F1610 /* ContactsView.swift in Sources */,
 				930F629D2BAEA647004CFD5E /* PeriodsCurrencyOption.swift in Sources */,
+				93D4CF9E2CA9E01900164D92 /* AppleStoreData.swift in Sources */,
 				9342551F2BA7A12400D787D6 /* CurrencyRateDetailView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				930948712BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift in Sources */,
@@ -2176,9 +2354,11 @@
 				9357DA0D2B5D9B900097673C /* FavoritesView.swift in Sources */,
 				9357DA162B6066F80097673C /* SettingsView.swift in Sources */,
 				93500A412BC5B9E5000E93FB /* ChartTypeFactory.swift in Sources */,
+				93D4CFB12CAA77FA00164D92 /* ProductPresenter.swift in Sources */,
 				939B08AD2CA7130500B78F82 /* ReceiptGenerator.swift in Sources */,
 				93517C412B88CCA2009252E9 /* TestFeature+State.swift in Sources */,
 				93A3EB572B658655007BFCDC /* MainViewModel.swift in Sources */,
+				93D4CFA92CA9F83600164D92 /* PackageItem.swift in Sources */,
 				9312DF022B9B1D5E00C3D441 /* MainFeature+State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -113,6 +113,9 @@
         }
       }
     },
+    "Cena: %lld zł" : {
+
+    },
     "ChatGPT" : {
       "comment" : "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"
     },
@@ -226,6 +229,12 @@
 
     },
     "Jeszcze tu nic nie ma" : {
+
+    },
+    "Już od %lld zł" : {
+
+    },
+    "Kup" : {
 
     },
     "kurs:" : {
@@ -451,6 +460,9 @@
     },
     "Sortuj" : {
 
+    },
+    "Store" : {
+      "comment" : "store"
     },
     "The request failed due to: %@." : {
       "comment" : "Request Failed",
