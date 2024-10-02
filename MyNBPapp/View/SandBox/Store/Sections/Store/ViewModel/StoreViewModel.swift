@@ -13,9 +13,10 @@ final class StoreViewModel: ObservableObject {
     
     @Published var products: [ProductPresenter] = []
     @Published var packages: [PackagePresenter] = []
-    @Published var items: [PurchasableItem] = []
     
     @Published var showProductCardDetails: Bool = false
+    @Published var showCartView: Bool = false
+    @Published var triggerEffect: Bool = false
     @Published var selectedProduct: PurchasableItem?
     
     private let service: AppleProductsService
@@ -44,4 +45,12 @@ final class StoreViewModel: ObservableObject {
         selectedProduct = product
         showProductCardDetails.toggle()
     }
+    
+    func handleCartButtonTapped(_ cartViewModel: CartViewModel) {
+         if cartViewModel.items.isEmpty {
+             triggerEffect.toggle()
+         } else {
+             showCartView.toggle()
+         }
+     }
 }

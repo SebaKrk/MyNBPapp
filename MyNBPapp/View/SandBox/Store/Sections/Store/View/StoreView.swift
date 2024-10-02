@@ -12,14 +12,25 @@ struct StoreView: View {
     // MARK: -  Properties
     
     @ObservedObject private var viewModel: StoreViewModel = StoreViewModel()
+    @ObservedObject private var cartViewModel = CartViewModel()
     
     // MARK: - Lifecycle
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(viewModel.products, id: \.name) { product in
-                    groupBoxItem(product)
+        ZStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.products, id: \.name) { product in
+                        groupBoxItem(product)
+                            .padding()
+                    }
+                }
+            }
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    storeButton()
                         .padding()
                 }
             }
@@ -29,8 +40,11 @@ struct StoreView: View {
         }
         .sheet(isPresented: $viewModel.showProductCardDetails) {
             if let selectedProduct = viewModel.selectedProduct {
-                    ProductDetailView(product: selectedProduct)
+                    ProductDetailView(selectedProduct)
                 }
+        }
+        .sheet(isPresented: $viewModel.showCartView) {
+            CartView(cardViewModel: cartViewModel)
         }
     }
     
@@ -41,7 +55,7 @@ struct StoreView: View {
             VStack {
                 groupBoxHeader(item)
                     .background(.red)
-                itemImage("photo")
+                itemImage(item)
                     .background(.yellow)
                 groupBoxBottom(item)
                     .background(.green)
@@ -76,13 +90,18 @@ struct StoreView: View {
             .frame(height: 50)
     }
     
-    private func itemImage(_ name: String) -> some View {
-        Image(systemName: name)
-            .resizable()
-            .scaledToFill()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .clipped()
-            .padding()
+    private func itemImage(_ item: PurchasableItem) -> some View {
+        Button {
+            viewModel.selectProduct(item)
+        } label: {
+            // TODO: item.name -> download image
+            Image(systemName: "photo")
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
+                .padding()
+        }
     }
     
     private func priceLabel(_ price: Int) -> some View {
@@ -91,7 +110,7 @@ struct StoreView: View {
     
     private func addButton(_ item: PurchasableItem) -> some View {
         Button {
-            viewModel.selectProduct(item)
+            cartViewModel.items.append(item)
         } label: {
             Text("Kup")
                 .padding(6)
@@ -103,29 +122,24 @@ struct StoreView: View {
     
     private func storeButton() -> some View {
         Button {
-            
+            viewModel.handleCartButtonTapped(cartViewModel)
         } label: {
-            if viewModel.items.isEmpty {
+            if cartViewModel.items.isEmpty {
                 Image(systemName: "basket")
+                    .symbolEffect(.bounce.down.byLayer, options: .speed(0.8), value: viewModel.triggerEffect)
             } else {
-                Text("\(viewModel.items.count)")
+                Text("\(cartViewModel.items.count)")
             }
         }
         .foregroundStyle(.white)
         .padding()
-        .background(.blue).opacity(0.7)
+        .background(.blue)
         .clipShape(Circle())
     }
         
     private var columns: [GridItem] {
         [ GridItem(.flexible()) ]
     }
+    
 }
 
-struct ProductDetailView: View {
-    let product: PurchasableItem
-
-    var body: some View {
-            Text(product.name)
-    }
-}

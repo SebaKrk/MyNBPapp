@@ -234,3 +234,6 @@ https://github.com/SebaKrk/MyNBPapp
     A: Create store service #Singelton
     B: Build UI, #ProgramingPrinciple
     - "program to an interface, not an implementation”
+    C: Add CartView and handle DetailView
+    -  refactor folder structure
+    -  integrate ProductPresenter

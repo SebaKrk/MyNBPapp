@@ -19,6 +19,10 @@ final class ProductPresenter: PurchasableItem {
         return product.name
     }
     
+    var image: String {
+          return product.image
+      }
+    
     func display() -> String {
         return "Product: \(product.name), Price: \(product.price)"
     }
