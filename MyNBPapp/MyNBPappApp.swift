@@ -18,3 +18,4 @@ struct MyNBPappApp: App {
         .modelContainer(for: Favorite.self)
     }
 }
+
