@@ -21,16 +21,20 @@ struct ProductDetailView: View {
             if let product = item as? ProductPresenter {
                 Text(product.image)
             }
-            Text("Cena: \(item.getPrice()) zł")
+
+            if let package = item as? PackagePresenter {
+                Text(package.display())
+                ForEach(package.products) { product in
+                    HStack {
+                        Text(product.name)
+                        Spacer()
+                        Text("\(product.price) pln")
+                    }
+                }
+            }
+            
+            Text("Cena: \(item.getPrice()) pln")
         }
         .padding()
     }
 }
-
-//if let package = item as? Package {
-//    Text("Produkty w pakiecie:")
-//    ForEach(package.products, id: \.id) { product in
-//        Text("- \(product.name), Cena: \(product.price) zł")
-//    }
-//    Text("Łączna cena: \(package.getPrice()) zł")
-//}

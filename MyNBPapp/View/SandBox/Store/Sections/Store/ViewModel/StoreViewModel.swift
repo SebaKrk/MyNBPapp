@@ -32,7 +32,7 @@ final class StoreViewModel: ObservableObject {
     @MainActor
     func fetchStoreData() async {
         do {
-            let storeData = try await service.fetchStoreData(from: jsonAppleProductsWithPackages)
+            let storeData = try await service.fetchStoreData(from: jsonAppleProductsWithUUID)
             
             products = storeData.products.map { ProductPresenter(product: $0) }
             packages = storeData.packages.map { PackagePresenter(package: $0) }

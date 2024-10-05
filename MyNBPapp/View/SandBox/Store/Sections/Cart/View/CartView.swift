@@ -17,7 +17,7 @@ struct CartView: View {
     
     var body: some View {
         List {
-            ForEach(cardViewModel.items, id: \.name) { item in
+            ForEach(cardViewModel.items, id: \.id) { item in
                 Text(item.name.description)
             }
         }

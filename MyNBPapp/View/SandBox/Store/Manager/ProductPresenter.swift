@@ -15,6 +15,10 @@ final class ProductPresenter: PurchasableItem {
         self.product = product
     }
     
+    var id: String {
+        return product.id
+    }
+    
     var name: String {
         return product.name
     }

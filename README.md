@@ -237,3 +237,5 @@ https://github.com/SebaKrk/MyNBPapp
     C: Add CartView and handle DetailView
     -  refactor folder structure
     -  integrate ProductPresenter
+    -  integrate PackagePresenter
+    

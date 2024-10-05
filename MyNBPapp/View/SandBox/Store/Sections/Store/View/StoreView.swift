@@ -20,8 +20,14 @@ struct StoreView: View {
         ZStack {
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach(viewModel.products, id: \.name) { product in
+                    ForEach(viewModel.products, id: \.id) { product in
                         groupBoxItem(product)
+                            .padding()
+                    }
+                }
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.packages, id: \.id) { package in
+                        groupBoxItem(package)
                             .padding()
                     }
                 }
@@ -55,8 +61,17 @@ struct StoreView: View {
             VStack {
                 groupBoxHeader(item)
                     .background(.red)
-                itemImage(item)
-                    .background(.yellow)
+                if let product = item as? ProductPresenter {
+                    itemImage(product)
+                        .background(.yellow)
+                }
+                if let package = item as? PackagePresenter {
+                    Button {
+                        viewModel.selectProduct(package)
+                    } label: {
+                        Text(package.display())
+                    }
+                }
                 groupBoxBottom(item)
                     .background(.green)
             }
