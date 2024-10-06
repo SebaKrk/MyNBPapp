@@ -239,3 +239,4 @@ https://github.com/SebaKrk/MyNBPapp
     -  integrate ProductPresenter
     -  integrate PackagePresenter
     
+// rozwiaz probnlem dodwania tych samych elemntow do koszyka , nie dodwaj nowego elemntu ale zekszaj jego ilosc np iPhonie 16 liczba 2 w koszuku

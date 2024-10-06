@@ -46,8 +46,8 @@ struct StoreView: View {
         }
         .sheet(isPresented: $viewModel.showProductCardDetails) {
             if let selectedProduct = viewModel.selectedProduct {
-                    ProductDetailView(selectedProduct)
-                }
+                PurchasableDetailView(selectedProduct)
+            }
         }
         .sheet(isPresented: $viewModel.showCartView) {
             CartView(cardViewModel: cartViewModel)
@@ -60,24 +60,12 @@ struct StoreView: View {
         GroupBox {
             VStack {
                 groupBoxHeader(item)
-                    .background(.red)
-                if let product = item as? ProductPresenter {
-                    itemImage(product)
-                        .background(.yellow)
-                }
-                if let package = item as? PackagePresenter {
-                    Button {
-                        viewModel.selectProduct(package)
-                    } label: {
-                        Text(package.display())
-                    }
-                }
+                groupBoxButton(item)
                 groupBoxBottom(item)
-                    .background(.green)
             }
             
         }
-        //.groupBoxStyle(ContainerBoxStyle(color: .white))
+        ///.groupBoxStyle(ContainerBoxStyle(color: .white))
         .frame(maxWidth: .infinity, maxHeight: 400)
         .padding()
     }
@@ -90,6 +78,13 @@ struct StoreView: View {
         .frame(height: 75)
     }
     
+    private func groupBoxButton(_ item: PurchasableItem) -> some View {
+        Button {
+            viewModel.selectProduct(item)
+        } label: {
+            Text(item.display())
+        }
+    }
     
     private func groupBoxBottom (_ item: PurchasableItem) -> some View {
         HStack {
@@ -103,20 +98,6 @@ struct StoreView: View {
     private func headerTitle(_ title: String) -> some View {
         Text(title)
             .frame(height: 50)
-    }
-    
-    private func itemImage(_ item: PurchasableItem) -> some View {
-        Button {
-            viewModel.selectProduct(item)
-        } label: {
-            // TODO: item.name -> download image
-            Image(systemName: "photo")
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipped()
-                .padding()
-        }
     }
     
     private func priceLabel(_ price: Int) -> some View {
