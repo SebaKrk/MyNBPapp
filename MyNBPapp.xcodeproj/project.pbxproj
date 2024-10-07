@@ -60,6 +60,7 @@
 		93517C462B88D77C009252E9 /* SettingsFeatureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C452B88D77C009252E9 /* SettingsFeatureServices.swift */; };
 		93517C492B88D863009252E9 /* AccountFeatureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93517C482B88D863009252E9 /* AccountFeatureServices.swift */; };
 		935180E52BADC73700F04301 /* MainFeatureServicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935180E42BADC73700F04301 /* MainFeatureServicesCoordinator.swift */; };
+		935210C52CB47DE600585030 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935210C42CB47DE600585030 /* CartItem.swift */; };
 		935639FA2C6F304900933EAA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 935639F92C6F304900933EAA /* ComposableArchitecture */; };
 		9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FD2B5D2EFC0097673C /* AppScreen.swift */; };
 		9357DA002B5D31770097673C /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D9FF2B5D31770097673C /* AppTabView.swift */; };
@@ -357,6 +358,7 @@
 		93517C452B88D77C009252E9 /* SettingsFeatureServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeatureServices.swift; sourceTree = "<group>"; };
 		93517C482B88D863009252E9 /* AccountFeatureServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFeatureServices.swift; sourceTree = "<group>"; };
 		935180E42BADC73700F04301 /* MainFeatureServicesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeatureServicesCoordinator.swift; sourceTree = "<group>"; };
+		935210C42CB47DE600585030 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		9357D9FD2B5D2EFC0097673C /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		9357D9FF2B5D31770097673C /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		9357DA012B5D78BD0097673C /* AppSidebarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarList.swift; sourceTree = "<group>"; };
@@ -1729,6 +1731,7 @@
 		93D4CF972CA9DEB200164D92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				935210C42CB47DE600585030 /* CartItem.swift */,
 				93D4CF992CA9DEDF00164D92 /* Product.swift */,
 				93D4CF9D2CA9E01900164D92 /* AppleStoreData.swift */,
 				93D4CF9B2CA9DF6B00164D92 /* Package.swift */,
@@ -2255,6 +2258,7 @@
 				932FFF032C09B3F6008FC828 /* ScreenA.swift in Sources */,
 				9357DA102B6065120097673C /* AccountView.swift in Sources */,
 				938604652CAD766B00CAF30E /* PurchasableDetailView.swift in Sources */,
+				935210C52CB47DE600585030 /* CartItem.swift in Sources */,
 				93517C492B88D863009252E9 /* AccountFeatureServices.swift in Sources */,
 				9312DF102B9B208800C3D441 /* CurrencyConverterView.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,

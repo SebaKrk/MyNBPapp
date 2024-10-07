@@ -50,7 +50,7 @@ struct StoreView: View {
             }
         }
         .sheet(isPresented: $viewModel.showCartView) {
-            CartView(cardViewModel: cartViewModel)
+            CartView(cartViewModel)
         }
     }
     
@@ -106,7 +106,7 @@ struct StoreView: View {
     
     private func addButton(_ item: PurchasableItem) -> some View {
         Button {
-            cartViewModel.items.append(item)
+            cartViewModel.addToCart(item)
         } label: {
             Text("Kup")
                 .padding(6)
@@ -124,7 +124,7 @@ struct StoreView: View {
                 Image(systemName: "basket")
                     .symbolEffect(.bounce.down.byLayer, options: .speed(0.8), value: viewModel.triggerEffect)
             } else {
-                Text("\(cartViewModel.items.count)")
+                Text("\(cartViewModel.totalItems())")
             }
         }
         .foregroundStyle(.white)

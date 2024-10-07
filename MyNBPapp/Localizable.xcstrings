@@ -255,6 +255,12 @@
     "Kwota: %.2f zł" : {
 
     },
+    "Łączna cena: %lld PLN" : {
+
+    },
+    "Liczba produktów: %lld" : {
+
+    },
     "Main" : {
       "comment" : "The Main Tab presents the primary view of the application.",
       "localizations" : {

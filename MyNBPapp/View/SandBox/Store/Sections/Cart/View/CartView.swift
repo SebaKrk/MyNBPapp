@@ -9,18 +9,28 @@ import SwiftUI
 
 struct CartView: View {
     
-    @ObservedObject var cardViewModel: CartViewModel
+    @ObservedObject var cartViewModel: CartViewModel
     
-    init(cardViewModel: CartViewModel) {
-        self.cardViewModel = cardViewModel
+    init(_ viewModel: CartViewModel) {
+        self.cartViewModel = viewModel
     }
     
     var body: some View {
         List {
-            ForEach(cardViewModel.items, id: \.id) { item in
-                Text(item.name.description)
+            ForEach(cartViewModel.items, id: \.id) { cartItem in
+                HStack {
+                    Text(cartItem.item.name)
+                    Spacer()
+                    Text("\(cartItem.quantity)")
+                }
             }
         }
+        HStack {
+            Text("Liczba produktów: \(cartViewModel.totalItems())")
+            Spacer()
+            Text("Łączna cena: \(cartViewModel.totalPrice()) PLN")
+        }
+        .padding()
     }
     
 }

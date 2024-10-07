@@ -238,5 +238,4 @@ https://github.com/SebaKrk/MyNBPapp
     -  refactor folder structure
     -  integrate ProductPresenter
     -  integrate PackagePresenter
-    
-// rozwiaz probnlem dodwania tych samych elemntow do koszyka , nie dodwaj nowego elemntu ale zekszaj jego ilosc np iPhonie 16 liczba 2 w koszuku
+    -  add cartLogic, simplified the display of unique products in the ca
