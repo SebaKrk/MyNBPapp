@@ -14,3 +14,4 @@ struct Package: Codable, Identifiable {
     var products: [Product]
     
 }
+

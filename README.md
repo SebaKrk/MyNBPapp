@@ -237,3 +237,6 @@ https://github.com/SebaKrk/MyNBPapp
     C: Add CartView and handle DetailView
     -  refactor folder structure
     -  integrate ProductPresenter
+    -  integrate PackagePresenter
+    -  add cartLogic, simplified the display of unique products in the card
+    - refactor CartViewModel #Facade
