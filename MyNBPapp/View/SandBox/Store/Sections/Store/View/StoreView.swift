@@ -20,8 +20,14 @@ struct StoreView: View {
         ZStack {
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach(viewModel.products, id: \.name) { product in
+                    ForEach(viewModel.products, id: \.id) { product in
                         groupBoxItem(product)
+                            .padding()
+                    }
+                }
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.packages, id: \.id) { package in
+                        groupBoxItem(package)
                             .padding()
                     }
                 }
@@ -40,11 +46,11 @@ struct StoreView: View {
         }
         .sheet(isPresented: $viewModel.showProductCardDetails) {
             if let selectedProduct = viewModel.selectedProduct {
-                    ProductDetailView(selectedProduct)
-                }
+                PurchasableDetailView(selectedProduct)
+            }
         }
         .sheet(isPresented: $viewModel.showCartView) {
-            CartView(cardViewModel: cartViewModel)
+            CartView(cartViewModel)
         }
     }
     
@@ -54,15 +60,12 @@ struct StoreView: View {
         GroupBox {
             VStack {
                 groupBoxHeader(item)
-                    .background(.red)
-                itemImage(item)
-                    .background(.yellow)
+                groupBoxButton(item)
                 groupBoxBottom(item)
-                    .background(.green)
             }
             
         }
-        //.groupBoxStyle(ContainerBoxStyle(color: .white))
+        ///.groupBoxStyle(ContainerBoxStyle(color: .white))
         .frame(maxWidth: .infinity, maxHeight: 400)
         .padding()
     }
@@ -75,6 +78,13 @@ struct StoreView: View {
         .frame(height: 75)
     }
     
+    private func groupBoxButton(_ item: PurchasableItem) -> some View {
+        Button {
+            viewModel.selectProduct(item)
+        } label: {
+            Text(item.display())
+        }
+    }
     
     private func groupBoxBottom (_ item: PurchasableItem) -> some View {
         HStack {
@@ -90,27 +100,13 @@ struct StoreView: View {
             .frame(height: 50)
     }
     
-    private func itemImage(_ item: PurchasableItem) -> some View {
-        Button {
-            viewModel.selectProduct(item)
-        } label: {
-            // TODO: item.name -> download image
-            Image(systemName: "photo")
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipped()
-                .padding()
-        }
-    }
-    
     private func priceLabel(_ price: Int) -> some View {
         Text("Już od \(price) zł")
     }
     
     private func addButton(_ item: PurchasableItem) -> some View {
         Button {
-            cartViewModel.items.append(item)
+            cartViewModel.addToCart(item)
         } label: {
             Text("Kup")
                 .padding(6)
@@ -128,7 +124,7 @@ struct StoreView: View {
                 Image(systemName: "basket")
                     .symbolEffect(.bounce.down.byLayer, options: .speed(0.8), value: viewModel.triggerEffect)
             } else {
-                Text("\(cartViewModel.items.count)")
+                Text("\(cartViewModel.totalItems)")
             }
         }
         .foregroundStyle(.white)
