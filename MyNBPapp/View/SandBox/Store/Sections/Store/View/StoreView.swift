@@ -124,7 +124,7 @@ struct StoreView: View {
                 Image(systemName: "basket")
                     .symbolEffect(.bounce.down.byLayer, options: .speed(0.8), value: viewModel.triggerEffect)
             } else {
-                Text("\(cartViewModel.totalItems())")
+                Text("\(cartViewModel.totalItems)")
             }
         }
         .foregroundStyle(.white)
