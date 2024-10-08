@@ -9,7 +9,7 @@ import Foundation
 
 final class CartViewModel: ObservableObject {
     
-    @Published var items: [CartItem] = []
+    @Published private(set) var items: [CartItem] = []
     
     func addToCart(_ item: PurchasableItem) {
         if let index = items.firstIndex(where: { $0.item.id == item.id }) {
@@ -20,25 +20,37 @@ final class CartViewModel: ObservableObject {
         }
     }
     
-    func totalPrice() -> Int {
+    var totalItems: Int {
+        return items.reduce(0) { total, cartItem in
+            total + cartItem.quantity
+        }
+    }
+    
+    var totalPrice: Int {
         return items.reduce(0) { $0 + ($1.item.getPrice() * $1.quantity) }
     }
     
     func totalProductsInPackage(for packageId: String) -> Int {
-          if let cartItem = items.first(where: { $0.item.id == packageId }),
-             let package = cartItem.item as? PackagePresenter {
-              return package.products.count * cartItem.quantity
-          }
-          return 0
-      }
+        if let cartItem = items.first(where: { $0.item.id == packageId }),
+           let package = cartItem.item as? PackagePresenter {
+            return package.products.count * cartItem.quantity
+        }
+        return 0
+    }
     
-    func totalItems() -> Int {
+    private func calculateTotalItems() -> Int {
         return items.reduce(0) { total, cartItem in
             if let package = cartItem.item as? PackagePresenter {
                 return total + (package.products.count * cartItem.quantity)
             } else {
                 return total + cartItem.quantity
             }
+        }
+    }
+    
+    private func calculateTotalPrice() -> Int {
+        return items.reduce(0) { total, cartItem in
+            total + (cartItem.item.getPrice() * cartItem.quantity)
         }
     }
     

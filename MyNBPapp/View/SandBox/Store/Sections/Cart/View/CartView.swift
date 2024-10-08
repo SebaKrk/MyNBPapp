@@ -72,9 +72,9 @@ struct CartView: View {
     
     private var summaryView: some View {
         HStack {
-            Text("Liczba produktów: \(cartViewModel.totalItems())")
+            Text("Liczba produktów: \(cartViewModel.totalItems)")
             Spacer()
-            Text("Łączna cena: \(cartViewModel.totalPrice()) PLN")
+            Text("Łączna cena: \(cartViewModel.totalPrice) PLN")
         }
         .padding()
     }

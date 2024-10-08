@@ -238,4 +238,5 @@ https://github.com/SebaKrk/MyNBPapp
     -  refactor folder structure
     -  integrate ProductPresenter
     -  integrate PackagePresenter
-    -  add cartLogic, simplified the display of unique products in the ca
+    -  add cartLogic, simplified the display of unique products in the card
+    - refactor CartViewModel #Facade
