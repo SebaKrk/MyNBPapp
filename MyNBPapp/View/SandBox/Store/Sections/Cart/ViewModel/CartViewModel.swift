@@ -24,8 +24,22 @@ final class CartViewModel: ObservableObject {
         return items.reduce(0) { $0 + ($1.item.getPrice() * $1.quantity) }
     }
     
+    func totalProductsInPackage(for packageId: String) -> Int {
+          if let cartItem = items.first(where: { $0.item.id == packageId }),
+             let package = cartItem.item as? PackagePresenter {
+              return package.products.count * cartItem.quantity
+          }
+          return 0
+      }
+    
     func totalItems() -> Int {
-        return items.reduce(0) { $0 + $1.quantity }
+        return items.reduce(0) { total, cartItem in
+            if let package = cartItem.item as? PackagePresenter {
+                return total + (package.products.count * cartItem.quantity)
+            } else {
+                return total + cartItem.quantity
+            }
+        }
     }
     
 }

@@ -29,7 +29,6 @@ final class PackagePresenter: PurchasableItem {
     
     func display() -> String {
         let productNames = package.products.map { $0.name }.joined(separator: ", ")
-        //return "Package: \(package.name), Contains: \(productNames)"
         return "Contains: \(productNames)"
     }
     

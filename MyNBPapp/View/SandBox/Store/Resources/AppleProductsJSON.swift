@@ -242,6 +242,12 @@ let jsonAppleProductsWithUUID =
           "name": "Apple Watch 10",
           "price": 2399,
           "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/watch-compare-series10-202409?wid=396&hei=468&fmt=jpeg&qlt=90&.v=1725360911927"
+        },
+        {
+            "id": "fbd9cba2-5e02-4a1e-a87b-9377cb17951d",
+            "name": "Zasilacz USB-C o mocy 20W",
+            "price": 100,
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MU7V2_GEO_EMEA?wid=266&hei=291&fmt=png-alpha&.v=1544468120362"
         }
       ]
     }
@@ -374,6 +380,7 @@ let jsonAppleProductsWithPackages =
               "price": 4999,
               "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch_AV1?wid=5120&hei=2880&fmt=webp&qlt=70&.v=UXp1U3VDY3IyR1hNdHZwdFdOLzg1V0tFK1lhSCtYSGRqMUdhR284NTN4L2RJbmltQWhGZkQyVGNjT3IyemNOZWd2S3NaRzcrU0dmYjNHTUFiMnlsWFRocXAvNjVVaCtjTTZGTUNzOU8wNkVpZ3JSOHVOUHZSUHBkZzU2ZUh5WUo=&traceId=1"
             },
+
             {
               "id": "4",
               "name": "Apple Watch 10",
