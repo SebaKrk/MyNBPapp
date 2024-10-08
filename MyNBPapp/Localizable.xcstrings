@@ -42,6 +42,12 @@
     "%lld" : {
 
     },
+    "%lld pln" : {
+
+    },
+    "%lld PLN" : {
+
+    },
     "%lld znaleziono" : {
 
     },
@@ -113,7 +119,10 @@
         }
       }
     },
-    "Cena: %lld zł" : {
+    "Cena: %lld" : {
+
+    },
+    "Cena: %lld pln" : {
 
     },
     "ChatGPT" : {
@@ -247,6 +256,12 @@
 
     },
     "Kwota: %.2f zł" : {
+
+    },
+    "Łączna cena: %lld PLN" : {
+
+    },
+    "Liczba produktów: %lld" : {
 
     },
     "Main" : {

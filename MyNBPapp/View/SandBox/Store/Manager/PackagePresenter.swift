@@ -15,13 +15,21 @@ final class PackagePresenter: PurchasableItem {
         self.package = package
     }
     
+    var id: String {
+        return package.id
+    }
+    
     var name: String {
         return package.name
     }
     
+    var products: [Product] {
+         return package.products
+     }
+    
     func display() -> String {
         let productNames = package.products.map { $0.name }.joined(separator: ", ")
-        return "Package: \(package.name), Contains: \(productNames)"
+        return "Contains: \(productNames)"
     }
     
     func getPrice() -> Int {
