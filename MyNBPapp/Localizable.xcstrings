@@ -161,6 +161,9 @@
     "Delete" : {
 
     },
+    "Do zaplaty: %@" : {
+
+    },
     "Done" : {
       "localizations" : {
         "pl" : {
@@ -244,6 +247,9 @@
 
     },
     "Kup" : {
+
+    },
+    "Kupuję i płace" : {
 
     },
     "kurs:" : {

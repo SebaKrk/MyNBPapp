@@ -19,6 +19,9 @@ final class StoreViewModel: ObservableObject {
     @Published var triggerEffect: Bool = false
     @Published var selectedProduct: PurchasableItem?
     
+    @Published var showPaymentCard: Bool = false
+    @Published var paymnet: String?
+    
     private let service: AppleProductsService
     
     // MARK: - Lifecycle

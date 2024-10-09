@@ -12,6 +12,7 @@ struct Payment: View {
     // MARK: - Properties
     
     @State private var selectedPaymentMethod: PaymentMethod?
+    @State var inputAmount: String = "0"
     
     // MARK: - View
     
@@ -20,12 +21,16 @@ struct Payment: View {
             if let method = selectedPaymentMethod {
                 let paymentFactory = selectedFactory(for: method)
                 let paymentService = PaymentService(factory: paymentFactory)
-                let viewModel = PaymentViewModel(paymentService: paymentService)
+                let viewModel = PaymentViewModel(paymentService: paymentService,
+                                                 inputAmount: inputAmount)
                 PaymentView(viewModel: viewModel)
             } else {
-                Text("Proszę wybrać metodę płatności")
-                    .foregroundColor(.red)
-                    .padding()
+                VStack {
+                    Text("Proszę wybrać metodę płatności")
+                        .foregroundColor(.red)
+                        .padding()
+                    Text("Do zaplaty: \(inputAmount)")
+                }
             }
         }
         .toolbar {
