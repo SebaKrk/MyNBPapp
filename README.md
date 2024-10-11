@@ -239,4 +239,7 @@ https://github.com/SebaKrk/MyNBPapp
     -  integrate ProductPresenter
     -  integrate PackagePresenter
     -  add cartLogic, simplified the display of unique products in the card
-    - refactor CartViewModel #Facade
+    -  refactor CartViewModel #Facade
+    
+### IOS-0030 Connect Store with Payment
+    A: Binding paymnet
