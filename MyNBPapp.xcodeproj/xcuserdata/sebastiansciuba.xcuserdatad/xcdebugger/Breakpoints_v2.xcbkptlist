@@ -215,52 +215,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AD068734-CD35-49B3-96D9-72BC1229666C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyNBPapp/View/SandBox/Payment/View/PaymentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "failedView"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "AD068734-CD35-49B3-96D9-72BC1229666C - c7840f7816b23f9c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in MyNBPapp.PaymentView.failedView.getter : some"
-                  moduleName = "MyNBPapp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sebastiansciuba/Dokumenty/Programowanie%20/Programing%20SWIFT/MOJE%20SwiftUI&amp;TCA/MyNBPapp/MyNBPapp/View/SandBox/Payment/View/PaymentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89">
-               </Location>
-               <Location
-                  uuid = "AD068734-CD35-49B3-96D9-72BC1229666C - c7840f7816b23f9c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in MyNBPapp.PaymentView.failedView.getter : some"
-                  moduleName = "MyNBPapp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sebastiansciuba/Dokumenty/Programowanie%20/Programing%20SWIFT/MOJE%20SwiftUI&amp;TCA/MyNBPapp/MyNBPapp/View/SandBox/Payment/View/PaymentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "95A0A27E-294C-4E50-9310-1B5C8E0DE778"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

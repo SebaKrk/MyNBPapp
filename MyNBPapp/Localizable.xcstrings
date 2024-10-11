@@ -258,7 +258,7 @@
     "Kwota" : {
 
     },
-    "Kwota do zapłaty: %.2f zł" : {
+    "Kwota do zapłaty: %@" : {
 
     },
     "Kwota: %.2f zł" : {

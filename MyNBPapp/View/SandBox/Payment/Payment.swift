@@ -17,24 +17,26 @@ struct Payment: View {
     // MARK: - View
     
     var body: some View {
-        VStack {
-            if let method = selectedPaymentMethod {
-                let paymentFactory = selectedFactory(for: method)
-                let paymentService = PaymentService(factory: paymentFactory)
-                let viewModel = PaymentViewModel(paymentService: paymentService,
-                                                 inputAmount: inputAmount)
-                PaymentView(viewModel: viewModel)
-            } else {
-                VStack {
-                    Text("Proszę wybrać metodę płatności")
-                        .foregroundColor(.red)
-                        .padding()
-                    Text("Do zaplaty: \(inputAmount)")
+        NavigationStack {
+            VStack {
+                if let method = selectedPaymentMethod {
+                    let paymentFactory = selectedFactory(for: method)
+                    let paymentService = PaymentService(factory: paymentFactory)
+                    let viewModel = PaymentViewModel(paymentService: paymentService,
+                                                     inputAmount: inputAmount)
+                    PaymentView(viewModel: viewModel)
+                } else {
+                    VStack {
+                        Text("Proszę wybrać metodę płatności")
+                            .foregroundColor(.red)
+                            .padding()
+                        Text("Do zaplaty: \(inputAmount)")
+                    }
                 }
             }
-        }
-        .toolbar {
-            toolBarButton
+            .toolbar {
+                toolBarButton
+            }
         }
     }
     
