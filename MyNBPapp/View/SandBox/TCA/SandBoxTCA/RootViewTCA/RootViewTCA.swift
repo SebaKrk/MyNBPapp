@@ -13,12 +13,15 @@ struct RootViewTCA: View {
     @Bindable var store: StoreOf<RootFeatureTCA>
     
     var body: some View {
+        SandBoxViewC(store: store.scope(state: \.sandBoxCFeature, action: \.sandBoxCFeature))
         NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             VStack {
                 sectionOne
                     
                 sectionTwo
-                ///sectionThree
+                
+                sectionThree
+                
                 sectionFour
             }
             .navigationTitle("Root")
@@ -65,7 +68,7 @@ struct RootViewTCA: View {
     var sectionThree: some View {
         Section {
             Button {
-                //store.send(.popToRoot)
+//                store.send(.sandBoxCFeature(SandBoxC.Action))
             } label: {
                 Text("pop to root")
             }

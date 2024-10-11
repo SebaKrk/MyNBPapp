@@ -24,7 +24,8 @@ extension RootFeatureTCA {
         
         // case popToRoot
         
-        // case sandBoxCFeature(SandBoxC.Action)
+        // MARK: Children Action
+         case sandBoxCFeature(SandBoxC.Action)
         
     }
 }
