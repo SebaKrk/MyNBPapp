@@ -161,6 +161,9 @@
     "Delete" : {
 
     },
+    "Do zaplaty: %@" : {
+
+    },
     "Done" : {
       "localizations" : {
         "pl" : {
@@ -246,13 +249,16 @@
     "Kup" : {
 
     },
+    "Kupuję i płace" : {
+
+    },
     "kurs:" : {
 
     },
     "Kwota" : {
 
     },
-    "Kwota do zapłaty: %.2f zł" : {
+    "Kwota do zapłaty: %@" : {
 
     },
     "Kwota: %.2f zł" : {

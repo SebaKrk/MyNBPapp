@@ -50,7 +50,14 @@ struct StoreView: View {
             }
         }
         .sheet(isPresented: $viewModel.showCartView) {
-            CartView(cartViewModel)
+            CartView(cartViewModel,
+                     showPaymentCard: $viewModel.showPaymentCard,
+                     paymnet: $viewModel.paymnet)
+        }
+        .sheet(isPresented: $viewModel.showPaymentCard) {
+            if let paymnet = viewModel.paymnet {
+                Payment(inputAmount: paymnet)
+            }
         }
     }
     

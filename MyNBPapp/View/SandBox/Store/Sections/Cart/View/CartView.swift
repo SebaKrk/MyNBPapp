@@ -9,10 +9,21 @@ import SwiftUI
 
 struct CartView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @ObservedObject var cartViewModel: CartViewModel
     
-    init(_ viewModel: CartViewModel) {
+    @Binding var showPaymentCard: Bool
+    @Binding var paymnet: String?
+    
+    
+    init(_ viewModel: CartViewModel,
+         showPaymentCard: Binding<Bool>,
+         paymnet: Binding<String?>) {
         self.cartViewModel = viewModel
+        self._showPaymentCard = showPaymentCard
+        self._paymnet = paymnet
+        
     }
     
     var body: some View {
@@ -26,6 +37,7 @@ struct CartView: View {
             }
         }
         summaryView
+        buyButton
     }
     
     private func productLabel(_ item: CartItem) -> some View {
@@ -77,6 +89,17 @@ struct CartView: View {
             Text("Łączna cena: \(cartViewModel.totalPrice) PLN")
         }
         .padding()
+    }
+    
+    private var buyButton: some View {
+        Button {
+            paymnet = String(cartViewModel.totalPrice)
+            showPaymentCard = true
+            cartViewModel.proceedToPayment()
+            dismiss()
+        } label: {
+            Label("Kupuję i płace", systemImage: "creditcard")
+        }
     }
     
 }

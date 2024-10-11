@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class CartViewModel: ObservableObject {
     
     @Published private(set) var items: [CartItem] = []
-    
+
     func addToCart(_ item: PurchasableItem) {
         if let index = items.firstIndex(where: { $0.item.id == item.id }) {
             items[index].quantity += 1
@@ -36,6 +37,11 @@ final class CartViewModel: ObservableObject {
             return package.products.count * cartItem.quantity
         }
         return 0
+    }
+    
+    func proceedToPayment() {
+        //inputAmount = "\(totalPrice)"
+        items = []
     }
     
     private func calculateTotalItems() -> Int {
