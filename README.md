@@ -219,7 +219,7 @@ https://github.com/SebaKrk/MyNBPapp
     - Refactored SearchService and add DocC documentation (testing)
     E: Create POI Buttons
     
-### IOS-0027 Paymnet, #CodingPatterns
+### IOS-0027 Paymnet, #DesignPatterns
     A: Create paymnet service
     - Used Abstract Factory
     B: Refactor state management in PaymentViewModel
@@ -229,4 +229,18 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-0028 TCA `Stack-based navigation`
     A: SandBox - navigation TCA
+    B: SandBox TCA cd
 
+### IOS-0029 Store #DesignPatterns - Composite "Kompozyt"
+    A: Create store service #Singelton
+    B: Build UI, #ProgramingPrinciple
+    - "program to an interface, not an implementation”
+    C: Add CartView and handle DetailView
+    -  refactor folder structure
+    -  integrate ProductPresenter
+    -  integrate PackagePresenter
+    -  add cartLogic, simplified the display of unique products in the card
+    -  refactor CartViewModel #Facade
+    
+### IOS-0030 Connect Store with Payment
+    A: Binding paymnet

@@ -11,10 +11,11 @@ import SwiftData
 @main
 struct MyNBPappApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup {            
             ContentView()
 //            SandBoxMapView()
         }
         .modelContainer(for: Favorite.self)
     }
 }
+

@@ -42,6 +42,12 @@
     "%lld" : {
 
     },
+    "%lld pln" : {
+
+    },
+    "%lld PLN" : {
+
+    },
     "%lld znaleziono" : {
 
     },
@@ -91,9 +97,6 @@
     "Average rate" : {
 
     },
-    "Bład" : {
-
-    },
     "Błąd płatności: %@" : {
 
     },
@@ -112,6 +115,12 @@
           }
         }
       }
+    },
+    "Cena: %lld" : {
+
+    },
+    "Cena: %lld pln" : {
+
     },
     "ChatGPT" : {
       "comment" : "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"
@@ -147,6 +156,9 @@
 
     },
     "Delete" : {
+
+    },
+    "Do zaplaty: %@" : {
 
     },
     "Done" : {
@@ -228,16 +240,31 @@
     "Jeszcze tu nic nie ma" : {
 
     },
+    "Już od %lld zł" : {
+
+    },
+    "Kup" : {
+
+    },
+    "Kupuję i płace" : {
+
+    },
     "kurs:" : {
 
     },
     "Kwota" : {
 
     },
-    "Kwota do zapłaty: %.2f zł" : {
+    "Kwota do zapłaty: %@" : {
 
     },
     "Kwota: %.2f zł" : {
+
+    },
+    "Łączna cena: %lld PLN" : {
+
+    },
+    "Liczba produktów: %lld" : {
 
     },
     "Main" : {
@@ -452,6 +479,9 @@
     "Sortuj" : {
 
     },
+    "Store" : {
+      "comment" : "store"
+    },
     "The request failed due to: %@." : {
       "comment" : "Request Failed",
       "localizations" : {
@@ -481,6 +511,9 @@
 
     },
     "Wawel" : {
+
+    },
+    "Widok C" : {
 
     },
     "Wpisz liczbę do przekonwertowania" : {
