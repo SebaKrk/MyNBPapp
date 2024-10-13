@@ -14,16 +14,29 @@ public final class DefaultNBPService: NBPService {
     public init() {}
     
     public func getDataFromNBP(table: TableNBP,
-                        symbol: GlobalCurrencySymbols,
-                        from: Date,
-                        to: Date) async throws -> Exchange {
+                               symbol: GlobalCurrencySymbols,
+                               from: Date,
+                               to: Date) async throws -> Exchange {
         
         let fromDate = Formatters.Date.createString(from: from, with: .shortDate)
         let toDate = Formatters.Date.createString(from: to, with: .shortDate)
-        let endpoint = "https://api.nbp.pl/api/exchangerates/rates/\(table)/\(symbol.title)/\(fromDate)/\(toDate)/?format=json"
-        //print(endpoint)
+
+        let path = PathBuilder()
+            .setPath(.exchangeRates)
+            .setRates("rates")
+            .setTable(table.rawValue)
+            .setSymbol(symbol.title)
+            .setStartDate(fromDate)
+            .setEndDate(toDate)
+            .build()
         
-        guard let url = URL(string: endpoint) else {
+        let queryItems = QueryItemsBuilder()
+            .addQueryItem(name: "format", value: "json")
+            .build()
+        
+        let urlBuilder = URLBuilder()
+        
+        guard let url = urlBuilder.build(path: path, queryItems: queryItems) else {
             throw NetworkingError.invalidURL
         }
         
@@ -47,7 +60,7 @@ public final class DefaultNBPService: NBPService {
         default:
             throw NetworkingError.fetchingDataFailed
         }
-
+        
         do {
             let decoder = JSONDecoder()
             return try decoder.decode(Exchange.self, from: data)
@@ -83,7 +96,7 @@ public final class DefaultNBPService: NBPService {
         default:
             throw NetworkingError.fetchingDataFailed
         }
-
+        
         do {
             let decoder = JSONDecoder()
             return try decoder.decode(Exchange.self, from: data)

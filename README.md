@@ -247,3 +247,4 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-0031 Builder with director
     A: Sandbox #CreationalPatterns / #BuilderWithDirector
+    - create NBP url Builder
