@@ -244,3 +244,6 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0030 Connect Store with Payment
     A: Binding paymnet
+
+### IOS-0031 Builder with director
+    A: Sandbox #CreationalPatterns / #BuilderWithDirector

@@ -12,8 +12,10 @@ import SwiftData
 struct MyNBPappApp: App {
     var body: some Scene {
         WindowGroup {            
-            ContentView()
+//            ContentView()
 //            SandBoxMapView()
+//            ContentViewBuilder()
+            ContentProductView()
         }
         .modelContainer(for: Favorite.self)
     }

@@ -83,6 +83,8 @@
 		9367750B2B7007A500816C92 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367750A2B7007A500816C92 /* AppIntent.swift */; };
 		9367750D2B7007A600816C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9367750C2B7007A600816C92 /* Assets.xcassets */; };
 		936775112B7007A600816C92 /* WidgetNBPExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		936F83AA2CBACAE900847BFE /* PurchasableItemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F83A92CBACAE900847BFE /* PurchasableItemBuilder.swift */; };
+		936F83AE2CBBA01400847BFE /* BuilderWithDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F83AD2CBBA01400847BFE /* BuilderWithDirector.swift */; };
 		93834AD62B7A004B00A5744C /* ExchangeRateClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 93834AD52B7A004B00A5744C /* ExchangeRateClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93834AD92B7A004B00A5744C /* ExchangeRateClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93834AD32B7A004B00A5744C /* ExchangeRateClient.framework */; };
 		93834ADA2B7A004B00A5744C /* ExchangeRateClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93834AD32B7A004B00A5744C /* ExchangeRateClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -382,6 +384,8 @@
 		9367750A2B7007A500816C92 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		9367750C2B7007A600816C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9367750E2B7007A600816C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		936F83A92CBACAE900847BFE /* PurchasableItemBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasableItemBuilder.swift; sourceTree = "<group>"; };
+		936F83AD2CBBA01400847BFE /* BuilderWithDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderWithDirector.swift; sourceTree = "<group>"; };
 		93834AD32B7A004B00A5744C /* ExchangeRateClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExchangeRateClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93834AD52B7A004B00A5744C /* ExchangeRateClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeRateClient.h; sourceTree = "<group>"; };
 		93834AEC2B7A04CE00A5744C /* openapi.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
@@ -951,6 +955,15 @@
 				9367750E2B7007A600816C92 /* Info.plist */,
 			);
 			path = WidgetNBP;
+			sourceTree = "<group>";
+		};
+		936F83A22CBA4D0900847BFE /* BuilderWithDirector */ = {
+			isa = PBXGroup;
+			children = (
+				936F83A92CBACAE900847BFE /* PurchasableItemBuilder.swift */,
+				936F83AD2CBBA01400847BFE /* BuilderWithDirector.swift */,
+			);
+			path = BuilderWithDirector;
 			sourceTree = "<group>";
 		};
 		93834AD42B7A004B00A5744C /* ExchangeRateClient */ = {
@@ -1717,6 +1730,7 @@
 		93D4CF912CA9B3A200164D92 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				936F83A22CBA4D0900847BFE /* BuilderWithDirector */,
 				93D4CFAE2CAA77E800164D92 /* Manager */,
 				93D4CFAA2CAA6D0900164D92 /* Resources */,
 				93D4CF982CA9DEBA00164D92 /* Services */,
@@ -2211,6 +2225,7 @@
 				93335A862BA750F4001F1610 /* ContactsFeature+Action.swift in Sources */,
 				93335A922BA751F2001F1610 /* AddContactFeature+Action.swift in Sources */,
 				93D4CFA62CA9EB1F00164D92 /* StoreView.swift in Sources */,
+				936F83AE2CBBA01400847BFE /* BuilderWithDirector.swift in Sources */,
 				93C6D7B62B5BA569006E28F7 /* MyNBPappApp.swift in Sources */,
 				93928A162CA8481C00CD026A /* ContainerBoxStyle.swift in Sources */,
 				9312DF162B9B346000C3D441 /* TransactionType.swift in Sources */,
@@ -2234,6 +2249,7 @@
 				93F782942BB07A0700ACB39A /* CurrencyRateDetailViewModel.swift in Sources */,
 				93335A822BA6DE99001F1610 /* CurrencyConverterFeature+State.swift in Sources */,
 				939B08D32CA7135B00B78F82 /* Colors.swift in Sources */,
+				936F83AA2CBACAE900847BFE /* PurchasableItemBuilder.swift in Sources */,
 				939B08D42CA7135B00B78F82 /* ShapeColor.swift in Sources */,
 				939B08D52CA7135B00B78F82 /* PaymentActionButton.swift in Sources */,
 				930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */,
