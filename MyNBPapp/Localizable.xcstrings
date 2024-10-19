@@ -158,6 +158,9 @@
     "Delete" : {
 
     },
+    "Discounted Price: %lld PLN" : {
+
+    },
     "Do zaplaty: %@" : {
 
     },
@@ -235,6 +238,9 @@
 
     },
     "ID transakcji: %@" : {
+
+    },
+    "In stock: %lld" : {
 
     },
     "Jeszcze tu nic nie ma" : {
@@ -348,6 +354,9 @@
         }
       }
     },
+    "No stock information available" : {
+
+    },
     "Odległość" : {
 
     },
@@ -392,6 +401,9 @@
 
     },
     "pop to root" : {
+
+    },
+    "Price: %lld PLN" : {
 
     },
     "Proszę wybrać metodę płatności" : {

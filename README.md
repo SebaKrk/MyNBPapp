@@ -1,4 +1,5 @@
 #  MyNPBapp
+#  MyNPBapp
 https://github.com/SebaKrk/MyNBPapp
 
 ## Zdanie roczne:
@@ -244,3 +245,9 @@ https://github.com/SebaKrk/MyNBPapp
     
 ### IOS-0030 Connect Store with Payment
     A: Binding paymnet
+
+### IOS-0031 Builder with director
+    A: Sandbox #CreationalPatterns / #BuilderWithDirector
+    - create NBP url Builder
+    - Refactor PathBuilder, URLBuilder, and QueryItemsBuilder to follow the "program to an interface" #ProgramingPrinciple
+    - Add protocols and comprehensive documentation for all builders

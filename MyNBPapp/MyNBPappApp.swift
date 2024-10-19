@@ -14,6 +14,8 @@ struct MyNBPappApp: App {
         WindowGroup {            
             ContentView()
 //            SandBoxMapView()
+//            ContentViewBuilder()
+//            ContentProductView()
         }
         .modelContainer(for: Favorite.self)
     }
