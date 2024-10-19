@@ -12,9 +12,13 @@ extension RootFeatureTCA {
     @ObservableState
     struct State: Equatable {
         
+        // MARK: Path
+        
         var path = StackState<Path.State>()
         
-        // var sandBoxCFeature = SandBoxC.State()
+        // MARK: Children state
+        
+        var sandBoxCFeature = SandBoxC.State()
         
         @Presents
         var destination: Destination.State?

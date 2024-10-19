@@ -49,11 +49,13 @@ struct SandBoxViewC: View {
     let store: StoreOf<SandBoxC>
     
     var body: some View {
-        if let element = store.element {
-            Text(element.title)
-        } else {
-            Text("Bład")
-        }
+//        if let element = store.element {
+//            Text(element.title)
+//        } else {
+//            Text("Bład")
+//        }
+//        
+        Text("Widok C")
     }
 }
 

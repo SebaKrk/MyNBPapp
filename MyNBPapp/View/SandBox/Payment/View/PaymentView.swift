@@ -48,7 +48,8 @@ struct PaymentView: View {
     
     private var selectionView: some View {
         VStack {
-            Text("Kwota do zapłaty: \(viewModel.receipt?.amount ?? 0, specifier: "%.2f") zł")
+            Text("Kwota do zapłaty: \(viewModel.inputAmount)")
+            ///Text("Kwota do zapłaty: \(viewModel.receipt?.amount ?? 0, specifier: "%.2f") zł")
                 .font(.footnote)
                 .padding()
             
@@ -98,6 +99,7 @@ struct PaymentView: View {
             .padding()
         }
     }
+    
     // MARK: - Methods
     
     private func processPayment(_ amount: Double) {

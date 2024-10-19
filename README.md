@@ -1,4 +1,5 @@
 #  MyNPBapp
+#  MyNPBapp
 https://github.com/SebaKrk/MyNBPapp
 
 ## Zdanie roczne:
@@ -229,6 +230,7 @@ https://github.com/SebaKrk/MyNBPapp
 
 ### IOS-0028 TCA `Stack-based navigation`
     A: SandBox - navigation TCA
+    B: SandBox TCA cd
 
 ### IOS-0029 Store #DesignPatterns - Composite "Kompozyt"
     A: Create store service #Singelton
@@ -239,4 +241,13 @@ https://github.com/SebaKrk/MyNBPapp
     -  integrate ProductPresenter
     -  integrate PackagePresenter
     -  add cartLogic, simplified the display of unique products in the card
-    - refactor CartViewModel #Facade
+    -  refactor CartViewModel #Facade
+    
+### IOS-0030 Connect Store with Payment
+    A: Binding paymnet
+
+### IOS-0031 Builder with director
+    A: Sandbox #CreationalPatterns / #BuilderWithDirector
+    - create NBP url Builder
+    - Refactor PathBuilder, URLBuilder, and QueryItemsBuilder to follow the "program to an interface" #ProgramingPrinciple
+    - Add protocols and comprehensive documentation for all builders

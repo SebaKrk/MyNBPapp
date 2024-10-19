@@ -32,7 +32,7 @@ class PaymentService: PaymentServiceProtocol {
     }
     
     private func mockServerResponse(for amount: Double) -> Bool {
-        return amount > 0.1
+        return amount > 1000
     }
     
 }

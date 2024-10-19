@@ -46,13 +46,16 @@ struct RootFeatureTCA {
             case .destination(_):
                 return .none
                 
+            default: return .none
+                
             }
         }
         .forEach(\.path, action: \.path)
         .ifLet(\.$destination, action: \.destination)
-        // Scope(state: \.sandBoxCFeature, action: \.sandBoxCFeature) {
-        //  SandBoxC()
-        // }
+         
+        Scope(state: \.sandBoxCFeature, action: \.sandBoxCFeature) {
+            SandBoxC()
+        }
     }
     
 }

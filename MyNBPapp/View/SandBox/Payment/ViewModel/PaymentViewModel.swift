@@ -12,7 +12,7 @@ class PaymentViewModel: ObservableObject {
     let paymentService: PaymentServiceProtocol
     @Published var paymentState: paymentState = .selection
     
-    @Published var inputAmount: String = ""
+    @Published var inputAmount: String
     @Published var receipt: Receipt?
     @Published var paymentError: Error?
     
@@ -24,8 +24,9 @@ class PaymentViewModel: ObservableObject {
          }
      }
     
-    init(paymentService: PaymentServiceProtocol) {
+    init(paymentService: PaymentServiceProtocol, inputAmount: String) {
         self.paymentService = paymentService
+        self.inputAmount = inputAmount
     }
     
     @MainActor
