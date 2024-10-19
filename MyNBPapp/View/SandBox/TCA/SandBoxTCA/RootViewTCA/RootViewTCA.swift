@@ -13,9 +13,11 @@ struct RootViewTCA: View {
     @Bindable var store: StoreOf<RootFeatureTCA>
     
     var body: some View {
-        SandBoxViewC(store: store.scope(state: \.sandBoxCFeature, action: \.sandBoxCFeature))
         NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             VStack {
+                SandBoxViewC(store: store.scope(state: \.sandBoxCFeature, action: \.sandBoxCFeature))
+                    .frame(height: 100)
+                
                 sectionOne
                     
                 sectionTwo
