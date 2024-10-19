@@ -85,7 +85,6 @@ public final class DefaultNBPService: NBPService {
             .build()
     
         let urlBuilder = URLBuilder()
-        
         guard let url = urlBuilder.build(path: path, queryItems: queryItems) else {
             throw NetworkingError.invalidURL
         }
