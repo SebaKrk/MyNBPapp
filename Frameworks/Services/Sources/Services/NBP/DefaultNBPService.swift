@@ -70,9 +70,23 @@ public final class DefaultNBPService: NBPService {
     }
     
     public func getDataFromNBP() async throws -> Exchange {
-        let endpoint = "https://api.nbp.pl/api/exchangerates/rates/a/eur/2024-01-02/2024-01-31/?format=json"
+
+        let path = PathBuilder()
+            .setPath(.exchangeRates)
+            .setRates("rates")
+            .setTable("a")
+            .setSymbol("eur")
+            .setStartDate("2024-01-02")
+            .setEndDate("2024-01-31")
+            .build()
         
-        guard let url = URL(string: endpoint) else {
+        let queryItems = QueryItemsBuilder()
+            .addQueryItem(name: "format", value: "json")
+            .build()
+    
+        let urlBuilder = URLBuilder()
+        
+        guard let url = urlBuilder.build(path: path, queryItems: queryItems) else {
             throw NetworkingError.invalidURL
         }
         
