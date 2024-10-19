@@ -15,6 +15,7 @@ enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case favorites
     case account
     case sandBox
+    case sandBoxTCA
     case coreData
     case chatGPT
     case payment
@@ -46,6 +47,9 @@ extension AppScreen {
         case .sandBox:
             Label(String(localized: "Sandbox", comment: "The ‘Sandbox’ tab in the application is my testing area where I experiment with various features and solutions using TCA."),
                   systemImage: "shippingbox")
+        case .sandBoxTCA:
+            Label(String(localized: "SandboxTCA", comment: "The ‘SandboxTCA’ tab in the application is my testing area where I experiment with various features and solutions using TCA."),
+                  systemImage: "shippingbox")
         case .coreData:
             Label(String(localized: "CoreData", comment: "The `CoreData` tab in the application is my testing area for CoreData "), systemImage: "archivebox.fill")
             
@@ -68,12 +72,7 @@ extension AppScreen {
         case .main:
             MainView()
         case .rate:
-            // CurrencyRateView()
-            // RootView(store: Store(initialState: RootFeature.State(),
-            //                 reducer: { RootFeature() }))
-            
-            RootViewTCA(store: Store(initialState: RootFeatureTCA.State(),
-                                     reducer: { RootFeatureTCA() }))
+             CurrencyRateView()
         case .favorites:
             FavoritesView()
         case .account:
@@ -82,9 +81,14 @@ extension AppScreen {
         case .sandBox:
             RootView(store: Store(initialState: RootFeature.State(),
                                   reducer: { RootFeature() }))
+        case .sandBoxTCA:
+            // RootView(store: Store(initialState: RootFeature.State(),
+            //                 reducer: { RootFeature() }))
+            
+            RootViewTCA(store: Store(initialState: RootFeatureTCA.State(),
+                                     reducer: { RootFeatureTCA() }))
         case .coreData:
             CoreDataBootCamp()
-            
         case .chatGPT:
             let viewModel = ChatViewModel()
             ChatView(viewModel: viewModel)
