@@ -444,6 +444,9 @@
     "SandBoxStarView" : {
 
     },
+    "SandboxTCA" : {
+      "comment" : "The ‘SandboxTCA’ tab in the application is my testing area where I experiment with various features and solutions using TCA."
+    },
     "Save" : {
 
     },
