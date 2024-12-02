@@ -253,3 +253,7 @@ https://github.com/SebaKrk/MyNBPapp
     - Add protocols and comprehensive documentation for all builders
     B: Refactor Network #Builder
     - add Decoder / Service / ResponseHandler  
+
+### IOS-0032 TCA 
+    A: Upgrade TCA version
+    - alert handling
