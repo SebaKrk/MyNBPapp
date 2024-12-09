@@ -12,4 +12,5 @@ protocol PickerService {
     
     func fetchDataFormNBP(_ period: Period) async throws -> Exchange
     func getPeriod() -> Period
+    func getPeriods() -> Periods 
 }

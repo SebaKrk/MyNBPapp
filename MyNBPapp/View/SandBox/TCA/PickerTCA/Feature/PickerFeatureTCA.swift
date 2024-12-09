@@ -19,7 +19,9 @@ struct PickerFeatureTCA {
         
         case updateExchangeData(Exchange)
         
-        case updatePeriods(Period)
+        case updatePeriod(Period)
+        
+        case updatePeriods(Periods)
         
         case view(View)
         
@@ -38,6 +40,8 @@ struct PickerFeatureTCA {
         var exchange: Exchange? = nil
         
         var period: Period? = nil
+        
+        var periods: Periods? = nil
 //        var periods: Periods?
 //        var periodState: PeriodsStatePicker = .current
 //        var periodState = Periods.currentPeriod(<#T##Period#>)
@@ -57,7 +61,13 @@ struct PickerFeatureTCA {
             Reduce { state, action in
                 
                 switch action {
-                case let .updatePeriods(period):
+                
+                case let .updatePeriods(periods):
+                    state.periods = periods
+                    dump(periods)
+                    return .none
+                    
+                case let .updatePeriod(period):
                     state.period = period
                     dump(period)
                     return .none
@@ -70,7 +80,7 @@ struct PickerFeatureTCA {
                 case .view(.fetchPeriodButtonTapped):
                     return .run { send in
                         let period = service.getPeriod()
-                        await send(.updatePeriods(period))
+                        await send(.updatePeriod(period))
                     }
                     
                 case .view(.fetchButtonTapped):
@@ -81,7 +91,10 @@ struct PickerFeatureTCA {
                     }
                     
                 case .view(.vieDidAppear):
-                    return .none
+                    return .run { send in
+                        let periods = service.getPeriods()
+                        await send(.updatePeriods(periods))
+                    }
                     
                 case .binding(_):
                     return .none
@@ -92,8 +105,3 @@ struct PickerFeatureTCA {
     
 }
 
-enum PeriodsStatePicker {
-    
-    case current
-    case previous
-}

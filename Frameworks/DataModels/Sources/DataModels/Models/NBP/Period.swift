@@ -20,13 +20,18 @@ public struct Period: Decodable, Hashable {
     
 }
 
-//public struct Periods: Equatable , Hashable {
-//        
-//    /// Current period
-//    let current: Period
-//    
-//    /// Previous period
-//    let previous: Period
-//    
-//}
+public struct Periods: Equatable , Hashable {
+        
+    /// Current period
+    let current: Period
+    
+    /// Previous period
+    let previous: Period
+    
+    public init(current: Period, previous: Period) {
+        self.current = current
+        self.previous = previous
+    }
+    
+}
 

@@ -8,7 +8,7 @@
 import Foundation
 import DataModels
 
-public enum Periods: Hashable, Equatable {
+public enum PeriodsState: Hashable, Equatable {
     
     /// Current period
     case currentPeriod(Period)
@@ -16,4 +16,9 @@ public enum Periods: Hashable, Equatable {
     /// Previous period
     case previousPeriod(Period)
         
+}
+enum PeriodsStatePicker {
+    
+    case current
+    case previous
 }
