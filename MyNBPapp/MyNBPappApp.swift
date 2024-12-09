@@ -7,12 +7,19 @@
 
 import SwiftUI
 import SwiftData
+import ComposableArchitecture
 
 @main
 struct MyNBPappApp: App {
     var body: some Scene {
-        WindowGroup {            
-            ContentView()
+        WindowGroup {
+            ViewPickerTCA(
+                store: Store(
+                    initialState: PickerFeatureTCA.State(),
+                    reducer: { PickerFeatureTCA(service: DefaultService())
+                    })
+            )
+//            ContentView()
 //            SandBoxMapView()
 //            ContentViewBuilder()
 //            ContentProductView()

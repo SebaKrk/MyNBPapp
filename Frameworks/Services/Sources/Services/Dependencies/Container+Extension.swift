@@ -8,10 +8,12 @@
 import Factory
 import Foundation
 
-extension Container {
-    
-    public var nbpService: Factory<NBPService> {
-        Factory(self) { DefaultNBPService() }.shared
-    }
-    
-}
+//extension Container {
+//    
+//    public var nbpService: Factory<NBPService> {
+//        Factory(self) { DefaultNBPService() }.shared
+//    }
+//    
+//    
+//    
+//}

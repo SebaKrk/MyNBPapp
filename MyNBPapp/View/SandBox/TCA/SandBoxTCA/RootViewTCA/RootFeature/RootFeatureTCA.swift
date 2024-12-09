@@ -22,6 +22,7 @@ struct RootFeatureTCA {
                 case .element(id: _, action: .sandBoxA(.screenButtonTapped)):
                     state.path.append(.sandBoxA(SandBoxA.State()))
                     return .none
+                    
                 case .element(id: _, action: .sandBoxB(.screenButtonTapped)):
                     state.path.append(.sandBoxB(SandBoxB.State()))
                     return .none

@@ -76,6 +76,15 @@
 		9357DA6B2B63CF2A0097673C /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6A2B63CF2A0097673C /* DataModels */; };
 		9357DA6D2B63CF2E0097673C /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 9357DA6C2B63CF2E0097673C /* Services */; };
 		9357DA6F2B63D3170097673C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9357DA6E2B63D3170097673C /* Localizable.xcstrings */; };
+		935FD74A2D0760A900806C22 /* PickerFeatureTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7492D0760A900806C22 /* PickerFeatureTCA.swift */; };
+		935FD74C2D07610200806C22 /* DestinationTestTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD74B2D07610200806C22 /* DestinationTestTCA.swift */; };
+		935FD7C82D07633E00806C22 /* ViewPickerTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7C72D07633E00806C22 /* ViewPickerTCA.swift */; };
+		935FD7CB2D07655700806C22 /* DefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7CA2D07655700806C22 /* DefaultService.swift */; };
+		935FD7CD2D07656100806C22 /* PickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7CC2D07656100806C22 /* PickerService.swift */; };
+		935FD7CF2D0766A900806C22 /* Dependencies+ContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7CE2D0766A900806C22 /* Dependencies+ContainerExtension.swift */; };
+		935FD7DD2D077DA100806C22 /* DefaultPickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7DC2D077DA100806C22 /* DefaultPickerRepository.swift */; };
+		935FD7DF2D077DB700806C22 /* PickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7DE2D077DB700806C22 /* PickerRepository.swift */; };
+		935FD7EA2D0796FA00806C22 /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7E92D0796FA00806C22 /* Periods.swift */; };
 		936775002B7007A500816C92 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936774FF2B7007A500816C92 /* WidgetKit.framework */; };
 		936775022B7007A500816C92 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936775012B7007A500816C92 /* SwiftUI.framework */; };
 		936775052B7007A500816C92 /* WidgetNBPBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936775042B7007A500816C92 /* WidgetNBPBundle.swift */; };
@@ -377,6 +386,15 @@
 		9357DA632B63C1940097673C /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Commons; path = Frameworks/Commons; sourceTree = "<group>"; };
 		9357DA6E2B63D3170097673C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9357DA702B63F5560097673C /* MonumentKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MonumentKit; path = Frameworks/MonumentKit; sourceTree = "<group>"; };
+		935FD7492D0760A900806C22 /* PickerFeatureTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFeatureTCA.swift; sourceTree = "<group>"; };
+		935FD74B2D07610200806C22 /* DestinationTestTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationTestTCA.swift; sourceTree = "<group>"; };
+		935FD7C72D07633E00806C22 /* ViewPickerTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPickerTCA.swift; sourceTree = "<group>"; };
+		935FD7CA2D07655700806C22 /* DefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultService.swift; sourceTree = "<group>"; };
+		935FD7CC2D07656100806C22 /* PickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerService.swift; sourceTree = "<group>"; };
+		935FD7CE2D0766A900806C22 /* Dependencies+ContainerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dependencies+ContainerExtension.swift"; sourceTree = "<group>"; };
+		935FD7DC2D077DA100806C22 /* DefaultPickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPickerRepository.swift; sourceTree = "<group>"; };
+		935FD7DE2D077DB700806C22 /* PickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRepository.swift; sourceTree = "<group>"; };
+		935FD7E92D0796FA00806C22 /* Periods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
 		936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetNBPExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		936774FF2B7007A500816C92 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		936775012B7007A500816C92 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -954,6 +972,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		935FD7482D07608200806C22 /* PickerTCA */ = {
+			isa = PBXGroup;
+			children = (
+				935FD7E82D0796F500806C22 /* Enum */,
+				935FD7DB2D077D7F00806C22 /* Repository */,
+				935FD7C92D07653E00806C22 /* Services */,
+				935FD7C62D07631F00806C22 /* Feature */,
+			);
+			path = PickerTCA;
+			sourceTree = "<group>";
+		};
+		935FD7C62D07631F00806C22 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				935FD7492D0760A900806C22 /* PickerFeatureTCA.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		935FD7C92D07653E00806C22 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				935FD7CA2D07655700806C22 /* DefaultService.swift */,
+				935FD7CC2D07656100806C22 /* PickerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		935FD7D32D07684400806C22 /* DestinationTest */ = {
+			isa = PBXGroup;
+			children = (
+				935FD74B2D07610200806C22 /* DestinationTestTCA.swift */,
+			);
+			path = DestinationTest;
+			sourceTree = "<group>";
+		};
+		935FD7DB2D077D7F00806C22 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				935FD7DE2D077DB700806C22 /* PickerRepository.swift */,
+				935FD7DC2D077DA100806C22 /* DefaultPickerRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		935FD7E82D0796F500806C22 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				935FD7E92D0796FA00806C22 /* Periods.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		936775032B7007A500816C92 /* WidgetNBP */ = {
 			isa = PBXGroup;
 			children = (
@@ -1527,6 +1598,9 @@
 		939BD5ED2C10F7780063D761 /* TCA */ = {
 			isa = PBXGroup;
 			children = (
+				935FD7D32D07684400806C22 /* DestinationTest */,
+				935FD7482D07608200806C22 /* PickerTCA */,
+				935FD7C72D07633E00806C22 /* ViewPickerTCA.swift */,
 				939B083A2CA711DC00B78F82 /* SandBoxTCA */,
 				93928A2A2CA8648500CD026A /* Old */,
 			);
@@ -1670,6 +1744,7 @@
 			children = (
 				931D595E2C5AD47C00B33C95 /* Info.plist */,
 				93C6D7B52B5BA569006E28F7 /* MyNBPappApp.swift */,
+				935FD7CE2D0766A900806C22 /* Dependencies+ContainerExtension.swift */,
 				93C6D7B72B5BA569006E28F7 /* ContentView.swift */,
 				93FE949A2BB1CD4D0087104D /* Dependencies */,
 				9357D9FC2B5D2EE40097673C /* Navigation */,
@@ -2208,6 +2283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				939B08362CA711BD00B78F82 /* RootFeatureTCA.swift in Sources */,
+				935FD74C2D07610200806C22 /* DestinationTestTCA.swift in Sources */,
 				939B08372CA711BD00B78F82 /* SandBoxA.swift in Sources */,
 				93928A1E2CA8594B00CD026A /* RootFeatureTCA+Action.swift in Sources */,
 				93500A3B2BC5AE13000E93FB /* CurrencyExchangeChartType.swift in Sources */,
@@ -2233,6 +2309,7 @@
 				939BD5F22C10FA400063D761 /* FruitContainer.xcdatamodeld in Sources */,
 				932FFF062C09B6E7008FC828 /* ScreenB.swift in Sources */,
 				93335A8C2BA7511B001F1610 /* ContactsFeature.swift in Sources */,
+				935FD7DD2D077DA100806C22 /* DefaultPickerRepository.swift in Sources */,
 				93335A862BA750F4001F1610 /* ContactsFeature+Action.swift in Sources */,
 				93335A922BA751F2001F1610 /* AddContactFeature+Action.swift in Sources */,
 				93D4CFA62CA9EB1F00164D92 /* StoreView.swift in Sources */,
@@ -2262,6 +2339,7 @@
 				939B08D32CA7135B00B78F82 /* Colors.swift in Sources */,
 				936F83AA2CBACAE900847BFE /* PurchasableItemBuilder.swift in Sources */,
 				939B08D42CA7135B00B78F82 /* ShapeColor.swift in Sources */,
+				935FD7CD2D07656100806C22 /* PickerService.swift in Sources */,
 				939B08D52CA7135B00B78F82 /* PaymentActionButton.swift in Sources */,
 				930B2EA22B667BA600BEB7B7 /* AccountFeature+State.swift in Sources */,
 				93335A892BA750FA001F1610 /* ContactsFeature+State.swift in Sources */,
@@ -2288,6 +2366,7 @@
 				935210C52CB47DE600585030 /* CartItem.swift in Sources */,
 				93517C492B88D863009252E9 /* AccountFeatureServices.swift in Sources */,
 				9312DF102B9B208800C3D441 /* CurrencyConverterView.swift in Sources */,
+				935FD7EA2D0796FA00806C22 /* Periods.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
 				9351DB2E2CFD9B5200D102B8 /* ScreenAlert.swift in Sources */,
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
@@ -2320,6 +2399,7 @@
 				939B092C2CA7161E00B78F82 /* DefaultMapViewsFactory.swift in Sources */,
 				939B092D2CA7161E00B78F82 /* MapFactory.swift in Sources */,
 				939B092E2CA7161E00B78F82 /* Place.swift in Sources */,
+				935FD7DF2D077DB700806C22 /* PickerRepository.swift in Sources */,
 				938604682CAD7EA900CAF30E /* CartView.swift in Sources */,
 				939B092F2CA7161E00B78F82 /* UIKitMapView.swift in Sources */,
 				939B09302CA7161E00B78F82 /* LocationDetailsView.swift in Sources */,
@@ -2338,12 +2418,14 @@
 				939B093C2CA7161E00B78F82 /* MainMapViewModel.swift in Sources */,
 				939B093D2CA7161E00B78F82 /* FlowLayout.swift in Sources */,
 				939B093E2CA7161E00B78F82 /* ChatModel.swift in Sources */,
+				935FD7CB2D07655700806C22 /* DefaultService.swift in Sources */,
 				939B093F2CA7161E00B78F82 /* SandBox.swift in Sources */,
 				939B09402CA7161E00B78F82 /* FiltersPlaceView.swift in Sources */,
 				939B09412CA7161E00B78F82 /* SearchPlaceSheetView.swift in Sources */,
 				939B09422CA7161E00B78F82 /* SearchResultsListView.swift in Sources */,
 				939B09432CA7161E00B78F82 /* MapViewModel.swift in Sources */,
 				939B09442CA7161E00B78F82 /* SearchServiceProtocol.swift in Sources */,
+				935FD7CF2D0766A900806C22 /* Dependencies+ContainerExtension.swift in Sources */,
 				939B09452CA7161E00B78F82 /* LoadingDotsView.swift in Sources */,
 				939B09462CA7161E00B78F82 /* MKPointOfInterestCategory+Extension.swift in Sources */,
 				93928A222CA8598E00CD026A /* RootFeatureTCA+Path.swift in Sources */,
@@ -2370,6 +2452,7 @@
 				93D4CFBB2CAB444300164D92 /* StoreViewModel.swift in Sources */,
 				93A3EB4F2B657E6F007BFCDC /* CurrencyBalanceView.swift in Sources */,
 				93517C3B2B88CBB7009252E9 /* TestFeature.swift in Sources */,
+				935FD74A2D0760A900806C22 /* PickerFeatureTCA.swift in Sources */,
 				9312DF052B9B1D9200C3D441 /* MainFeature+Action.swift in Sources */,
 				93335A692BA4560A001F1610 /* ContactDetailView.swift in Sources */,
 				93CF41D92C09F640006263F0 /* ScreenContact.swift in Sources */,
@@ -2380,6 +2463,7 @@
 				9342551F2BA7A12400D787D6 /* CurrencyRateDetailView.swift in Sources */,
 				9357D9FE2B5D2EFC0097673C /* AppScreen.swift in Sources */,
 				930948712BA7AE8F00CF6284 /* CurrencyRateDetailFeature+Action.swift in Sources */,
+				935FD7C82D07633E00806C22 /* ViewPickerTCA.swift in Sources */,
 				93928A102CA7D98300CD026A /* SandBoxB.swift in Sources */,
 				93E9A8132B6EE15100B37B26 /* CurrencyRate+Widget.swift in Sources */,
 				932FFF092C09C226008FC828 /* Demo.swift in Sources */,
@@ -2981,7 +3065,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.13.0;
+				minimumVersion = 1.17.0;
 			};
 		};
 		93834ADF2B7A006C00A5744C /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {

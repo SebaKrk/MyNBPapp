@@ -257,3 +257,4 @@ https://github.com/SebaKrk/MyNBPapp
 ### IOS-0032 TCA 
     A: Upgrade TCA version
     - alert handling
+    B: Testing Picker TCA

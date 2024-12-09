@@ -122,6 +122,9 @@
     "Cena: %lld pln" : {
 
     },
+    "Change User Name" : {
+
+    },
     "ChatGPT" : {
       "comment" : "The ‘chatGPT’ tab in the application is my testing area and experiment with chat gpt technology"
     },
@@ -210,10 +213,19 @@
     "FavoritesView" : {
 
     },
+    "Fetch data" : {
+
+    },
+    "Fetch period" : {
+
+    },
     "Filtry" : {
 
     },
     "Fruits" : {
+
+    },
+    "GO A -> B" : {
 
     },
     "Go to → B" : {
@@ -379,6 +391,9 @@
         }
       }
     },
+    "PickerTCA" : {
+
+    },
     "Płacę" : {
 
     },
@@ -497,6 +512,12 @@
     "Store" : {
       "comment" : "store"
     },
+    "TestView A" : {
+
+    },
+    "TestView B" : {
+
+    },
     "The request failed due to: %@." : {
       "comment" : "Request Failed",
       "localizations" : {
@@ -520,6 +541,9 @@
       }
     },
     "Ukryj symbol" : {
+
+    },
+    "UserName: %@" : {
 
     },
     "value" : {

@@ -18,4 +18,8 @@ public protocol NBPService {
                         from: Date,
                         to: Date) async throws -> Exchange
     
+    
+    func makeTestRequestFromNBP(_ dateFrom: String,
+                                _ dateTo: String) async throws -> Exchange
 }
+
