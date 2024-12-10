@@ -16,8 +16,10 @@ struct ViewPickerTCA: View {
     var body: some View {
         NavigationStack {
             VStack {
-                fetchPeriodButton
                 Text("PickerTCA")
+                Spacer().frame(height: 50)
+                picker
+                Spacer()
                 fetchButton
             }
         }
@@ -27,11 +29,22 @@ struct ViewPickerTCA: View {
     }
     
     @ViewBuilder
-    private var fetchPeriodButton: some View {
-        Button  {
-            send(.fetchPeriodButtonTapped)
-        } label: {
-            Text("Fetch period")
+    private var picker: some View {
+//        if let selectedPeriod = store.selectedPeriod {
+        if store.periods != nil {
+            Picker("Picker", selection: $store.selectedPeriod.sending(\.selectedPeriodChange)) {
+                if let periods = store.periods {
+                    Text(periods.current.dateFrom)
+                        .tag(periods.current)
+                    
+                    Text(periods.previous.dateFrom)
+                        .tag(periods.previous)
+                }
+            }
+            .pickerStyle(.segmented)
+            .frame(width: 200)
+        } else {
+            ProgressView()
         }
     }
     

@@ -10,12 +10,13 @@ import DataModels
 import Foundation
 
 public final class DefaultNBPService: NBPService {
+    
     // view -> reducera -> feature serwisu -> repository -> factory
     public init() {}
     
     public func makeTestRequestFromNBP(_ dateFrom: String, _ dateTo: String) async throws -> Exchange {
         
-        let request = try await DefaultNBPServiceRequestBuilder().makeTestRequestFromNBP()
+        let request = try await DefaultNBPServiceRequestBuilder().makeTestRequestFromNBP(dateFrom, dateTo)
         
         let data = try await NetworkingService().perform(request)
         

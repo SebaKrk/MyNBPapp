@@ -23,10 +23,10 @@ public struct Period: Decodable, Hashable {
 public struct Periods: Equatable , Hashable {
         
     /// Current period
-    let current: Period
+    public var current: Period
     
     /// Previous period
-    let previous: Period
+    public var previous: Period
     
     public init(current: Period, previous: Period) {
         self.current = current

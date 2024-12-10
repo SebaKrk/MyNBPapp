@@ -216,9 +216,6 @@
     "Fetch data" : {
 
     },
-    "Fetch period" : {
-
-    },
     "Filtry" : {
 
     },
@@ -390,6 +387,9 @@
           }
         }
       }
+    },
+    "Picker" : {
+
     },
     "PickerTCA" : {
 

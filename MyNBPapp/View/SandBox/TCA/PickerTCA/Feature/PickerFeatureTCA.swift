@@ -19,15 +19,14 @@ struct PickerFeatureTCA {
         
         case updateExchangeData(Exchange)
         
-        case updatePeriod(Period)
-        
         case updatePeriods(Periods)
+        
+        case selectedPeriodChange(Period?)
         
         case view(View)
         
         enum View {
             
-            case fetchPeriodButtonTapped
             case fetchButtonTapped
             
             case vieDidAppear
@@ -38,15 +37,10 @@ struct PickerFeatureTCA {
     struct State: Equatable {
         
         var exchange: Exchange? = nil
-        
-        var period: Period? = nil
-        
+    
         var periods: Periods? = nil
-//        var periods: Periods?
-//        var periodState: PeriodsStatePicker = .current
-//        var periodState = Periods.currentPeriod(<#T##Period#>)
-//        var selectedPeriod: Periods = .currentPeriod(<#T##Period#>)
-      
+        
+        var selectedPeriod: Period?
     }
     
     // MARK: - Properties
@@ -61,32 +55,28 @@ struct PickerFeatureTCA {
             Reduce { state, action in
                 
                 switch action {
-                
+                    
+                case let .selectedPeriodChange(period):
+                    state.selectedPeriod = period
+                    let test = state.selectedPeriod
+                    print(test!)
+                    
+                    return .none
+
                 case let .updatePeriods(periods):
                     state.periods = periods
-                    dump(periods)
-                    return .none
-                    
-                case let .updatePeriod(period):
-                    state.period = period
-                    dump(period)
                     return .none
                     
                 case let .updateExchangeData(exchange):
                     state.exchange = exchange
                     dump(exchange)
                     return .none
-                
-                case .view(.fetchPeriodButtonTapped):
-                    return .run { send in
-                        let period = service.getPeriod()
-                        await send(.updatePeriod(period))
-                    }
                     
                 case .view(.fetchButtonTapped):
-                    return .run { [period = state.period] send in
-                        guard let period = period else { return }
-                        let data = try await service.fetchDataFormNBP(period)
+                    return .run { [period = state.selectedPeriod] send in
+                        guard let selectedPeriod = period else { return }
+                        
+                        let data = try await service.fetchDataFormNBP(selectedPeriod)
                         await send(.updateExchangeData(data))
                     }
                     
@@ -104,4 +94,3 @@ struct PickerFeatureTCA {
     }
     
 }
-

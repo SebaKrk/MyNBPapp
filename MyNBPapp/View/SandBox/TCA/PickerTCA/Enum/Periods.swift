@@ -15,10 +15,7 @@ public enum PeriodsState: Hashable, Equatable {
     
     /// Previous period
     case previousPeriod(Period)
-        
-}
-enum PeriodsStatePicker {
     
-    case current
-    case previous
+    case none
+        
 }
