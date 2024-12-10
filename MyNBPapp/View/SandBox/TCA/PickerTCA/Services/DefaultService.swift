@@ -22,7 +22,7 @@ final class DefaultService: PickerService {
     }
     
     func getPeriods() -> Periods {
-        Periods(current:  Period(dateFrom: "2024-11-01", dateTo: "2024-11-30"),
-                previous:  Period(dateFrom: "2024-12-01", dateTo: "2024-12-31"))
+        Periods(current:  Period(dateFrom: "2024-10-01", dateTo: "2024-10-31"),
+                previous:  Period(dateFrom: "2024-11-01", dateTo: "2024-11-30"))
     }
 }

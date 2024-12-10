@@ -30,7 +30,6 @@ struct ViewPickerTCA: View {
     
     @ViewBuilder
     private var picker: some View {
-//        if let selectedPeriod = store.selectedPeriod {
         if store.periods != nil {
             Picker("Picker", selection: $store.selectedPeriod.sending(\.selectedPeriodChange)) {
                 if let periods = store.periods {
@@ -56,4 +55,5 @@ struct ViewPickerTCA: View {
             Text("Fetch data")
         }
     }
+    
 }

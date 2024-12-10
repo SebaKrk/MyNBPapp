@@ -84,7 +84,8 @@
 		935FD7CF2D0766A900806C22 /* Dependencies+ContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7CE2D0766A900806C22 /* Dependencies+ContainerExtension.swift */; };
 		935FD7DD2D077DA100806C22 /* DefaultPickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7DC2D077DA100806C22 /* DefaultPickerRepository.swift */; };
 		935FD7DF2D077DB700806C22 /* PickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7DE2D077DB700806C22 /* PickerRepository.swift */; };
-		935FD7EA2D0796FA00806C22 /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD7E92D0796FA00806C22 /* Periods.swift */; };
+		935FD8102D08644B00806C22 /* PickerFeatureTCA+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD80F2D08644B00806C22 /* PickerFeatureTCA+Action.swift */; };
+		935FD8142D08652300806C22 /* PickerFeatureTCA+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935FD8132D08652300806C22 /* PickerFeatureTCA+State.swift */; };
 		936775002B7007A500816C92 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936774FF2B7007A500816C92 /* WidgetKit.framework */; };
 		936775022B7007A500816C92 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936775012B7007A500816C92 /* SwiftUI.framework */; };
 		936775052B7007A500816C92 /* WidgetNBPBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936775042B7007A500816C92 /* WidgetNBPBundle.swift */; };
@@ -394,7 +395,8 @@
 		935FD7CE2D0766A900806C22 /* Dependencies+ContainerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dependencies+ContainerExtension.swift"; sourceTree = "<group>"; };
 		935FD7DC2D077DA100806C22 /* DefaultPickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPickerRepository.swift; sourceTree = "<group>"; };
 		935FD7DE2D077DB700806C22 /* PickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRepository.swift; sourceTree = "<group>"; };
-		935FD7E92D0796FA00806C22 /* Periods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
+		935FD80F2D08644B00806C22 /* PickerFeatureTCA+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PickerFeatureTCA+Action.swift"; sourceTree = "<group>"; };
+		935FD8132D08652300806C22 /* PickerFeatureTCA+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PickerFeatureTCA+State.swift"; sourceTree = "<group>"; };
 		936774FE2B7007A500816C92 /* WidgetNBPExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetNBPExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		936774FF2B7007A500816C92 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		936775012B7007A500816C92 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -975,7 +977,6 @@
 		935FD7482D07608200806C22 /* PickerTCA */ = {
 			isa = PBXGroup;
 			children = (
-				935FD7E82D0796F500806C22 /* Enum */,
 				935FD7DB2D077D7F00806C22 /* Repository */,
 				935FD7C92D07653E00806C22 /* Services */,
 				935FD7C62D07631F00806C22 /* Feature */,
@@ -987,6 +988,8 @@
 			isa = PBXGroup;
 			children = (
 				935FD7492D0760A900806C22 /* PickerFeatureTCA.swift */,
+				935FD80F2D08644B00806C22 /* PickerFeatureTCA+Action.swift */,
+				935FD8132D08652300806C22 /* PickerFeatureTCA+State.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -1015,14 +1018,6 @@
 				935FD7DC2D077DA100806C22 /* DefaultPickerRepository.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		935FD7E82D0796F500806C22 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				935FD7E92D0796FA00806C22 /* Periods.swift */,
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 		936775032B7007A500816C92 /* WidgetNBP */ = {
@@ -2319,6 +2314,7 @@
 				9312DF162B9B346000C3D441 /* TransactionType.swift in Sources */,
 				939B91602BC042D300C0D4C1 /* CurrencyBarChartView.swift in Sources */,
 				93517C432B88CD99009252E9 /* TestView.swift in Sources */,
+				935FD8142D08652300806C22 /* PickerFeatureTCA+State.swift in Sources */,
 				939B08A82CA712C800B78F82 /* PaymentFactory.swift in Sources */,
 				93517C3F2B88CC3E009252E9 /* TestFeature+Action.swift in Sources */,
 				939B08AB2CA712EE00B78F82 /* PaymentProcessor.swift in Sources */,
@@ -2366,7 +2362,6 @@
 				935210C52CB47DE600585030 /* CartItem.swift in Sources */,
 				93517C492B88D863009252E9 /* AccountFeatureServices.swift in Sources */,
 				9312DF102B9B208800C3D441 /* CurrencyConverterView.swift in Sources */,
-				935FD7EA2D0796FA00806C22 /* Periods.swift in Sources */,
 				9357DA002B5D31770097673C /* AppTabView.swift in Sources */,
 				9351DB2E2CFD9B5200D102B8 /* ScreenAlert.swift in Sources */,
 				9357DA022B5D78BD0097673C /* AppSidebarList.swift in Sources */,
@@ -2423,6 +2418,7 @@
 				939B09402CA7161E00B78F82 /* FiltersPlaceView.swift in Sources */,
 				939B09412CA7161E00B78F82 /* SearchPlaceSheetView.swift in Sources */,
 				939B09422CA7161E00B78F82 /* SearchResultsListView.swift in Sources */,
+				935FD8102D08644B00806C22 /* PickerFeatureTCA+Action.swift in Sources */,
 				939B09432CA7161E00B78F82 /* MapViewModel.swift in Sources */,
 				939B09442CA7161E00B78F82 /* SearchServiceProtocol.swift in Sources */,
 				935FD7CF2D0766A900806C22 /* Dependencies+ContainerExtension.swift in Sources */,
